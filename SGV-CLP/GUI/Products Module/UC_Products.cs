@@ -49,6 +49,8 @@ namespace SGV_CLP.GUI
             tbSalesPriceToThePublic.Text = string.Empty;
             tbImagePath.Text = string.Empty;
             cbCategory.SelectedIndex = 0;
+            isSubproductCheckBox.Checked = false;
+            isParentCheckBox.Checked = false;
 
             productCodeIsValid = false;
             productNameIsValid = false;

@@ -22,9 +22,6 @@
     <Compile Update="GUI\Módulo Ventas\ShowDetailInvoice.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="GUI\Products Module\EditBatch.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="GUI\Products Module\EditProduct.cs">
       <SubType>Form</SubType>
     </Compile>

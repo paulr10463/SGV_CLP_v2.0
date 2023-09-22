@@ -693,54 +693,72 @@
             // 
             // ColumnaCedula
             // 
+            ColumnaCedula.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             ColumnaCedula.HeaderText = "CI";
             ColumnaCedula.MinimumWidth = 6;
             ColumnaCedula.Name = "ColumnaCedula";
             ColumnaCedula.ReadOnly = true;
-            ColumnaCedula.Resizable = DataGridViewTriState.True;
-            ColumnaCedula.SortMode = DataGridViewColumnSortMode.NotSortable;
+            ColumnaCedula.Resizable = DataGridViewTriState.False;
+            ColumnaCedula.SortMode = DataGridViewColumnSortMode.Programmatic;
+            ColumnaCedula.Width = 53;
             // 
             // ColumnaNombres
             // 
+            ColumnaNombres.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             ColumnaNombres.HeaderText = "Nombres";
             ColumnaNombres.MinimumWidth = 6;
             ColumnaNombres.Name = "ColumnaNombres";
             ColumnaNombres.ReadOnly = true;
-            ColumnaNombres.SortMode = DataGridViewColumnSortMode.NotSortable;
+            ColumnaNombres.Resizable = DataGridViewTriState.False;
+            ColumnaNombres.SortMode = DataGridViewColumnSortMode.Programmatic;
+            ColumnaNombres.Width = 114;
             // 
             // ColumnaApellidos
             // 
+            ColumnaApellidos.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             ColumnaApellidos.HeaderText = "Apellidos";
             ColumnaApellidos.MinimumWidth = 6;
             ColumnaApellidos.Name = "ColumnaApellidos";
             ColumnaApellidos.ReadOnly = true;
-            ColumnaApellidos.SortMode = DataGridViewColumnSortMode.NotSortable;
+            ColumnaApellidos.Resizable = DataGridViewTriState.False;
+            ColumnaApellidos.SortMode = DataGridViewColumnSortMode.Programmatic;
+            ColumnaApellidos.Width = 114;
             // 
             // ColumnaDireccion
             // 
+            ColumnaDireccion.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             ColumnaDireccion.HeaderText = "Dirección";
             ColumnaDireccion.MinimumWidth = 6;
             ColumnaDireccion.Name = "ColumnaDireccion";
             ColumnaDireccion.ReadOnly = true;
-            ColumnaDireccion.SortMode = DataGridViewColumnSortMode.NotSortable;
+            ColumnaDireccion.Resizable = DataGridViewTriState.False;
+            ColumnaDireccion.SortMode = DataGridViewColumnSortMode.Programmatic;
+            ColumnaDireccion.Width = 119;
             // 
             // ColumnaTelefono
             // 
+            ColumnaTelefono.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             ColumnaTelefono.HeaderText = "Teléfono";
             ColumnaTelefono.MinimumWidth = 6;
             ColumnaTelefono.Name = "ColumnaTelefono";
             ColumnaTelefono.ReadOnly = true;
-            ColumnaTelefono.SortMode = DataGridViewColumnSortMode.NotSortable;
+            ColumnaTelefono.Resizable = DataGridViewTriState.False;
+            ColumnaTelefono.SortMode = DataGridViewColumnSortMode.Programmatic;
+            ColumnaTelefono.Width = 110;
             // 
             // ColumnaCorreo
             // 
+            ColumnaCorreo.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             ColumnaCorreo.HeaderText = "Correo Electrónico";
             ColumnaCorreo.MinimumWidth = 6;
             ColumnaCorreo.Name = "ColumnaCorreo";
+            ColumnaCorreo.Resizable = DataGridViewTriState.False;
+            ColumnaCorreo.SortMode = DataGridViewColumnSortMode.Programmatic;
+            ColumnaCorreo.Width = 184;
             // 
             // ColumnaEditar
             // 
-            ColumnaEditar.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            ColumnaEditar.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.NullValue = null;
             dataGridViewCellStyle3.Padding = new Padding(5);
@@ -750,15 +768,15 @@
             ColumnaEditar.MinimumWidth = 45;
             ColumnaEditar.Name = "ColumnaEditar";
             ColumnaEditar.Resizable = DataGridViewTriState.False;
-            ColumnaEditar.Width = 45;
             // 
             // ColumnaEliminar
             // 
+            ColumnaEliminar.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             ColumnaEliminar.HeaderText = "";
             ColumnaEliminar.Image = (Image)resources.GetObject("ColumnaEliminar.Image");
             ColumnaEliminar.MinimumWidth = 45;
             ColumnaEliminar.Name = "ColumnaEliminar";
-            ColumnaEliminar.Resizable = DataGridViewTriState.True;
+            ColumnaEliminar.Resizable = DataGridViewTriState.False;
             // 
             // UC_Customers
             // 
@@ -808,6 +826,10 @@
         private Siticone.Desktop.UI.WinForms.SiticoneTextBox tbEMail;
         private Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel labelCorrectEMail;
         private Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel labelWrongEMail;
+        private Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel labelValidPhoneNumber;
+        private Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel labelInvalidPhoneNumber;
+        private Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel labelCustomerIDUnique;
+        private Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel labelCustomerIDNotUnique;
         private DataGridViewTextBoxColumn ColumnaCedula;
         private DataGridViewTextBoxColumn ColumnaNombres;
         private DataGridViewTextBoxColumn ColumnaApellidos;
@@ -816,9 +838,5 @@
         private DataGridViewTextBoxColumn ColumnaCorreo;
         private DataGridViewImageColumn ColumnaEditar;
         private DataGridViewImageColumn ColumnaEliminar;
-        private Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel labelValidPhoneNumber;
-        private Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel labelInvalidPhoneNumber;
-        private Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel labelCustomerIDUnique;
-        private Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel labelCustomerIDNotUnique;
     }
 }

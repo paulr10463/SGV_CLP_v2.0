@@ -240,7 +240,7 @@ namespace SGV_CLP.GUI
             {
                 labelWrongPhoneNumberLength.Hide();
                 labelCorrectPhoneNumberLength.Show();
-                
+
 
                 if (ValidationUtils.IsValidPhoneNumber(tbPhoneNumber.Text))
                 {
@@ -265,7 +265,7 @@ namespace SGV_CLP.GUI
                 phoneNumberIsValid = false;
                 countCorrectFields--;
             }
-            else 
+            else
             {
                 labelValidPhoneNumber.Hide();
                 labelInvalidPhoneNumber.Show();
