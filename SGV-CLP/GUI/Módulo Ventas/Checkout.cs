@@ -495,15 +495,22 @@ namespace SGV_CLP.GUI.Módulo_Ventas
                     telefIsValid = false;
                 }
             }
-            else if (txtTelefVenta.Text.Length != Constants.LIMIT_TELEF_LENGTH &&
-                txtTelefVenta.Text.Length != Constants.LIMIT_TELEF_LENGTH_MIN &&
-                telefIsValid &&
-                editClientIsEnabled)
+            else if ( telefIsValid && editClientIsEnabled)
             {
                 telefIsValid = false;
                 count_correct_fields--;
                 siticoneHtmlLabel_wrong_length_telef.Show();
                 siticoneHtmlLabel_correct_length_telef.Hide();
+                labelValidPhoneNumber.Hide();
+                labelInvalidPhoneNumber.Show();
+            }
+            else
+            {
+                telefIsValid = false;
+                siticoneHtmlLabel_wrong_length_telef.Show();
+                siticoneHtmlLabel_correct_length_telef.Hide();
+                labelValidPhoneNumber.Hide();
+                labelInvalidPhoneNumber.Show();
             }
             validateFieldsCounter();
         }

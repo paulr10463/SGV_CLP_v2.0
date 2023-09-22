@@ -240,13 +240,14 @@ namespace SGV_CLP.GUI
             {
                 labelWrongPhoneNumberLength.Hide();
                 labelCorrectPhoneNumberLength.Show();
-                countCorrectFields++;
+                
 
                 if (ValidationUtils.IsValidPhoneNumber(tbPhoneNumber.Text))
                 {
                     labelValidPhoneNumber.Show();
                     labelInvalidPhoneNumber.Hide();
                     phoneNumberIsValid = true;
+                    countCorrectFields++;
                 }
                 else
                 {
@@ -255,7 +256,7 @@ namespace SGV_CLP.GUI
                     phoneNumberIsValid = false;
                 }
             }
-            else if (tbPhoneNumber.Text.Length != Constants.LIMIT_TELEF_LENGTH && tbPhoneNumber.Text.Length != Constants.LIMIT_TELEF_LENGTH_MIN && phoneNumberIsValid)
+            else if (phoneNumberIsValid)
             {
                 labelValidPhoneNumber.Hide();
                 labelInvalidPhoneNumber.Show();
@@ -263,6 +264,14 @@ namespace SGV_CLP.GUI
                 labelCorrectPhoneNumberLength.Hide();
                 phoneNumberIsValid = false;
                 countCorrectFields--;
+            }
+            else 
+            {
+                labelValidPhoneNumber.Hide();
+                labelInvalidPhoneNumber.Show();
+                labelWrongPhoneNumberLength.Show();
+                labelCorrectPhoneNumberLength.Hide();
+                phoneNumberIsValid = false;
             }
             ValidateFieldsCounter();
         }

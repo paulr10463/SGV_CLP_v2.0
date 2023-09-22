@@ -107,10 +107,12 @@ namespace SGV_CLP.GUI.Customers_Module
 
         private void tbPhoneNumber_TextChanged(object sender, EventArgs e)
         {
-            if (tbPhoneNumber.Text.Length == Constants.LIMIT_TELEF_LENGTH && !phoneNumberIsValid)
+            if ((tbPhoneNumber.Text.Length == Constants.LIMIT_TELEF_LENGTH || tbPhoneNumber.Text.Length == Constants.LIMIT_TELEF_LENGTH_MIN) && !phoneNumberIsValid)
             {
                 labelWrongPhoneNumberLength.Hide();
                 labelCorrectPhoneNumberLength.Show();
+
+
                 if (ValidationUtils.IsValidPhoneNumber(tbPhoneNumber.Text))
                 {
                     labelValidPhoneNumber.Show();
@@ -123,10 +125,9 @@ namespace SGV_CLP.GUI.Customers_Module
                     labelValidPhoneNumber.Hide();
                     labelInvalidPhoneNumber.Show();
                     phoneNumberIsValid = false;
-                    countCorrectFields--;
                 }
             }
-            else if (tbPhoneNumber.Text.Length < Constants.LIMIT_TELEF_LENGTH && phoneNumberIsValid)
+            else if (phoneNumberIsValid)
             {
                 labelValidPhoneNumber.Hide();
                 labelInvalidPhoneNumber.Show();
@@ -134,6 +135,14 @@ namespace SGV_CLP.GUI.Customers_Module
                 labelCorrectPhoneNumberLength.Hide();
                 phoneNumberIsValid = false;
                 countCorrectFields--;
+            }
+            else
+            {
+                labelValidPhoneNumber.Hide();
+                labelInvalidPhoneNumber.Show();
+                labelWrongPhoneNumberLength.Show();
+                labelCorrectPhoneNumberLength.Hide();
+                phoneNumberIsValid = false;
             }
             ValidateFieldsCounter();
         }
@@ -155,24 +164,12 @@ namespace SGV_CLP.GUI.Customers_Module
 
         private void tbPhoneNumber_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar != '\b' && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-                SystemSounds.Beep.Play();
-                MessageBox.Show("Ingrese únicamente números!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
+            ValidationUtils.keyPressDigitsValidation(e);
         }
 
         private void tbEMail_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar != '\b' && !char.IsLetter(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '_' && e.KeyChar != '@' && e.KeyChar != '.')
-            {
-                e.Handled = true;
-                SystemSounds.Beep.Play();
-                MessageBox.Show("Ingrese únicamente letras o números!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
+            ValidationUtils.keyPressEmailValidation(e);
         }
 
     }
