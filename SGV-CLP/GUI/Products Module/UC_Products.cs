@@ -73,11 +73,7 @@ namespace SGV_CLP.GUI
                 int index = 0;
                 foreach (Product product in registeredProducts)
                 {
-                    ProductDataGridView.Rows.Add(product.productCode, product.productName, product.salePrice, product.category);
-                    if (product.productCode.Equals("XXX"))
-                    {
-                        ProductDataGridView.Rows[index].Visible = false;
-                    }
+                    ProductDataGridView.Rows.Add(product.productCode, product.productName, product.salePrice, product.category, product.imagePath, product.parentCode);
                     index++;
                 }
             }
@@ -101,10 +97,10 @@ namespace SGV_CLP.GUI
             var product = new Product(
                 tbProductCode.Text.ToUpper(),
                 tbProductName.Text,
-                isParentCheckBox.Checked? null : Convert.ToDouble(tbSalesPriceToThePublic.Text, CultureInfo.InvariantCulture),
+                isParentCheckBox.Checked ? null : Convert.ToDouble(tbSalesPriceToThePublic.Text, CultureInfo.InvariantCulture),
                 cbCategory.Text,
                 tbImagePath.Text,
-                isSubproductCheckBox.Checked? parentProducts[parentComboBox.SelectedIndex].productCode : null
+                isSubproductCheckBox.Checked ? parentProducts[parentComboBox.SelectedIndex].productCode : null
                 );
 
             try
@@ -136,8 +132,15 @@ namespace SGV_CLP.GUI
                         if (MessageBox.Show("¿Está seguro de eliminar este producto?", "Eliminar Producto", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                         {
                             string productCode = ProductDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
-                            ProductMapper.DeleteProduct(productCode);
-                            MessageBox.Show("Producto eliminado con éxito");
+                            try
+                            {
+                                ProductMapper.DeleteProduct(productCode);
+                                MessageBox.Show("Producto eliminado con éxito");
+                            }catch(Exception ex)
+                            {
+                                MessageBox.Show(ex.Message);
+                            }
+                            
                         }
                     }
                 }
@@ -266,11 +269,6 @@ namespace SGV_CLP.GUI
             buttonAddProduct.Enabled = fieldAreValid;
         }
 
-        private void TbProductCode_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            ValidationUtils.keyPressLetterValidation(e);
-        }
-
         private void TbProductCode_TextChanged(object sender, EventArgs e)
         {
             // Valida que el campo no esté vacío
@@ -298,6 +296,10 @@ namespace SGV_CLP.GUI
         private void TbProductName_KeyPress(object sender, KeyPressEventArgs e)
         {
             ValidationUtils.keyPressAddressValidation(e);
+        }
+        private void TbProductCode_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidationUtils.keyPressLetterValidation(e);
         }
 
         private void TbProductName_TextChanged(object sender, EventArgs e)

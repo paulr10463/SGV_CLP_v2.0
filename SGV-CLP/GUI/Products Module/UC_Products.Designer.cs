@@ -70,6 +70,8 @@ namespace SGV_CLP.GUI
             NombreProd = new DataGridViewTextBoxColumn();
             PrecioVentaPub = new DataGridViewTextBoxColumn();
             Categoria = new DataGridViewTextBoxColumn();
+            ImagePath = new DataGridViewTextBoxColumn();
+            parentCode = new DataGridViewTextBoxColumn();
             ColumnaEditarProducto = new DataGridViewImageColumn();
             ColumnaEliminarProducto = new DataGridViewImageColumn();
             siticoneTabControl1.SuspendLayout();
@@ -198,7 +200,6 @@ namespace SGV_CLP.GUI
             parentComboBox.Margin = new Padding(3, 4, 3, 4);
             parentComboBox.Name = "parentComboBox";
             parentComboBox.Size = new Size(316, 45);
-            parentComboBox.StartIndex = 0;
             parentComboBox.TabIndex = 65;
             parentComboBox.TextOffset = new Point(5, 0);
             parentComboBox.Visible = false;
@@ -629,7 +630,7 @@ namespace SGV_CLP.GUI
             ProductDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             ProductDataGridView.ColumnHeadersHeight = 75;
             ProductDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            ProductDataGridView.Columns.AddRange(new DataGridViewColumn[] { CodProd, NombreProd, PrecioVentaPub, Categoria, ColumnaEditarProducto, ColumnaEliminarProducto });
+            ProductDataGridView.Columns.AddRange(new DataGridViewColumn[] { CodProd, NombreProd, PrecioVentaPub, Categoria, ImagePath, parentCode, ColumnaEditarProducto, ColumnaEliminarProducto });
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.White;
             dataGridViewCellStyle3.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
@@ -706,6 +707,16 @@ namespace SGV_CLP.GUI
             Categoria.Name = "Categoria";
             Categoria.ReadOnly = true;
             Categoria.SortMode = DataGridViewColumnSortMode.NotSortable;
+            // 
+            // ImagePath
+            // 
+            ImagePath.HeaderText = "Ruta de Imagen";
+            ImagePath.Name = "ImagePath";
+            // 
+            // parentCode
+            // 
+            parentCode.HeaderText = "Padre";
+            parentCode.Name = "parentCode";
             // 
             // ColumnaEditarProducto
             // 
@@ -803,16 +814,18 @@ namespace SGV_CLP.GUI
         private Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel labelProductCodeNotChosenInTheSearchBatchTab;
         private Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel labelCategoryNotChosenInTheSearchProductTab;
         private Siticone.Desktop.UI.WinForms.SiticoneComboBox cbSearchProductByCategory;
-        private DataGridViewTextBoxColumn CodProd;
-        private DataGridViewTextBoxColumn NombreProd;
-        private DataGridViewTextBoxColumn PrecioVentaPub;
-        private DataGridViewTextBoxColumn Categoria;
-        private DataGridViewImageColumn ColumnaEditarProducto;
-        private DataGridViewImageColumn ColumnaEliminarProducto;
         private Siticone.Desktop.UI.WinForms.SiticoneComboBox parentComboBox;
         private CheckBox isParentCheckBox;
         private Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel parentErrorLabel;
         private Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel parentLabel;
         private CheckBox isSubproductCheckBox;
+        private DataGridViewTextBoxColumn CodProd;
+        private DataGridViewTextBoxColumn NombreProd;
+        private DataGridViewTextBoxColumn PrecioVentaPub;
+        private DataGridViewTextBoxColumn Categoria;
+        private DataGridViewTextBoxColumn ImagePath;
+        private DataGridViewTextBoxColumn parentCode;
+        private DataGridViewImageColumn ColumnaEditarProducto;
+        private DataGridViewImageColumn ColumnaEliminarProducto;
     }
 }

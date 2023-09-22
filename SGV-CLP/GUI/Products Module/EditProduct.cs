@@ -19,21 +19,54 @@ namespace SGV_CLP.GUI
     public partial class EditProduct : Form
     {
         string productCode;
-
-        bool categoryIsValid, salesPriceToThePubicIsValid, imagePathIsValid; // Para validar los campos de los productos
-
+        List<Product> parentProducts;
+        bool productNameIsValid, categoryIsValid, salesPriceToThePubicIsValid, imagePathIsValid, parentIsValid; // Para validar los campos de Producto
+        Product? productToEdit;
         public EditProduct(string productCode)
         {
             InitializeComponent();
 
             this.productCode = productCode;
 
-            categoryIsValid = true;
-            salesPriceToThePubicIsValid = true;
-            imagePathIsValid = true;
+            productNameIsValid = false;
+            categoryIsValid = false;
+            salesPriceToThePubicIsValid = false;
+            imagePathIsValid = false;
+            parentIsValid = false;
 
-            tbSalesPriceToThePublic.Text = ProductMapper.GetProductField(productCode, "precio_Unitario").Replace(",", ".");
-            tbImagePath.Text = ProductMapper.GetProductField(productCode, "ruta_Imagen");
+            //Cargar info del producto 
+            productToEdit = ProductMapper.GetProductByID(productCode);
+
+            //Mostrar en los recuadros la información del producto 
+            if (productToEdit?.salePrice != null)
+            {
+                tbSalesPriceToThePublic.Text = productToEdit?.salePrice?.ToString().Replace(',', '.');
+            }
+            else
+            {
+                isParentCheckBox.Checked = true;
+            }
+
+            if (productToEdit?.parentCode != null)
+            {
+                isSubproductCheckBox.Checked = true;
+                parentProducts = ProductMapper.GetAllParentProducts();
+                List<String> parentCodes = parentProducts.Select(p => p.productCode).ToList();
+                parentComboBox.DataSource = parentCodes;
+                foreach (var item in parentCodes)
+                {
+                    if (item == productToEdit.parentCode)
+                    {
+                        parentComboBox.SelectedIndex = parentCodes.IndexOf(item);
+                    }
+                };
+            }
+
+
+
+            tbImagePath.Text = productToEdit?.imagePath;
+            tbProductName.Text = productToEdit?.productName;
+
 
             tbSalesPriceToThePublic.SelectionStart = tbSalesPriceToThePublic.Text.Length;
             tbImagePath.SelectionStart = tbImagePath.Text.Length;
@@ -51,22 +84,18 @@ namespace SGV_CLP.GUI
             buttonEditProduct.Enabled = false;
         }
 
-        private void ButtonBrowse_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog dlg = new OpenFileDialog();
-
-            if (dlg.ShowDialog() == DialogResult.OK)
-            {
-                string fileName;
-                fileName = dlg.FileName;
-                tbImagePath.Text = fileName;
-            }
-        }
-
         private void ButtonEditProduct_Click(object sender, EventArgs e)
         {
+            var product = new Product(
+                productToEdit?.productCode,
+                tbProductName.Text,
+                isParentCheckBox.Checked ? null : Convert.ToDouble(tbSalesPriceToThePublic.Text, CultureInfo.InvariantCulture),
+                cbCategory.Text,
+                tbImagePath.Text,
+                isSubproductCheckBox.Checked ? parentProducts[parentComboBox.SelectedIndex].productCode : null
+            );
             SystemSounds.Beep.Play();
-            ProductMapper.EditProduct(productCode, cbCategory.Text, Convert.ToDouble(tbSalesPriceToThePublic.Text, CultureInfo.InvariantCulture), tbImagePath.Text);
+            ProductMapper.EditProduct(product);
             MessageBox.Show("Producto editado con éxito", "Editar", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Dispose();
         }
@@ -79,47 +108,119 @@ namespace SGV_CLP.GUI
         // Validaciones de atributos
         private void ValidateProductFields()
         {
-            buttonEditProduct.Enabled = salesPriceToThePubicIsValid && categoryIsValid && imagePathIsValid;
-        }
-
-        private void CbCategory_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cbCategory.SelectedIndex > 0)
+            bool fieldAreValid = false;
+            if (isParentCheckBox.Checked)
             {
-                labelCategoryNotChosen.Hide();
-                categoryIsValid = true;
+                fieldAreValid =  productNameIsValid && categoryIsValid && imagePathIsValid;
+            }
+            else if (isSubproductCheckBox.Checked)
+            {
+                //Se debe tomar en cuenta el checkbox de padre
+                fieldAreValid =  productNameIsValid && salesPriceToThePubicIsValid && categoryIsValid && imagePathIsValid && parentIsValid;
             }
             else
             {
-                labelCategoryNotChosen.Show();
-                categoryIsValid = false;
+                fieldAreValid = productNameIsValid && salesPriceToThePubicIsValid && categoryIsValid && imagePathIsValid;
             }
-            ValidateProductFields();
-        }
-
-        private void TbProductionPrice_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar != '\b' && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
-            {
-                e.Handled = true;
-                SystemSounds.Beep.Play();
-                MessageBox.Show("Precio de elaboración inválido – solo se permiten caracteres numéricos y el \".\"", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
+            buttonEditProduct.Enabled = fieldAreValid;
         }
 
         private void TbSalesPriceToThePublic_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar != '\b' && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+            ValidationUtils.keyPressDoubleValidation(e);
+        }
+        private void isParentCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!isParentCheckBox.Checked)
             {
-                e.Handled = true;
-                SystemSounds.Beep.Play();
-                MessageBox.Show("P.V.P. inválido – solo se permiten caracteres numéricos y la \".\"", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
+                siticoneHtmlLabel8.Visible = true;
+                tbSalesPriceToThePublic.Visible = true;
+            }
+            else
+            {
+                isSubproductCheckBox.Checked = false;
+                siticoneHtmlLabel8.Visible = false;
+                tbSalesPriceToThePublic.Visible = false;
+                tbSalesPriceToThePublic.Text = string.Empty;
+                labelInvalidSalesPriceToThePublic.Visible = false;
+                parentErrorLabel.Visible = false;
+            }
+            ValidateProductFields();
+        }
+
+        private void isSubproductCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!isSubproductCheckBox.Checked)
+            {
+                parentComboBox.Visible = false;
+                parentLabel.Visible = false;
+                parentErrorLabel.Visible = false;
+                parentComboBox.SelectedIndex = -1;
+            }
+            else
+            {
+                isParentCheckBox.Checked = false;
+                parentComboBox.Visible = true;
+                parentComboBox.Visible = true;
+                parentLabel.Visible = true;
+                parentErrorLabel.Visible = true;
+                parentProducts = ProductMapper.GetAllParentProducts();
+                if (parentProducts != null && parentProducts.Count > 0)
+                {
+                    List<String> productNames = new List<String>();
+                    parentProducts.ForEach(item => productNames.Add(item.productName));
+                    parentComboBox.DataSource = productNames;
+                    parentComboBox.SelectedIndex = -1;
+                }
+            }
+            ValidateProductFields();
+        }
+
+        private void parentComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Valida que el item seleccionado es "> 0"
+            if (parentComboBox.SelectedIndex > -1)
+            {
+                parentErrorLabel.Hide();
+                parentIsValid = true;
+            }
+            else
+            {
+                parentErrorLabel.Show();
+                parentIsValid = false;
+            }
+            ValidateProductFields();
+        }
+
+        private void tbImagePath_TextChanged(object sender, EventArgs e)
+        {
+            // Valida si el valor del campo es una ruta válida 
+            if (ValidationUtils.IsValidPath(tbImagePath.Text))
+            {
+                labelInvalidImagePath.Hide();
+                imagePathIsValid = true;
+            }
+            else
+            {
+                labelInvalidImagePath.Show();
+                imagePathIsValid = false;
+            }
+            ValidateProductFields();
+        }
+
+        private void SBExaminar_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dlg = new OpenFileDialog();
+
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                string fileName;
+                fileName = dlg.FileName;
+                tbImagePath.Text = fileName;
             }
         }
 
-        private void TbSalesPriceToThePublic_TextChanged(object sender, EventArgs e)
+        private void tbSalesPriceToThePublic_TextChanged(object sender, EventArgs e)
         {
             // Valida si hay un double en el campo
             if (ValidationUtils.IsValidDouble(tbSalesPriceToThePublic.Text))
@@ -135,18 +236,31 @@ namespace SGV_CLP.GUI
             ValidateProductFields();
         }
 
-        private void TbImagePath_TextChanged(object sender, EventArgs e)
+        private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Valida si el valor del campo es una ruta válida 
-            if (ValidationUtils.IsValidPath(tbImagePath.Text))
+            if (cbCategory.SelectedIndex > 0)
             {
-                labelInvalidImagePath.Hide();
-                imagePathIsValid = true;
+                labelCategoryNotChosen.Hide();
+                categoryIsValid = true;
             }
             else
             {
-                labelInvalidImagePath.Show();
-                imagePathIsValid = false;
+                labelCategoryNotChosen.Show();
+                categoryIsValid = false;
+            }
+            ValidateProductFields();
+        }
+
+        private void tbProductName_TextChanged(object sender, EventArgs e)
+        {
+            // Valida que el campo no esté vacío
+            if (tbProductName.Text.Length > 0)
+            {
+                productNameIsValid = true;
+            }
+            else
+            {
+                productNameIsValid = false;
             }
             ValidateProductFields();
         }

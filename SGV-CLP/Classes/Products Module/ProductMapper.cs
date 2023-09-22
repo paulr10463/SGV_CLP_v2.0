@@ -53,17 +53,19 @@ namespace SGV_CLP.Classes.Products_module
         }
 
         //  Editar Producto 
-        public static void EditProduct(string productCode, string category, double salesPriceToThePubic, string imagePath)
+        public static void EditProduct(Product product)
         {
             using var connection = new NpgsqlConnection(s_connectionString);
             connection.Open();
 
-            using (var cmd = new NpgsqlCommand("UPDATE \"Producto\" SET \"categoria\" = @categoria, \"precio_Unitario\" = @precio_Unitario, \"ruta_Imagen\" = @ruta_Imagen WHERE \"cod_Producto\" = @cod_Producto", connection))
+            using (var cmd = new NpgsqlCommand("UPDATE \"Producto\" SET \"nombre_Producto\" = @productName, \"categoria\" = @categoria, \"precio_Unitario\" = @precio_Unitario, \"ruta_Imagen\" = @ruta_Imagen,\"producto_padre\" = @parentCode  WHERE \"cod_Producto\" = @cod_Producto", connection))
             {
-                cmd.Parameters.AddWithValue("@cod_Producto", productCode);
-                cmd.Parameters.AddWithValue("@categoria", category);
-                cmd.Parameters.AddWithValue("@precio_Unitario", salesPriceToThePubic);
-                cmd.Parameters.AddWithValue("@ruta_Imagen", imagePath);
+                cmd.Parameters.AddWithValue("@cod_Producto", product.productCode);
+                cmd.Parameters.AddWithValue("@productName", product.productName);
+                cmd.Parameters.AddWithValue("@categoria", product.category);
+                cmd.Parameters.AddWithValue("@precio_Unitario", product.salePrice == null ? DBNull.Value : product.salePrice);
+                cmd.Parameters.AddWithValue("@ruta_Imagen", product.imagePath);
+                cmd.Parameters.AddWithValue("@parentCode", product.parentCode == null ? DBNull.Value : product.parentCode);
                 cmd.ExecuteNonQuery();
             }
         }
@@ -127,6 +129,40 @@ namespace SGV_CLP.Classes.Products_module
             return registeredProducts;
         }
 
+
+        // Consultar producto por id
+        public static Product? GetProductByID(string codProducto)
+        {
+            Product productById;
+            using (var connection = new NpgsqlConnection(s_connectionString))
+            {
+                connection.Open();
+                using (var command = new NpgsqlCommand("SELECT * FROM \"Producto\" WHERE \"cod_Producto\" = @productCode", connection))
+                {
+                    command.Parameters.AddWithValue("@productCode", codProducto);
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            double? unitPrice = reader.IsDBNull(2) ? (double?)null : reader.GetDouble(2);
+                            string? innerParentCode = reader.IsDBNull(5) ? (string?)null : reader.GetString(5);
+                            productById = new Product(
+                                reader.GetString(0), //codProducto
+                                reader.GetString(1), //nombreProducto
+                                unitPrice, //precioUnitario
+                                reader.GetString(3), //categoría
+                                reader.GetString(4), //rutaImagen
+                                innerParentCode
+                                );
+                            return productById;
+                        }
+                        
+                    }
+                }
+            }
+            return null;
+        }
+
         // Consultar productos padre
         public static List<Product> GetAllParentProducts()
         {
@@ -176,27 +212,6 @@ namespace SGV_CLP.Classes.Products_module
             return NombresProductosRegistrados;
         }
 
-        // Consultar id de un Producto
-        public static string GetProductCode(string productName)
-        {
-            string productCode = string.Empty;
-            using (var connection = new NpgsqlConnection(s_connectionString))
-            {
-                connection.Open();
-                using (var command = new NpgsqlCommand("SELECT \"cod_Producto\" FROM \"Producto\" WHERE \"nombre_Producto\" = @nombre_Producto", connection))
-                {
-                    command.Parameters.AddWithValue("@nombre_Producto", productName);
-                    using (var reader = command.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            productCode = reader.GetString(0);
-                        }
-                    }
-                }
-            }
-            return productCode;
-        }
 
         // Consultar un atributo de un Producto
         public static string GetProductField(string productCode, string field)
