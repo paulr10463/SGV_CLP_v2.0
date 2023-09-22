@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_LastSelectedProfileId>C:\Users\georg\source\repos\Requerimientos Proyecto\SGV_CLP_V.2\SGV-CLP\Properties\PublishProfiles\FolderProfile1.pubxml</_LastSelectedProfileId>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Update="GUI\MainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GUI\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GUI\Módulo Administración\Editar_Parametro_Por_Unidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GUI\Módulo Administración\Editar_Usuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GUI\Customers Module\EditCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GUI\Módulo Ventas\ShowDetailInvoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GUI\Products Module\EditBatch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GUI\Products Module\EditProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GUI\Módulo Ventas\Checkout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GUI\Módulo Ventas\UC_Item.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>

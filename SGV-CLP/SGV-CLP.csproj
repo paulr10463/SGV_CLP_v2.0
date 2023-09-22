@@ -1,0 +1,55 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <RootNamespace>SGV_CLP</RootNamespace>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="iTextSharp" Version="5.5.13.3" />
+    <PackageReference Include="Npgsql" Version="7.0.2" />
+    <PackageReference Include="Siticone.Desktop.UI" Version="2.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="GUI\Módulo Administración\UC_Administracion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="GUI\Customers Module\UC_Customers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="GUI\Módulo Ventas\ProductSubtype.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GUI\Products Module\UC_Products.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="GUI\Módulo Ventas\Checkout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GUI\Módulo Ventas\UC_Item.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="GUI\Módulo Ventas\UC_Ventas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

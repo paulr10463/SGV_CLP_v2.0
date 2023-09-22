@@ -1,0 +1,9 @@
+﻿################################################################################
+# Este archivo .gitignore ha sido creado automáticamente por Microsoft(R) Visual Studio.
+################################################################################
+
+/SGV-CLP/obj
+/.vs
+/SGV-CLP/bin/Debug/net7.0-windows
+/SGV_CLP/bin/Debug
+/SGV_CLP/obj/Debug
