@@ -43,15 +43,15 @@ namespace SGV_CLP.GUI
             hotDrinks = new List<Product>();
             coldDrinks = new List<Product>();
             empanadas = new List<Product>();
-            classifyProducts();
-            showProducts(specialties, flowLayoutPanel1);
-            showProducts(hotDrinks, flowLayoutPanel2);
-            showProducts(coldDrinks, flowLayoutPanel4);
-            showProducts(empanadas, flowLayoutPanel5);
+            ClassifyProducts();
+            ShowProducts(specialties, flowLayoutPanel1);
+            ShowProducts(hotDrinks, flowLayoutPanel2);
+            ShowProducts(coldDrinks, flowLayoutPanel4);
+            ShowProducts(empanadas, flowLayoutPanel5);
 
         }
 
-        private void classifyProducts()
+        private void ClassifyProducts()
         {
             //Add in each Product category the products
             foreach (Product producto in products)
@@ -78,7 +78,7 @@ namespace SGV_CLP.GUI
                 }
             }
         }
-        private void showProducts(List<Product> productCategoryItems, FlowLayoutPanel flowLayoutPanel)
+        private void ShowProducts(List<Product> productCategoryItems, FlowLayoutPanel flowLayoutPanel)
         {
             flowLayoutPanel.Controls.Clear();
             if (productCategoryItems.Count > 0)
@@ -98,7 +98,7 @@ namespace SGV_CLP.GUI
         }
 
         //Vacia siticoneDataGridView2 para una nueva compra
-        public void resetValues()
+        public void ResetValues()
         {
             siticoneDataGridView2.Rows.Clear();
             siticoneHtmlLabel11.Visible = false;
@@ -109,7 +109,7 @@ namespace SGV_CLP.GUI
             productosUI.ForEach(item => item.resetComponents());
         }
 
-        private void txtConsultarVenta_TextChanged(object sender, EventArgs e)
+        private void TxtConsultarVenta_TextChanged(object sender, EventArgs e)
         {
             List<Invoice> invoices = new List<Invoice>();
             switch (ComboBox_ConsultarVentaPor.SelectedIndex)
@@ -156,23 +156,11 @@ namespace SGV_CLP.GUI
             {
                 //case 0: "cod_NotaVenta, ccCliente y Telefono"
                 case 1 or 2 or 5:
-                    if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-                    {
-                        e.Handled = true;
-                        SystemSounds.Beep.Play();
-                        MessageBox.Show("Ingrese únicamente números!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        return;
-                    }
+                    ValidationUtils.keyPressDigitsValidation(e);
                     break;
                 //case 2: "primer_Nombre y apellido"; 
                 case 3 or 4:
-                    if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))
-                    {
-                        e.Handled = true;
-                        SystemSounds.Beep.Play();
-                        MessageBox.Show("Ingrese únicamente letras!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        return;
-                    }
+                    ValidationUtils.keyPressLetterValidation(e);
                     break;
 
             }
@@ -247,15 +235,15 @@ namespace SGV_CLP.GUI
 
             switch (ComboBox_ConsultarVentaPor.SelectedIndex)
             {
-                case 1: Categoria = "orderID"; txtConsultarVenta_TextChanged(null, null); break;
-                case 2: Categoria = "ccCustomer"; txtConsultarVenta_TextChanged(null, null); break;
-                case 3: Categoria = "name"; txtConsultarVenta_TextChanged(null, null); break;
-                case 4: Categoria = "lastName"; txtConsultarVenta_TextChanged(null, null); break;
-                case 5: Categoria = "phone"; txtConsultarVenta_TextChanged(null, null); break;
+                case 1: Categoria = "cod_NotaVenta"; TxtConsultarVenta_TextChanged(null, null); break;
+                case 2: Categoria = "cc_Cliente"; TxtConsultarVenta_TextChanged(null, null); break;
+                case 3: Categoria = "primer_Nombre"; TxtConsultarVenta_TextChanged(null, null); break;
+                case 4: Categoria = "primer_Apellido"; TxtConsultarVenta_TextChanged(null, null); break;
+                case 5: Categoria = "telefono"; TxtConsultarVenta_TextChanged(null, null); break;
                 case 6:
-                    Categoria = "issueDate";
+                    Categoria = "fecha_emision";
                     dateTimePickerConsultarVenta.Visible = true;
-                    dateTimePickerConsultarVenta_ValueChanged(null, null);
+                    DateTimePickerConsultarVenta_ValueChanged(null, null);
                     break;
             }
 
@@ -276,15 +264,29 @@ namespace SGV_CLP.GUI
             }
         }
 
-        private void dateTimePickerConsultarVenta_ValueChanged(object sender, EventArgs e)
+        private void DateTimePickerConsultarVenta_ValueChanged(object sender, EventArgs e)
         {
-            List<Invoice> invoices = InvoiceMapper.GetAllInvoicesByDate(dateTimePickerConsultarVenta.Text);
-            llenarTablaVenta(invoices);
+            try
+            {
+                List<Invoice> invoices = InvoiceMapper.GetAllInvoicesByDate(dateTimePickerConsultarVenta.Text);
+                llenarTablaVenta(invoices);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+
         }
 
         private void SiticoneTabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            if (siticoneTabControl1.SelectedIndex == 1)
+            {
+                MessageBox.Show("Ingresa a esta parte del codigo");
+                //Actualiza las ventas al ingresar a la pestaña de consulta de ventas
+                List<Invoice> registeredInvoices = InvoiceMapper.GetAllInvoices("");
+                MainMenu.uc_ventas.llenarTablaVenta(registeredInvoices);
+            }
         }
     }
 }
