@@ -148,11 +148,7 @@ namespace SGV_CLP.GUI
             }
         }
 
-        private void dateTimePickerConsultarVenta_ValueChanged(object sender, EventArgs e)
-        {
-            List<Invoice> invoices = InvoiceMapper.GetAllInvoicesByDate(dateTimePickerConsultarVenta.Text);
-            llenarTablaVenta(invoices);
-        }
+
 
         private void txtConsultarVenta_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -251,13 +247,13 @@ namespace SGV_CLP.GUI
 
             switch (ComboBox_ConsultarVentaPor.SelectedIndex)
             {
-                case 1: Categoria = "cod_NotaVenta"; txtConsultarVenta_TextChanged(null, null); break;
-                case 2: Categoria = "cc_Cliente"; txtConsultarVenta_TextChanged(null, null); break;
-                case 3: Categoria = "primer_Nombre"; txtConsultarVenta_TextChanged(null, null); break;
-                case 4: Categoria = "primer_Apellido"; txtConsultarVenta_TextChanged(null, null); break;
-                case 5: Categoria = "telefono"; txtConsultarVenta_TextChanged(null, null); break;
+                case 1: Categoria = "orderID"; txtConsultarVenta_TextChanged(null, null); break;
+                case 2: Categoria = "ccCustomer"; txtConsultarVenta_TextChanged(null, null); break;
+                case 3: Categoria = "name"; txtConsultarVenta_TextChanged(null, null); break;
+                case 4: Categoria = "lastName"; txtConsultarVenta_TextChanged(null, null); break;
+                case 5: Categoria = "phone"; txtConsultarVenta_TextChanged(null, null); break;
                 case 6:
-                    Categoria = "fecha_emision";
+                    Categoria = "issueDate";
                     dateTimePickerConsultarVenta.Visible = true;
                     dateTimePickerConsultarVenta_ValueChanged(null, null);
                     break;
@@ -266,7 +262,7 @@ namespace SGV_CLP.GUI
             txtConsultarVenta.Text = string.Empty;
         }
 
-        private void buttonDoPayment_Click(object sender, EventArgs e)
+        private void ButtonDoPayment_Click(object sender, EventArgs e)
         {
             if (siticoneDataGridView2.RowCount == 1)
             {
@@ -275,11 +271,20 @@ namespace SGV_CLP.GUI
             }
             else
             {
-                Checkout ventana = new Checkout(siticoneDataGridView2);
+                Checkout ventana = new(siticoneDataGridView2);
                 ventana.ShowDialog();
-                List<Invoice> registeredInvoices = InvoiceMapper.GetAllInvoices("");
-                MainMenu.uc_ventas.llenarTablaVenta(registeredInvoices);
             }
+        }
+
+        private void dateTimePickerConsultarVenta_ValueChanged(object sender, EventArgs e)
+        {
+            List<Invoice> invoices = InvoiceMapper.GetAllInvoicesByDate(dateTimePickerConsultarVenta.Text);
+            llenarTablaVenta(invoices);
+        }
+
+        private void SiticoneTabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

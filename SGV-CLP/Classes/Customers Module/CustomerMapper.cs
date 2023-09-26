@@ -21,15 +21,14 @@ namespace SGV_CLP.Classes.Customers_Module
             using var connection = new NpgsqlConnection(s_connectionString);
             connection.Open();
 
-            using (var cmd = new NpgsqlCommand("INSERT INTO public.\"Cliente\"(\"cc_Cliente\", \"primer_Nombre\", \"primer_Apellido\", \"direccion_Domicilio\", telefono, \"correo_Electronico\") VALUES (@CC_Cliente, @Primer_Nombre, @Primer_Apellido,@Direccion_Domicilio, @Telefono, @Correo_Electronico)", connection))
+            using (var cmd = new NpgsqlCommand("INSERT INTO public.\"Cliente\"(\"ccCustomer\", \"name\", \"lastName\", \"address\", phone, \"email\") VALUES (@ccCustomer, @name, @lastName,@address, @phone, @email)", connection))
             {
-
-                cmd.Parameters.AddWithValue("@CC_Cliente", customer.customerID);
-                cmd.Parameters.AddWithValue("@Primer_Nombre", customer.firstName);
-                cmd.Parameters.AddWithValue("@Primer_Apellido", customer.firstLastName);
-                cmd.Parameters.AddWithValue("@Direccion_Domicilio", customer.homeAddress);
-                cmd.Parameters.AddWithValue("@Telefono", customer.phoneNumber);
-                cmd.Parameters.AddWithValue("@Correo_Electronico", customer.eMail);
+                cmd.Parameters.AddWithValue("@ccCustomer", customer.customerID);
+                cmd.Parameters.AddWithValue("@name", customer.firstName);
+                cmd.Parameters.AddWithValue("@lastName", customer.firstLastName);
+                cmd.Parameters.AddWithValue("@address", customer.homeAddress);
+                cmd.Parameters.AddWithValue("@phone", customer.phoneNumber);
+                cmd.Parameters.AddWithValue("@email", customer.eMail);
                 cmd.ExecuteNonQuery();
             }
         }
@@ -40,9 +39,9 @@ namespace SGV_CLP.Classes.Customers_Module
             using var connection = new NpgsqlConnection(s_connectionString);
             connection.Open();
 
-            using (var cmd = new NpgsqlCommand("DELETE FROM public.\"Cliente\" WHERE \"cc_Cliente\" = @cc_Cliente", connection))
+            using (var cmd = new NpgsqlCommand("DELETE FROM public.\"Cliente\" WHERE \"ccCustomer\" = @ccCustomer", connection))
             {
-                cmd.Parameters.AddWithValue("@cc_Cliente", customerID);
+                cmd.Parameters.AddWithValue("@ccCustomer", customerID);
                 cmd.ExecuteNonQuery();
             }
         }
@@ -53,12 +52,12 @@ namespace SGV_CLP.Classes.Customers_Module
             using var connection = new NpgsqlConnection(s_connectionString);
             connection.Open();
 
-            using (var cmd = new NpgsqlCommand("UPDATE \"Cliente\" SET \"direccion_Domicilio\" = @direccion_Domicilio, \"correo_Electronico\" = @correo_Electronico, \"telefono\" = @telefono WHERE \"cc_Cliente\" = @cc_Cliente", connection))
+            using (var cmd = new NpgsqlCommand("UPDATE \"Cliente\" SET \"address\" = @address, \"email\" = @email, \"phone\" = @phone WHERE \"ccCustomer\" = @ccCustomer", connection))
             {
-                cmd.Parameters.AddWithValue("@cc_Cliente", customerID);
-                cmd.Parameters.AddWithValue("@direccion_Domicilio", homeAddress);
-                cmd.Parameters.AddWithValue("@correo_Electronico", eMail);
-                cmd.Parameters.AddWithValue("@telefono", phoneNumber);
+                cmd.Parameters.AddWithValue("@ccCustomer", customerID);
+                cmd.Parameters.AddWithValue("@address", homeAddress);
+                cmd.Parameters.AddWithValue("@email", eMail);
+                cmd.Parameters.AddWithValue("@phone", phoneNumber);
                 cmd.ExecuteNonQuery();
             }
         }
@@ -70,7 +69,7 @@ namespace SGV_CLP.Classes.Customers_Module
             using (var connection = new NpgsqlConnection(s_connectionString))
             {
                 connection.Open();
-                using (var command = new NpgsqlCommand("SELECT * FROM \"Cliente\"", connection))
+                using (var command = new NpgsqlCommand("SELECT * FROM \"Customer\"", connection))
                 using (var reader = command.ExecuteReader())
                 {
                     while (reader.Read())
@@ -96,9 +95,9 @@ namespace SGV_CLP.Classes.Customers_Module
             using (var connection = new NpgsqlConnection(s_connectionString))
             {
                 connection.Open();
-                using (var command = new NpgsqlCommand("SELECT * FROM \"Cliente\" WHERE \"cc_Cliente\" ILIKE @cc_Cliente", connection))
+                using (var command = new NpgsqlCommand("SELECT * FROM \"Customer\" WHERE \"ccCustomer\" ILIKE @ccCustomer", connection))
                 {
-                    command.Parameters.AddWithValue("@cc_Cliente", customerID);
+                    command.Parameters.AddWithValue("@ccCustomer", customerID);
                     using (var reader = command.ExecuteReader())
                     {
                         while (reader.Read())
@@ -119,9 +118,9 @@ namespace SGV_CLP.Classes.Customers_Module
             using (var connection = new NpgsqlConnection(s_connectionString))
             {
                 connection.Open();
-                using (var cmd = new NpgsqlCommand($"SELECT \"{field}\" FROM \"Cliente\" WHERE \"cc_Cliente\" = @cc_Cliente", connection))
+                using (var cmd = new NpgsqlCommand($"SELECT \"{field}\" FROM \"Customer\" WHERE \"ccCustomer\" = @ccCustomer", connection))
                 {
-                    cmd.Parameters.AddWithValue("@cc_Cliente", customerID);
+                    cmd.Parameters.AddWithValue("@ccCustomer", customerID);
                     using (var reader = cmd.ExecuteReader())
                     {
                         if (reader.Read())
@@ -143,14 +142,14 @@ namespace SGV_CLP.Classes.Customers_Module
                 connection.Open();
                 await using NpgsqlCommand command = connection.CreateCommand();
                 command.CommandType = CommandType.Text;
-                command.CommandText = "UPDATE public.\"CLiente\" SET  \"cc_Cliente\"=@CC_Cliente, \"primer_Nombre\"=@Primer_Nombre, \"primer_Apellido\"=@Primer_Apellido, \"direccion_Domicilio\"=@Direccion_Domicilio, telefono=@Telefono, \"correo_Electronico\"=@Correo_Electronico WHERE \"cc_Cliente\" = @CC_Cliente;";
-                command.Parameters.AddWithValue("@CC_Cliente", customer.customerID);
-                command.Parameters.AddWithValue("@Primer_Nombre", customer.firstName);
-                command.Parameters.AddWithValue("@Primer_Apellido", customer.firstLastName);
-                command.Parameters.AddWithValue("@Direccion_Domicilio", customer.homeAddress);
-                command.Parameters.AddWithValue("@Telefono", customer.phoneNumber);
-                command.Parameters.AddWithValue("@Correo_Electronico", customer.eMail);
-                command.Parameters.AddWithValue("@CC_Cliente", customer.customerID);
+                command.CommandText = "UPDATE public.\"Customer\" SET  \"ccCustomer\"=@ccCustomer, \"name\"=@name, \"lastName\"=@lastName, \"address\"=@address, phone=@phone, \"email\"=@email WHERE \"ccCustomer\" = @ccCustomer;";
+                command.Parameters.AddWithValue("@ccCustomer", customer.customerID);
+                command.Parameters.AddWithValue("@name", customer.firstName);
+                command.Parameters.AddWithValue("@lastName", customer.firstLastName);
+                command.Parameters.AddWithValue("@address", customer.homeAddress);
+                command.Parameters.AddWithValue("@phone", customer.phoneNumber);
+                command.Parameters.AddWithValue("@email", customer.eMail);
+                command.Parameters.AddWithValue("@ccCustomer", customer.customerID);
                 result = await command.ExecuteNonQueryAsync();
             }
             return result > 0;

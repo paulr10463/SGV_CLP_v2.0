@@ -77,7 +77,7 @@ namespace SGV_CLP.Classes.Products_module
             using (var connection = new NpgsqlConnection(s_connectionString))
             {
                 connection.Open();
-                using (var command = new NpgsqlCommand("SELECT * FROM \"Producto\"", connection))
+                using (var command = new NpgsqlCommand("SELECT * FROM \"Product\"", connection))
                 using (var reader = command.ExecuteReader())
                 {
                     while (reader.Read())
@@ -105,7 +105,7 @@ namespace SGV_CLP.Classes.Products_module
             using (var connection = new NpgsqlConnection(s_connectionString))
             {
                 connection.Open();
-                using (var command = new NpgsqlCommand("SELECT * FROM \"Producto\" WHERE \"producto_padre\" = @parentCode", connection))
+                using (var command = new NpgsqlCommand("SELECT * FROM \"Product\" WHERE \"parentCode\" = @parentCode", connection))
                 {
                     command.Parameters.AddWithValue("@parentCode", parentCode);
                     using (var reader = command.ExecuteReader())
@@ -137,7 +137,7 @@ namespace SGV_CLP.Classes.Products_module
             using (var connection = new NpgsqlConnection(s_connectionString))
             {
                 connection.Open();
-                using (var command = new NpgsqlCommand("SELECT * FROM \"Producto\" WHERE \"cod_Producto\" = @productCode", connection))
+                using (var command = new NpgsqlCommand("SELECT * FROM \"Product\" WHERE \"productID\" = @productCode", connection))
                 {
                     command.Parameters.AddWithValue("@productCode", codProducto);
                     using (var reader = command.ExecuteReader())
@@ -170,7 +170,7 @@ namespace SGV_CLP.Classes.Products_module
             using (var connection = new NpgsqlConnection(s_connectionString))
             {
                 connection.Open();
-                using (var command = new NpgsqlCommand("SELECT * FROM \"Producto\" WHERE \"precio_Unitario\" IS NULL", connection))
+                using (var command = new NpgsqlCommand("SELECT * FROM \"Product\" WHERE \"price\" IS NULL", connection))
                 {
                     using (var reader = command.ExecuteReader())
                     {
@@ -200,7 +200,7 @@ namespace SGV_CLP.Classes.Products_module
             using (var connection = new NpgsqlConnection(s_connectionString))
             {
                 connection.Open();
-                using (var command = new NpgsqlCommand("SELECT \"nombre_Producto\" FROM \"Producto\"", connection))
+                using (var command = new NpgsqlCommand("SELECT \"name\" FROM \"Product\"", connection))
                 using (var reader = command.ExecuteReader())
                 {
                     while (reader.Read())
@@ -220,7 +220,7 @@ namespace SGV_CLP.Classes.Products_module
             using (var connection = new NpgsqlConnection(s_connectionString))
             {
                 connection.Open();
-                using (var cmd = new NpgsqlCommand($"SELECT \"{field}\" FROM \"Producto\" WHERE \"cod_Producto\" = @cod_Producto", connection))
+                using (var cmd = new NpgsqlCommand($"SELECT \"{field}\" FROM \"Product\" WHERE \"productID\" = @cod_Producto", connection))
                 {
                     cmd.Parameters.AddWithValue("@cod_Producto", productCode);
                     using (var reader = cmd.ExecuteReader())
@@ -242,7 +242,7 @@ namespace SGV_CLP.Classes.Products_module
             using (var connection = new NpgsqlConnection(s_connectionString))
             {
                 connection.Open();
-                using (var command = new NpgsqlCommand("SELECT * FROM \"Producto\" WHERE \"cod_Producto\" ILIKE @cod_Producto", connection))
+                using (var command = new NpgsqlCommand("SELECT * FROM \"Producto\" WHERE \"productID\" ILIKE @cod_Producto", connection))
                 {
                     command.Parameters.AddWithValue("@cod_Producto", productCode);
                     using (var reader = command.ExecuteReader())
@@ -266,7 +266,7 @@ namespace SGV_CLP.Classes.Products_module
             using (var connection = new NpgsqlConnection(s_connectionString))
             {
                 connection.Open();
-                using (var command = new NpgsqlCommand("SELECT * FROM \"Producto\" WHERE \"nombre_Producto\" ILIKE @nombre_Producto", connection))
+                using (var command = new NpgsqlCommand("SELECT * FROM \"Product\" WHERE \"name\" ILIKE @nombre_Producto", connection))
                 {
                     command.Parameters.AddWithValue("@nombre_Producto", productName);
                     using (var reader = command.ExecuteReader())

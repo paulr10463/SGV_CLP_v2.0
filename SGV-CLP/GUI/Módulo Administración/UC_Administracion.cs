@@ -171,10 +171,10 @@ namespace SGV_CLP.GUI
             if (ParamsPURegistrados != null)
             {
                 SDGVParamUnidad.Rows.Clear();
-                ParamsPURegistrados = ParametroMapper.ConsultarParametros();
+                //ParamsPURegistrados = ParametroMapper.ConsultarParametros();
                 foreach (ParametroPorUnidad param in ParamsPURegistrados)
                 {
-                    SDGVParamUnidad.Rows.Add(param.IdParametro, param.UnidadBase, param.UnidadExtra, param.Producto);
+                    //SDGVParamUnidad.Rows.Add(param.IdParametro, param.UnidadBase, param.UnidadExtra, param.Producto);
                 }
             }
         }

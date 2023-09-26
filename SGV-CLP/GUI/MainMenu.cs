@@ -9,11 +9,11 @@ namespace SGV_CLP
     {
         public static Usuario UsuarioRegistrado;
         public static UC_Ventas uc_ventas;
-        public MainMenu(Usuario user)
+        public MainMenu()
         {
             InitializeComponent();
-            UsuarioRegistrado = user;
-            siticoneHtmlLabel2.Text = "Bienvenido " + UsuarioRegistrado.primer_Nombre + "!";
+
+            siticoneHtmlLabel2.Text = "Bienvenido ";
             uc_ventas = uC_Ventas1;
             /*
             if (user.cargo.Equals("Administrador"))
@@ -31,11 +31,6 @@ namespace SGV_CLP
                 siticoneButton2.Visible = false;
 
             }*/
-        }
-
-        private void siticoneButton1_CheckedChanged_1(object sender, EventArgs e)
-        {
-            uC_Administracion1.BringToFront();
         }
 
         private void siticoneButton3_CheckedChanged_1(object sender, EventArgs e)

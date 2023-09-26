@@ -122,7 +122,7 @@ namespace SGV_CLP.Classes.Módulo_Administración
             using (var connection = new NpgsqlConnection(_connectionString))
             {
                 connection.Open();
-                using (var command = new NpgsqlCommand("SELECT * FROM \"Usuario\"", connection))
+                using (var command = new NpgsqlCommand("SELECT * FROM \"User\"", connection))
                 using (var reader = command.ExecuteReader())
                 {
                     while (reader.Read())
@@ -132,8 +132,8 @@ namespace SGV_CLP.Classes.Módulo_Administración
                             reader.GetString(1), 
                             reader.GetString(2), 
                             reader.GetString(3),
-                            reader.GetString(5),
-                            reader.GetString(7)));
+                            reader.GetString(4),
+                            reader.GetString(5)));
                     }
                 }
             }
@@ -147,7 +147,7 @@ namespace SGV_CLP.Classes.Módulo_Administración
             using (var connection = new NpgsqlConnection(_connectionString))
             {
                 connection.Open();
-                using (var cmd = new NpgsqlCommand($"SELECT \"{atributo}\" FROM \"Usuario\" WHERE \"cc_Usuario\" = @cc_Usuario", connection))
+                using (var cmd = new NpgsqlCommand($"SELECT \"{atributo}\" FROM \"User\" WHERE \"cc_User\" = @cc_Usuario", connection))
                 {
                     cmd.Parameters.AddWithValue("@cc_Usuario", cc_User);
                     using (var reader = cmd.ExecuteReader())
@@ -169,7 +169,7 @@ namespace SGV_CLP.Classes.Módulo_Administración
             using (var connection = new NpgsqlConnection(_connectionString))
             {
                 connection.Open();
-                using (var command = new NpgsqlCommand("SELECT * FROM public.\"Usuario\" WHERE \"userName\" ILIKE @userName", connection))
+                using (var command = new NpgsqlCommand("SELECT * FROM public.\"User\" WHERE \"username\" ILIKE @userName", connection))
                 {
                     command.Parameters.AddWithValue("@userName", userName);
                     using (var reader = command.ExecuteReader())
@@ -190,7 +190,7 @@ namespace SGV_CLP.Classes.Módulo_Administración
             using (var connection = new NpgsqlConnection(_connectionString))
             {
                 connection.Open();
-                using (var command = new NpgsqlCommand("SELECT * FROM public.\"Usuario\" WHERE \"cc_Usuario\" ILIKE @cc", connection))
+                using (var command = new NpgsqlCommand("SELECT * FROM public.\"User\" WHERE \"ccUser\" ILIKE @cc", connection))
                 {
                     command.Parameters.AddWithValue("@cc", cc);
                     using (var reader = command.ExecuteReader())

@@ -22,19 +22,19 @@ namespace SGV_CLP.Classes.Sales_Module
             using (var connection = new NpgsqlConnection(s_connectionString))
             {
                 connection.Open();
-                var queryString = "SELECT * FROM \"NotaVenta\" JOIN \"Cliente\" ON \"NotaVenta\".\"cc_Cliente\" = \"Cliente\".\"cc_Cliente\" WHERE \"" + parameter + "\" ILIKE '%" + value + "%'";
+                var queryString = "SELECT * FROM \"Order\" JOIN \"Customer\" ON \"Order\".\"ccCustomer\" = \"Customer\".\"ccCustomer\" WHERE \"" + parameter + "\" ILIKE '%" + value + "%'";
                 using (var command = new NpgsqlCommand(queryString, connection))
                 using (var reader = command.ExecuteReader())
                 {
                     while (reader.Read())
                     {
-                        int invoiceCode = (int)reader["cod_NotaVenta"];
-                        string customerID = (string)reader["cc_Cliente"];
-                        string firstName = (string)reader["primer_Nombre"];
-                        string firstLastName = (string)reader["primer_Apellido"];
-                        string phoneNumber = (string)reader["telefono"];
-                        double totalSale = (double)reader["total_Venta"];
-                        DateTime issuedDate = (DateTime)reader["fecha_emision"];
+                        int invoiceCode = (int)reader["orderID"];
+                        string customerID = (string)reader["ccCustomer"];
+                        string firstName = (string)reader["name"];
+                        string firstLastName = (string)reader["lastName"];
+                        string phoneNumber = (string)reader["phone"];
+                        double totalSale = (double)reader["total"];
+                        DateTime issuedDate = (DateTime)reader["issueDate"];
                         invoices.Add(new Invoice(
                             invoiceCode,
                             new Customer(customerID, firstName, firstLastName, null, phoneNumber, null),
@@ -52,19 +52,19 @@ namespace SGV_CLP.Classes.Sales_Module
             using (var connection = new NpgsqlConnection(s_connectionString))
             {
                 connection.Open();
-                var queryString = "SELECT * FROM \"NotaVenta\" JOIN \"Cliente\" ON \"NotaVenta\".\"cc_Cliente\" = \"Cliente\".\"cc_Cliente\" WHERE \"NotaVenta\".\"cc_Cliente\" ILIKE '%" + value + "%'";
+                var queryString = "SELECT * FROM \"Order\" JOIN \"Customer\" ON \"Order\".\"ccCustomer\" = \"Customer\".\"ccCustomer\" WHERE \"Order\".\"ccCustomer\" ILIKE '%" + value + "%'";
                 using (var command = new NpgsqlCommand(queryString, connection))
                 using (var reader = command.ExecuteReader())
                 {
                     while (reader.Read())
                     {
-                        int invoiceCode = (int)reader["cod_NotaVenta"];
-                        string customerID = (string)reader["cc_Cliente"];
-                        string firstName = (string)reader["primer_Nombre"];
-                        string firstLastName = (string)reader["primer_Apellido"];
-                        string phoneNumber = (string)reader["telefono"];
-                        double totalSale = (double)reader["total_Venta"];
-                        DateTime issuedDate = (DateTime)reader["fecha_emision"];
+                        int invoiceCode = (int)reader["orderID"];
+                        string customerID = (string)reader["ccCustomer"];
+                        string firstName = (string)reader["name"];
+                        string firstLastName = (string)reader["lastName"];
+                        string phoneNumber = (string)reader["phone"];
+                        double totalSale = (double)reader["total"];
+                        DateTime issuedDate = (DateTime)reader["issueDate"];
                         invoices.Add(new Invoice(
                             invoiceCode,
                             new Customer(customerID, firstName, firstLastName, null, phoneNumber, null),
@@ -83,19 +83,19 @@ namespace SGV_CLP.Classes.Sales_Module
             using (var connection = new NpgsqlConnection(s_connectionString))
             {
                 connection.Open();
-                var queryString = "SELECT * FROM \"NotaVenta\" JOIN \"Cliente\" ON \"NotaVenta\".\"cc_Cliente\" = \"Cliente\".\"cc_Cliente\" WHERE \"fecha_emision\" = '" + value + "'";
+                var queryString = "SELECT * FROM \"Order\" JOIN \"Customer\" ON \"Order\".\"ccCustomer\" = \"Customer\".\"ccCustomer\" WHERE \"issueDate\" = '" + value + "'";
                 using (var command = new NpgsqlCommand(queryString, connection))
                 using (var reader = command.ExecuteReader())
                 {
                     while (reader.Read())
                     {
-                        int invoiceCode = (int)reader["cod_NotaVenta"];
-                        string customerID = (string)reader["cc_Cliente"];
-                        string firstName = (string)reader["primer_Nombre"];
-                        string firstLastName = (string)reader["primer_Apellido"];
-                        string phoneNumber = (string)reader["telefono"];
-                        double totalSale = (double)reader["total_Venta"];
-                        DateTime issuedDate = (DateTime)reader["fecha_emision"];
+                        int invoiceCode = (int)reader["orderID"];
+                        string customerID = (string)reader["ccCustomer"];
+                        string firstName = (string)reader["name"];
+                        string firstLastName = (string)reader["lastName"];
+                        string phoneNumber = (string)reader["phone"];
+                        double totalSale = (double)reader["total"];
+                        DateTime issuedDate = (DateTime)reader["issueDate"];
                         invoices.Add(new Invoice(
                             invoiceCode,
                             new Customer(customerID, firstName, firstLastName, null, phoneNumber, null),
@@ -113,19 +113,19 @@ namespace SGV_CLP.Classes.Sales_Module
             connection.Open();
             using NpgsqlCommand command = connection.CreateCommand();
             command.CommandType = CommandType.Text;
-            command.CommandText = "SELECT * FROM \"NotaVenta\" JOIN \"Cliente\" ON \"NotaVenta\".\"cc_Cliente\" = \"Cliente\".\"cc_Cliente\" WHERE \"cod_NotaVenta\" = @CodNotaVenta limit 1;";
+            command.CommandText = "SELECT * FROM \"Order\" JOIN \"Customer\" ON \"Order\".\"ccCustomer\" = \"Customer\".\"ccCustomer\" WHERE \"orderID\" = @CodNotaVenta limit 1;";
             command.Parameters.AddWithValue("@CodNotaVenta", invoiceCode);
             NpgsqlDataReader reader = command.ExecuteReader();
             if (reader.HasRows)
             {
                 reader.Read();
-                int auxInvoiceCode = (int)reader["cod_NotaVenta"];
-                string customerID = (string)reader["cc_Cliente"];
-                string firstName = (string)reader["primer_Nombre"];
-                string firstLastName = (string)reader["primer_Apellido"];
-                string phoneNumber = (string)reader["telefono"];
-                double totalSale = (double)reader["total_Venta"];
-                DateTime issuedDate = (DateTime)reader["fecha_emision"];
+                int auxInvoiceCode = (int)reader["orderID"];
+                string customerID = (string)reader["ccCustomer"];
+                string firstName = (string)reader["name"];
+                string firstLastName = (string)reader["lastName"];
+                string phoneNumber = (string)reader["phone"];
+                double totalSale = (double)reader["total"];
+                DateTime issuedDate = (DateTime)reader["issueDate"];
                 return new List<Invoice> {
                     new Invoice(
                     auxInvoiceCode,
@@ -143,9 +143,9 @@ namespace SGV_CLP.Classes.Sales_Module
             using var connection = new NpgsqlConnection(s_connectionString);
             connection.Open();
 
-            using (var cmd = new NpgsqlCommand("INSERT INTO public.\"NotaVenta\"(\"cc_Cliente\", \"userName\", \"total_Venta\", \"fecha_emision\") VALUES (@Cc_Cliente, @UserName, @Total_Venta, @Fecha_emision)", connection))
+            using (var cmd = new NpgsqlCommand("INSERT INTO public.\"Order\"(\"ccCustomer\", \"username\", \"total\", \"issueDate\") VALUES (@ccCustomer, @UserName, @Total_Venta, @Fecha_emision)", connection))
             {
-                cmd.Parameters.AddWithValue("@Cc_Cliente", invoice.customer.customerID);
+                cmd.Parameters.AddWithValue("@ccCustomer", invoice.customer.customerID);
                 cmd.Parameters.AddWithValue("@UserName", invoice.user.userName);
                 cmd.Parameters.AddWithValue("@Total_Venta", invoice.totalSales);
                 cmd.Parameters.AddWithValue("@Fecha_emision", invoice.issuedDate);
@@ -159,13 +159,13 @@ namespace SGV_CLP.Classes.Sales_Module
             int codVenta = -1;
             using var connection = new NpgsqlConnection(s_connectionString);
             connection.Open();
-            using (var cmd = new NpgsqlCommand("SELECT \"cod_NotaVenta\" FROM public.\"NotaVenta\" ORDER BY \"cod_NotaVenta\" DESC LIMIT 1", connection))
+            using (var cmd = new NpgsqlCommand("SELECT \"orderID\" FROM public.\"Order\" ORDER BY \"orderID\" DESC LIMIT 1", connection))
             {
                 using (var reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
                     {
-                        codVenta = (int)reader["cod_NotaVenta"];
+                        codVenta = (int)reader["orderID"];
                     }
                 }
             }

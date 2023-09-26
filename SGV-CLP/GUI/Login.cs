@@ -18,7 +18,7 @@ namespace SGV_CLP
             if (user != null)
             {
                 this.Hide();
-                MainMenu ventana = new MainMenu(user);
+                MainMenu ventana = new MainMenu();
                 ventana.Owner = this;
                 ventana.ShowDialog();
                 this.Dispose();

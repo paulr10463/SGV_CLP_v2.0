@@ -13,11 +13,7 @@ namespace SGV_CLP
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Usuario user = new Usuario();
-            user.userName = "DefaultUser";
-            user.contrasenia = "P@ssw0rd";
-            user.cargo = "Cajero";
-            Application.Run(new MainMenu(user));
+            Application.Run(new MainMenu());
         }
     }
 }
