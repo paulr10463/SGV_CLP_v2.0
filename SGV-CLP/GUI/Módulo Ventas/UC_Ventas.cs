@@ -235,13 +235,21 @@ namespace SGV_CLP.GUI
 
             switch (ComboBox_ConsultarVentaPor.SelectedIndex)
             {
+<<<<<<< Updated upstream
                 case 1: Categoria = "cod_NotaVenta"; TxtConsultarVenta_TextChanged(null, null); break;
                 case 2: Categoria = "cc_Cliente"; TxtConsultarVenta_TextChanged(null, null); break;
                 case 3: Categoria = "primer_Nombre"; TxtConsultarVenta_TextChanged(null, null); break;
                 case 4: Categoria = "primer_Apellido"; TxtConsultarVenta_TextChanged(null, null); break;
                 case 5: Categoria = "telefono"; TxtConsultarVenta_TextChanged(null, null); break;
+=======
+                case 1: Categoria = "orderID"; txtConsultarVenta_TextChanged(null, null); break;
+                case 2: Categoria = "ccCustomer"; txtConsultarVenta_TextChanged(null, null); break;
+                case 3: Categoria = "name"; txtConsultarVenta_TextChanged(null, null); break;
+                case 4: Categoria = "lastName"; txtConsultarVenta_TextChanged(null, null); break;
+                case 5: Categoria = "phone"; txtConsultarVenta_TextChanged(null, null); break;
+>>>>>>> Stashed changes
                 case 6:
-                    Categoria = "fecha_emision";
+                    Categoria = "issueDate";
                     dateTimePickerConsultarVenta.Visible = true;
                     DateTimePickerConsultarVenta_ValueChanged(null, null);
                     break;
@@ -261,6 +269,7 @@ namespace SGV_CLP.GUI
             {
                 Checkout ventana = new(siticoneDataGridView2);
                 ventana.ShowDialog();
+<<<<<<< Updated upstream
             }
         }
 
@@ -286,7 +295,20 @@ namespace SGV_CLP.GUI
                 //Actualiza las ventas al ingresar a la pestaña de consulta de ventas
                 List<Invoice> registeredInvoices = InvoiceMapper.GetAllInvoices("");
                 MainMenu.uc_ventas.llenarTablaVenta(registeredInvoices);
+=======
+>>>>>>> Stashed changes
             }
+        }
+
+        private void dateTimePickerConsultarVenta_ValueChanged(object sender, EventArgs e)
+        {
+            List<Invoice> invoices = InvoiceMapper.GetAllInvoicesByDate(dateTimePickerConsultarVenta.Text);
+            llenarTablaVenta(invoices);
+        }
+
+        private void SiticoneTabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
