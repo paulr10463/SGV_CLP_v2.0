@@ -237,6 +237,7 @@ namespace SGV_CLP.GUI
             {
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                 case 1: Categoria = "cod_NotaVenta"; TxtConsultarVenta_TextChanged(null, null); break;
                 case 2: Categoria = "cc_Cliente"; TxtConsultarVenta_TextChanged(null, null); break;
                 case 3: Categoria = "primer_Nombre"; TxtConsultarVenta_TextChanged(null, null); break;
@@ -245,12 +246,17 @@ namespace SGV_CLP.GUI
 =======
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
                 case 1: Categoria = "orderID"; txtConsultarVenta_TextChanged(null, null); break;
                 case 2: Categoria = "ccCustomer"; txtConsultarVenta_TextChanged(null, null); break;
                 case 3: Categoria = "name"; txtConsultarVenta_TextChanged(null, null); break;
                 case 4: Categoria = "lastName"; txtConsultarVenta_TextChanged(null, null); break;
                 case 5: Categoria = "phone"; txtConsultarVenta_TextChanged(null, null); break;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -275,6 +281,7 @@ namespace SGV_CLP.GUI
             {
                 Checkout ventana = new(siticoneDataGridView2);
                 ventana.ShowDialog();
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
             }
@@ -302,6 +309,8 @@ namespace SGV_CLP.GUI
                 //Actualiza las ventas al ingresar a la pestaña de consulta de ventas
                 List<Invoice> registeredInvoices = InvoiceMapper.GetAllInvoices("");
                 MainMenu.uc_ventas.llenarTablaVenta(registeredInvoices);
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======

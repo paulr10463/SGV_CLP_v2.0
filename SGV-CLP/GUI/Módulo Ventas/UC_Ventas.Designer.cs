@@ -409,6 +409,9 @@
             dateTimePickerConsultarVenta.Value = new DateTime(2023, 3, 5, 4, 33, 33, 358);
             dateTimePickerConsultarVenta.ValueChanged += dateTimePickerConsultarVenta_ValueChanged;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
