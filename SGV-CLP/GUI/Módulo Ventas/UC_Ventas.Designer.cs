@@ -28,13 +28,13 @@
         /// </summary>
         public void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Ventas));
-            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             siticoneTabControl1 = new Siticone.Desktop.UI.WinForms.SiticoneTabControl();
             Añadir = new TabPage();
             flowLayoutPanel3 = new FlowLayoutPanel();
@@ -47,7 +47,7 @@
             empanadasHtmlLabel = new Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel();
             flowLayoutPanel5 = new FlowLayoutPanel();
             siticoneGradientPanel1 = new Siticone.Desktop.UI.WinForms.SiticoneGradientPanel();
-            siticoneHtmlLabel11 = new Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel();
+            siticoneHtmlLabel11 = new Label();
             siticoneDataGridView2 = new Siticone.Desktop.UI.WinForms.SiticoneDataGridView();
             CC = new DataGridViewTextBoxColumn();
             Contras = new DataGridViewTextBoxColumn();
@@ -248,44 +248,42 @@
             // 
             // siticoneHtmlLabel11
             // 
-            siticoneHtmlLabel11.Anchor = AnchorStyles.None;
-            siticoneHtmlLabel11.BackColor = Color.Transparent;
-            siticoneHtmlLabel11.Font = new Font("Century Gothic", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            siticoneHtmlLabel11.Location = new Point(187, 571);
-            siticoneHtmlLabel11.Margin = new Padding(3, 2, 3, 2);
-            siticoneHtmlLabel11.MinimumSize = new Size(131, 30);
+            siticoneHtmlLabel11.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            siticoneHtmlLabel11.AutoSize = true;
+            siticoneHtmlLabel11.Font = new Font("Century Gothic", 24F, FontStyle.Regular, GraphicsUnit.Point);
+            siticoneHtmlLabel11.Location = new Point(177, 523);
             siticoneHtmlLabel11.Name = "siticoneHtmlLabel11";
-            siticoneHtmlLabel11.Size = new Size(131, 30);
+            siticoneHtmlLabel11.Size = new Size(0, 39);
             siticoneHtmlLabel11.TabIndex = 56;
-            siticoneHtmlLabel11.Text = null;
+            siticoneHtmlLabel11.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // siticoneDataGridView2
             // 
             siticoneDataGridView2.AllowUserToResizeColumns = false;
             siticoneDataGridView2.AllowUserToResizeRows = false;
-            dataGridViewCellStyle7.BackColor = Color.White;
-            siticoneDataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.BackColor = Color.White;
+            siticoneDataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             siticoneDataGridView2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             siticoneDataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             siticoneDataGridView2.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = Color.Black;
-            dataGridViewCellStyle8.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
-            siticoneDataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.Black;
+            dataGridViewCellStyle2.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            siticoneDataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             siticoneDataGridView2.ColumnHeadersHeight = 60;
             siticoneDataGridView2.Columns.AddRange(new DataGridViewColumn[] { CC, Contras, dataGridViewTextBoxColumn3, EliminarDetalle });
-            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = Color.White;
-            dataGridViewCellStyle9.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle9.ForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle9.SelectionBackColor = Color.FromArgb(231, 229, 255);
-            dataGridViewCellStyle9.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.False;
-            siticoneDataGridView2.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.White;
+            dataGridViewCellStyle3.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            siticoneDataGridView2.DefaultCellStyle = dataGridViewCellStyle3;
             siticoneDataGridView2.GridColor = Color.FromArgb(231, 229, 255);
             siticoneDataGridView2.Location = new Point(17, 53);
             siticoneDataGridView2.Margin = new Padding(3, 2, 3, 2);
@@ -402,19 +400,8 @@
             dateTimePickerConsultarVenta.Name = "dateTimePickerConsultarVenta";
             dateTimePickerConsultarVenta.Size = new Size(303, 46);
             dateTimePickerConsultarVenta.TabIndex = 25;
-<<<<<<< Updated upstream
             dateTimePickerConsultarVenta.Value = new DateTime(2023, 9, 25, 0, 0, 0, 0);
             dateTimePickerConsultarVenta.ValueChanged += DateTimePickerConsultarVenta_ValueChanged;
-=======
-            dateTimePickerConsultarVenta.Value = new DateTime(2023, 3, 5, 4, 33, 33, 358);
-            dateTimePickerConsultarVenta.ValueChanged += dateTimePickerConsultarVenta_ValueChanged;
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
             // 
             // siticoneHtmlLabel_buscarCliente_sin_campo
             // 
@@ -430,27 +417,27 @@
             // 
             // siticoneDataGridView1
             // 
-            dataGridViewCellStyle10.BackColor = Color.White;
-            siticoneDataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
-            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = Color.FromArgb(100, 88, 255);
-            dataGridViewCellStyle11.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle11.ForeColor = Color.White;
-            dataGridViewCellStyle11.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = DataGridViewTriState.True;
-            siticoneDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle4.BackColor = Color.White;
+            siticoneDataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(100, 88, 255);
+            dataGridViewCellStyle5.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            siticoneDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             siticoneDataGridView1.ColumnHeadersHeight = 60;
             siticoneDataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             siticoneDataGridView1.Columns.AddRange(new DataGridViewColumn[] { CodNV, CICliente, Column1, Column2, Column3, Column7, FechaDeVenta, Column4 });
-            dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = Color.White;
-            dataGridViewCellStyle12.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle12.ForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle12.SelectionBackColor = Color.FromArgb(231, 229, 255);
-            dataGridViewCellStyle12.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle12.WrapMode = DataGridViewTriState.False;
-            siticoneDataGridView1.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.White;
+            dataGridViewCellStyle6.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            siticoneDataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
             siticoneDataGridView1.Dock = DockStyle.Bottom;
             siticoneDataGridView1.GridColor = Color.FromArgb(231, 229, 255);
             siticoneDataGridView1.Location = new Point(3, 208);
@@ -693,8 +680,6 @@
         private RichTextBox richTextBox1;
         private Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel specialtiesHtmlLabel;
         private Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel hotDrinksHtmlLabel;
-
-        private Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel siticoneHtmlLabel11;
         private Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel siticoneHtmlLabel_buscarCliente_sin_campo;
         private DataGridViewTextBoxColumn CC;
         private DataGridViewTextBoxColumn Contras;
@@ -717,5 +702,6 @@
         private DataGridViewTextBoxColumn Column7;
         private DataGridViewTextBoxColumn FechaDeVenta;
         private DataGridViewImageColumn Column4;
+        private Label siticoneHtmlLabel11;
     }
 }

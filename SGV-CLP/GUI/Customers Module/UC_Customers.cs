@@ -33,8 +33,6 @@ namespace SGV_CLP.GUI
             phoneNumberIsValid = false;
             eMailIsValid = false;
 
-            FillCustomerDataGridView();
-
             cbSearchCustomerBy.SelectedIndex = 0;
 
             // Limitamos la longitud segun los requisitos
@@ -75,19 +73,14 @@ namespace SGV_CLP.GUI
             {
                 CustomerDataGridView.Rows.Clear();
                 registeredCustomers = CustomerMapper.GetAllCustomers();
-                int index = 0;
                 foreach (Customer customer in registeredCustomers)
                 {
-                    CustomerDataGridView.Rows.Add(customer.customerID, customer.firstName + " " + customer.MiddleName, customer.firstLastName + " " + customer.secondLastName, customer.homeAddress, customer.phoneNumber, customer.eMail);
-                    if (customer.customerID.Equals("9999999999"))
-                    {
-                        CustomerDataGridView.Rows[index].Visible = false;
-                    }
-                    index++;
+                    if (!customer.customerID.Equals("9999999999"))
+                        CustomerDataGridView.Rows.Add(customer.customerID, customer.firstName + " " + customer.MiddleName, customer.firstLastName + " " + customer.secondLastName, customer.homeAddress, customer.phoneNumber, customer.eMail);
                 }
             }
         }
-        private void buttonAddCustomer_Click(object sender, EventArgs e)
+        private void ButtonAddCustomer_Click(object sender, EventArgs e)
         {
             var customer = new Customer
             {
@@ -101,7 +94,6 @@ namespace SGV_CLP.GUI
 
             CustomerMapper.AddCustomer(customer);
 
-            FillCustomerDataGridView();
             ClearCustomerFields();
 
             SystemSounds.Beep.Play();
@@ -125,6 +117,7 @@ namespace SGV_CLP.GUI
                             MessageBox.Show("Cliente eliminado con éxito");
                         }
                     }
+                    FillCustomerDataGridView();
                 }
 
                 // CLICK EN CELDA EDITAR CLIENTE
@@ -136,6 +129,7 @@ namespace SGV_CLP.GUI
                         EditCustomer editCustomerWinForm = new EditCustomer(customerID);
                         editCustomerWinForm.ShowDialog();
                     }
+                    FillCustomerDataGridView();
                 }
             }
             catch (Exception nre)
@@ -143,11 +137,11 @@ namespace SGV_CLP.GUI
                 //MessageBox.Show("Esa fila está vacía, no puede hacer acciones sobre ella!!");
                 MessageBox.Show(nre.Message);
             }
-            FillCustomerDataGridView();
+            
         }
         private void cbSearchCustomerBy_SelectedIndexChanged(object sender, EventArgs e)
         {
-            FillCustomerDataGridView();
+            //FillCustomerDataGridView();
             tbSearchCustomerBy.Text = string.Empty;
             if (cbSearchCustomerBy.SelectedIndex > 0)
             {
@@ -445,6 +439,14 @@ namespace SGV_CLP.GUI
                 tbSearchCustomerBy.Enabled = false;
             }
             ValidateFieldsCounter();
+        }
+
+        private void siticoneTabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (siticoneTabControl1.SelectedIndex == 1)
+            {
+                FillCustomerDataGridView();
+            }
         }
     }
 }

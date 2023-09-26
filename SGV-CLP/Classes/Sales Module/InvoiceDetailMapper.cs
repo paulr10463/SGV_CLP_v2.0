@@ -24,7 +24,7 @@ namespace SGV_CLP.Classes.Sales_Module
             using var connection = new NpgsqlConnection(s_connectionString);
             connection.Open();
 
-            using (var cmd = new NpgsqlCommand("INSERT INTO public.\"DetalleNotaVenta\"(\"num_Detalle\", \"cod_NotaVenta\", \"cod_Producto\", \"cantidad\", \"subTotal\") VALUES (@NumDetalle, @Cod_NotaVenta, @Cod_Producto, @Cantidad, @SubTotal)", connection))
+            using (var cmd = new NpgsqlCommand("INSERT INTO public.\"OrderDetail\"(\"detailID\", \"orderID\", \"productID\", \"quantity\", \"subTotal\") VALUES (@NumDetalle, @Cod_NotaVenta, @Cod_Producto, @Cantidad, @SubTotal)", connection))
             {
                 cmd.Parameters.AddWithValue("@NumDetalle", invoiceDetail.detailNumber);
                 cmd.Parameters.AddWithValue("@Cod_NotaVenta", invoiceDetail.invoiceCode);
@@ -38,7 +38,7 @@ namespace SGV_CLP.Classes.Sales_Module
         public static List<InvoiceDetail> GetAllInvoiceDetails(int invoiceCode)
         {
             List<InvoiceDetail> invoiceDetails = new List<InvoiceDetail>();
-            string queryString = "SELECT \"nombre_Producto\",\"cantidad\",\"subTotal\"  FROM public.\"DetalleNotaVenta\" join public.\"Producto\" on \"DetalleNotaVenta\".\"cod_Producto\" = \"Producto\".\"cod_Producto\" where \"cod_NotaVenta\" = @CodNotaVenta;";
+            string queryString = "SELECT \"name\",\"quantity\",\"subTotal\"  FROM public.\"OrderDetail\" join public.\"Product\" on \"OrderDetail\".\"productID\" = \"Product\".\"productID\" where \"orderID\" = @CodNotaVenta;";
             using (var connection = new NpgsqlConnection(s_connectionString))
             {
                 connection.Open();

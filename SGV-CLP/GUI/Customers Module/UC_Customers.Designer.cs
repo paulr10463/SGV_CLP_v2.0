@@ -111,6 +111,7 @@
             siticoneTabControl1.TabButtonSize = new Size(160, 75);
             siticoneTabControl1.TabIndex = 2;
             siticoneTabControl1.TabMenuBackColor = Color.Black;
+            siticoneTabControl1.SelectedIndexChanged += siticoneTabControl1_SelectedIndexChanged;
             // 
             // TabRegistrar
             // 
@@ -346,7 +347,7 @@
             buttonAddCustomer.Size = new Size(180, 45);
             buttonAddCustomer.TabIndex = 39;
             buttonAddCustomer.Text = "Añadir";
-            buttonAddCustomer.Click += buttonAddCustomer_Click;
+            buttonAddCustomer.Click += ButtonAddCustomer_Click;
             // 
             // labelValidCustomerID
             // 

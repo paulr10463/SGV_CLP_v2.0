@@ -18,7 +18,7 @@ namespace SGV_CLP.GUI
         List<Product> empanadas;
         public static Invoice invoice;
         public static SiticoneDataGridView detalleVentaTabla;
-        public static SiticoneHtmlLabel totalVenta;
+        public static Label totalVenta;
         public static List<UC_Item> productosUI = new List<UC_Item>();
         public string Categoria = string.Empty;
         public UC_Ventas()
@@ -235,31 +235,11 @@ namespace SGV_CLP.GUI
 
             switch (ComboBox_ConsultarVentaPor.SelectedIndex)
             {
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-                case 1: Categoria = "cod_NotaVenta"; TxtConsultarVenta_TextChanged(null, null); break;
-                case 2: Categoria = "cc_Cliente"; TxtConsultarVenta_TextChanged(null, null); break;
-                case 3: Categoria = "primer_Nombre"; TxtConsultarVenta_TextChanged(null, null); break;
-                case 4: Categoria = "primer_Apellido"; TxtConsultarVenta_TextChanged(null, null); break;
-                case 5: Categoria = "telefono"; TxtConsultarVenta_TextChanged(null, null); break;
-=======
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-                case 1: Categoria = "orderID"; txtConsultarVenta_TextChanged(null, null); break;
-                case 2: Categoria = "ccCustomer"; txtConsultarVenta_TextChanged(null, null); break;
-                case 3: Categoria = "name"; txtConsultarVenta_TextChanged(null, null); break;
-                case 4: Categoria = "lastName"; txtConsultarVenta_TextChanged(null, null); break;
-                case 5: Categoria = "phone"; txtConsultarVenta_TextChanged(null, null); break;
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
+                case 1: Categoria = "orderID"; TxtConsultarVenta_TextChanged(null, null); break;
+                case 2: Categoria = "ccCustomer"; TxtConsultarVenta_TextChanged(null, null); break;
+                case 3: Categoria = "name"; TxtConsultarVenta_TextChanged(null, null); break;
+                case 4: Categoria = "lastName"; TxtConsultarVenta_TextChanged(null, null); break;
+                case 5: Categoria = "phone"; TxtConsultarVenta_TextChanged(null, null); break;
                 case 6:
                     Categoria = "issueDate";
                     dateTimePickerConsultarVenta.Visible = true;
@@ -281,9 +261,6 @@ namespace SGV_CLP.GUI
             {
                 Checkout ventana = new(siticoneDataGridView2);
                 ventana.ShowDialog();
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
             }
         }
 
@@ -305,28 +282,10 @@ namespace SGV_CLP.GUI
         {
             if (siticoneTabControl1.SelectedIndex == 1)
             {
-                MessageBox.Show("Ingresa a esta parte del codigo");
                 //Actualiza las ventas al ingresar a la pestaña de consulta de ventas
                 List<Invoice> registeredInvoices = InvoiceMapper.GetAllInvoices("");
                 MainMenu.uc_ventas.llenarTablaVenta(registeredInvoices);
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
             }
-        }
-
-        private void dateTimePickerConsultarVenta_ValueChanged(object sender, EventArgs e)
-        {
-            List<Invoice> invoices = InvoiceMapper.GetAllInvoicesByDate(dateTimePickerConsultarVenta.Text);
-            llenarTablaVenta(invoices);
-        }
-
-        private void SiticoneTabControl1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

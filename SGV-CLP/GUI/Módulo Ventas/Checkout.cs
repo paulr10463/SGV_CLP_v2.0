@@ -102,7 +102,7 @@ namespace SGV_CLP.GUI.Módulo_Ventas
             SystemSounds.Beep.Play();
             MessageBox.Show("Venta finalizada con éxito", "Venta", MessageBoxButtons.OK, MessageBoxIcon.Information);
             MainMenu.uc_ventas.loadProducts();
-            MainMenu.uc_ventas.resetValues();
+            MainMenu.uc_ventas.ResetValues();
 
             this.Dispose();
         }

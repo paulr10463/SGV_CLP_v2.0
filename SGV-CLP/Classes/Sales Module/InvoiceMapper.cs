@@ -143,10 +143,9 @@ namespace SGV_CLP.Classes.Sales_Module
             using var connection = new NpgsqlConnection(s_connectionString);
             connection.Open();
 
-            using (var cmd = new NpgsqlCommand("INSERT INTO public.\"Order\"(\"ccCustomer\", \"username\", \"total\", \"issueDate\") VALUES (@ccCustomer, @UserName, @Total_Venta, @Fecha_emision)", connection))
+            using (var cmd = new NpgsqlCommand("INSERT INTO public.\"Order\"(\"ccCustomer\", \"total\", \"issueDate\") VALUES (@ccCustomer, @Total_Venta, @Fecha_emision)", connection))
             {
                 cmd.Parameters.AddWithValue("@ccCustomer", invoice.customer.customerID);
-                cmd.Parameters.AddWithValue("@UserName", invoice.user.userName);
                 cmd.Parameters.AddWithValue("@Total_Venta", invoice.totalSales);
                 cmd.Parameters.AddWithValue("@Fecha_emision", invoice.issuedDate);
                 cmd.ExecuteNonQuery();
