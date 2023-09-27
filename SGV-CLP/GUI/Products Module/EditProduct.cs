@@ -73,7 +73,7 @@ namespace SGV_CLP.GUI
 
             foreach (var item in cbCategory.Items)
             {
-                if (item.ToString() == ProductMapper.GetProductField(productCode, "categoria"))
+                if (item.ToString() == ProductMapper.GetProductField(productCode, "category"))
                 {
                     cbCategory.SelectedIndex = cbCategory.Items.IndexOf(item.ToString());
                 }

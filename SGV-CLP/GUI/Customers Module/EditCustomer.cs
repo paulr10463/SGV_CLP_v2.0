@@ -29,15 +29,15 @@ namespace SGV_CLP.GUI.Customers_Module
             this.customerID = customerID;
 
             countCorrectFields = 0;
-            fieldsNumber = 3;
+            fieldsNumber = 0;
 
             phoneNumberIsValid = false;
             homeAddressIsValid = false;
             eMailIsValid = false;
 
-            tbPhoneNumber.Text = CustomerMapper.GetCustomerField(customerID, "telefono");
-            tbHomeAddress.Text = CustomerMapper.GetCustomerField(customerID, "direccion_Domicilio");
-            tbEMail.Text = CustomerMapper.GetCustomerField(customerID, "correo_Electronico");
+            tbPhoneNumber.Text = CustomerMapper.GetCustomerField(customerID, "phone");
+            tbHomeAddress.Text = CustomerMapper.GetCustomerField(customerID, "address");
+            tbEMail.Text = CustomerMapper.GetCustomerField(customerID, "email");
 
             tbPhoneNumber.SelectionStart = tbPhoneNumber.Text.Length;
             tbHomeAddress.SelectionStart = tbHomeAddress.Text.Length;

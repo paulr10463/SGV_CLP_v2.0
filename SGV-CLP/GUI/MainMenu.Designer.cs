@@ -125,7 +125,7 @@ namespace SGV_CLP
             siticoneButton3.Text = "Ventas";
             siticoneButton3.TextAlign = HorizontalAlignment.Left;
             siticoneButton3.TextOffset = new Point(20, 0);
-            siticoneButton3.CheckedChanged += siticoneButton3_CheckedChanged_1;
+            siticoneButton3.CheckedChanged += SiticoneButton3_CheckedChanged_1;
             // 
             // siticoneButton6
             // 

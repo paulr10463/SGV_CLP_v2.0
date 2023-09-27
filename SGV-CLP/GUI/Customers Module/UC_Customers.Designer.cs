@@ -369,9 +369,9 @@
             siticoneHtmlLabel3.Location = new Point(305, 156);
             siticoneHtmlLabel3.Margin = new Padding(3, 4, 3, 4);
             siticoneHtmlLabel3.Name = "siticoneHtmlLabel3";
-            siticoneHtmlLabel3.Size = new Size(80, 26);
+            siticoneHtmlLabel3.Size = new Size(95, 26);
             siticoneHtmlLabel3.TabIndex = 24;
-            siticoneHtmlLabel3.Text = "Cédula";
+            siticoneHtmlLabel3.Text = "Cédula *";
             // 
             // labelInvalidCustomerID
             // 
@@ -482,9 +482,9 @@
             siticoneHtmlLabel16.Location = new Point(305, 328);
             siticoneHtmlLabel16.Margin = new Padding(3, 4, 3, 4);
             siticoneHtmlLabel16.Name = "siticoneHtmlLabel16";
-            siticoneHtmlLabel16.Size = new Size(87, 26);
+            siticoneHtmlLabel16.Size = new Size(102, 26);
             siticoneHtmlLabel16.TabIndex = 47;
-            siticoneHtmlLabel16.Text = "Apellido";
+            siticoneHtmlLabel16.Text = "Apellido *";
             // 
             // siticoneHtmlLabel1
             // 
@@ -533,9 +533,9 @@
             siticoneHtmlLabel17.Location = new Point(305, 242);
             siticoneHtmlLabel17.Margin = new Padding(3, 4, 3, 4);
             siticoneHtmlLabel17.Name = "siticoneHtmlLabel17";
-            siticoneHtmlLabel17.Size = new Size(88, 26);
+            siticoneHtmlLabel17.Size = new Size(103, 26);
             siticoneHtmlLabel17.TabIndex = 45;
-            siticoneHtmlLabel17.Text = "Nombre";
+            siticoneHtmlLabel17.Text = "Nombre *";
             // 
             // siticoneHtmlLabel7
             // 

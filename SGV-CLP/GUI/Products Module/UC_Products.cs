@@ -108,7 +108,7 @@ namespace SGV_CLP.GUI
                 ProductMapper.AddProduct(product);
                 FillProductDataGridView();
                 ClearProductFields();
-                MainMenu.uc_ventas.loadProducts();
+                MainMenu.uc_ventas.LoadProducts();
                 SystemSounds.Beep.Play();
                 MessageBox.Show("Producto añadido con éxito", "Añadir", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -151,7 +151,7 @@ namespace SGV_CLP.GUI
                     if (e.RowIndex >= 0)
                     {
                         string productCode = ProductDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
-                        EditProduct editProductWinForm = new EditProduct(productCode);
+                        EditProduct editProductWinForm = new(productCode);
                         editProductWinForm.ShowDialog();
                     }
                 }
@@ -162,7 +162,7 @@ namespace SGV_CLP.GUI
             }
 
             FillProductDataGridView();
-            MainMenu.uc_ventas.loadProducts();
+            MainMenu.uc_ventas.LoadProducts();
         }
 
         // Filtro de busqueda de productos
@@ -269,13 +269,13 @@ namespace SGV_CLP.GUI
             buttonAddProduct.Enabled = fieldAreValid;
         }
 
-        private void TbProductCode_TextChanged(object sender, EventArgs e)
+        private async void TbProductCode_TextChanged(object sender, EventArgs e)
         {
             // Valida que el campo no esté vacío
             if (tbProductCode.Text.Length > 0)
             {
                 // Verifica la existencia del ID
-                if (ProductMapper.ProductExistsByCode(tbProductCode.Text))
+                if (await ProductMapper.ProductExistsByCode(tbProductCode.Text))
                 {
                     labelProductCodeNotUnique.Show();
                     productCodeIsValid = false;

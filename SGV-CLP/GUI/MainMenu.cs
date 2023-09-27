@@ -33,10 +33,10 @@ namespace SGV_CLP
             }*/
         }
 
-        private void siticoneButton3_CheckedChanged_1(object sender, EventArgs e)
+        private async void SiticoneButton3_CheckedChanged_1(object sender, EventArgs e)
         {
             uC_Ventas1.BringToFront();
-            List<Invoice> registeredInvoices = InvoiceMapper.GetAllInvoices("");
+            List<Invoice> registeredInvoices = await InvoiceMapper.GetAllInvoices("");
             uC_Ventas1.llenarTablaVenta(registeredInvoices);
             //uC_Ventas1.loadProducts();
         }

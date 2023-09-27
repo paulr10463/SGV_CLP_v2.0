@@ -11,9 +11,7 @@ namespace SGV_CLP.Classes.Customers_Module
     {
         public string? customerID { get; set; }
         public string? firstName { get; set; }
-        public string? MiddleName { get; set; }
         public string? firstLastName { get; set; }
-        public string? secondLastName { get; set; }
         public string? homeAddress { get; set; }
         public string? phoneNumber { get; set; }
         public string? eMail { get; set; }
@@ -22,7 +20,7 @@ namespace SGV_CLP.Classes.Customers_Module
         {
         }
 
-        public Customer(string customerID, string firstName, string firstLastName, string homeAddress, string phoneNumber, string eMail)
+        public Customer(string customerID, string firstName, string firstLastName, string? homeAddress, string? phoneNumber, string? eMail)
         {
             this.customerID = customerID;
             this.firstName = firstName;
@@ -36,9 +34,7 @@ namespace SGV_CLP.Classes.Customers_Module
         {
             return this.customerID == cliente.customerID &&
                    this.firstName == cliente.firstName &&
-                   this.MiddleName == cliente.MiddleName &&
                    this.firstLastName == cliente.firstLastName &&
-                   this.secondLastName == cliente.secondLastName &&
                    this.homeAddress == cliente.homeAddress &&
                    this.phoneNumber == cliente.phoneNumber &&
                    this.eMail == cliente.eMail;

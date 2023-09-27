@@ -22,7 +22,7 @@ namespace SGV_CLP.GUI.Módulo_Ventas
 
     public partial class Checkout : Form
     {
-        public static List<Customer> clientes = CustomerMapper.GetAllCustomers();
+        public static List<Customer> clientes = CustomerMapper.GetAllCustomers().Result;
         AutoCompleteStringCollection listaDeSugerenciasdeAutompletacion;
 
         int num_atributos = 6;
@@ -101,7 +101,7 @@ namespace SGV_CLP.GUI.Módulo_Ventas
             UC_Ventas.resetNumPickers();
             SystemSounds.Beep.Play();
             MessageBox.Show("Venta finalizada con éxito", "Venta", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            MainMenu.uc_ventas.loadProducts();
+            MainMenu.uc_ventas.LoadProducts();
             MainMenu.uc_ventas.ResetValues();
 
             this.Dispose();
@@ -152,7 +152,7 @@ namespace SGV_CLP.GUI.Módulo_Ventas
 
         }
 
-        private void siticoneButton3_Click_1(object sender, EventArgs e)
+        private async void SiticoneButton3_Click_1(object sender, EventArgs e)
         {
 
             MessageBox.Show("Cliente Registrado con éxito", "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -186,12 +186,12 @@ namespace SGV_CLP.GUI.Módulo_Ventas
                 case 0:
                     break;
                 case 1:
-                    CustomerMapper.UpdateCustomer(clienteNuevo);
-                    clientes = CustomerMapper.GetAllCustomers();
+                    await CustomerMapper.UpdateCustomer(clienteNuevo);
+                    clientes = await CustomerMapper.GetAllCustomers();
                     break;
                 case -1:
                     CustomerMapper.AddCustomer(clienteNuevo);
-                    clientes = CustomerMapper.GetAllCustomers();
+                    clientes = await CustomerMapper.GetAllCustomers();
                     break;
             }
 

@@ -10,7 +10,7 @@ namespace SGV_CLP.GUI
 {
     public partial class UC_Customers : UserControl
     {
-        List<Customer> registeredCustomers;
+
 
         int countCorrectFields, fieldsNumber;
 
@@ -20,10 +20,8 @@ namespace SGV_CLP.GUI
         {
             InitializeComponent();
 
-            registeredCustomers = CustomerMapper.GetAllCustomers();
-
             countCorrectFields = 0;
-            fieldsNumber = 6;
+            fieldsNumber = 3;
 
             customerIDIsValid = false;
             customerIDIsUnique = false;
@@ -67,16 +65,16 @@ namespace SGV_CLP.GUI
             customerIDIsValid = false;
             labelCustomerIDUnique.Hide();
         }
-        public void FillCustomerDataGridView()
+        public async void FillCustomerDataGridView()
         {
+            List<Customer> registeredCustomers = await CustomerMapper.GetAllCustomers();
             if (registeredCustomers != null)
             {
                 CustomerDataGridView.Rows.Clear();
-                registeredCustomers = CustomerMapper.GetAllCustomers();
                 foreach (Customer customer in registeredCustomers)
                 {
                     if (!customer.customerID.Equals("9999999999"))
-                        CustomerDataGridView.Rows.Add(customer.customerID, customer.firstName + " " + customer.MiddleName, customer.firstLastName + " " + customer.secondLastName, customer.homeAddress, customer.phoneNumber, customer.eMail);
+                        CustomerDataGridView.Rows.Add(customer.customerID, customer.firstName, customer.firstLastName, customer.homeAddress, customer.phoneNumber, customer.eMail);
                 }
             }
         }
@@ -137,7 +135,7 @@ namespace SGV_CLP.GUI
                 //MessageBox.Show("Esa fila está vacía, no puede hacer acciones sobre ella!!");
                 MessageBox.Show(nre.Message);
             }
-            
+
         }
         private void cbSearchCustomerBy_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -213,7 +211,6 @@ namespace SGV_CLP.GUI
                 //El correo es válido
                 labelWrongEMail.Hide();
                 labelCorrectEMail.Show();
-                countCorrectFields++;
                 eMailIsValid = true;
 
             }
@@ -222,7 +219,6 @@ namespace SGV_CLP.GUI
                 // El correo es invalido pero fue valido anteriormente
                 labelWrongEMail.Show();
                 labelCorrectEMail.Hide();
-                countCorrectFields--;
                 eMailIsValid = false;
             }
             ValidateFieldsCounter();
@@ -241,7 +237,6 @@ namespace SGV_CLP.GUI
                     labelValidPhoneNumber.Show();
                     labelInvalidPhoneNumber.Hide();
                     phoneNumberIsValid = true;
-                    countCorrectFields++;
                 }
                 else
                 {
@@ -257,7 +252,6 @@ namespace SGV_CLP.GUI
                 labelWrongPhoneNumberLength.Show();
                 labelCorrectPhoneNumberLength.Hide();
                 phoneNumberIsValid = false;
-                countCorrectFields--;
             }
             else
             {
@@ -275,12 +269,10 @@ namespace SGV_CLP.GUI
             if (tbHomeAddress.Text.Length > 0 && !homeAddressIsValid)
             {
                 homeAddressIsValid = true;
-                countCorrectFields++;
             }
             else if (tbHomeAddress.Text.Length == 0 && homeAddressIsValid)
             {
                 homeAddressIsValid = false;
-                countCorrectFields--;
             }
             ValidateFieldsCounter();
         }

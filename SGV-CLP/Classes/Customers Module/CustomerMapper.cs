@@ -21,14 +21,14 @@ namespace SGV_CLP.Classes.Customers_Module
             using var connection = new NpgsqlConnection(s_connectionString);
             connection.Open();
 
-            using (var cmd = new NpgsqlCommand("INSERT INTO public.\"Cliente\"(\"ccCustomer\", \"name\", \"lastName\", \"address\", phone, \"email\") VALUES (@ccCustomer, @name, @lastName,@address, @phone, @email)", connection))
+            using (var cmd = new NpgsqlCommand("INSERT INTO public.\"Customer\"(\"ccCustomer\", \"name\", \"lastName\", \"address\", phone, \"email\") VALUES (@ccCustomer, @name, @lastName,@address, @phone, @email)", connection))
             {
                 cmd.Parameters.AddWithValue("@ccCustomer", customer.customerID);
                 cmd.Parameters.AddWithValue("@name", customer.firstName);
                 cmd.Parameters.AddWithValue("@lastName", customer.firstLastName);
-                cmd.Parameters.AddWithValue("@address", customer.homeAddress);
-                cmd.Parameters.AddWithValue("@phone", customer.phoneNumber);
-                cmd.Parameters.AddWithValue("@email", customer.eMail);
+                cmd.Parameters.AddWithValue("@address", customer.homeAddress == null ? DBNull.Value :customer.homeAddress);
+                cmd.Parameters.AddWithValue("@phone", customer.phoneNumber == null ? DBNull.Value : customer.phoneNumber);
+                cmd.Parameters.AddWithValue("@email", customer.eMail == null ? DBNull.Value : customer.eMail);
                 cmd.ExecuteNonQuery();
             }
         }
@@ -52,7 +52,7 @@ namespace SGV_CLP.Classes.Customers_Module
             using var connection = new NpgsqlConnection(s_connectionString);
             connection.Open();
 
-            using (var cmd = new NpgsqlCommand("UPDATE \"Cliente\" SET \"address\" = @address, \"email\" = @email, \"phone\" = @phone WHERE \"ccCustomer\" = @ccCustomer", connection))
+            using (var cmd = new NpgsqlCommand("UPDATE \"Customer\" SET \"address\" = @address, \"email\" = @email, \"phone\" = @phone WHERE \"ccCustomer\" = @ccCustomer", connection))
             {
                 cmd.Parameters.AddWithValue("@ccCustomer", customerID);
                 cmd.Parameters.AddWithValue("@address", homeAddress);
@@ -63,31 +63,32 @@ namespace SGV_CLP.Classes.Customers_Module
         }
 
         // Consultar Clientes
-        public static List<Customer> GetAllCustomers()
+        public static async Task<List<Customer>> GetAllCustomers()
         {
-            List<Customer> registeredCustomers = new List<Customer>();
+            List<Customer> registeredCustomers = new();
             using (var connection = new NpgsqlConnection(s_connectionString))
             {
-                connection.Open();
-                using (var command = new NpgsqlCommand("SELECT * FROM \"Customer\"", connection))
-                using (var reader = command.ExecuteReader())
+                await connection.OpenAsync(); // Abre la conexión de forma asíncrona
+                using var command = new NpgsqlCommand("SELECT * FROM \"Customer\"", connection);
+                using var reader = await command.ExecuteReaderAsync(); // Ejecuta la consulta de forma asíncrona
+                while (await reader.ReadAsync()) // Lee el resultado de forma asíncrona
                 {
-                    while (reader.Read())
-                    {
-                        
-                        registeredCustomers.Add(
-                            new Customer(
-                                reader.GetString(0), 
-                                reader.GetString(1),
-                                reader.GetString(2),
-                                reader.GetString(3), 
-                                reader.GetString(4), 
-                                reader.GetString(5)));
-                    }
+                    string? address = reader.IsDBNull(3) ? (string?)null : reader.GetString(3);
+                    string? phone = reader.IsDBNull(4) ? (string?)null : reader.GetString(4);
+                    string? email = reader.IsDBNull(5) ? (string?)null : reader.GetString(5);
+                    registeredCustomers.Add(
+                        new Customer(
+                            reader.GetString(0),
+                            reader.GetString(1),
+                            reader.GetString(2),
+                            address,
+                            phone,
+                            email));
                 }
             }
             return registeredCustomers;
         }
+
 
         public static bool CustomerExistsByID(string customerID)
         {

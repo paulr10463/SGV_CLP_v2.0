@@ -23,7 +23,7 @@ namespace SGV_CLP.Classes.Products_module
             using var connection = new NpgsqlConnection(s_connectionString);
             connection.Open();
             using var transaction = connection.BeginTransaction();
-            using (var cmd = new NpgsqlCommand("INSERT INTO public.\"Producto\"(\"cod_Producto\", \"nombre_Producto\",  \"precio_Unitario\", \"categoria\", \"ruta_Imagen\",\"producto_padre\" ) VALUES (@cod_Producto, @nombre_Producto, @precio_Unitario, @categoria, @ruta_Imagen,@parentCode)", connection))
+            using (var cmd = new NpgsqlCommand("INSERT INTO public.\"Product\"(\"productID\", \"name\",  \"price\", \"category\", \"imagePath\",\"parentCode\" ) VALUES (@cod_Producto, @nombre_Producto, @precio_Unitario, @categoria, @ruta_Imagen,@parentCode)", connection))
             {
                 cmd.Parameters.AddWithValue("@cod_Producto", product.productCode);
                 cmd.Parameters.AddWithValue("@nombre_Producto", product.productName);
@@ -44,7 +44,7 @@ namespace SGV_CLP.Classes.Products_module
             using var connection = new NpgsqlConnection(s_connectionString);
             connection.Open();
             using var transaction = connection.BeginTransaction();
-            using (var cmd = new NpgsqlCommand("DELETE FROM public.\"Producto\" WHERE \"cod_Producto\" = @cod_Producto", connection))
+            using (var cmd = new NpgsqlCommand("DELETE FROM public.\"Product\" WHERE \"productID\" = @cod_Producto", connection))
             {
                 cmd.Parameters.AddWithValue("@cod_Producto", productCode);
                 cmd.ExecuteNonQuery();
@@ -58,7 +58,7 @@ namespace SGV_CLP.Classes.Products_module
             using var connection = new NpgsqlConnection(s_connectionString);
             connection.Open();
 
-            using (var cmd = new NpgsqlCommand("UPDATE \"Producto\" SET \"nombre_Producto\" = @productName, \"categoria\" = @categoria, \"precio_Unitario\" = @precio_Unitario, \"ruta_Imagen\" = @ruta_Imagen,\"producto_padre\" = @parentCode  WHERE \"cod_Producto\" = @cod_Producto", connection))
+            using (var cmd = new NpgsqlCommand("UPDATE \"Product\" SET \"name\" = @productName, \"category\" = @categoria, \"price\" = @precio_Unitario, \"imagePath\" = @ruta_Imagen,\"parentCode\" = @parentCode  WHERE \"productID\" = @cod_Producto", connection))
             {
                 cmd.Parameters.AddWithValue("@cod_Producto", product.productCode);
                 cmd.Parameters.AddWithValue("@productName", product.productName);
@@ -236,26 +236,31 @@ namespace SGV_CLP.Classes.Products_module
         }
 
         // Verificar existencia de un Producto con un id
-        public static bool ProductExistsByCode(string productCode)
+        public static async Task<bool> ProductExistsByCode(string productCode)
         {
             bool exists = false;
+
             using (var connection = new NpgsqlConnection(s_connectionString))
             {
-                connection.Open();
-                using (var command = new NpgsqlCommand("SELECT * FROM \"Producto\" WHERE \"productID\" ILIKE @cod_Producto", connection))
+                await connection.OpenAsync();
+
+                using (var command = new NpgsqlCommand("SELECT * FROM \"Product\" WHERE \"productID\" ILIKE @cod_Producto", connection))
                 {
                     command.Parameters.AddWithValue("@cod_Producto", productCode);
-                    using (var reader = command.ExecuteReader())
+
+                    using (var reader = await command.ExecuteReaderAsync())
                     {
-                        while (reader.Read())
+                        while (await reader.ReadAsync())
                         {
                             exists = true;
                         }
                     }
                 }
             }
+
             return exists;
         }
+
 
         // Verificar existencia de un Producto con un nombre
         public static bool ProductExistsByName(string productName)

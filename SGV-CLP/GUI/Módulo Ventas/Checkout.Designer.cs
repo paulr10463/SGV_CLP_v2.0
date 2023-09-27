@@ -513,7 +513,7 @@
             ButtonConfirmarVenta.TabIndex = 75;
             ButtonConfirmarVenta.Text = "Confirmar";
             ButtonConfirmarVenta.Visible = false;
-            ButtonConfirmarVenta.Click += siticoneButton3_Click_1;
+            ButtonConfirmarVenta.Click += SiticoneButton3_Click_1;
             // 
             // siticoneHtmlLabel_cc_correct_length
             // 

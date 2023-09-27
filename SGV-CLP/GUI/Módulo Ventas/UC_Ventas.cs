@@ -31,12 +31,12 @@ namespace SGV_CLP.GUI
             dateTimePickerConsultarVenta.Visible = false;
             txtConsultarVenta.Enabled = false;
             ComboBox_ConsultarVentaPor.SelectedIndex = 0;
-            loadProducts();
+            LoadProducts();
 
         }
 
 
-        public void loadProducts()
+        public void LoadProducts()
         {
             products = ProductMapper.GetAllProduct();
             specialties = new List<Product>();
@@ -109,23 +109,23 @@ namespace SGV_CLP.GUI
             productosUI.ForEach(item => item.resetComponents());
         }
 
-        private void TxtConsultarVenta_TextChanged(object sender, EventArgs e)
+        private async void TxtConsultarVenta_TextChanged(object sender, EventArgs e)
         {
             List<Invoice> invoices = new List<Invoice>();
             switch (ComboBox_ConsultarVentaPor.SelectedIndex)
             {
                 case 1:
                     if (!txtConsultarVenta.Text.Equals(string.Empty))
-                        invoices = InvoiceMapper.GetAllInvoicesByCode(Convert.ToInt32(txtConsultarVenta.Text));
+                        invoices = await InvoiceMapper.GetAllInvoicesByCode(Convert.ToInt32(txtConsultarVenta.Text));
                     break;
 
                 case 2:
                     txtConsultarVenta.MaxLength = Constants.LIMIT_CC_LENGTH;
-                    invoices = InvoiceMapper.GetAllInvoices(txtConsultarVenta.Text);
+                    invoices = await InvoiceMapper.GetAllInvoices(txtConsultarVenta.Text);
                     break;
 
                 case >= 3 and <= 5:
-                    invoices = InvoiceMapper.GetAllInvoices(Categoria, txtConsultarVenta.Text);
+                    invoices = await InvoiceMapper.GetAllInvoices(Categoria, txtConsultarVenta.Text);
                     break;
 
             }
@@ -218,8 +218,6 @@ namespace SGV_CLP.GUI
 
         private void ComboBox_ConsultarVentaPor_SelectedIndexChanged(object sender, EventArgs e)
         {
-            InvoiceMapper.GetAllInvoices("");
-            // txtConsultarVenta.Text = string.Empty;
             if (ComboBox_ConsultarVentaPor.SelectedIndex > 0)
             {
                 siticoneHtmlLabel_buscarCliente_sin_campo.Hide();
@@ -264,11 +262,11 @@ namespace SGV_CLP.GUI
             }
         }
 
-        private void DateTimePickerConsultarVenta_ValueChanged(object sender, EventArgs e)
+        private async void DateTimePickerConsultarVenta_ValueChanged(object sender, EventArgs e)
         {
             try
             {
-                List<Invoice> invoices = InvoiceMapper.GetAllInvoicesByDate(dateTimePickerConsultarVenta.Text);
+                List<Invoice> invoices = await InvoiceMapper.GetAllInvoicesByDate(dateTimePickerConsultarVenta.Text);
                 llenarTablaVenta(invoices);
             }
             catch (Exception ex)
@@ -278,12 +276,12 @@ namespace SGV_CLP.GUI
 
         }
 
-        private void SiticoneTabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        private async void SiticoneTabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (siticoneTabControl1.SelectedIndex == 1)
             {
                 //Actualiza las ventas al ingresar a la pestaña de consulta de ventas
-                List<Invoice> registeredInvoices = InvoiceMapper.GetAllInvoices("");
+                List<Invoice> registeredInvoices = await InvoiceMapper.GetAllInvoices("");
                 MainMenu.uc_ventas.llenarTablaVenta(registeredInvoices);
             }
         }

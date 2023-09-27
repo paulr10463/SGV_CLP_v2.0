@@ -132,7 +132,7 @@ namespace SGV_CLP.GUI.Módulo_Ventas
 
         private void openSubproductsButton_Click(object sender, EventArgs e)
         {
-            List <Product> subProductos = ProductMapper.GetProductByParentCode(_producto.productCode);
+            List<Product> subProductos = ProductMapper.GetProductByParentCode(_producto.productCode);
             ProductSubtype productSubtypeWindow = new ProductSubtype(subProductos);
             productSubtypeWindow.ShowDialog();
 

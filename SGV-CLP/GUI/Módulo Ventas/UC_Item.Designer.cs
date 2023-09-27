@@ -60,7 +60,7 @@
             // 
             siticonePictureBox1.ImageRotate = 0F;
             siticonePictureBox1.InitialImage = (Image)resources.GetObject("siticonePictureBox1.InitialImage");
-            siticonePictureBox1.Location = new Point(24, 45);
+            siticonePictureBox1.Location = new Point(24, 54);
             siticonePictureBox1.Name = "siticonePictureBox1";
             siticonePictureBox1.Size = new Size(124, 89);
             siticonePictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -114,10 +114,11 @@
             // 
             // label1
             // 
+            label1.AutoEllipsis = true;
             label1.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(10, 12);
+            label1.Location = new Point(10, 0);
             label1.Name = "label1";
-            label1.Size = new Size(152, 23);
+            label1.Size = new Size(152, 51);
             label1.TabIndex = 12;
             label1.Text = "label1";
             label1.TextAlign = ContentAlignment.MiddleCenter;
