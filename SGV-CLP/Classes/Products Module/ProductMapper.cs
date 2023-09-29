@@ -28,7 +28,7 @@ namespace SGV_CLP.Classes.Products_module
                 cmd.Parameters.AddWithValue("@cod_Producto", product.productCode);
                 cmd.Parameters.AddWithValue("@nombre_Producto", product.productName);
                 cmd.Parameters.AddWithValue("@precio_Unitario", product.salePrice == null ? DBNull.Value : product.salePrice);
-                cmd.Parameters.AddWithValue("@categoria", product.category);
+                cmd.Parameters.AddWithValue("@categoria", product.categoryName);
                 cmd.Parameters.AddWithValue("@ruta_Imagen", product.imagePath);
                 cmd.Parameters.AddWithValue("@parentCode", product.parentCode == null ? DBNull.Value : product.parentCode);
                 cmd.ExecuteNonQuery();
@@ -62,7 +62,7 @@ namespace SGV_CLP.Classes.Products_module
             {
                 cmd.Parameters.AddWithValue("@cod_Producto", product.productCode);
                 cmd.Parameters.AddWithValue("@productName", product.productName);
-                cmd.Parameters.AddWithValue("@categoria", product.category);
+                cmd.Parameters.AddWithValue("@categoria", product.categoryName);
                 cmd.Parameters.AddWithValue("@precio_Unitario", product.salePrice == null ? DBNull.Value : product.salePrice);
                 cmd.Parameters.AddWithValue("@ruta_Imagen", product.imagePath);
                 cmd.Parameters.AddWithValue("@parentCode", product.parentCode == null ? DBNull.Value : product.parentCode);
@@ -77,21 +77,21 @@ namespace SGV_CLP.Classes.Products_module
             using (var connection = new NpgsqlConnection(s_connectionString))
             {
                 connection.Open();
-                using (var command = new NpgsqlCommand("SELECT * FROM \"Product\"", connection))
+                using (var command = new NpgsqlCommand("SELECT \"Product\".*, \"Category\".name FROM \"Product\" join \"Category\" on \"Product\".\"category\" = \"Category\".\"categoryID\" ", connection))
                 using (var reader = command.ExecuteReader())
                 {
                     while (reader.Read())
                     {
                         double? unitPrice = reader.IsDBNull(2) ? (double?)null : reader.GetDouble(2);
-                        string? parentCode = reader.IsDBNull(5) ? (string?)null : reader.GetString(5);
+                        string? parentCode = reader.IsDBNull(4) ? (string?)null : reader.GetString(4);
                         registeredProducts.Add(new Product(
                             reader.GetString(0), //codProducto
                             reader.GetString(1), //nombreProducto
                             unitPrice, //precioUnitario
-                            reader.GetString(3), //categoría
-                            reader.GetString(4), //rutaImagen
-                            parentCode)
-                            );
+                            reader.GetString(3), //rutaImagen
+                            parentCode,
+                            reader.GetString(6) //categoría)
+                            ));
                     }
                 }
             }
@@ -113,15 +113,15 @@ namespace SGV_CLP.Classes.Products_module
                         while (reader.Read())
                         {
                             double? unitPrice = reader.IsDBNull(2) ? (double?)null : reader.GetDouble(2);
-                            string? innerParentCode = reader.IsDBNull(5) ? (string?)null : reader.GetString(5);
+                            string? parentCodeAux = reader.IsDBNull(4) ? (string?)null : reader.GetString(4);
                             registeredProducts.Add(new Product(
                                 reader.GetString(0), //codProducto
                                 reader.GetString(1), //nombreProducto
                                 unitPrice, //precioUnitario
-                                reader.GetString(3), //categoría
-                                reader.GetString(4), //rutaImagen
-                                innerParentCode)
-                                );
+                                reader.GetString(3), //rutaImagen
+                                parentCodeAux,
+                                reader.GetInt32(5)
+                                ));
                         }
                     }
                 }

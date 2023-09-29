@@ -12,18 +12,18 @@
 
   <ItemGroup>
     <PackageReference Include="iTextSharp" Version="5.5.13.3" />
-    <PackageReference Include="Npgsql" Version="7.0.2" />
+    <PackageReference Include="Npgsql" Version="7.0.6" />
     <PackageReference Include="Siticone.Desktop.UI" Version="2.1.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="GUI\Módulo Administración\UC_Administracion.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Update="GUI\Customers Module\UC_Customers.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="GUI\Módulo Ventas\ProductSubtype.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GUI\Products Module\EditCategory.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="GUI\Products Module\UC_Products.cs">

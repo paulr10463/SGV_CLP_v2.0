@@ -5,7 +5,8 @@
         public string productCode { get; set; }
         public string productName { get; set; }
         public string imagePath { get; set; }
-        public string category { get; set; }
+        public string categoryName { get; set; }
+        public int categoryID { get; set; }
         public double? salePrice { get; set; } // sales price to the public = S.P.P
         public string? parentCode { get; set; }
 
@@ -21,18 +22,29 @@
             this.productCode = productCode;
             this.productName = productName;
             this.salePrice = salePrice;
-            this.category = category;
+            this.categoryName = category;
             this.imagePath = imagePath;
             
         }
 
         // Para obtener de base de datos
-        public Product(string productCode, string productName, double? salePrice, string category, string imagePath, string? parentCode)
+        public Product(string productCode, string productName, double? salePrice, string imagePath, string? parentCode, string categoryName)
         {
             this.productCode = productCode;
             this.productName = productName;
             this.salePrice = salePrice;
-            this.category = category;
+            this.categoryName = categoryName;
+            this.imagePath = imagePath;
+            this.parentCode = parentCode;
+        }
+
+        // Para obtener de base de datos
+        public Product(string productCode, string productName, double? salePrice, string imagePath, string? parentCode, int categoryID)
+        {
+            this.productCode = productCode;
+            this.productName = productName;
+            this.salePrice = salePrice;
+            this.categoryID = categoryID;
             this.imagePath = imagePath;
             this.parentCode = parentCode;
         }

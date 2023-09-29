@@ -10,12 +10,6 @@
     <Compile Update="GUI\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="GUI\Módulo Administración\Editar_Parametro_Por_Unidad.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="GUI\Módulo Administración\Editar_Usuario.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="GUI\Customers Module\EditCustomer.cs">
       <SubType>Form</SubType>
     </Compile>

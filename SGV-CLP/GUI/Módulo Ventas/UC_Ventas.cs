@@ -56,22 +56,22 @@ namespace SGV_CLP.GUI
             //Add in each Product category the products
             foreach (Product producto in products)
             {
-                if (producto.category.Equals("Bebidas Calientes"))
+                if (producto.categoryName.Equals("Bebidas Calientes"))
                 {
                     hotDrinks.Add(producto);
                     hotDrinksHtmlLabel.Visible = true;
                 }
-                if (producto.category.Equals("Especialidades"))
+                if (producto.categoryName.Equals("Especialidades"))
                 {
                     specialties.Add(producto);
                     specialtiesHtmlLabel.Visible = true;
                 }
-                if (producto.category.Equals("Bebidas Frías"))
+                if (producto.categoryName.Equals("Bebidas Frías"))
                 {
                     coldDrinks.Add(producto);
                     coldDrinksHtmlLabel.Visible = true;
                 }
-                if (producto.category.Equals("Empanadas"))
+                if (producto.categoryName.Equals("Empanadas"))
                 {
                     empanadas.Add(producto);
                     empanadasHtmlLabel.Visible = true;

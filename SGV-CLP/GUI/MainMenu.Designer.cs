@@ -34,36 +34,43 @@ namespace SGV_CLP
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
             siticonePanel1 = new Siticone.Desktop.UI.WinForms.SiticonePanel();
+            pictureBox1 = new PictureBox();
             flowLayoutPanel1 = new FlowLayoutPanel();
             siticoneButton4 = new Siticone.Desktop.UI.WinForms.SiticoneButton();
             siticoneButton3 = new Siticone.Desktop.UI.WinForms.SiticoneButton();
             siticoneButton6 = new Siticone.Desktop.UI.WinForms.SiticoneButton();
-            siticoneHtmlLabel2 = new Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel();
             siticoneButton7 = new Siticone.Desktop.UI.WinForms.SiticoneButton();
-            siticoneCirclePictureBox1 = new Siticone.Desktop.UI.WinForms.SiticoneCirclePictureBox();
             siticoneDragControl1 = new Siticone.Desktop.UI.WinForms.SiticoneDragControl(components);
             siticoneCustomGradientPanel1 = new Siticone.Desktop.UI.WinForms.SiticoneCustomGradientPanel();
             uC_Clientes1 = new UC_Customers();
             uC_Ventas1 = new UC_Ventas();
             uC_Productos1 = new UC_Products();
-            uC_Administracion1 = new UC_Administracion();
             siticonePanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             flowLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)siticoneCirclePictureBox1).BeginInit();
             siticoneCustomGradientPanel1.SuspendLayout();
             SuspendLayout();
             // 
             // siticonePanel1
             // 
+            siticonePanel1.Controls.Add(pictureBox1);
             siticonePanel1.Controls.Add(flowLayoutPanel1);
-            siticonePanel1.Controls.Add(siticoneHtmlLabel2);
             siticonePanel1.Controls.Add(siticoneButton7);
-            siticonePanel1.Controls.Add(siticoneCirclePictureBox1);
             siticonePanel1.Dock = DockStyle.Left;
             siticonePanel1.Location = new Point(0, 0);
             siticonePanel1.Name = "siticonePanel1";
             siticonePanel1.Size = new Size(227, 1033);
             siticonePanel1.TabIndex = 3;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(25, 27);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(171, 159);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 15;
+            pictureBox1.TabStop = false;
             // 
             // flowLayoutPanel1
             // 
@@ -152,17 +159,6 @@ namespace SGV_CLP
             siticoneButton6.TextOffset = new Point(20, 0);
             siticoneButton6.CheckedChanged += siticoneButton6_CheckedChanged_1;
             // 
-            // siticoneHtmlLabel2
-            // 
-            siticoneHtmlLabel2.Anchor = AnchorStyles.None;
-            siticoneHtmlLabel2.BackColor = Color.Transparent;
-            siticoneHtmlLabel2.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            siticoneHtmlLabel2.Location = new Point(6, 30);
-            siticoneHtmlLabel2.Name = "siticoneHtmlLabel2";
-            siticoneHtmlLabel2.Size = new Size(14, 23);
-            siticoneHtmlLabel2.TabIndex = 13;
-            siticoneHtmlLabel2.Text = "a";
-            // 
             // siticoneButton7
             // 
             siticoneButton7.Anchor = AnchorStyles.Bottom;
@@ -181,18 +177,6 @@ namespace SGV_CLP
             siticoneButton7.Text = "Cerrar sesión";
             siticoneButton7.Click += siticoneButton7_Click;
             // 
-            // siticoneCirclePictureBox1
-            // 
-            siticoneCirclePictureBox1.Image = (Image)resources.GetObject("siticoneCirclePictureBox1.Image");
-            siticoneCirclePictureBox1.ImageRotate = 0F;
-            siticoneCirclePictureBox1.Location = new Point(25, 63);
-            siticoneCirclePictureBox1.Name = "siticoneCirclePictureBox1";
-            siticoneCirclePictureBox1.ShadowDecoration.Mode = Siticone.Desktop.UI.WinForms.Enums.ShadowMode.Circle;
-            siticoneCirclePictureBox1.Size = new Size(174, 161);
-            siticoneCirclePictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            siticoneCirclePictureBox1.TabIndex = 0;
-            siticoneCirclePictureBox1.TabStop = false;
-            // 
             // siticoneDragControl1
             // 
             siticoneDragControl1.DockIndicatorTransparencyValue = 0.6D;
@@ -203,7 +187,6 @@ namespace SGV_CLP
             siticoneCustomGradientPanel1.Controls.Add(uC_Clientes1);
             siticoneCustomGradientPanel1.Controls.Add(uC_Ventas1);
             siticoneCustomGradientPanel1.Controls.Add(uC_Productos1);
-            siticoneCustomGradientPanel1.Controls.Add(uC_Administracion1);
             siticoneCustomGradientPanel1.Dock = DockStyle.Fill;
             siticoneCustomGradientPanel1.Location = new Point(227, 0);
             siticoneCustomGradientPanel1.Name = "siticoneCustomGradientPanel1";
@@ -238,15 +221,6 @@ namespace SGV_CLP
             uC_Productos1.Size = new Size(1675, 1033);
             uC_Productos1.TabIndex = 2;
             // 
-            // uC_Administracion1
-            // 
-            uC_Administracion1.Dock = DockStyle.Fill;
-            uC_Administracion1.Location = new Point(0, 0);
-            uC_Administracion1.Margin = new Padding(3, 4, 3, 4);
-            uC_Administracion1.Name = "uC_Administracion1";
-            uC_Administracion1.Size = new Size(1675, 1033);
-            uC_Administracion1.TabIndex = 0;
-            // 
             // MainMenu
             // 
             AutoScaleMode = AutoScaleMode.None;
@@ -260,9 +234,8 @@ namespace SGV_CLP
             Text = "SGV-CLP";
             WindowState = FormWindowState.Maximized;
             siticonePanel1.ResumeLayout(false);
-            siticonePanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             flowLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)siticoneCirclePictureBox1).EndInit();
             siticoneCustomGradientPanel1.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -272,15 +245,13 @@ namespace SGV_CLP
         private Siticone.Desktop.UI.WinForms.SiticoneButton siticoneButton4;
         private Siticone.Desktop.UI.WinForms.SiticoneButton siticoneButton3;
         private Siticone.Desktop.UI.WinForms.SiticoneDragControl siticoneDragControl1;
-        private Siticone.Desktop.UI.WinForms.SiticoneCirclePictureBox siticoneCirclePictureBox1;
         private Siticone.Desktop.UI.WinForms.SiticoneButton siticoneButton7;
         private Siticone.Desktop.UI.WinForms.SiticoneCustomGradientPanel siticoneCustomGradientPanel1;
         private GUI.UC_Customers uC_Clientes1;
         private GUI.UC_Products uC_Productos1;
-        private GUI.UC_Administracion uC_Administracion1;
         private UC_Ventas uC_Ventas1;
-        private Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel siticoneHtmlLabel2;
         private FlowLayoutPanel flowLayoutPanel1;
         private Siticone.Desktop.UI.WinForms.SiticoneButton siticoneButton6;
+        private PictureBox pictureBox1;
     }
 }

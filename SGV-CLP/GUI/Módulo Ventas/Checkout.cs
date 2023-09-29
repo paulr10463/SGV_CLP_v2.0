@@ -22,10 +22,10 @@ namespace SGV_CLP.GUI.Módulo_Ventas
 
     public partial class Checkout : Form
     {
-        public static List<Customer> clientes = CustomerMapper.GetAllCustomers().Result;
+        public static List<Customer> clientes = CustomerMapper.GetAllCustomersSync();
         AutoCompleteStringCollection listaDeSugerenciasdeAutompletacion;
 
-        int num_atributos = 6;
+        readonly int num_atributos = 3;
         int count_correct_fields = 0;
         bool editClientIsEnabled = false;
 
@@ -46,7 +46,7 @@ namespace SGV_CLP.GUI.Módulo_Ventas
             }
             setTotal(siticoneDataGridView1);
             listaDeSugerenciasdeAutompletacion = new AutoCompleteStringCollection();
-            actulizarListadeSugerenciasdeAutocompletacion();
+            ActualizarListadeSugerenciasdeAutocompletacion();
 
             txtCC_ClienteVenta.AutoCompleteCustomSource = listaDeSugerenciasdeAutompletacion;
 
@@ -75,17 +75,16 @@ namespace SGV_CLP.GUI.Módulo_Ventas
 
         }
 
-        private void actulizarListadeSugerenciasdeAutocompletacion()
+        private void ActualizarListadeSugerenciasdeAutocompletacion()
         {
             clientes.ForEach(a => listaDeSugerenciasdeAutompletacion.Add(a.customerID));
         }
 
 
-        private void siticoneButton1_Click(object sender, EventArgs e)
+        private void SiticoneButton1_Click(object sender, EventArgs e)
         {
-            Customer clienteFinal = new Customer(txtCC_ClienteVenta.Text, txtNombre1Venta.Text, txtApellido1Venta.Text, txtDireccionVenta.Text, txtTelefVenta.Text, txtCorreoVenta.Text);
+            Customer clienteFinal = new(txtCC_ClienteVenta.Text, txtNombre1Venta.Text, txtApellido1Venta.Text, txtDireccionVenta.Text, txtTelefVenta.Text, txtCorreoVenta.Text);
             UC_Ventas.invoice.customer = clienteFinal;
-            UC_Ventas.invoice.user = MainMenu.UsuarioRegistrado;
             UC_Ventas.invoice.issuedDate = DateTime.Now;
             InvoiceMapper.AddInvoice(UC_Ventas.invoice);
             UC_Ventas.invoice.SetInvoiceDetail(InvoiceMapper.ConsultarUltimoID());
@@ -107,13 +106,13 @@ namespace SGV_CLP.GUI.Módulo_Ventas
             this.Dispose();
         }
 
-        private void siticoneButton2_Click(object sender, EventArgs e)
+        private void SiticoneButton2_Click(object sender, EventArgs e)
         {
             this.Dispose();
         }
 
         //Se presiona el boton de añadir cliente
-        private void siticoneButton4_Click(object sender, EventArgs e)
+        private void SiticoneButton4_Click(object sender, EventArgs e)
         {
             txtApellido1Venta.Enabled = true;
             txtNombre1Venta.Enabled = true;
@@ -164,6 +163,7 @@ namespace SGV_CLP.GUI.Módulo_Ventas
             txtCorreoVenta.Enabled = false;
             editClientIsEnabled = false;
 
+
             ccIsValid = false;
             firsLastNameIsValid = false;
             firstNameIsValid = false;
@@ -172,8 +172,14 @@ namespace SGV_CLP.GUI.Módulo_Ventas
             correoIsValid = false;
 
             siticoneHtmlLabel_correct_length_telef.Visible = false;
+            siticoneHtmlLabel_wrong_length_telef.Visible=false;
             siticoneHtmlLabel_correct_email.Visible = false;
+            siticoneHtmlLabel_wrong_email.Visible = false;
             labelValidPhoneNumber.Visible = false;
+            labelInvalidPhoneNumber.Visible = false;
+            siticoneHtmlLabel_cc_correct_length.Visible = false;
+            siticoneHtmlLabel_cc_wrong_length.Visible = false;
+           
             Customer clienteNuevo = new Customer(txtCC_ClienteVenta.Text,
                 txtNombre1Venta.Text,
                 txtApellido1Venta.Text,
@@ -196,7 +202,7 @@ namespace SGV_CLP.GUI.Módulo_Ventas
             }
 
             txtCC_ClienteVenta_TextChanged(null, null);
-            actulizarListadeSugerenciasdeAutocompletacion();
+            ActualizarListadeSugerenciasdeAutocompletacion();
         }
 
 
@@ -217,79 +223,34 @@ namespace SGV_CLP.GUI.Módulo_Ventas
 
         private void txtCC_ClienteVenta_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar != '\b' && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-                SystemSounds.Beep.Play();
-                MessageBox.Show("Ingrese únicamente números!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
+            ValidationUtils.keyPressDigitsValidation(e);
         }
         private void txtNombre1Venta_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar != '\b' && !char.IsLetter(e.KeyChar))
-            {
-                e.Handled = true;
-                SystemSounds.Beep.Play();
-                MessageBox.Show("Ingrese únicamente letras!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
+            ValidationUtils.keyPressLetterValidation(e);
         }
-        private void txtApellido1Venta_KeyPress(object sender, KeyPressEventArgs e)
+        private void TxtApellido1Venta_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar != '\b' && !char.IsLetter(e.KeyChar))
-            {
-                e.Handled = true;
-                SystemSounds.Beep.Play();
-                MessageBox.Show("Ingrese únicamente letras!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
+            ValidationUtils.keyPressLetterValidation(e);
         }
-        private void txtDireccionVenta_KeyPress(object sender, KeyPressEventArgs e)
+        private void TxtDireccionVenta_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar != '\b' && !char.IsLetter(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != Convert.ToChar(Keys.Space))
-            {
-                e.Handled = true;
-                SystemSounds.Beep.Play();
-                MessageBox.Show("Ingrese únicamente letras o números!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-
+            ValidationUtils.keyPressAddressValidation(e);
         }
 
-        private void txtTelefVenta_KeyPress(object sender, KeyPressEventArgs e)
+        private void TxtTelefVenta_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar != '\b' && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-                SystemSounds.Beep.Play();
-                MessageBox.Show("Ingrese únicamente números!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
+            ValidationUtils.keyPressDigitsValidation(e);
         }
 
-        private void txtCorreoVenta_KeyPress(object sender, KeyPressEventArgs e)
+        private void TxtCorreoVenta_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar != '\b' && !char.IsLetter(e.KeyChar) && !char.IsDigit(e.KeyChar)
-                && e.KeyChar != '_' && e.KeyChar != '@' && e.KeyChar != '.')
-            {
-                e.Handled = true;
-                SystemSounds.Beep.Play();
-                MessageBox.Show("Ingrese únicamente letras o números!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
+            ValidationUtils.keyPressEmailValidation(e);
 
         }
-
         private void txtTotalVenta_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar != '\b' && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
-            {
-                e.Handled = true;
-                SystemSounds.Beep.Play();
-                MessageBox.Show("Ingrese únicamente números o \".\" !", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
+            ValidationUtils.keyPressDoubleValidation(e);
         }
 
         private void txtCC_ClienteVenta_TextChanged(object sender, EventArgs e)
@@ -461,15 +422,11 @@ namespace SGV_CLP.GUI.Módulo_Ventas
             if (txtDireccionVenta.Text.Length > 0 && !addressIsValid && editClientIsEnabled)
             {
                 addressIsValid = true;
-                count_correct_fields++;
             }
             else if (txtDireccionVenta.Text.Length == 0 && addressIsValid && editClientIsEnabled)
             {
                 addressIsValid = false;
-                count_correct_fields--;
             }
-
-            validateFieldsCounter();
         }
 
         private void txtTelefVenta_TextChanged(object sender, EventArgs e)
@@ -483,7 +440,6 @@ namespace SGV_CLP.GUI.Módulo_Ventas
 
                 if (ValidationUtils.IsValidPhoneNumber(txtTelefVenta.Text))
                 {
-                    count_correct_fields++;
                     labelValidPhoneNumber.Show();
                     labelInvalidPhoneNumber.Hide();
                     telefIsValid = true;
@@ -498,13 +454,12 @@ namespace SGV_CLP.GUI.Módulo_Ventas
             else if ( telefIsValid && editClientIsEnabled)
             {
                 telefIsValid = false;
-                count_correct_fields--;
                 siticoneHtmlLabel_wrong_length_telef.Show();
                 siticoneHtmlLabel_correct_length_telef.Hide();
                 labelValidPhoneNumber.Hide();
                 labelInvalidPhoneNumber.Show();
             }
-            else
+            else if (editClientIsEnabled)
             {
                 telefIsValid = false;
                 siticoneHtmlLabel_wrong_length_telef.Show();
@@ -512,7 +467,6 @@ namespace SGV_CLP.GUI.Módulo_Ventas
                 labelValidPhoneNumber.Hide();
                 labelInvalidPhoneNumber.Show();
             }
-            validateFieldsCounter();
         }
 
         private void txtCorreoVenta_TextChanged(object sender, EventArgs e)
@@ -522,7 +476,6 @@ namespace SGV_CLP.GUI.Módulo_Ventas
                 //El correo es válido
                 siticoneHtmlLabel_wrong_email.Hide();
                 siticoneHtmlLabel_correct_email.Show();
-                count_correct_fields++;
                 correoIsValid = true;
 
             }
@@ -531,10 +484,8 @@ namespace SGV_CLP.GUI.Módulo_Ventas
                 // El correo es invalido pero fue valido anteriormente
                 siticoneHtmlLabel_wrong_email.Show();
                 siticoneHtmlLabel_correct_email.Hide();
-                count_correct_fields--;
                 correoIsValid = false;
             }
-            validateFieldsCounter();
         }
 
         private void txtNombre1Venta_TextChanged(object sender, EventArgs e)

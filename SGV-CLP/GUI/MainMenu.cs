@@ -7,13 +7,11 @@ namespace SGV_CLP
 {
     public partial class MainMenu : Form
     {
-        public static Usuario UsuarioRegistrado;
         public static UC_Ventas uc_ventas;
         public MainMenu()
         {
             InitializeComponent();
 
-            siticoneHtmlLabel2.Text = "Bienvenido ";
             uc_ventas = uC_Ventas1;
             /*
             if (user.cargo.Equals("Administrador"))

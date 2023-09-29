@@ -1,5 +1,6 @@
 ﻿using SGV_CLP.Classes;
 using SGV_CLP.Classes.Products_module;
+using SGV_CLP.Classes.Sales_Module;
 using System.Globalization;
 using System.Media;
 
@@ -10,7 +11,7 @@ namespace SGV_CLP.GUI
     {
         List<Product> registeredProducts;
         List<Product> parentProducts;
-
+        Dictionary<int, string> existingCategories;
 
         bool productCodeIsValid, productNameIsValid, categoryIsValid, salesPriceToThePubicIsValid, imagePathIsValid, parentIsValid; // Para validar los campos de Producto
 
@@ -19,7 +20,8 @@ namespace SGV_CLP.GUI
             InitializeComponent();
 
             registeredProducts = ProductMapper.GetAllProduct();
-
+            existingCategories = new Dictionary<int, string>();
+            CategoryMapper.GetAllCategories().ForEach(item => existingCategories[item.id] = item.categoryName);
 
             productCodeIsValid = false;
             productNameIsValid = false;
@@ -30,7 +32,10 @@ namespace SGV_CLP.GUI
 
             FillProductDataGridView();
 
+
             cbCategory.SelectedIndex = 0;
+            cbCategory.DataSource = existingCategories.Values.ToArray();
+            cbCategory.SelectedIndex = -1;
             cbSearchProdutBy.SelectedIndex = 0;
 
             tbProductCode.MaxLength = Constants.LIMIT_IDPROD_LENGTH;
@@ -38,6 +43,23 @@ namespace SGV_CLP.GUI
             tbImagePath.MaxLength = Constants.LIMIT_RUTAIMAGEN_LENGTH;
 
             labelCategoryNotChosen.Show();
+        }
+
+        private void TbProductName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidationUtils.keyPressAddressValidation(e);
+        }
+        private void TbProductCode_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidationUtils.keyPressLetterValidation(e);
+        }
+        private void TbSalesPriceToThePublic_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidationUtils.keyPressDoubleValidation(e);
+        }
+        private void addCategoryTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidationUtils.keyPressAddressValidation(e);
         }
 
         // Métodos de pestaña de Producto
@@ -48,7 +70,7 @@ namespace SGV_CLP.GUI
             tbProductName.Text = string.Empty;
             tbSalesPriceToThePublic.Text = string.Empty;
             tbImagePath.Text = string.Empty;
-            cbCategory.SelectedIndex = 0;
+            cbCategory.SelectedIndex = -1;
             isSubproductCheckBox.Checked = false;
             isParentCheckBox.Checked = false;
 
@@ -63,21 +85,7 @@ namespace SGV_CLP.GUI
             labelInvalidImagePath.Hide();
         }
 
-        // Llenar tabla Producto
-        public void FillProductDataGridView()
-        {
-            if (registeredProducts != null)
-            {
-                ProductDataGridView.Rows.Clear();
-                registeredProducts = ProductMapper.GetAllProduct();
-                int index = 0;
-                foreach (Product product in registeredProducts)
-                {
-                    ProductDataGridView.Rows.Add(product.productCode, product.productName, product.salePrice, product.category, product.imagePath, product.parentCode);
-                    index++;
-                }
-            }
-        }
+
 
         private void ButtonBrowse_Click(object sender, EventArgs e)
         {
@@ -98,9 +106,9 @@ namespace SGV_CLP.GUI
                 tbProductCode.Text.ToUpper(),
                 tbProductName.Text,
                 isParentCheckBox.Checked ? null : Convert.ToDouble(tbSalesPriceToThePublic.Text, CultureInfo.InvariantCulture),
-                cbCategory.Text,
                 tbImagePath.Text,
-                isSubproductCheckBox.Checked ? parentProducts[parentComboBox.SelectedIndex].productCode : null
+                isSubproductCheckBox.Checked ? parentProducts[parentComboBox.SelectedIndex].productCode : null,
+                cbCategory.SelectedIndex
                 );
 
             try
@@ -119,51 +127,7 @@ namespace SGV_CLP.GUI
 
         }
 
-        // Editar y eliminar Producto
-        private void ProductDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                // CLICK EN CELDA ELIMINAR PRODUCTO
-                if (ProductDataGridView.Columns[e.ColumnIndex].Name == "ColumnaEliminarProducto")
-                {
-                    if (e.RowIndex >= 0 && ProductDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString() != null)
-                    {
-                        if (MessageBox.Show("¿Está seguro de eliminar este producto?", "Eliminar Producto", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                        {
-                            string productCode = ProductDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
-                            try
-                            {
-                                ProductMapper.DeleteProduct(productCode);
-                                MessageBox.Show("Producto eliminado con éxito");
-                            }catch(Exception ex)
-                            {
-                                MessageBox.Show(ex.Message);
-                            }
-                            
-                        }
-                    }
-                }
 
-                // CLICK EN CELDA EDITAR PRODUCTO
-                if (ProductDataGridView.Columns[e.ColumnIndex].Name == "ColumnaEditarProducto")
-                {
-                    if (e.RowIndex >= 0)
-                    {
-                        string productCode = ProductDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
-                        EditProduct editProductWinForm = new(productCode);
-                        editProductWinForm.ShowDialog();
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
-            FillProductDataGridView();
-            MainMenu.uc_ventas.LoadProducts();
-        }
 
         // Filtro de busqueda de productos
         private void TbSearchProductBy_TextChanged(object sender, EventArgs e)
@@ -293,14 +257,6 @@ namespace SGV_CLP.GUI
             ValidateProductFields();
         }
 
-        private void TbProductName_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            ValidationUtils.keyPressAddressValidation(e);
-        }
-        private void TbProductCode_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            ValidationUtils.keyPressLetterValidation(e);
-        }
 
         private void TbProductName_TextChanged(object sender, EventArgs e)
         {
@@ -329,7 +285,7 @@ namespace SGV_CLP.GUI
         private void CbCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Valida que el item seleccionado es "> 0"
-            if (cbCategory.SelectedIndex > 0)
+            if (cbCategory.SelectedIndex > -1)
             {
                 labelCategoryNotChosen.Hide();
                 categoryIsValid = true;
@@ -341,10 +297,7 @@ namespace SGV_CLP.GUI
             }
             ValidateProductFields();
         }
-        private void TbSalesPriceToThePublic_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            ValidationUtils.keyPressDoubleValidation(e);
-        }
+
         private void TbSalesPriceToThePublic_TextChanged(object sender, EventArgs e)
         {
             // Valida si hay un double en el campo
@@ -437,6 +390,184 @@ namespace SGV_CLP.GUI
                 parentIsValid = false;
             }
             ValidateProductFields();
+        }
+
+
+        private void addCategoryTextBox_TextChanged(object sender, EventArgs e)
+        {
+            List<string> categoryNamesUsed = new List<string>();
+            existingCategories.Values.ToList().ForEach(item => categoryNamesUsed.Add(item.ToLower()));
+            bool categoryNameAlreadyUsed = categoryNamesUsed.Contains(addCategoryTextBox.Text.ToLower());
+            if (addCategoryTextBox.Text.Equals(string.Empty))
+            {
+                addCategoryButton.Enabled = false;
+                return;
+            }
+            if (categoryNameAlreadyUsed)
+            {
+                addCategoryButton.Enabled = false;
+                categoryUsedLabel.Visible = true;
+                return;
+            }
+            else
+            {
+                categoryUsedLabel.Visible = false;
+                addCategoryButton.Enabled = true;
+            }
+        }
+
+        private void SiticoneTabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (siticoneTabControl1.SelectedIndex == 2 || siticoneTabControl1.SelectedIndex == 0)
+            {
+                CategoryMapper.GetAllCategories().ForEach(item => existingCategories[item.id] = item.categoryName);
+            }
+            if (siticoneTabControl1.SelectedIndex == 0)
+            {
+                cbCategory.SelectedIndex = -1;
+
+            }
+            if (siticoneTabControl1.SelectedIndex == 3)
+            {
+                FillCategoryDataGridView();
+            }
+        }
+
+        private void AddCategoryButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                CategoryMapper.AddCategory(addCategoryTextBox.Text);
+                MessageBox.Show("Se creó la categoría exitosamente");
+                addCategoryTextBox.Text = string.Empty;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al añadir la categoría", ex.Message);
+            }
+
+        }
+        //tables section 
+        // Llenar tabla Producto
+        public void FillProductDataGridView()
+        {
+            if (registeredProducts != null)
+            {
+                ProductDataGridView.Rows.Clear();
+                registeredProducts = ProductMapper.GetAllProduct();
+                int index = 0;
+                foreach (Product product in registeredProducts)
+                {
+                    ProductDataGridView.Rows.Add(product.productCode, product.productName, product.salePrice, product.categoryName, product.imagePath, product.parentCode);
+                    index++;
+                }
+            }
+        }
+
+        public void FillCategoryDataGridView()
+        {
+            if (existingCategories != null)
+            {
+                categoryDataGridView.Rows.Clear();
+                List<Category> categories = CategoryMapper.GetAllCategories();
+                foreach (Category category in categories)
+                {
+                    categoryDataGridView.Rows.Add(category.id, category.categoryName);
+                }
+            }
+        }
+        private void CategoryDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                // CLICK EN CELDA ELIMINAR PRODUCTO
+                if (categoryDataGridView.Columns[e.ColumnIndex].Name == "deleteCategoryColumn")
+                {
+                    if (e.RowIndex >= 0 && categoryDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString() != null)
+                    {
+                        if (MessageBox.Show("¿Está seguro de eliminar esta categoría?", "Eliminar Categoría", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        {
+                            int categoryIndex = Int32.Parse(categoryDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString());
+                            try
+                            {
+                                CategoryMapper.DeleteCategory(categoryIndex);
+                                MessageBox.Show("Categoría eliminada con éxito");
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show(ex.Message);
+                            }
+
+                        }
+                    }
+                }
+
+                // CLICK EN CELDA EDITAR CATEGORIA
+                if (categoryDataGridView.Columns[e.ColumnIndex].Name == "updateCategoryColumn")
+                {
+                    if (e.RowIndex >= 0)
+                    {
+                        int categoryID = (int)categoryDataGridView.Rows[e.RowIndex].Cells[0].Value;
+                        string? categoryName = categoryDataGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
+                        EditCategory editCategoryWinForm = new(new Category(categoryID, categoryName));
+                        editCategoryWinForm.ShowDialog();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            FillCategoryDataGridView();
+            MainMenu.uc_ventas.LoadProducts();
+        }
+
+        // Editar y eliminar Producto
+        private void ProductDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                // CLICK EN CELDA ELIMINAR PRODUCTO
+                if (ProductDataGridView.Columns[e.ColumnIndex].Name == "ColumnaEliminarProducto")
+                {
+                    if (e.RowIndex >= 0 && ProductDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString() != null)
+                    {
+                        if (MessageBox.Show("¿Está seguro de eliminar este producto?", "Eliminar Producto", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        {
+                            string productCode = ProductDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
+                            try
+                            {
+                                ProductMapper.DeleteProduct(productCode);
+                                MessageBox.Show("Producto eliminado con éxito");
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show(ex.Message);
+                            }
+
+                        }
+                    }
+                }
+
+                // CLICK EN CELDA EDITAR PRODUCTO
+                if (ProductDataGridView.Columns[e.ColumnIndex].Name == "ColumnaEditarProducto")
+                {
+                    if (e.RowIndex >= 0)
+                    {
+                        string productCode = ProductDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
+                        EditProduct editProductWinForm = new(productCode);
+                        editProductWinForm.ShowDialog();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            FillProductDataGridView();
+            MainMenu.uc_ventas.LoadProducts();
         }
     }
 }

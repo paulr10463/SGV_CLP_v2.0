@@ -34,6 +34,9 @@ namespace SGV_CLP.GUI
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Products));
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             siticoneTabControl1 = new Siticone.Desktop.UI.WinForms.SiticoneTabControl();
             Añadir = new TabPage();
             parentErrorLabel = new Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel();
@@ -74,11 +77,25 @@ namespace SGV_CLP.GUI
             parentCode = new DataGridViewTextBoxColumn();
             ColumnaEditarProducto = new DataGridViewImageColumn();
             ColumnaEliminarProducto = new DataGridViewImageColumn();
+            AddCategory = new TabPage();
+            categoryUsedLabel = new Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel();
+            siticoneHtmlLabel3 = new Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel();
+            addCategoryTextBox = new Siticone.Desktop.UI.WinForms.SiticoneTextBox();
+            addCategoryButton = new Siticone.Desktop.UI.WinForms.SiticoneButton();
+            EditDeleteCategory = new TabPage();
+            categoryDataGridView = new Siticone.Desktop.UI.WinForms.SiticoneDataGridView();
+            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
+            updateCategoryColumn = new DataGridViewImageColumn();
+            deleteCategoryColumn = new DataGridViewImageColumn();
             siticoneTabControl1.SuspendLayout();
             Añadir.SuspendLayout();
             Editar.SuspendLayout();
             siticonePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)ProductDataGridView).BeginInit();
+            AddCategory.SuspendLayout();
+            EditDeleteCategory.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)categoryDataGridView).BeginInit();
             SuspendLayout();
             // 
             // siticoneTabControl1
@@ -86,6 +103,8 @@ namespace SGV_CLP.GUI
             siticoneTabControl1.Alignment = TabAlignment.Left;
             siticoneTabControl1.Controls.Add(Añadir);
             siticoneTabControl1.Controls.Add(Editar);
+            siticoneTabControl1.Controls.Add(AddCategory);
+            siticoneTabControl1.Controls.Add(EditDeleteCategory);
             siticoneTabControl1.Dock = DockStyle.Fill;
             siticoneTabControl1.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             siticoneTabControl1.ItemSize = new Size(160, 75);
@@ -111,6 +130,7 @@ namespace SGV_CLP.GUI
             siticoneTabControl1.TabButtonSize = new Size(160, 75);
             siticoneTabControl1.TabIndex = 2;
             siticoneTabControl1.TabMenuBackColor = Color.Black;
+            siticoneTabControl1.SelectedIndexChanged += SiticoneTabControl1_SelectedIndexChanged;
             // 
             // Añadir
             // 
@@ -740,6 +760,197 @@ namespace SGV_CLP.GUI
             ColumnaEliminarProducto.Resizable = DataGridViewTriState.False;
             ColumnaEliminarProducto.Width = 182;
             // 
+            // AddCategory
+            // 
+            AddCategory.Controls.Add(categoryUsedLabel);
+            AddCategory.Controls.Add(siticoneHtmlLabel3);
+            AddCategory.Controls.Add(addCategoryTextBox);
+            AddCategory.Controls.Add(addCategoryButton);
+            AddCategory.Location = new Point(164, 4);
+            AddCategory.Name = "AddCategory";
+            AddCategory.Padding = new Padding(3);
+            AddCategory.Size = new Size(1100, 757);
+            AddCategory.TabIndex = 2;
+            AddCategory.Text = "Añadir Categoría";
+            AddCategory.UseVisualStyleBackColor = true;
+            // 
+            // categoryUsedLabel
+            // 
+            categoryUsedLabel.Anchor = AnchorStyles.None;
+            categoryUsedLabel.BackColor = Color.Transparent;
+            categoryUsedLabel.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            categoryUsedLabel.ForeColor = Color.Red;
+            categoryUsedLabel.Location = new Point(519, 312);
+            categoryUsedLabel.Name = "categoryUsedLabel";
+            categoryUsedLabel.Size = new Size(298, 22);
+            categoryUsedLabel.TabIndex = 58;
+            categoryUsedLabel.Text = "Ya existe una categoría con ese nombre";
+            categoryUsedLabel.Visible = false;
+            // 
+            // siticoneHtmlLabel3
+            // 
+            siticoneHtmlLabel3.Anchor = AnchorStyles.None;
+            siticoneHtmlLabel3.BackColor = Color.Transparent;
+            siticoneHtmlLabel3.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            siticoneHtmlLabel3.Location = new Point(267, 265);
+            siticoneHtmlLabel3.Margin = new Padding(3, 4, 3, 4);
+            siticoneHtmlLabel3.Name = "siticoneHtmlLabel3";
+            siticoneHtmlLabel3.Size = new Size(181, 26);
+            siticoneHtmlLabel3.TabIndex = 57;
+            siticoneHtmlLabel3.Text = "Nueva categoría";
+            // 
+            // addCategoryTextBox
+            // 
+            addCategoryTextBox.Anchor = AnchorStyles.None;
+            addCategoryTextBox.BorderRadius = 20;
+            addCategoryTextBox.DefaultText = "";
+            addCategoryTextBox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            addCategoryTextBox.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            addCategoryTextBox.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            addCategoryTextBox.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            addCategoryTextBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            addCategoryTextBox.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            addCategoryTextBox.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            addCategoryTextBox.Location = new Point(536, 255);
+            addCategoryTextBox.Margin = new Padding(5, 9, 5, 9);
+            addCategoryTextBox.Name = "addCategoryTextBox";
+            addCategoryTextBox.PasswordChar = '\0';
+            addCategoryTextBox.PlaceholderText = "";
+            addCategoryTextBox.SelectedText = "";
+            addCategoryTextBox.Size = new Size(249, 45);
+            addCategoryTextBox.TabIndex = 56;
+            addCategoryTextBox.TextOffset = new Point(5, 0);
+            addCategoryTextBox.TextChanged += addCategoryTextBox_TextChanged;
+            addCategoryTextBox.KeyPress += addCategoryTextBox_KeyPress;
+            // 
+            // addCategoryButton
+            // 
+            addCategoryButton.Anchor = AnchorStyles.None;
+            addCategoryButton.BorderRadius = 20;
+            addCategoryButton.DisabledState.BorderColor = Color.DarkGray;
+            addCategoryButton.DisabledState.CustomBorderColor = Color.DarkGray;
+            addCategoryButton.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            addCategoryButton.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            addCategoryButton.Enabled = false;
+            addCategoryButton.FillColor = Color.Black;
+            addCategoryButton.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            addCategoryButton.ForeColor = Color.White;
+            addCategoryButton.Location = new Point(435, 520);
+            addCategoryButton.Margin = new Padding(3, 4, 3, 4);
+            addCategoryButton.Name = "addCategoryButton";
+            addCategoryButton.Size = new Size(180, 45);
+            addCategoryButton.TabIndex = 46;
+            addCategoryButton.Text = "Añadir";
+            addCategoryButton.Click += AddCategoryButton_Click;
+            // 
+            // EditDeleteCategory
+            // 
+            EditDeleteCategory.Controls.Add(categoryDataGridView);
+            EditDeleteCategory.Location = new Point(164, 4);
+            EditDeleteCategory.Name = "EditDeleteCategory";
+            EditDeleteCategory.Padding = new Padding(3);
+            EditDeleteCategory.Size = new Size(1100, 757);
+            EditDeleteCategory.TabIndex = 3;
+            EditDeleteCategory.Text = "Editar/Eliminar Categoría";
+            EditDeleteCategory.UseVisualStyleBackColor = true;
+            // 
+            // categoryDataGridView
+            // 
+            categoryDataGridView.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle4.BackColor = Color.White;
+            categoryDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(100, 88, 255);
+            dataGridViewCellStyle5.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            categoryDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            categoryDataGridView.ColumnHeadersHeight = 75;
+            categoryDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            categoryDataGridView.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, updateCategoryColumn, deleteCategoryColumn });
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.White;
+            dataGridViewCellStyle6.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            categoryDataGridView.DefaultCellStyle = dataGridViewCellStyle6;
+            categoryDataGridView.Dock = DockStyle.Bottom;
+            categoryDataGridView.GridColor = Color.FromArgb(231, 229, 255);
+            categoryDataGridView.Location = new Point(3, 254);
+            categoryDataGridView.Name = "categoryDataGridView";
+            categoryDataGridView.RowHeadersVisible = false;
+            categoryDataGridView.RowHeadersWidth = 50;
+            categoryDataGridView.RowTemplate.DefaultCellStyle.BackColor = Color.White;
+            categoryDataGridView.RowTemplate.Height = 50;
+            categoryDataGridView.Size = new Size(1094, 500);
+            categoryDataGridView.TabIndex = 1;
+            categoryDataGridView.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
+            categoryDataGridView.ThemeStyle.AlternatingRowsStyle.Font = null;
+            categoryDataGridView.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
+            categoryDataGridView.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
+            categoryDataGridView.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
+            categoryDataGridView.ThemeStyle.BackColor = Color.White;
+            categoryDataGridView.ThemeStyle.GridColor = Color.FromArgb(231, 229, 255);
+            categoryDataGridView.ThemeStyle.HeaderStyle.BackColor = Color.DimGray;
+            categoryDataGridView.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
+            categoryDataGridView.ThemeStyle.HeaderStyle.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            categoryDataGridView.ThemeStyle.HeaderStyle.ForeColor = Color.White;
+            categoryDataGridView.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            categoryDataGridView.ThemeStyle.HeaderStyle.Height = 75;
+            categoryDataGridView.ThemeStyle.ReadOnly = false;
+            categoryDataGridView.ThemeStyle.RowsStyle.BackColor = Color.White;
+            categoryDataGridView.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            categoryDataGridView.ThemeStyle.RowsStyle.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            categoryDataGridView.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(71, 69, 94);
+            categoryDataGridView.ThemeStyle.RowsStyle.Height = 50;
+            categoryDataGridView.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            categoryDataGridView.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            categoryDataGridView.CellClick += CategoryDataGridView_CellClick;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            dataGridViewTextBoxColumn1.FillWeight = 75F;
+            dataGridViewTextBoxColumn1.HeaderText = "ID";
+            dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            dataGridViewTextBoxColumn1.ReadOnly = true;
+            dataGridViewTextBoxColumn1.SortMode = DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            dataGridViewTextBoxColumn2.FillWeight = 150F;
+            dataGridViewTextBoxColumn2.HeaderText = "Categoría";
+            dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            dataGridViewTextBoxColumn2.ReadOnly = true;
+            dataGridViewTextBoxColumn2.SortMode = DataGridViewColumnSortMode.NotSortable;
+            // 
+            // updateCategoryColumn
+            // 
+            updateCategoryColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            updateCategoryColumn.HeaderText = "";
+            updateCategoryColumn.Image = (Image)resources.GetObject("updateCategoryColumn.Image");
+            updateCategoryColumn.MinimumWidth = 6;
+            updateCategoryColumn.Name = "updateCategoryColumn";
+            updateCategoryColumn.ReadOnly = true;
+            updateCategoryColumn.Resizable = DataGridViewTriState.False;
+            updateCategoryColumn.Width = 182;
+            // 
+            // deleteCategoryColumn
+            // 
+            deleteCategoryColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            deleteCategoryColumn.HeaderText = "";
+            deleteCategoryColumn.Image = (Image)resources.GetObject("deleteCategoryColumn.Image");
+            deleteCategoryColumn.MinimumWidth = 6;
+            deleteCategoryColumn.Name = "deleteCategoryColumn";
+            deleteCategoryColumn.ReadOnly = true;
+            deleteCategoryColumn.Resizable = DataGridViewTriState.False;
+            deleteCategoryColumn.Width = 182;
+            // 
             // UC_Products
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -754,6 +965,10 @@ namespace SGV_CLP.GUI
             Editar.PerformLayout();
             siticonePanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)ProductDataGridView).EndInit();
+            AddCategory.ResumeLayout(false);
+            AddCategory.PerformLayout();
+            EditDeleteCategory.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)categoryDataGridView).EndInit();
             ResumeLayout(false);
         }
 
@@ -827,5 +1042,15 @@ namespace SGV_CLP.GUI
         private DataGridViewTextBoxColumn parentCode;
         private DataGridViewImageColumn ColumnaEditarProducto;
         private DataGridViewImageColumn ColumnaEliminarProducto;
+        private TabPage AddCategory;
+        private TabPage EditDeleteCategory;
+        private Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel categoryUsedLabel;
+        private Siticone.Desktop.UI.WinForms.SiticoneTextBox addCategoryTextBox;
+        private Siticone.Desktop.UI.WinForms.SiticoneButton addCategoryButton;
+        private Siticone.Desktop.UI.WinForms.SiticoneDataGridView categoryDataGridView;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private DataGridViewImageColumn updateCategoryColumn;
+        private DataGridViewImageColumn deleteCategoryColumn;
     }
 }

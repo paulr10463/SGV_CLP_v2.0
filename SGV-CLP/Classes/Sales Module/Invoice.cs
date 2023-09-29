@@ -13,7 +13,6 @@ namespace SGV_CLP.Classes.Sales_Module
     {
         public List<InvoiceDetail> invoiceDetailList;
         public Customer? customer;
-        public Usuario? user;
         public double totalSales;
         public DateTime? issuedDate; // Fecha de emisión
         public int invoiceCode;
@@ -28,14 +27,12 @@ namespace SGV_CLP.Classes.Sales_Module
         }
 
         //Constructor getter BD
-        public Invoice(int invoiceCode, string customerID, string userName, double totalSales, DateTime issuedDate)
+        public Invoice(int invoiceCode, string customerID,  double totalSales, DateTime issuedDate)
         {
             this.invoiceCode = invoiceCode;
             this.invoiceDetailList = new List<InvoiceDetail>();
             this.customer = new Customer();
-            this.user = new Usuario();
             this.customer.customerID = customerID;
-            this.user.userName = userName;
             this.totalSales = totalSales;
             this.issuedDate = issuedDate;
         }

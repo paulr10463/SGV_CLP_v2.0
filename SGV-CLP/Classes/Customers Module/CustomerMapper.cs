@@ -39,7 +39,7 @@ namespace SGV_CLP.Classes.Customers_Module
             using var connection = new NpgsqlConnection(s_connectionString);
             connection.Open();
 
-            using (var cmd = new NpgsqlCommand("DELETE FROM public.\"Cliente\" WHERE \"ccCustomer\" = @ccCustomer", connection))
+            using (var cmd = new NpgsqlCommand("DELETE FROM public.\"Customer\" WHERE \"ccCustomer\" = @ccCustomer", connection))
             {
                 cmd.Parameters.AddWithValue("@ccCustomer", customerID);
                 cmd.ExecuteNonQuery();
@@ -86,6 +86,35 @@ namespace SGV_CLP.Classes.Customers_Module
                             email));
                 }
             }
+            return registeredCustomers;
+        }
+        public static List<Customer> GetAllCustomersSync()
+        {
+            List<Customer> registeredCustomers = new List<Customer>();
+
+            using (var connection = new NpgsqlConnection(s_connectionString))
+            {
+                connection.Open(); // Abre la conexión de forma síncrona
+                using (var command = new NpgsqlCommand("SELECT * FROM \"Customer\"", connection))
+                using (var reader = command.ExecuteReader()) // Ejecuta la consulta de forma síncrona
+                {
+                    while (reader.Read()) // Lee el resultado de forma síncrona
+                    {
+                        string address = reader.IsDBNull(3) ? null : reader.GetString(3);
+                        string phone = reader.IsDBNull(4) ? null : reader.GetString(4);
+                        string email = reader.IsDBNull(5) ? null : reader.GetString(5);
+                        registeredCustomers.Add(
+                            new Customer(
+                                reader.GetString(0),
+                                reader.GetString(1),
+                                reader.GetString(2),
+                                address,
+                                phone,
+                                email));
+                    }
+                }
+            }
+
             return registeredCustomers;
         }
 

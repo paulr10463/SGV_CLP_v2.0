@@ -129,7 +129,7 @@
             siticoneButton2.Size = new Size(180, 45);
             siticoneButton2.TabIndex = 51;
             siticoneButton2.Text = "Cancelar";
-            siticoneButton2.Click += siticoneButton2_Click;
+            siticoneButton2.Click += SiticoneButton2_Click;
             // 
             // ButtonFinalizarVenta
             // 
@@ -148,7 +148,7 @@
             ButtonFinalizarVenta.Size = new Size(180, 45);
             ButtonFinalizarVenta.TabIndex = 50;
             ButtonFinalizarVenta.Text = "Finalizar";
-            ButtonFinalizarVenta.Click += siticoneButton1_Click;
+            ButtonFinalizarVenta.Click += SiticoneButton1_Click;
             // 
             // ButtonAniadirClienteVenta
             // 
@@ -166,7 +166,7 @@
             ButtonAniadirClienteVenta.Size = new Size(180, 45);
             ButtonAniadirClienteVenta.TabIndex = 53;
             ButtonAniadirClienteVenta.Text = "Añadir cliente";
-            ButtonAniadirClienteVenta.Click += siticoneButton4_Click;
+            ButtonAniadirClienteVenta.Click += SiticoneButton4_Click;
             // 
             // siticoneDataGridView1
             // 
@@ -386,7 +386,7 @@
             txtApellido1Venta.TabIndex = 67;
             txtApellido1Venta.TextOffset = new Point(5, 0);
             txtApellido1Venta.TextChanged += txtApellido1Venta_TextChanged;
-            txtApellido1Venta.KeyPress += txtApellido1Venta_KeyPress;
+            txtApellido1Venta.KeyPress += TxtApellido1Venta_KeyPress;
             // 
             // siticoneHtmlLabel17
             // 
@@ -447,7 +447,7 @@
             txtTelefVenta.TabIndex = 64;
             txtTelefVenta.TextOffset = new Point(5, 0);
             txtTelefVenta.TextChanged += txtTelefVenta_TextChanged;
-            txtTelefVenta.KeyPress += txtTelefVenta_KeyPress;
+            txtTelefVenta.KeyPress += TxtTelefVenta_KeyPress;
             // 
             // txtDireccionVenta
             // 
@@ -472,7 +472,7 @@
             txtDireccionVenta.TabIndex = 63;
             txtDireccionVenta.TextOffset = new Point(5, 0);
             txtDireccionVenta.TextChanged += txtDireccionVenta_TextChanged;
-            txtDireccionVenta.KeyPress += txtDireccionVenta_KeyPress;
+            txtDireccionVenta.KeyPress += TxtDireccionVenta_KeyPress;
             // 
             // siticoneHtmlLabel6
             // 
@@ -586,7 +586,7 @@
             txtCorreoVenta.TabIndex = 80;
             txtCorreoVenta.TextOffset = new Point(5, 0);
             txtCorreoVenta.TextChanged += txtCorreoVenta_TextChanged;
-            txtCorreoVenta.KeyPress += txtCorreoVenta_KeyPress;
+            txtCorreoVenta.KeyPress += TxtCorreoVenta_KeyPress;
             // 
             // siticoneHtmlLabel_correct_email
             // 
