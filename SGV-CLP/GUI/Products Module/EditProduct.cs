@@ -1,5 +1,6 @@
 ﻿using SGV_CLP.Classes;
 using SGV_CLP.Classes.Products_module;
+using SGV_CLP.Classes.Sales_Module;
 using Siticone.Desktop.UI.WinForms;
 using System;
 using System.Collections.Generic;
@@ -22,10 +23,13 @@ namespace SGV_CLP.GUI
         List<Product> parentProducts;
         bool productNameIsValid, categoryIsValid, salesPriceToThePubicIsValid, imagePathIsValid, parentIsValid; // Para validar los campos de Producto
         Product? productToEdit;
+        Dictionary<int, string> existingCategories;
+
         public EditProduct(string productCode)
         {
             InitializeComponent();
-
+            existingCategories = new Dictionary<int, string>();
+            CategoryMapper.GetAllCategories().ForEach(item => existingCategories[item.id] = item.categoryName);
             this.productCode = productCode;
 
             productNameIsValid = false;
@@ -34,8 +38,15 @@ namespace SGV_CLP.GUI
             imagePathIsValid = false;
             parentIsValid = false;
 
+            //Setting Values in catergory combobox
+            cbCategory.DataSource = existingCategories.Values.ToArray();
+            cbCategory.SelectedIndex = -1;
+
             //Cargar info del producto 
             productToEdit = ProductMapper.GetProductByID(productCode);
+
+            //Setting initial value of cbox 
+            cbCategory.SelectedIndex = existingCategories.Values.ToList().IndexOf(existingCategories[productToEdit.categoryID]);
 
             //Mostrar en los recuadros la información del producto 
             if (productToEdit?.salePrice != null)
@@ -90,9 +101,9 @@ namespace SGV_CLP.GUI
                 productToEdit?.productCode,
                 tbProductName.Text,
                 isParentCheckBox.Checked ? null : Convert.ToDouble(tbSalesPriceToThePublic.Text, CultureInfo.InvariantCulture),
-                cbCategory.Text,
                 tbImagePath.Text,
-                isSubproductCheckBox.Checked ? parentProducts[parentComboBox.SelectedIndex].productCode : null
+                isSubproductCheckBox.Checked ? parentProducts[parentComboBox.SelectedIndex].productCode : null,
+                existingCategories.FirstOrDefault(x => x.Value == cbCategory.Text).Key
             );
             SystemSounds.Beep.Play();
             ProductMapper.EditProduct(product);
@@ -238,7 +249,7 @@ namespace SGV_CLP.GUI
 
         private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbCategory.SelectedIndex > 0)
+            if (cbCategory.SelectedIndex > -1)
             {
                 labelCategoryNotChosen.Hide();
                 categoryIsValid = true;

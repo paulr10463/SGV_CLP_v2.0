@@ -28,7 +28,7 @@ namespace SGV_CLP.Classes.Products_module
                 cmd.Parameters.AddWithValue("@cod_Producto", product.productCode);
                 cmd.Parameters.AddWithValue("@nombre_Producto", product.productName);
                 cmd.Parameters.AddWithValue("@precio_Unitario", product.salePrice == null ? DBNull.Value : product.salePrice);
-                cmd.Parameters.AddWithValue("@categoria", product.categoryName);
+                cmd.Parameters.AddWithValue("@categoria", product.categoryID);
                 cmd.Parameters.AddWithValue("@ruta_Imagen", product.imagePath);
                 cmd.Parameters.AddWithValue("@parentCode", product.parentCode == null ? DBNull.Value : product.parentCode);
                 cmd.ExecuteNonQuery();
@@ -62,7 +62,7 @@ namespace SGV_CLP.Classes.Products_module
             {
                 cmd.Parameters.AddWithValue("@cod_Producto", product.productCode);
                 cmd.Parameters.AddWithValue("@productName", product.productName);
-                cmd.Parameters.AddWithValue("@categoria", product.categoryName);
+                cmd.Parameters.AddWithValue("@categoria", product.categoryID);
                 cmd.Parameters.AddWithValue("@precio_Unitario", product.salePrice == null ? DBNull.Value : product.salePrice);
                 cmd.Parameters.AddWithValue("@ruta_Imagen", product.imagePath);
                 cmd.Parameters.AddWithValue("@parentCode", product.parentCode == null ? DBNull.Value : product.parentCode);
@@ -145,14 +145,14 @@ namespace SGV_CLP.Classes.Products_module
                         while (reader.Read())
                         {
                             double? unitPrice = reader.IsDBNull(2) ? (double?)null : reader.GetDouble(2);
-                            string? innerParentCode = reader.IsDBNull(5) ? (string?)null : reader.GetString(5);
+                            string? innerParentCode = reader.IsDBNull(4) ? (string?)null : reader.GetString(4);
                             productById = new Product(
                                 reader.GetString(0), //codProducto
                                 reader.GetString(1), //nombreProducto
                                 unitPrice, //precioUnitario
-                                reader.GetString(3), //categoría
-                                reader.GetString(4), //rutaImagen
-                                innerParentCode
+                                reader.GetString(3), //rutaImagen
+                                innerParentCode,
+                                reader.GetInt32(5) //categoría
                                 );
                             return productById;
                         }
@@ -177,15 +177,15 @@ namespace SGV_CLP.Classes.Products_module
                         while (reader.Read())
                         {
                             double? unitPrice = reader.IsDBNull(2) ? (double?)null : reader.GetDouble(2);
-                            string? innerParentCode = reader.IsDBNull(5) ? (string?)null : reader.GetString(5);
+                            string? innerParentCode = reader.IsDBNull(4) ? (string?)null : reader.GetString(4);
                             registeredProducts.Add(new Product(
                                 reader.GetString(0), //codProducto
                                 reader.GetString(1), //nombreProducto
                                 unitPrice, //precioUnitario
-                                reader.GetString(3), //categoría
-                                reader.GetString(4), //rutaImagen
-                                innerParentCode)
-                                );
+                                reader.GetString(3), //rutaImagen
+                                innerParentCode,
+                                reader.GetInt32(5) //categoría)
+                                ));
                         }
                     }
                 }

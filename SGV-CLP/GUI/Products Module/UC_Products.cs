@@ -108,7 +108,7 @@ namespace SGV_CLP.GUI
                 isParentCheckBox.Checked ? null : Convert.ToDouble(tbSalesPriceToThePublic.Text, CultureInfo.InvariantCulture),
                 tbImagePath.Text,
                 isSubproductCheckBox.Checked ? parentProducts[parentComboBox.SelectedIndex].productCode : null,
-                cbCategory.SelectedIndex
+                existingCategories.FirstOrDefault(x => x.Value == cbCategory.Text).Key 
                 );
 
             try
@@ -166,14 +166,14 @@ namespace SGV_CLP.GUI
         private void CbSearchProductByCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Valida que el item seleccionado es "> 0"
-            if (cbSearchProductByCategory.SelectedIndex > 0)
+            if (cbSearchProductByCategory.SelectedIndex > -1)
             {
                 labelCategoryNotChosenInTheSearchProductTab.Hide();
                 string filterValue = cbSearchProductByCategory.Text;
                 foreach (DataGridViewRow row in ProductDataGridView.Rows)
                 {
                     // Ocultar las filas que no cumplan con el filtro
-                    if (row.Cells[2].Value != null)
+                    if (row.Cells[3].Value != null)
                     {
                         row.Visible = row.Cells[3].Value.ToString().Equals(filterValue);
                     }
@@ -194,9 +194,10 @@ namespace SGV_CLP.GUI
                 labelSearchProductWithoutField.Hide();
                 if (cbSearchProdutBy.SelectedItem.ToString() == "Categoría")
                 {
+                    cbSearchProductByCategory.DataSource = existingCategories.Values.ToArray();
                     tbSearchProductBy.Visible = false;
                     cbSearchProductByCategory.Visible = true;
-                    cbSearchProductByCategory.SelectedIndex = 0;
+                    cbSearchProductByCategory.SelectedIndex = -1;
                 }
                 else
                 {
@@ -418,18 +419,20 @@ namespace SGV_CLP.GUI
 
         private void SiticoneTabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (siticoneTabControl1.SelectedIndex == 2 || siticoneTabControl1.SelectedIndex == 0)
-            {
-                CategoryMapper.GetAllCategories().ForEach(item => existingCategories[item.id] = item.categoryName);
-            }
+            existingCategories.Clear();
+            CategoryMapper.GetAllCategories().ForEach(item => existingCategories[item.id] = item.categoryName);
             if (siticoneTabControl1.SelectedIndex == 0)
             {
+                cbCategory.DataSource = existingCategories.Values.ToArray();
                 cbCategory.SelectedIndex = -1;
-
             }
             if (siticoneTabControl1.SelectedIndex == 3)
             {
                 FillCategoryDataGridView();
+            }
+            if (siticoneTabControl1.SelectedIndex == 1)
+            {
+                cbSearchProductByCategory.DataSource = existingCategories.Values.ToArray();
             }
         }
 
@@ -566,6 +569,8 @@ namespace SGV_CLP.GUI
                 MessageBox.Show(ex.Message);
             }
 
+            existingCategories.Clear();
+            CategoryMapper.GetAllCategories().ForEach(item => existingCategories[item.id] = item.categoryName);
             FillProductDataGridView();
             MainMenu.uc_ventas.LoadProducts();
         }
