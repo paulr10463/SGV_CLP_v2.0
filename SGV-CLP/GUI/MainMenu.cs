@@ -36,7 +36,7 @@ namespace SGV_CLP
             uC_Ventas1.BringToFront();
             List<Invoice> registeredInvoices = await InvoiceMapper.GetAllInvoices("");
             uC_Ventas1.llenarTablaVenta(registeredInvoices);
-            //uC_Ventas1.loadProducts();
+            //uC_Ventas1.LoadProducts();
         }
 
         private void siticoneButton4_CheckedChanged_1(object sender, EventArgs e)

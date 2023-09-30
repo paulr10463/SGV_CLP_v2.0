@@ -11,11 +11,7 @@ namespace SGV_CLP.GUI
 {
     public partial class UC_Ventas : UserControl
     {
-        List<Product> products;
-        List<Product> specialties;
-        List<Product> hotDrinks;
-        List<Product> coldDrinks;
-        List<Product> empanadas;
+        Dictionary<string, List<Product>> productsCategorized = new();
         public static Invoice invoice;
         public static SiticoneDataGridView detalleVentaTabla;
         public static Label totalVenta;
@@ -38,46 +34,33 @@ namespace SGV_CLP.GUI
 
         public void LoadProducts()
         {
-            products = ProductMapper.GetAllProduct();
-            specialties = new List<Product>();
-            hotDrinks = new List<Product>();
-            coldDrinks = new List<Product>();
-            empanadas = new List<Product>();
-            ClassifyProducts();
-            ShowProducts(specialties, flowLayoutPanel1);
-            ShowProducts(hotDrinks, flowLayoutPanel2);
-            ShowProducts(coldDrinks, flowLayoutPanel4);
-            ShowProducts(empanadas, flowLayoutPanel5);
-
-        }
-
-        private void ClassifyProducts()
-        {
-            //Add in each Product category the products
-            foreach (Product producto in products)
+            productsFlowLayoutPanel.Controls.Clear();
+            productsCategorized.Clear();
+            List<Product> products = ProductMapper.GetAllProduct();
+            products.ForEach(product =>
             {
-                if (producto.categoryName.Equals("Bebidas Calientes"))
+                if (!productsCategorized.ContainsKey(product.categoryName))
                 {
-                    hotDrinks.Add(producto);
-                    hotDrinksHtmlLabel.Visible = true;
+                    productsCategorized.Add(product.categoryName, new List<Product>());
                 }
-                if (producto.categoryName.Equals("Especialidades"))
-                {
-                    specialties.Add(producto);
-                    specialtiesHtmlLabel.Visible = true;
-                }
-                if (producto.categoryName.Equals("Bebidas Frías"))
-                {
-                    coldDrinks.Add(producto);
-                    coldDrinksHtmlLabel.Visible = true;
-                }
-                if (producto.categoryName.Equals("Empanadas"))
-                {
-                    empanadas.Add(producto);
-                    empanadasHtmlLabel.Visible = true;
-                }
+                productsCategorized[product.categoryName].Add(product);
+            });
+
+            //List<Category> categoriesAvailable = CategoryMapper.GetAllCategories();
+            foreach (var item in productsCategorized)
+            {
+                FlowLayoutPanel flowLayoutPanel = new FlowLayoutPanel();
+                flowLayoutPanel.FlowDirection = FlowDirection.LeftToRight;
+                flowLayoutPanel.AutoSize = true;
+                Label label = new Label();
+                label.AutoSize = true;
+                label.Text = item.Key;
+                productsFlowLayoutPanel.Controls.Add(label);
+                productsFlowLayoutPanel.Controls.Add(flowLayoutPanel);
+                ShowProducts(item.Value, flowLayoutPanel);
             }
         }
+
         private void ShowProducts(List<Product> productCategoryItems, FlowLayoutPanel flowLayoutPanel)
         {
             flowLayoutPanel.Controls.Clear();

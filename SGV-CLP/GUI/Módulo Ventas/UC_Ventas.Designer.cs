@@ -28,24 +28,16 @@
         /// </summary>
         public void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Ventas));
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
             siticoneTabControl1 = new Siticone.Desktop.UI.WinForms.SiticoneTabControl();
             Añadir = new TabPage();
-            flowLayoutPanel3 = new FlowLayoutPanel();
-            specialtiesHtmlLabel = new Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel();
-            flowLayoutPanel1 = new FlowLayoutPanel();
-            hotDrinksHtmlLabel = new Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel();
-            flowLayoutPanel2 = new FlowLayoutPanel();
-            coldDrinksHtmlLabel = new Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel();
-            flowLayoutPanel4 = new FlowLayoutPanel();
-            empanadasHtmlLabel = new Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel();
-            flowLayoutPanel5 = new FlowLayoutPanel();
+            productsFlowLayoutPanel = new FlowLayoutPanel();
             siticoneGradientPanel1 = new Siticone.Desktop.UI.WinForms.SiticoneGradientPanel();
             siticoneHtmlLabel11 = new Label();
             siticoneDataGridView2 = new Siticone.Desktop.UI.WinForms.SiticoneDataGridView();
@@ -68,6 +60,10 @@
             Column4 = new DataGridViewImageColumn();
             ComboBox_ConsultarVentaPor = new Siticone.Desktop.UI.WinForms.SiticoneComboBox();
             txtConsultarVenta = new Siticone.Desktop.UI.WinForms.SiticoneTextBox();
+            flowLayoutPanel1 = new FlowLayoutPanel();
+            flowLayoutPanel2 = new FlowLayoutPanel();
+            flowLayoutPanel4 = new FlowLayoutPanel();
+            flowLayoutPanel5 = new FlowLayoutPanel();
             richTextBox1 = new RichTextBox();
             codigoFactura = new DataGridViewTextBoxColumn();
             CI = new DataGridViewTextBoxColumn();
@@ -80,7 +76,6 @@
             codFactura = new DataGridViewTextBoxColumn();
             siticoneTabControl1.SuspendLayout();
             Añadir.SuspendLayout();
-            flowLayoutPanel3.SuspendLayout();
             siticoneGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)siticoneDataGridView2).BeginInit();
             Editar.SuspendLayout();
@@ -121,7 +116,7 @@
             // 
             // Añadir
             // 
-            Añadir.Controls.Add(flowLayoutPanel3);
+            Añadir.Controls.Add(productsFlowLayoutPanel);
             Añadir.Controls.Add(siticoneGradientPanel1);
             Añadir.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             Añadir.Location = new Point(164, 4);
@@ -133,105 +128,17 @@
             Añadir.Text = "Registrar Venta";
             Añadir.UseVisualStyleBackColor = true;
             // 
-            // flowLayoutPanel3
+            // productsFlowLayoutPanel
             // 
-            flowLayoutPanel3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            flowLayoutPanel3.AutoScroll = true;
-            flowLayoutPanel3.BackColor = Color.White;
-            flowLayoutPanel3.Controls.Add(specialtiesHtmlLabel);
-            flowLayoutPanel3.Controls.Add(flowLayoutPanel1);
-            flowLayoutPanel3.Controls.Add(hotDrinksHtmlLabel);
-            flowLayoutPanel3.Controls.Add(flowLayoutPanel2);
-            flowLayoutPanel3.Controls.Add(coldDrinksHtmlLabel);
-            flowLayoutPanel3.Controls.Add(flowLayoutPanel4);
-            flowLayoutPanel3.Controls.Add(empanadasHtmlLabel);
-            flowLayoutPanel3.Controls.Add(flowLayoutPanel5);
-            flowLayoutPanel3.FlowDirection = FlowDirection.TopDown;
-            flowLayoutPanel3.Location = new Point(6, 7);
-            flowLayoutPanel3.Name = "flowLayoutPanel3";
-            flowLayoutPanel3.Size = new Size(517, 698);
-            flowLayoutPanel3.TabIndex = 12;
-            flowLayoutPanel3.WrapContents = false;
-            // 
-            // specialtiesHtmlLabel
-            // 
-            specialtiesHtmlLabel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            specialtiesHtmlLabel.BackColor = Color.Transparent;
-            specialtiesHtmlLabel.Location = new Point(3, 3);
-            specialtiesHtmlLabel.Name = "specialtiesHtmlLabel";
-            specialtiesHtmlLabel.Size = new Size(79, 17);
-            specialtiesHtmlLabel.TabIndex = 8;
-            specialtiesHtmlLabel.Text = "Especialidades ";
-            specialtiesHtmlLabel.Visible = false;
-            // 
-            // flowLayoutPanel1
-            // 
-            flowLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            flowLayoutPanel1.AutoSize = true;
-            flowLayoutPanel1.Location = new Point(3, 26);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(93, 0);
-            flowLayoutPanel1.TabIndex = 10;
-            // 
-            // hotDrinksHtmlLabel
-            // 
-            hotDrinksHtmlLabel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            hotDrinksHtmlLabel.BackColor = Color.Transparent;
-            hotDrinksHtmlLabel.Location = new Point(3, 32);
-            hotDrinksHtmlLabel.Name = "hotDrinksHtmlLabel";
-            hotDrinksHtmlLabel.Size = new Size(93, 17);
-            hotDrinksHtmlLabel.TabIndex = 9;
-            hotDrinksHtmlLabel.Text = "Bebidas calientes ";
-            hotDrinksHtmlLabel.Visible = false;
-            // 
-            // flowLayoutPanel2
-            // 
-            flowLayoutPanel2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            flowLayoutPanel2.AutoSize = true;
-            flowLayoutPanel2.Location = new Point(3, 55);
-            flowLayoutPanel2.Name = "flowLayoutPanel2";
-            flowLayoutPanel2.Size = new Size(93, 0);
-            flowLayoutPanel2.TabIndex = 11;
-            // 
-            // coldDrinksHtmlLabel
-            // 
-            coldDrinksHtmlLabel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            coldDrinksHtmlLabel.BackColor = Color.Transparent;
-            coldDrinksHtmlLabel.Location = new Point(3, 61);
-            coldDrinksHtmlLabel.Name = "coldDrinksHtmlLabel";
-            coldDrinksHtmlLabel.Size = new Size(71, 17);
-            coldDrinksHtmlLabel.TabIndex = 12;
-            coldDrinksHtmlLabel.Text = "Bebidas Frías";
-            coldDrinksHtmlLabel.Visible = false;
-            // 
-            // flowLayoutPanel4
-            // 
-            flowLayoutPanel4.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            flowLayoutPanel4.AutoSize = true;
-            flowLayoutPanel4.Location = new Point(3, 84);
-            flowLayoutPanel4.Name = "flowLayoutPanel4";
-            flowLayoutPanel4.Size = new Size(93, 0);
-            flowLayoutPanel4.TabIndex = 13;
-            // 
-            // empanadasHtmlLabel
-            // 
-            empanadasHtmlLabel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            empanadasHtmlLabel.BackColor = Color.Transparent;
-            empanadasHtmlLabel.Location = new Point(3, 90);
-            empanadasHtmlLabel.Name = "empanadasHtmlLabel";
-            empanadasHtmlLabel.Size = new Size(64, 17);
-            empanadasHtmlLabel.TabIndex = 14;
-            empanadasHtmlLabel.Text = "Empanadas";
-            empanadasHtmlLabel.Visible = false;
-            // 
-            // flowLayoutPanel5
-            // 
-            flowLayoutPanel5.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            flowLayoutPanel5.AutoSize = true;
-            flowLayoutPanel5.Location = new Point(3, 113);
-            flowLayoutPanel5.Name = "flowLayoutPanel5";
-            flowLayoutPanel5.Size = new Size(93, 0);
-            flowLayoutPanel5.TabIndex = 15;
+            productsFlowLayoutPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            productsFlowLayoutPanel.AutoScroll = true;
+            productsFlowLayoutPanel.BackColor = Color.White;
+            productsFlowLayoutPanel.FlowDirection = FlowDirection.TopDown;
+            productsFlowLayoutPanel.Location = new Point(6, 7);
+            productsFlowLayoutPanel.Name = "productsFlowLayoutPanel";
+            productsFlowLayoutPanel.Size = new Size(517, 698);
+            productsFlowLayoutPanel.TabIndex = 12;
+            productsFlowLayoutPanel.WrapContents = false;
             // 
             // siticoneGradientPanel1
             // 
@@ -261,29 +168,29 @@
             // 
             siticoneDataGridView2.AllowUserToResizeColumns = false;
             siticoneDataGridView2.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = Color.White;
-            siticoneDataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.BackColor = Color.White;
+            siticoneDataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             siticoneDataGridView2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             siticoneDataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             siticoneDataGridView2.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.Black;
-            dataGridViewCellStyle2.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            siticoneDataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = Color.Black;
+            dataGridViewCellStyle8.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
+            siticoneDataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             siticoneDataGridView2.ColumnHeadersHeight = 60;
             siticoneDataGridView2.Columns.AddRange(new DataGridViewColumn[] { CC, Contras, dataGridViewTextBoxColumn3, EliminarDetalle });
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.White;
-            dataGridViewCellStyle3.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(231, 229, 255);
-            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            siticoneDataGridView2.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = Color.White;
+            dataGridViewCellStyle9.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle9.ForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle9.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dataGridViewCellStyle9.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.False;
+            siticoneDataGridView2.DefaultCellStyle = dataGridViewCellStyle9;
             siticoneDataGridView2.GridColor = Color.FromArgb(231, 229, 255);
             siticoneDataGridView2.Location = new Point(17, 53);
             siticoneDataGridView2.Margin = new Padding(3, 2, 3, 2);
@@ -417,27 +324,27 @@
             // 
             // siticoneDataGridView1
             // 
-            dataGridViewCellStyle4.BackColor = Color.White;
-            siticoneDataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(100, 88, 255);
-            dataGridViewCellStyle5.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            siticoneDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle10.BackColor = Color.White;
+            siticoneDataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = Color.FromArgb(100, 88, 255);
+            dataGridViewCellStyle11.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle11.ForeColor = Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = DataGridViewTriState.True;
+            siticoneDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             siticoneDataGridView1.ColumnHeadersHeight = 60;
             siticoneDataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             siticoneDataGridView1.Columns.AddRange(new DataGridViewColumn[] { CodNV, CICliente, Column1, Column2, Column3, Column7, FechaDeVenta, Column4 });
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = Color.White;
-            dataGridViewCellStyle6.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(231, 229, 255);
-            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            siticoneDataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = Color.White;
+            dataGridViewCellStyle12.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle12.ForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle12.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dataGridViewCellStyle12.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle12.WrapMode = DataGridViewTriState.False;
+            siticoneDataGridView1.DefaultCellStyle = dataGridViewCellStyle12;
             siticoneDataGridView1.Dock = DockStyle.Bottom;
             siticoneDataGridView1.GridColor = Color.FromArgb(231, 229, 255);
             siticoneDataGridView1.Location = new Point(3, 208);
@@ -566,6 +473,42 @@
             txtConsultarVenta.TextChanged += TxtConsultarVenta_TextChanged;
             txtConsultarVenta.KeyPress += txtConsultarVenta_KeyPress;
             // 
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            flowLayoutPanel1.AutoSize = true;
+            flowLayoutPanel1.Location = new Point(3, 3);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(0, 0);
+            flowLayoutPanel1.TabIndex = 10;
+            // 
+            // flowLayoutPanel2
+            // 
+            flowLayoutPanel2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            flowLayoutPanel2.AutoSize = true;
+            flowLayoutPanel2.Location = new Point(3, 9);
+            flowLayoutPanel2.Name = "flowLayoutPanel2";
+            flowLayoutPanel2.Size = new Size(0, 0);
+            flowLayoutPanel2.TabIndex = 11;
+            // 
+            // flowLayoutPanel4
+            // 
+            flowLayoutPanel4.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            flowLayoutPanel4.AutoSize = true;
+            flowLayoutPanel4.Location = new Point(3, 15);
+            flowLayoutPanel4.Name = "flowLayoutPanel4";
+            flowLayoutPanel4.Size = new Size(0, 0);
+            flowLayoutPanel4.TabIndex = 13;
+            // 
+            // flowLayoutPanel5
+            // 
+            flowLayoutPanel5.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            flowLayoutPanel5.AutoSize = true;
+            flowLayoutPanel5.Location = new Point(3, 21);
+            flowLayoutPanel5.Name = "flowLayoutPanel5";
+            flowLayoutPanel5.Size = new Size(0, 0);
+            flowLayoutPanel5.TabIndex = 15;
+            // 
             // richTextBox1
             // 
             richTextBox1.Location = new Point(23, 101);
@@ -647,8 +590,6 @@
             Size = new Size(1200, 720);
             siticoneTabControl1.ResumeLayout(false);
             Añadir.ResumeLayout(false);
-            flowLayoutPanel3.ResumeLayout(false);
-            flowLayoutPanel3.PerformLayout();
             siticoneGradientPanel1.ResumeLayout(false);
             siticoneGradientPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)siticoneDataGridView2).EndInit();
@@ -689,7 +630,7 @@
         private FlowLayoutPanel flowLayoutPanel1;
         public Siticone.Desktop.UI.WinForms.SiticoneDataGridView siticoneDataGridView2;
         private Siticone.Desktop.UI.WinForms.SiticoneDateTimePicker dateTimePickerConsultarVenta;
-        private FlowLayoutPanel flowLayoutPanel3;
+        private FlowLayoutPanel productsFlowLayoutPanel;
         private Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel coldDrinksHtmlLabel;
         private FlowLayoutPanel flowLayoutPanel4;
         private Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel empanadasHtmlLabel;
