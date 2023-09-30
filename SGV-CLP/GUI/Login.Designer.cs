@@ -51,9 +51,10 @@
             siticonePanel2.Controls.Add(siticoneHtmlLabel4);
             siticonePanel2.Controls.Add(siticoneHtmlLabel2);
             siticonePanel2.Controls.Add(siticoneHtmlLabel3);
+            siticonePanel2.Dock = DockStyle.Bottom;
             siticonePanel2.FillColor = Color.White;
             siticonePanel2.ForeColor = SystemColors.ControlText;
-            siticonePanel2.Location = new Point(1, 433);
+            siticonePanel2.Location = new Point(0, 416);
             siticonePanel2.Margin = new Padding(0);
             siticonePanel2.Name = "siticonePanel2";
             siticonePanel2.Size = new Size(590, 375);
