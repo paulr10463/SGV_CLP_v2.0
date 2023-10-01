@@ -60,10 +60,6 @@
             Column4 = new DataGridViewImageColumn();
             ComboBox_ConsultarVentaPor = new Siticone.Desktop.UI.WinForms.SiticoneComboBox();
             txtConsultarVenta = new Siticone.Desktop.UI.WinForms.SiticoneTextBox();
-            flowLayoutPanel1 = new FlowLayoutPanel();
-            flowLayoutPanel2 = new FlowLayoutPanel();
-            flowLayoutPanel4 = new FlowLayoutPanel();
-            flowLayoutPanel5 = new FlowLayoutPanel();
             richTextBox1 = new RichTextBox();
             codigoFactura = new DataGridViewTextBoxColumn();
             CI = new DataGridViewTextBoxColumn();
@@ -74,8 +70,11 @@
             dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
             codFactura = new DataGridViewTextBoxColumn();
+            label1 = new Label();
+            panel1 = new Panel();
             siticoneTabControl1.SuspendLayout();
             Añadir.SuspendLayout();
+            productsFlowLayoutPanel.SuspendLayout();
             siticoneGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)siticoneDataGridView2).BeginInit();
             Buscar.SuspendLayout();
@@ -90,7 +89,9 @@
             siticoneTabControl1.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             siticoneTabControl1.ItemSize = new Size(120, 40);
             siticoneTabControl1.Location = new Point(0, 0);
+            siticoneTabControl1.Margin = new Padding(0);
             siticoneTabControl1.Name = "siticoneTabControl1";
+            siticoneTabControl1.Padding = new Point(0, 0);
             siticoneTabControl1.SelectedIndex = 0;
             siticoneTabControl1.Size = new Size(1200, 720);
             siticoneTabControl1.TabButtonHoverState.BorderColor = Color.Empty;
@@ -121,9 +122,8 @@
             Añadir.Controls.Add(siticoneGradientPanel1);
             Añadir.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             Añadir.Location = new Point(4, 44);
-            Añadir.Margin = new Padding(3, 4, 3, 4);
+            Añadir.Margin = new Padding(0);
             Añadir.Name = "Añadir";
-            Añadir.Padding = new Padding(3, 4, 3, 4);
             Añadir.Size = new Size(1192, 672);
             Añadir.TabIndex = 0;
             Añadir.Text = "Añadir";
@@ -132,11 +132,15 @@
             // 
             productsFlowLayoutPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             productsFlowLayoutPanel.AutoScroll = true;
+            productsFlowLayoutPanel.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             productsFlowLayoutPanel.BackColor = Color.White;
+            productsFlowLayoutPanel.Controls.Add(label1);
+            productsFlowLayoutPanel.Controls.Add(panel1);
             productsFlowLayoutPanel.FlowDirection = FlowDirection.TopDown;
-            productsFlowLayoutPanel.Location = new Point(6, 7);
+            productsFlowLayoutPanel.Location = new Point(0, 0);
+            productsFlowLayoutPanel.Margin = new Padding(0);
             productsFlowLayoutPanel.Name = "productsFlowLayoutPanel";
-            productsFlowLayoutPanel.Size = new Size(831, 658);
+            productsFlowLayoutPanel.Size = new Size(846, 672);
             productsFlowLayoutPanel.TabIndex = 12;
             productsFlowLayoutPanel.WrapContents = false;
             // 
@@ -148,16 +152,16 @@
             siticoneGradientPanel1.Controls.Add(siticoneDataGridView2);
             siticoneGradientPanel1.Controls.Add(buttonDoPayment);
             siticoneGradientPanel1.Dock = DockStyle.Right;
-            siticoneGradientPanel1.Location = new Point(843, 4);
+            siticoneGradientPanel1.Location = new Point(846, 0);
             siticoneGradientPanel1.Name = "siticoneGradientPanel1";
-            siticoneGradientPanel1.Size = new Size(346, 664);
+            siticoneGradientPanel1.Size = new Size(346, 672);
             siticoneGradientPanel1.TabIndex = 5;
             // 
             // siticoneHtmlLabel11
             // 
             siticoneHtmlLabel11.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             siticoneHtmlLabel11.Font = new Font("Century Gothic", 24F, FontStyle.Regular, GraphicsUnit.Point);
-            siticoneHtmlLabel11.Location = new Point(26, 531);
+            siticoneHtmlLabel11.Location = new Point(26, 535);
             siticoneHtmlLabel11.Name = "siticoneHtmlLabel11";
             siticoneHtmlLabel11.Size = new Size(295, 48);
             siticoneHtmlLabel11.TabIndex = 56;
@@ -268,7 +272,7 @@
             buttonDoPayment.FillColor = Color.Black;
             buttonDoPayment.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             buttonDoPayment.ForeColor = Color.White;
-            buttonDoPayment.Location = new Point(94, 599);
+            buttonDoPayment.Location = new Point(94, 603);
             buttonDoPayment.Name = "buttonDoPayment";
             buttonDoPayment.Size = new Size(172, 40);
             buttonDoPayment.TabIndex = 4;
@@ -285,8 +289,8 @@
             Buscar.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             Buscar.ImageKey = "(ninguna)";
             Buscar.Location = new Point(4, 44);
+            Buscar.Margin = new Padding(0);
             Buscar.Name = "Buscar";
-            Buscar.Padding = new Padding(3, 4, 3, 4);
             Buscar.Size = new Size(1192, 672);
             Buscar.TabIndex = 1;
             Buscar.Text = "Buscar";
@@ -347,12 +351,12 @@
             siticoneDataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
             siticoneDataGridView1.Dock = DockStyle.Bottom;
             siticoneDataGridView1.GridColor = Color.FromArgb(231, 229, 255);
-            siticoneDataGridView1.Location = new Point(3, 168);
+            siticoneDataGridView1.Location = new Point(0, 172);
             siticoneDataGridView1.Name = "siticoneDataGridView1";
             siticoneDataGridView1.RowHeadersVisible = false;
             siticoneDataGridView1.RowHeadersWidth = 51;
             siticoneDataGridView1.RowTemplate.Height = 29;
-            siticoneDataGridView1.Size = new Size(1186, 500);
+            siticoneDataGridView1.Size = new Size(1192, 500);
             siticoneDataGridView1.TabIndex = 23;
             siticoneDataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             siticoneDataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -473,42 +477,6 @@
             txtConsultarVenta.TextChanged += TxtConsultarVenta_TextChanged;
             txtConsultarVenta.KeyPress += txtConsultarVenta_KeyPress;
             // 
-            // flowLayoutPanel1
-            // 
-            flowLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            flowLayoutPanel1.AutoSize = true;
-            flowLayoutPanel1.Location = new Point(3, 3);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(0, 0);
-            flowLayoutPanel1.TabIndex = 10;
-            // 
-            // flowLayoutPanel2
-            // 
-            flowLayoutPanel2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            flowLayoutPanel2.AutoSize = true;
-            flowLayoutPanel2.Location = new Point(3, 9);
-            flowLayoutPanel2.Name = "flowLayoutPanel2";
-            flowLayoutPanel2.Size = new Size(0, 0);
-            flowLayoutPanel2.TabIndex = 11;
-            // 
-            // flowLayoutPanel4
-            // 
-            flowLayoutPanel4.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            flowLayoutPanel4.AutoSize = true;
-            flowLayoutPanel4.Location = new Point(3, 15);
-            flowLayoutPanel4.Name = "flowLayoutPanel4";
-            flowLayoutPanel4.Size = new Size(0, 0);
-            flowLayoutPanel4.TabIndex = 13;
-            // 
-            // flowLayoutPanel5
-            // 
-            flowLayoutPanel5.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            flowLayoutPanel5.AutoSize = true;
-            flowLayoutPanel5.Location = new Point(3, 21);
-            flowLayoutPanel5.Name = "flowLayoutPanel5";
-            flowLayoutPanel5.Size = new Size(0, 0);
-            flowLayoutPanel5.TabIndex = 15;
-            // 
             // richTextBox1
             // 
             richTextBox1.Location = new Point(23, 101);
@@ -580,6 +548,27 @@
             codFactura.Name = "codFactura";
             codFactura.Width = 264;
             // 
+            // label1
+            // 
+            label1.Anchor = AnchorStyles.None;
+            label1.AutoSize = true;
+            productsFlowLayoutPanel.SetFlowBreak(label1, true);
+            label1.Location = new Point(3, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(57, 21);
+            label1.TabIndex = 0;
+            label1.Text = "label1";
+            // 
+            // panel1
+            // 
+            panel1.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            panel1.AutoSize = true;
+            productsFlowLayoutPanel.SetFlowBreak(panel1, true);
+            panel1.Location = new Point(3, 24);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(57, 0);
+            panel1.TabIndex = 1;
+            // 
             // UC_Ventas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -590,6 +579,8 @@
             Size = new Size(1200, 720);
             siticoneTabControl1.ResumeLayout(false);
             Añadir.ResumeLayout(false);
+            productsFlowLayoutPanel.ResumeLayout(false);
+            productsFlowLayoutPanel.PerformLayout();
             siticoneGradientPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)siticoneDataGridView2).EndInit();
             Buscar.ResumeLayout(false);
@@ -620,15 +611,11 @@
         private Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel specialtiesHtmlLabel;
         private Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel hotDrinksHtmlLabel;
         private Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel siticoneHtmlLabel_buscarCliente_sin_campo;
-        private FlowLayoutPanel flowLayoutPanel2;
-        private FlowLayoutPanel flowLayoutPanel1;
         public Siticone.Desktop.UI.WinForms.SiticoneDataGridView siticoneDataGridView2;
         private Siticone.Desktop.UI.WinForms.SiticoneDateTimePicker dateTimePickerConsultarVenta;
         private FlowLayoutPanel productsFlowLayoutPanel;
         private Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel coldDrinksHtmlLabel;
-        private FlowLayoutPanel flowLayoutPanel4;
         private Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel empanadasHtmlLabel;
-        private FlowLayoutPanel flowLayoutPanel5;
         private DataGridViewTextBoxColumn CodNV;
         private DataGridViewTextBoxColumn CICliente;
         private DataGridViewTextBoxColumn Column1;
@@ -643,5 +630,7 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private DataGridViewImageColumn EliminarDetalle;
         public TabPage Añadir;
+        private Label label1;
+        private Panel panel1;
     }
 }

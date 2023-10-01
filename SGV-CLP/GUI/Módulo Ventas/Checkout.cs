@@ -92,7 +92,7 @@ namespace SGV_CLP.GUI.Módulo_Ventas
             ReceiptHelper.GenerateReceipt(
                 UC_Ventas.invoice,
                 clienteFinal,
-                txtTotalVenta.Text.Replace('.',','),
+                txtTotalVenta.Text.Replace('.', ','),
                 txtRecibidoVenta.Text.Equals(string.Empty) ? txtTotalVenta.Text.Replace('.', ',') : txtRecibidoVenta.Text.Replace('.', ','),
                 txtVueltoVenta.Text.Equals(string.Empty) ? "0,00" : txtVueltoVenta.Text.Replace('.', ','));
             //Print Receipt Line
@@ -172,14 +172,14 @@ namespace SGV_CLP.GUI.Módulo_Ventas
             correoIsValid = false;
 
             siticoneHtmlLabel_correct_length_telef.Visible = false;
-            siticoneHtmlLabel_wrong_length_telef.Visible=false;
+            siticoneHtmlLabel_wrong_length_telef.Visible = false;
             siticoneHtmlLabel_correct_email.Visible = false;
             siticoneHtmlLabel_wrong_email.Visible = false;
             labelValidPhoneNumber.Visible = false;
             labelInvalidPhoneNumber.Visible = false;
             siticoneHtmlLabel_cc_correct_length.Visible = false;
             siticoneHtmlLabel_cc_wrong_length.Visible = false;
-           
+
             Customer clienteNuevo = new Customer(txtCC_ClienteVenta.Text,
                 txtNombre1Venta.Text,
                 txtApellido1Venta.Text,
@@ -451,7 +451,7 @@ namespace SGV_CLP.GUI.Módulo_Ventas
                     telefIsValid = false;
                 }
             }
-            else if ( telefIsValid && editClientIsEnabled)
+            else if (telefIsValid && editClientIsEnabled)
             {
                 telefIsValid = false;
                 siticoneHtmlLabel_wrong_length_telef.Show();

@@ -63,6 +63,16 @@ namespace SGV_CLP.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _2550221 {
+            get {
+                object obj = ResourceManager.GetObject("2550221", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _3Puntos {
             get {
                 object obj = ResourceManager.GetObject("3Puntos", resourceCulture);
@@ -96,6 +106,16 @@ namespace SGV_CLP.Properties {
         internal static System.Drawing.Bitmap Customer {
             get {
                 object obj = ResourceManager.GetObject("Customer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap descarga {
+            get {
+                object obj = ResourceManager.GetObject("descarga", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -193,6 +213,16 @@ namespace SGV_CLP.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap newUser {
+            get {
+                object obj = ResourceManager.GetObject("newUser", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Products {
             get {
                 object obj = ResourceManager.GetObject("Products", resourceCulture);
@@ -236,6 +266,26 @@ namespace SGV_CLP.Properties {
         internal static System.Drawing.Bitmap Tamal1 {
             get {
                 object obj = ResourceManager.GetObject("Tamal1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap visto_verde_1 {
+            get {
+                object obj = ResourceManager.GetObject("visto-verde-1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap visto_verde_11 {
+            get {
+                object obj = ResourceManager.GetObject("visto-verde-11", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

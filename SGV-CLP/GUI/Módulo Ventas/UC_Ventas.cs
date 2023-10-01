@@ -4,7 +4,7 @@ using SGV_CLP.Classes.Sales_Module;
 using SGV_CLP.GUI.Módulo_Ventas;
 using Siticone.Desktop.UI.WinForms;
 using System.Media;
-using System.Security.Policy;
+
 using System.Windows.Forms;
 
 
@@ -50,16 +50,35 @@ namespace SGV_CLP.GUI
             //List<Category> categoriesAvailable = CategoryMapper.GetAllCategories();
             foreach (var item in productsCategorized)
             {
-                FlowLayoutPanel flowLayoutPanel = new FlowLayoutPanel();
-                flowLayoutPanel.FlowDirection = FlowDirection.LeftToRight;
-                flowLayoutPanel.AutoSize = true;
-                Label label = new Label();
-                label.AutoSize = true;
-                label.Text = item.Key;
+                FlowLayoutPanel flowLayoutPanel = new()
+                {
+                    FlowDirection = FlowDirection.LeftToRight,
+                    AutoSize = true,
+                    Dock = DockStyle.Top,
+                    Margin = new Padding(0, 0, 0, 2),
+                };
+                Label label = new()
+                {
+                    AutoSize = true,
+                    Text = item.Key,
+                    Dock = DockStyle.Top,
+                    BackColor = Color.Green,
+                    ForeColor = Color.White,
+                    Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point),
+                    Padding = new Padding(10, 5, 0, 5),
+                    Cursor = Cursors.Hand,
+                    Margin = new Padding(0, 0, 0, 2),
+                };
+                label.Click += (s, e) => { flowLayoutPanel.Visible = !flowLayoutPanel.Visible; };
                 productsFlowLayoutPanel.Controls.Add(label);
                 productsFlowLayoutPanel.Controls.Add(flowLayoutPanel);
                 ShowProducts(item.Value, flowLayoutPanel);
             }
+        }
+
+        private void siticoneHtmlLabel17_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void ShowProducts(List<Product> productCategoryItems, FlowLayoutPanel flowLayoutPanel)
