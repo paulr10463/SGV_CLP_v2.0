@@ -428,10 +428,6 @@ namespace SGV_CLP.GUI
             {
                 FillCategoryDataGridView();
             }
-            if (siticoneTabControl1.SelectedIndex == 1)
-            {
-                cbSearchProductByCategory.DataSource = existingCategories.Values.ToArray();
-            }
         }
 
         private void AddCategoryButton_Click(object sender, EventArgs e)
