@@ -35,7 +35,7 @@ namespace SGV_CLP
         {
             uC_Ventas1.BringToFront();
             List<Invoice> registeredInvoices = await InvoiceMapper.GetAllInvoices("");
-            uC_Ventas1.llenarTablaVenta(registeredInvoices);
+            uC_Ventas1.FillSalesTable(registeredInvoices);
             //uC_Ventas1.LoadProducts();
         }
 
@@ -47,21 +47,6 @@ namespace SGV_CLP
         private void siticoneButton6_CheckedChanged_1(object sender, EventArgs e)
         {
             uC_Productos1.BringToFront();
-        }
-
-        private void siticoneButton7_Click(object sender, EventArgs e)
-        {
-            SystemSounds.Beep.Play();
-            if (MessageBox.Show("¿Desea cerrar sesión?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Information)
-                == DialogResult.Yes)
-            {
-                this.Hide();
-                Login ventana = new Login();
-                ventana.Owner = this;
-                ventana.ShowDialog();
-                this.Dispose();
-            }
-
         }
     }
 }

@@ -50,7 +50,7 @@ namespace SGV_CLP.GUI.Módulo_Ventas
                 UC_Ventas.invoice.AddOrUpdateInvoiceDetail(invoiceDetail);
                 addRowInTable(invoiceDetail.soldQuantity, _producto);
                 UC_Ventas.totalVenta.Visible = true;
-                UC_Ventas.totalVenta.Text = "Total: $" + (Math.Round((decimal)UC_Ventas.invoice.CalculateTotalSales(), 2)).ToString().Replace(',', '.');
+                UC_Ventas.totalVenta.Text = "Total : $" + $"{UC_Ventas.invoice.CalculateTotalSales():0.00}".Replace(',', '.');
             }
         }
         public void addRowInTable(int cantidad, Product producto)

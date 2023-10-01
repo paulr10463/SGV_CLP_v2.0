@@ -30,13 +30,11 @@ namespace SGV_CLP.GUI
             imagePathIsValid = false;
             parentIsValid = false;
 
-            FillProductDataGridView();
-
-
-            cbCategory.SelectedIndex = 0;
             cbCategory.DataSource = existingCategories.Values.ToArray();
             cbCategory.SelectedIndex = -1;
             cbSearchProdutBy.SelectedIndex = 0;
+            FillProductDataGridView();
+
 
             tbProductCode.MaxLength = Constants.LIMIT_IDPROD_LENGTH;
             tbProductName.MaxLength = Constants.LIMIT_NOMBREPROD_LENGTH;
@@ -108,7 +106,7 @@ namespace SGV_CLP.GUI
                 isParentCheckBox.Checked ? null : Convert.ToDouble(tbSalesPriceToThePublic.Text, CultureInfo.InvariantCulture),
                 tbImagePath.Text,
                 isSubproductCheckBox.Checked ? parentProducts[parentComboBox.SelectedIndex].productCode : null,
-                existingCategories.FirstOrDefault(x => x.Value == cbCategory.Text).Key 
+                existingCategories.FirstOrDefault(x => x.Value == cbCategory.Text).Key
                 );
 
             try

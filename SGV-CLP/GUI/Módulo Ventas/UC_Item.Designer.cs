@@ -49,9 +49,9 @@
             addProductButton.FillColor = Color.Black;
             addProductButton.Font = new Font("Century Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
             addProductButton.ForeColor = Color.White;
-            addProductButton.Location = new Point(19, 192);
+            addProductButton.Location = new Point(5, 160);
             addProductButton.Name = "addProductButton";
-            addProductButton.Size = new Size(129, 36);
+            addProductButton.Size = new Size(117, 31);
             addProductButton.TabIndex = 7;
             addProductButton.Text = "Añadir";
             addProductButton.Click += siticoneButton1_Click;
@@ -60,9 +60,9 @@
             // 
             siticonePictureBox1.ImageRotate = 0F;
             siticonePictureBox1.InitialImage = (Image)resources.GetObject("siticonePictureBox1.InitialImage");
-            siticonePictureBox1.Location = new Point(24, 54);
+            siticonePictureBox1.Location = new Point(7, 43);
             siticonePictureBox1.Name = "siticonePictureBox1";
-            siticonePictureBox1.Size = new Size(124, 89);
+            siticonePictureBox1.Size = new Size(115, 78);
             siticonePictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             siticonePictureBox1.TabIndex = 4;
             siticonePictureBox1.TabStop = false;
@@ -77,9 +77,9 @@
             lessButton.FillColor = Color.Black;
             lessButton.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             lessButton.ForeColor = Color.White;
-            lessButton.Location = new Point(19, 150);
+            lessButton.Location = new Point(7, 127);
             lessButton.Name = "lessButton";
-            lessButton.Size = new Size(35, 36);
+            lessButton.Size = new Size(35, 30);
             lessButton.TabIndex = 8;
             lessButton.Text = "-";
             lessButton.MouseDown += lessButton_MouseDown;
@@ -94,9 +94,9 @@
             plusButton.FillColor = Color.Black;
             plusButton.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             plusButton.ForeColor = Color.White;
-            plusButton.Location = new Point(113, 150);
+            plusButton.Location = new Point(87, 127);
             plusButton.Name = "plusButton";
-            plusButton.Size = new Size(35, 36);
+            plusButton.Size = new Size(35, 30);
             plusButton.TabIndex = 9;
             plusButton.Text = "+";
             plusButton.MouseDown += plusButton_MouseDown;
@@ -104,10 +104,10 @@
             // quantityField
             // 
             quantityField.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            quantityField.Location = new Point(60, 154);
+            quantityField.Location = new Point(47, 128);
             quantityField.Name = "quantityField";
             quantityField.PlaceholderText = "0";
-            quantityField.Size = new Size(47, 29);
+            quantityField.Size = new Size(35, 29);
             quantityField.TabIndex = 11;
             quantityField.TextAlign = HorizontalAlignment.Center;
             quantityField.KeyPress += quantityField_KeyPress;
@@ -116,9 +116,9 @@
             // 
             label1.AutoEllipsis = true;
             label1.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(10, 0);
+            label1.Location = new Point(5, 0);
             label1.Name = "label1";
-            label1.Size = new Size(152, 51);
+            label1.Size = new Size(117, 41);
             label1.TabIndex = 12;
             label1.Text = "label1";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -133,9 +133,9 @@
             openSubproductsButton.FillColor = Color.Black;
             openSubproductsButton.Font = new Font("Century Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
             openSubproductsButton.ForeColor = Color.White;
-            openSubproductsButton.Location = new Point(19, 172);
+            openSubproductsButton.Location = new Point(5, 143);
             openSubproductsButton.Name = "openSubproductsButton";
-            openSubproductsButton.Size = new Size(129, 36);
+            openSubproductsButton.Size = new Size(117, 31);
             openSubproductsButton.TabIndex = 13;
             openSubproductsButton.Text = "Seleccionar...";
             openSubproductsButton.Visible = false;
@@ -153,7 +153,7 @@
             Controls.Add(addProductButton);
             Controls.Add(siticonePictureBox1);
             Name = "UC_Item";
-            Size = new Size(173, 242);
+            Size = new Size(128, 197);
             ((System.ComponentModel.ISupportInitialize)siticonePictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();

@@ -39,7 +39,7 @@ namespace SGV_CLP.Classes.Sales_Module
 
         public Invoice()
         {
-            this.invoiceDetailList = new List<InvoiceDetail>();
+            invoiceDetailList = new List<InvoiceDetail>();
             totalSales = 0;
         }
 
@@ -50,13 +50,10 @@ namespace SGV_CLP.Classes.Sales_Module
             {
                 total += item.subTotal;
             }
-            this.totalSales = (double)total;
+            totalSales = Math.Round((double)total, 2);
             return total;
         }
-        public void setTotalSales()
-        {
-            this.totalSales = (double)CalculateTotalSales();
-        }
+
         public void AddOrUpdateInvoiceDetail(InvoiceDetail invoiceDetail)
         {
             bool flag = false;

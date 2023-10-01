@@ -4,6 +4,7 @@ using SGV_CLP.Classes.Sales_Module;
 using SGV_CLP.GUI.Módulo_Ventas;
 using Siticone.Desktop.UI.WinForms;
 using System.Media;
+using System.Security.Policy;
 using System.Windows.Forms;
 
 
@@ -112,10 +113,10 @@ namespace SGV_CLP.GUI
                     break;
 
             }
-            llenarTablaVenta(invoices);
+            FillSalesTable(invoices);
         }
 
-        public void llenarTablaVenta(List<Invoice> notasVenta)
+        public void FillSalesTable(List<Invoice> notasVenta)
         {
             if (notasVenta != null)
             {
@@ -183,19 +184,17 @@ namespace SGV_CLP.GUI
                 {
                     if (e.RowIndex >= 0 && siticoneDataGridView2.Rows[e.RowIndex].Cells[0].Value.ToString() != null)
                     {
-                        if (MessageBox.Show("¿Está seguro de eliminar este detalle de nota de venta?", "Eliminar detalle", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                        {
-                            DataGridViewRow row = siticoneDataGridView2.Rows[e.RowIndex];
-                            invoice.DeleteInvoiceDetailbyProductName(row.Cells[0].Value.ToString());
-                            siticoneDataGridView2.Rows.RemoveAt(e.RowIndex);
-                            UC_Ventas.totalVenta.Text = "Total: $" + UC_Ventas.invoice.CalculateTotalSales().ToString().Replace(',', '.');
-                        }
+                        DataGridViewRow row = siticoneDataGridView2.Rows[e.RowIndex];
+                        invoice.DeleteInvoiceDetailbyProductName(row.Cells[0].Value.ToString());
+                        siticoneDataGridView2.Rows.RemoveAt(e.RowIndex);
+                        totalVenta.Text = "Total : $" + $"{invoice.CalculateTotalSales():0.00}".Replace(',', '.');
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Esa fila está vacía, no puede hacer acciones sobre ella!!");
+                //MessageBox.Show("Esa fila está vacía, no puede hacer acciones sobre ella!!");
+                Console.WriteLine(ex.Message);
             }
         }
 
@@ -250,7 +249,7 @@ namespace SGV_CLP.GUI
             try
             {
                 List<Invoice> invoices = await InvoiceMapper.GetAllInvoicesByDate(dateTimePickerConsultarVenta.Text);
-                llenarTablaVenta(invoices);
+                FillSalesTable(invoices);
             }
             catch (Exception ex)
             {
@@ -265,7 +264,7 @@ namespace SGV_CLP.GUI
             {
                 //Actualiza las ventas al ingresar a la pestaña de consulta de ventas
                 List<Invoice> registeredInvoices = await InvoiceMapper.GetAllInvoices("");
-                MainMenu.uc_ventas.llenarTablaVenta(registeredInvoices);
+                MainMenu.uc_ventas.FillSalesTable(registeredInvoices);
             }
         }
     }

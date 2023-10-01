@@ -9,12 +9,12 @@ namespace SGV_CLP.Classes
 {
     public static class ReceiptHelper
     {
-        public static void generateReceipt(Invoice invoice, Customer customer, string total, string cash, string change)
+        public static void GenerateReceipt(Invoice invoice, Customer customer, string total, string cash, string change)
         {
             iTextSharp.text.Rectangle pageSize = new iTextSharp.text.Rectangle(226.77f, PageSize.LETTER.Height);
             // Crear un nuevo documento
             iTextSharp.text.Document document = new iTextSharp.text.Document(pageSize);
-            document.SetMargins(0, 0, 0, 0);
+            document.SetMargins(10, 10, 20, 0);
             // Establecer el archivo donde deseas guardar el PDF
             string outputPath = "receipt.pdf";
             PdfWriter.GetInstance(document, new FileStream(outputPath, FileMode.Create));
@@ -36,8 +36,8 @@ namespace SGV_CLP.Classes
         }
         static void AddHeader(iTextSharp.text.Document document)
         {
-            iTextSharp.text.Font font = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 10);
-            iTextSharp.text.Font font1 = FontFactory.GetFont(FontFactory.HELVETICA, 10);
+            iTextSharp.text.Font font = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 8);
+            iTextSharp.text.Font font1 = FontFactory.GetFont(FontFactory.HELVETICA, 8);
             Paragraph header = new iTextSharp.text.Paragraph("CAFETERÍA LA PROSPERIDAD\n\n", font);
             // Obtener la fecha y hora actuales
             DateTime now = DateTime.Now;
@@ -53,7 +53,7 @@ namespace SGV_CLP.Classes
         }
         static void AddSeparator(iTextSharp.text.Document document)
         {
-            Paragraph separator = new Paragraph("--------------------------------------------------------\n");
+            Paragraph separator = new Paragraph("--------------------------------------------------\n");
             separator.Alignment = Element.ALIGN_CENTER;
             document.Add(separator);
         }
@@ -69,7 +69,7 @@ namespace SGV_CLP.Classes
         }
         static void AddDetailTableTitle(PdfPTable table)
         {
-            iTextSharp.text.Font font = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 10);
+            iTextSharp.text.Font font = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 8);
             // Configurar el estilo de borde de las celdas
             PdfPCell cell = new PdfPCell();
             cell.Border = iTextSharp.text.Rectangle.NO_BORDER;
@@ -94,7 +94,7 @@ namespace SGV_CLP.Classes
         }
         static void AddReceiptItem(PdfPTable table, int quantity, string itemName, double itemPrice, double subTotal)
         {
-            iTextSharp.text.Font font1 = FontFactory.GetFont(FontFactory.HELVETICA, 10);
+            iTextSharp.text.Font font1 = FontFactory.GetFont(FontFactory.HELVETICA, 8);
             PdfPCell cell = new PdfPCell();
             cell.Border = iTextSharp.text.Rectangle.NO_BORDER;
             cell.HorizontalAlignment = Element.ALIGN_CENTER; // Centrar contenido horizontalmente
@@ -117,7 +117,7 @@ namespace SGV_CLP.Classes
         }
         static void AddTotal(iTextSharp.text.Document document, string totalAmount, string cash, string change)
         {
-            iTextSharp.text.Font font = FontFactory.GetFont(FontFactory.HELVETICA, 10);
+            iTextSharp.text.Font font = FontFactory.GetFont(FontFactory.HELVETICA, 8);
             PdfPTable table = new PdfPTable(2); // 4 columnas
             float[] columnWidths = { 5f, 1f };
             table.SetWidths(columnWidths);
@@ -169,7 +169,7 @@ namespace SGV_CLP.Classes
         }
         static void AddCustomerInfo(iTextSharp.text.Document document, Customer customer)
         {
-            iTextSharp.text.Font font = FontFactory.GetFont(FontFactory.HELVETICA, 10);
+            iTextSharp.text.Font font = FontFactory.GetFont(FontFactory.HELVETICA, 8);
             PdfPTable table = new PdfPTable(2); // 4 columnas
             float[] columnWidths = { 2f, 4f };
             table.SetWidths(columnWidths);
@@ -188,7 +188,7 @@ namespace SGV_CLP.Classes
             //Adding IVA row
             cell.Phrase = new Phrase("NOMBRE:", font);
             table.AddCell(cell);
-            cell.Phrase = new Phrase(customer.firstName+" "+customer.firstLastName, font);
+            cell.Phrase = new Phrase(customer.firstName.ToUpper() + " " + customer.firstLastName.ToUpper(), font);
             table.AddCell(cell);
 
             // Agregar la tabla al documento
@@ -196,7 +196,7 @@ namespace SGV_CLP.Classes
         }
         static void AddFooter(iTextSharp.text.Document document)
         {
-            iTextSharp.text.Font font = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 10);
+            iTextSharp.text.Font font = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 8);
             Paragraph header = new iTextSharp.text.Paragraph("**  GRACIAS POR SU COMPRA  **\n\n\n\n", font);
             header.Alignment = Element.ALIGN_CENTER;
             document.Add(header);

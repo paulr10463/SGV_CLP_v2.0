@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Customers));
             siticoneTabControl1 = new Siticone.Desktop.UI.WinForms.SiticoneTabControl();
             TabRegistrar = new TabPage();
@@ -83,12 +83,11 @@
             // 
             // siticoneTabControl1
             // 
-            siticoneTabControl1.Alignment = TabAlignment.Left;
             siticoneTabControl1.Controls.Add(TabRegistrar);
             siticoneTabControl1.Controls.Add(TabEditar);
             siticoneTabControl1.Dock = DockStyle.Fill;
             siticoneTabControl1.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            siticoneTabControl1.ItemSize = new Size(160, 75);
+            siticoneTabControl1.ItemSize = new Size(120, 40);
             siticoneTabControl1.Location = new Point(0, 0);
             siticoneTabControl1.Name = "siticoneTabControl1";
             siticoneTabControl1.SelectedIndex = 0;
@@ -108,9 +107,10 @@
             siticoneTabControl1.TabButtonSelectedState.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             siticoneTabControl1.TabButtonSelectedState.ForeColor = Color.White;
             siticoneTabControl1.TabButtonSelectedState.InnerColor = Color.FromArgb(76, 132, 255);
-            siticoneTabControl1.TabButtonSize = new Size(160, 75);
+            siticoneTabControl1.TabButtonSize = new Size(120, 40);
             siticoneTabControl1.TabIndex = 2;
             siticoneTabControl1.TabMenuBackColor = Color.Black;
+            siticoneTabControl1.TabMenuOrientation = Siticone.Desktop.UI.WinForms.TabMenuOrientation.HorizontalTop;
             siticoneTabControl1.SelectedIndexChanged += siticoneTabControl1_SelectedIndexChanged;
             // 
             // TabRegistrar
@@ -141,13 +141,13 @@
             TabRegistrar.Controls.Add(siticoneHtmlLabel17);
             TabRegistrar.Controls.Add(siticoneHtmlLabel7);
             TabRegistrar.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            TabRegistrar.Location = new Point(164, 4);
+            TabRegistrar.Location = new Point(4, 44);
             TabRegistrar.Margin = new Padding(3, 4, 3, 4);
             TabRegistrar.Name = "TabRegistrar";
             TabRegistrar.Padding = new Padding(3, 4, 3, 4);
-            TabRegistrar.Size = new Size(1278, 837);
+            TabRegistrar.Size = new Size(1438, 797);
             TabRegistrar.TabIndex = 0;
-            TabRegistrar.Text = "Registrar Cliente";
+            TabRegistrar.Text = "Añadir";
             TabRegistrar.UseVisualStyleBackColor = true;
             // 
             // labelCustomerIDUnique
@@ -156,7 +156,7 @@
             labelCustomerIDUnique.BackColor = Color.Transparent;
             labelCustomerIDUnique.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             labelCustomerIDUnique.ForeColor = Color.Turquoise;
-            labelCustomerIDUnique.Location = new Point(687, 185);
+            labelCustomerIDUnique.Location = new Point(767, 178);
             labelCustomerIDUnique.Margin = new Padding(3, 2, 3, 2);
             labelCustomerIDUnique.Name = "labelCustomerIDUnique";
             labelCustomerIDUnique.Size = new Size(110, 22);
@@ -169,7 +169,7 @@
             labelCustomerIDNotUnique.BackColor = Color.Transparent;
             labelCustomerIDNotUnique.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             labelCustomerIDNotUnique.ForeColor = Color.Red;
-            labelCustomerIDNotUnique.Location = new Point(687, 185);
+            labelCustomerIDNotUnique.Location = new Point(767, 178);
             labelCustomerIDNotUnique.Margin = new Padding(3, 2, 3, 2);
             labelCustomerIDNotUnique.Name = "labelCustomerIDNotUnique";
             labelCustomerIDNotUnique.Size = new Size(165, 22);
@@ -182,7 +182,7 @@
             labelValidPhoneNumber.BackColor = Color.Transparent;
             labelValidPhoneNumber.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             labelValidPhoneNumber.ForeColor = Color.Turquoise;
-            labelValidPhoneNumber.Location = new Point(774, 601);
+            labelValidPhoneNumber.Location = new Point(852, 485);
             labelValidPhoneNumber.Margin = new Padding(3, 4, 3, 4);
             labelValidPhoneNumber.Name = "labelValidPhoneNumber";
             labelValidPhoneNumber.Size = new Size(123, 22);
@@ -196,7 +196,7 @@
             labelInvalidPhoneNumber.BackColor = Color.Transparent;
             labelInvalidPhoneNumber.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             labelInvalidPhoneNumber.ForeColor = Color.Red;
-            labelInvalidPhoneNumber.Location = new Point(774, 601);
+            labelInvalidPhoneNumber.Location = new Point(852, 485);
             labelInvalidPhoneNumber.Margin = new Padding(3, 4, 3, 4);
             labelInvalidPhoneNumber.Name = "labelInvalidPhoneNumber";
             labelInvalidPhoneNumber.Size = new Size(135, 22);
@@ -209,7 +209,7 @@
             labelCorrectEMail.BackColor = Color.Transparent;
             labelCorrectEMail.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             labelCorrectEMail.ForeColor = Color.Turquoise;
-            labelCorrectEMail.Location = new Point(857, 500);
+            labelCorrectEMail.Location = new Point(937, 411);
             labelCorrectEMail.Name = "labelCorrectEMail";
             labelCorrectEMail.Size = new Size(98, 22);
             labelCorrectEMail.TabIndex = 85;
@@ -221,7 +221,7 @@
             labelWrongEMail.BackColor = Color.Transparent;
             labelWrongEMail.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             labelWrongEMail.ForeColor = Color.Red;
-            labelWrongEMail.Location = new Point(857, 500);
+            labelWrongEMail.Location = new Point(937, 411);
             labelWrongEMail.Name = "labelWrongEMail";
             labelWrongEMail.Size = new Size(110, 22);
             labelWrongEMail.TabIndex = 84;
@@ -232,7 +232,7 @@
             siticoneHtmlLabel2.Anchor = AnchorStyles.None;
             siticoneHtmlLabel2.BackColor = Color.Transparent;
             siticoneHtmlLabel2.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            siticoneHtmlLabel2.Location = new Point(305, 500);
+            siticoneHtmlLabel2.Location = new Point(385, 409);
             siticoneHtmlLabel2.Margin = new Padding(3, 4, 3, 4);
             siticoneHtmlLabel2.Name = "siticoneHtmlLabel2";
             siticoneHtmlLabel2.Size = new Size(58, 26);
@@ -253,7 +253,7 @@
             tbEMail.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             tbEMail.ForeColor = Color.Black;
             tbEMail.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tbEMail.Location = new Point(446, 491);
+            tbEMail.Location = new Point(526, 400);
             tbEMail.Margin = new Padding(5, 9, 5, 9);
             tbEMail.Name = "tbEMail";
             tbEMail.PasswordChar = '\0';
@@ -271,7 +271,7 @@
             labelCorrectPhoneNumberLength.BackColor = Color.Transparent;
             labelCorrectPhoneNumberLength.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             labelCorrectPhoneNumberLength.ForeColor = Color.Turquoise;
-            labelCorrectPhoneNumberLength.Location = new Point(774, 573);
+            labelCorrectPhoneNumberLength.Location = new Point(852, 460);
             labelCorrectPhoneNumberLength.Margin = new Padding(3, 4, 3, 4);
             labelCorrectPhoneNumberLength.Name = "labelCorrectPhoneNumberLength";
             labelCorrectPhoneNumberLength.Size = new Size(143, 22);
@@ -292,7 +292,7 @@
             tbFirstName.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             tbFirstName.ForeColor = Color.Black;
             tbFirstName.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tbFirstName.Location = new Point(446, 233);
+            tbFirstName.Location = new Point(526, 211);
             tbFirstName.Margin = new Padding(0);
             tbFirstName.MaxLength = 50;
             tbFirstName.Name = "tbFirstName";
@@ -311,7 +311,7 @@
             labelWrongPhoneNumberLength.BackColor = Color.Transparent;
             labelWrongPhoneNumberLength.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             labelWrongPhoneNumberLength.ForeColor = Color.Red;
-            labelWrongPhoneNumberLength.Location = new Point(774, 573);
+            labelWrongPhoneNumberLength.Location = new Point(852, 460);
             labelWrongPhoneNumberLength.Margin = new Padding(3, 4, 3, 4);
             labelWrongPhoneNumberLength.Name = "labelWrongPhoneNumberLength";
             labelWrongPhoneNumberLength.Size = new Size(182, 22);
@@ -324,7 +324,7 @@
             labelCorrectCustomerIDLength.BackColor = Color.Transparent;
             labelCorrectCustomerIDLength.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             labelCorrectCustomerIDLength.ForeColor = Color.Turquoise;
-            labelCorrectCustomerIDLength.Location = new Point(687, 156);
+            labelCorrectCustomerIDLength.Location = new Point(767, 153);
             labelCorrectCustomerIDLength.Name = "labelCorrectCustomerIDLength";
             labelCorrectCustomerIDLength.Size = new Size(143, 22);
             labelCorrectCustomerIDLength.TabIndex = 57;
@@ -341,7 +341,7 @@
             buttonAddCustomer.FillColor = Color.Black;
             buttonAddCustomer.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             buttonAddCustomer.ForeColor = Color.White;
-            buttonAddCustomer.Location = new Point(556, 710);
+            buttonAddCustomer.Location = new Point(635, 617);
             buttonAddCustomer.Margin = new Padding(3, 4, 3, 4);
             buttonAddCustomer.Name = "buttonAddCustomer";
             buttonAddCustomer.Size = new Size(180, 45);
@@ -355,7 +355,7 @@
             labelValidCustomerID.BackColor = Color.Transparent;
             labelValidCustomerID.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             labelValidCustomerID.ForeColor = Color.Turquoise;
-            labelValidCustomerID.Location = new Point(687, 128);
+            labelValidCustomerID.Location = new Point(767, 129);
             labelValidCustomerID.Name = "labelValidCustomerID";
             labelValidCustomerID.Size = new Size(115, 22);
             labelValidCustomerID.TabIndex = 56;
@@ -366,7 +366,7 @@
             siticoneHtmlLabel3.Anchor = AnchorStyles.None;
             siticoneHtmlLabel3.BackColor = Color.Transparent;
             siticoneHtmlLabel3.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            siticoneHtmlLabel3.Location = new Point(305, 156);
+            siticoneHtmlLabel3.Location = new Point(385, 157);
             siticoneHtmlLabel3.Margin = new Padding(3, 4, 3, 4);
             siticoneHtmlLabel3.Name = "siticoneHtmlLabel3";
             siticoneHtmlLabel3.Size = new Size(95, 26);
@@ -379,7 +379,7 @@
             labelInvalidCustomerID.BackColor = Color.Transparent;
             labelInvalidCustomerID.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             labelInvalidCustomerID.ForeColor = Color.Red;
-            labelInvalidCustomerID.Location = new Point(687, 128);
+            labelInvalidCustomerID.Location = new Point(767, 129);
             labelInvalidCustomerID.Name = "labelInvalidCustomerID";
             labelInvalidCustomerID.Size = new Size(127, 22);
             labelInvalidCustomerID.TabIndex = 55;
@@ -398,7 +398,7 @@
             tbHomeAddress.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             tbHomeAddress.ForeColor = Color.Black;
             tbHomeAddress.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tbHomeAddress.Location = new Point(446, 405);
+            tbHomeAddress.Location = new Point(526, 337);
             tbHomeAddress.Margin = new Padding(5, 9, 5, 9);
             tbHomeAddress.Name = "tbHomeAddress";
             tbHomeAddress.PasswordChar = '\0';
@@ -416,7 +416,7 @@
             labelWrongCustomerIDLength.BackColor = Color.Transparent;
             labelWrongCustomerIDLength.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             labelWrongCustomerIDLength.ForeColor = Color.Red;
-            labelWrongCustomerIDLength.Location = new Point(685, 156);
+            labelWrongCustomerIDLength.Location = new Point(765, 153);
             labelWrongCustomerIDLength.Name = "labelWrongCustomerIDLength";
             labelWrongCustomerIDLength.Size = new Size(182, 22);
             labelWrongCustomerIDLength.TabIndex = 54;
@@ -435,7 +435,7 @@
             tbCustomerID.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             tbCustomerID.ForeColor = Color.Black;
             tbCustomerID.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tbCustomerID.Location = new Point(446, 147);
+            tbCustomerID.Location = new Point(526, 148);
             tbCustomerID.Margin = new Padding(8, 7, 8, 7);
             tbCustomerID.Name = "tbCustomerID";
             tbCustomerID.PasswordChar = '\0';
@@ -462,7 +462,7 @@
             tbPhoneNumber.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             tbPhoneNumber.ForeColor = Color.Black;
             tbPhoneNumber.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tbPhoneNumber.Location = new Point(446, 577);
+            tbPhoneNumber.Location = new Point(524, 463);
             tbPhoneNumber.Margin = new Padding(5, 9, 5, 9);
             tbPhoneNumber.Name = "tbPhoneNumber";
             tbPhoneNumber.PasswordChar = '\0';
@@ -479,7 +479,7 @@
             siticoneHtmlLabel16.Anchor = AnchorStyles.None;
             siticoneHtmlLabel16.BackColor = Color.Transparent;
             siticoneHtmlLabel16.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            siticoneHtmlLabel16.Location = new Point(305, 328);
+            siticoneHtmlLabel16.Location = new Point(385, 283);
             siticoneHtmlLabel16.Margin = new Padding(3, 4, 3, 4);
             siticoneHtmlLabel16.Name = "siticoneHtmlLabel16";
             siticoneHtmlLabel16.Size = new Size(102, 26);
@@ -491,7 +491,7 @@
             siticoneHtmlLabel1.Anchor = AnchorStyles.None;
             siticoneHtmlLabel1.BackColor = Color.Transparent;
             siticoneHtmlLabel1.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            siticoneHtmlLabel1.Location = new Point(305, 414);
+            siticoneHtmlLabel1.Location = new Point(385, 346);
             siticoneHtmlLabel1.Margin = new Padding(3, 4, 3, 4);
             siticoneHtmlLabel1.Name = "siticoneHtmlLabel1";
             siticoneHtmlLabel1.Size = new Size(100, 26);
@@ -512,7 +512,7 @@
             tbFirstLastName.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             tbFirstLastName.ForeColor = Color.Black;
             tbFirstLastName.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tbFirstLastName.Location = new Point(446, 319);
+            tbFirstLastName.Location = new Point(526, 274);
             tbFirstLastName.Margin = new Padding(5, 9, 5, 9);
             tbFirstLastName.MinimumSize = new Size(0, 45);
             tbFirstLastName.Name = "tbFirstLastName";
@@ -530,7 +530,7 @@
             siticoneHtmlLabel17.Anchor = AnchorStyles.None;
             siticoneHtmlLabel17.BackColor = Color.Transparent;
             siticoneHtmlLabel17.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            siticoneHtmlLabel17.Location = new Point(305, 242);
+            siticoneHtmlLabel17.Location = new Point(385, 220);
             siticoneHtmlLabel17.Margin = new Padding(3, 4, 3, 4);
             siticoneHtmlLabel17.Name = "siticoneHtmlLabel17";
             siticoneHtmlLabel17.Size = new Size(103, 26);
@@ -542,7 +542,7 @@
             siticoneHtmlLabel7.Anchor = AnchorStyles.None;
             siticoneHtmlLabel7.BackColor = Color.Transparent;
             siticoneHtmlLabel7.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            siticoneHtmlLabel7.Location = new Point(305, 586);
+            siticoneHtmlLabel7.Location = new Point(383, 472);
             siticoneHtmlLabel7.Margin = new Padding(3, 4, 3, 4);
             siticoneHtmlLabel7.Name = "siticoneHtmlLabel7";
             siticoneHtmlLabel7.Size = new Size(92, 26);
@@ -556,13 +556,13 @@
             TabEditar.Controls.Add(tbSearchCustomerBy);
             TabEditar.Controls.Add(siticonePanel1);
             TabEditar.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            TabEditar.Location = new Point(164, 4);
+            TabEditar.Location = new Point(4, 44);
             TabEditar.Margin = new Padding(3, 4, 3, 4);
             TabEditar.Name = "TabEditar";
             TabEditar.Padding = new Padding(3, 4, 3, 4);
-            TabEditar.Size = new Size(1278, 837);
+            TabEditar.Size = new Size(1438, 797);
             TabEditar.TabIndex = 1;
-            TabEditar.Text = "Editar/Eliminar Cliente";
+            TabEditar.Text = "Buscar";
             TabEditar.UseVisualStyleBackColor = true;
             // 
             // labelSearchCustomerWithoutField
@@ -571,7 +571,7 @@
             labelSearchCustomerWithoutField.BackColor = Color.Transparent;
             labelSearchCustomerWithoutField.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             labelSearchCustomerWithoutField.ForeColor = Color.Red;
-            labelSearchCustomerWithoutField.Location = new Point(248, 111);
+            labelSearchCustomerWithoutField.Location = new Point(328, 109);
             labelSearchCustomerWithoutField.Name = "labelSearchCustomerWithoutField";
             labelSearchCustomerWithoutField.Size = new Size(363, 24);
             labelSearchCustomerWithoutField.TabIndex = 19;
@@ -590,7 +590,7 @@
             cbSearchCustomerBy.ForeColor = Color.FromArgb(68, 88, 112);
             cbSearchCustomerBy.ItemHeight = 40;
             cbSearchCustomerBy.Items.AddRange(new object[] { "Seleccionar...", "CI", "Nombres", "Apellidos", "Teléfono" });
-            cbSearchCustomerBy.Location = new Point(634, 163);
+            cbSearchCustomerBy.Location = new Point(714, 143);
             cbSearchCustomerBy.Margin = new Padding(3, 4, 3, 4);
             cbSearchCustomerBy.MinimumSize = new Size(200, 0);
             cbSearchCustomerBy.Name = "cbSearchCustomerBy";
@@ -612,7 +612,7 @@
             tbSearchCustomerBy.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             tbSearchCustomerBy.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             tbSearchCustomerBy.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tbSearchCustomerBy.Location = new Point(248, 164);
+            tbSearchCustomerBy.Location = new Point(328, 144);
             tbSearchCustomerBy.Margin = new Padding(5, 8, 5, 8);
             tbSearchCustomerBy.Name = "tbSearchCustomerBy";
             tbSearchCustomerBy.PasswordChar = '\0';
@@ -628,36 +628,36 @@
             // 
             siticonePanel1.Controls.Add(CustomerDataGridView);
             siticonePanel1.Dock = DockStyle.Bottom;
-            siticonePanel1.Location = new Point(3, 333);
+            siticonePanel1.Location = new Point(3, 293);
             siticonePanel1.Margin = new Padding(3, 4, 3, 4);
             siticonePanel1.Name = "siticonePanel1";
-            siticonePanel1.Size = new Size(1272, 500);
+            siticonePanel1.Size = new Size(1432, 500);
             siticonePanel1.TabIndex = 1;
             // 
             // CustomerDataGridView
             // 
-            dataGridViewCellStyle1.BackColor = Color.White;
-            CustomerDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.BackColor = Color.White;
+            CustomerDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             CustomerDataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(100, 88, 255);
-            dataGridViewCellStyle2.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            CustomerDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.FromArgb(100, 88, 255);
+            dataGridViewCellStyle6.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
+            CustomerDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             CustomerDataGridView.ColumnHeadersHeight = 60;
             CustomerDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             CustomerDataGridView.Columns.AddRange(new DataGridViewColumn[] { ColumnaCedula, ColumnaNombres, ColumnaApellidos, ColumnaDireccion, ColumnaTelefono, ColumnaCorreo, ColumnaEditar, ColumnaEliminar });
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = Color.White;
-            dataGridViewCellStyle4.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(231, 229, 255);
-            dataGridViewCellStyle4.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            CustomerDataGridView.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = Color.White;
+            dataGridViewCellStyle8.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle8.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dataGridViewCellStyle8.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
+            CustomerDataGridView.DefaultCellStyle = dataGridViewCellStyle8;
             CustomerDataGridView.Dock = DockStyle.Fill;
             CustomerDataGridView.GridColor = Color.FromArgb(231, 229, 255);
             CustomerDataGridView.Location = new Point(0, 0);
@@ -667,7 +667,7 @@
             CustomerDataGridView.RowHeadersWidth = 50;
             CustomerDataGridView.RowTemplate.DefaultCellStyle.BackColor = Color.White;
             CustomerDataGridView.RowTemplate.Height = 50;
-            CustomerDataGridView.Size = new Size(1272, 500);
+            CustomerDataGridView.Size = new Size(1432, 500);
             CustomerDataGridView.TabIndex = 0;
             CustomerDataGridView.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             CustomerDataGridView.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -749,35 +749,36 @@
             // 
             // ColumnaCorreo
             // 
-            ColumnaCorreo.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            ColumnaCorreo.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             ColumnaCorreo.HeaderText = "Correo Electrónico";
             ColumnaCorreo.MinimumWidth = 6;
             ColumnaCorreo.Name = "ColumnaCorreo";
             ColumnaCorreo.Resizable = DataGridViewTriState.False;
             ColumnaCorreo.SortMode = DataGridViewColumnSortMode.Programmatic;
-            ColumnaCorreo.Width = 184;
             // 
             // ColumnaEditar
             // 
-            ColumnaEditar.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.NullValue = null;
-            dataGridViewCellStyle3.Padding = new Padding(5);
-            ColumnaEditar.DefaultCellStyle = dataGridViewCellStyle3;
+            ColumnaEditar.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.NullValue = null;
+            dataGridViewCellStyle7.Padding = new Padding(5);
+            ColumnaEditar.DefaultCellStyle = dataGridViewCellStyle7;
             ColumnaEditar.HeaderText = "";
             ColumnaEditar.Image = (Image)resources.GetObject("ColumnaEditar.Image");
-            ColumnaEditar.MinimumWidth = 45;
+            ColumnaEditar.MinimumWidth = 50;
             ColumnaEditar.Name = "ColumnaEditar";
             ColumnaEditar.Resizable = DataGridViewTriState.False;
+            ColumnaEditar.Width = 50;
             // 
             // ColumnaEliminar
             // 
-            ColumnaEliminar.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            ColumnaEliminar.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
             ColumnaEliminar.HeaderText = "";
             ColumnaEliminar.Image = (Image)resources.GetObject("ColumnaEliminar.Image");
-            ColumnaEliminar.MinimumWidth = 45;
+            ColumnaEliminar.MinimumWidth = 50;
             ColumnaEliminar.Name = "ColumnaEliminar";
             ColumnaEliminar.Resizable = DataGridViewTriState.False;
+            ColumnaEliminar.Width = 50;
             // 
             // UC_Customers
             // 

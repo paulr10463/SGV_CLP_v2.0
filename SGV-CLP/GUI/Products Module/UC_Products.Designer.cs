@@ -100,14 +100,13 @@ namespace SGV_CLP.GUI
             // 
             // siticoneTabControl1
             // 
-            siticoneTabControl1.Alignment = TabAlignment.Left;
             siticoneTabControl1.Controls.Add(Añadir);
             siticoneTabControl1.Controls.Add(Editar);
             siticoneTabControl1.Controls.Add(AddCategory);
             siticoneTabControl1.Controls.Add(EditDeleteCategory);
             siticoneTabControl1.Dock = DockStyle.Fill;
             siticoneTabControl1.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            siticoneTabControl1.ItemSize = new Size(160, 75);
+            siticoneTabControl1.ItemSize = new Size(200, 40);
             siticoneTabControl1.Location = new Point(0, 0);
             siticoneTabControl1.Name = "siticoneTabControl1";
             siticoneTabControl1.SelectedIndex = 0;
@@ -127,9 +126,10 @@ namespace SGV_CLP.GUI
             siticoneTabControl1.TabButtonSelectedState.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             siticoneTabControl1.TabButtonSelectedState.ForeColor = Color.White;
             siticoneTabControl1.TabButtonSelectedState.InnerColor = Color.FromArgb(76, 132, 255);
-            siticoneTabControl1.TabButtonSize = new Size(160, 75);
+            siticoneTabControl1.TabButtonSize = new Size(200, 40);
             siticoneTabControl1.TabIndex = 2;
             siticoneTabControl1.TabMenuBackColor = Color.Black;
+            siticoneTabControl1.TabMenuOrientation = Siticone.Desktop.UI.WinForms.TabMenuOrientation.HorizontalTop;
             siticoneTabControl1.SelectedIndexChanged += SiticoneTabControl1_SelectedIndexChanged;
             // 
             // Añadir
@@ -158,13 +158,13 @@ namespace SGV_CLP.GUI
             Añadir.Controls.Add(siticoneHtmlLabel5);
             Añadir.Controls.Add(tbProductName);
             Añadir.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            Añadir.Location = new Point(164, 4);
+            Añadir.Location = new Point(4, 44);
             Añadir.Margin = new Padding(3, 4, 3, 4);
             Añadir.Name = "Añadir";
             Añadir.Padding = new Padding(3, 4, 3, 4);
-            Añadir.Size = new Size(1100, 757);
+            Añadir.Size = new Size(1260, 717);
             Añadir.TabIndex = 0;
-            Añadir.Text = "Registrar Producto";
+            Añadir.Text = "Añadir Producto";
             // 
             // parentErrorLabel
             // 
@@ -172,7 +172,7 @@ namespace SGV_CLP.GUI
             parentErrorLabel.BackColor = Color.Transparent;
             parentErrorLabel.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             parentErrorLabel.ForeColor = Color.Red;
-            parentErrorLabel.Location = new Point(475, 592);
+            parentErrorLabel.Location = new Point(553, 522);
             parentErrorLabel.Name = "parentErrorLabel";
             parentErrorLabel.Size = new Size(396, 22);
             parentErrorLabel.TabIndex = 68;
@@ -184,7 +184,7 @@ namespace SGV_CLP.GUI
             parentLabel.Anchor = AnchorStyles.None;
             parentLabel.BackColor = Color.Transparent;
             parentLabel.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            parentLabel.Location = new Point(430, 550);
+            parentLabel.Location = new Point(541, 480);
             parentLabel.Margin = new Padding(3, 4, 3, 4);
             parentLabel.Name = "parentLabel";
             parentLabel.Size = new Size(68, 26);
@@ -196,7 +196,7 @@ namespace SGV_CLP.GUI
             // 
             isSubproductCheckBox.Anchor = AnchorStyles.None;
             isSubproductCheckBox.AutoSize = true;
-            isSubproductCheckBox.Location = new Point(112, 550);
+            isSubproductCheckBox.Location = new Point(223, 480);
             isSubproductCheckBox.Name = "isSubproductCheckBox";
             isSubproductCheckBox.Size = new Size(210, 26);
             isSubproductCheckBox.TabIndex = 66;
@@ -216,7 +216,7 @@ namespace SGV_CLP.GUI
             parentComboBox.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             parentComboBox.ForeColor = Color.FromArgb(68, 88, 112);
             parentComboBox.ItemHeight = 39;
-            parentComboBox.Location = new Point(514, 540);
+            parentComboBox.Location = new Point(625, 470);
             parentComboBox.Margin = new Padding(3, 4, 3, 4);
             parentComboBox.Name = "parentComboBox";
             parentComboBox.Size = new Size(316, 45);
@@ -229,7 +229,7 @@ namespace SGV_CLP.GUI
             // 
             isParentCheckBox.Anchor = AnchorStyles.None;
             isParentCheckBox.AutoSize = true;
-            isParentCheckBox.Location = new Point(112, 487);
+            isParentCheckBox.Location = new Point(223, 440);
             isParentCheckBox.Name = "isParentCheckBox";
             isParentCheckBox.Size = new Size(223, 26);
             isParentCheckBox.TabIndex = 64;
@@ -243,7 +243,7 @@ namespace SGV_CLP.GUI
             labelInvalidImagePath.BackColor = Color.Transparent;
             labelInvalidImagePath.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             labelInvalidImagePath.ForeColor = Color.Red;
-            labelInvalidImagePath.Location = new Point(971, 313);
+            labelInvalidImagePath.Location = new Point(1039, 297);
             labelInvalidImagePath.Name = "labelInvalidImagePath";
             labelInvalidImagePath.Size = new Size(98, 22);
             labelInvalidImagePath.TabIndex = 63;
@@ -256,7 +256,7 @@ namespace SGV_CLP.GUI
             labelInvalidSalesPriceToThePublic.BackColor = Color.Transparent;
             labelInvalidSalesPriceToThePublic.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             labelInvalidSalesPriceToThePublic.ForeColor = Color.Red;
-            labelInvalidSalesPriceToThePublic.Location = new Point(585, 396);
+            labelInvalidSalesPriceToThePublic.Location = new Point(698, 361);
             labelInvalidSalesPriceToThePublic.Name = "labelInvalidSalesPriceToThePublic";
             labelInvalidSalesPriceToThePublic.Size = new Size(130, 22);
             labelInvalidSalesPriceToThePublic.TabIndex = 59;
@@ -269,7 +269,7 @@ namespace SGV_CLP.GUI
             labelCategoryNotChosen.BackColor = Color.Transparent;
             labelCategoryNotChosen.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             labelCategoryNotChosen.ForeColor = Color.Red;
-            labelCategoryNotChosen.Location = new Point(587, 240);
+            labelCategoryNotChosen.Location = new Point(700, 237);
             labelCategoryNotChosen.Name = "labelCategoryNotChosen";
             labelCategoryNotChosen.Size = new Size(305, 22);
             labelCategoryNotChosen.TabIndex = 57;
@@ -282,7 +282,7 @@ namespace SGV_CLP.GUI
             labelProductNameNotUnique.BackColor = Color.Transparent;
             labelProductNameNotUnique.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             labelProductNameNotUnique.ForeColor = Color.Red;
-            labelProductNameNotUnique.Location = new Point(587, 164);
+            labelProductNameNotUnique.Location = new Point(700, 177);
             labelProductNameNotUnique.Name = "labelProductNameNotUnique";
             labelProductNameNotUnique.Size = new Size(284, 22);
             labelProductNameNotUnique.TabIndex = 56;
@@ -295,7 +295,7 @@ namespace SGV_CLP.GUI
             labelProductCodeNotUnique.BackColor = Color.Transparent;
             labelProductCodeNotUnique.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             labelProductCodeNotUnique.ForeColor = Color.Red;
-            labelProductCodeNotUnique.Location = new Point(587, 80);
+            labelProductCodeNotUnique.Location = new Point(698, 113);
             labelProductCodeNotUnique.Name = "labelProductCodeNotUnique";
             labelProductCodeNotUnique.Size = new Size(243, 22);
             labelProductCodeNotUnique.TabIndex = 55;
@@ -307,7 +307,7 @@ namespace SGV_CLP.GUI
             siticoneHtmlLabel1.Anchor = AnchorStyles.None;
             siticoneHtmlLabel1.BackColor = Color.Transparent;
             siticoneHtmlLabel1.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            siticoneHtmlLabel1.Location = new Point(116, 80);
+            siticoneHtmlLabel1.Location = new Point(227, 111);
             siticoneHtmlLabel1.Margin = new Padding(3, 4, 3, 4);
             siticoneHtmlLabel1.Name = "siticoneHtmlLabel1";
             siticoneHtmlLabel1.Size = new Size(124, 26);
@@ -326,7 +326,7 @@ namespace SGV_CLP.GUI
             tbProductCode.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             tbProductCode.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             tbProductCode.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tbProductCode.Location = new Point(325, 78);
+            tbProductCode.Location = new Point(436, 104);
             tbProductCode.Margin = new Padding(5, 9, 5, 9);
             tbProductCode.Name = "tbProductCode";
             tbProductCode.PasswordChar = '\0';
@@ -349,9 +349,9 @@ namespace SGV_CLP.GUI
             SBExaminar.FillColor = Color.Black;
             SBExaminar.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             SBExaminar.ForeColor = Color.White;
-            SBExaminar.Location = new Point(773, 299);
+            SBExaminar.Location = new Point(886, 285);
             SBExaminar.Name = "SBExaminar";
-            SBExaminar.Size = new Size(180, 45);
+            SBExaminar.Size = new Size(134, 45);
             SBExaminar.TabIndex = 50;
             SBExaminar.Text = "Examinar...";
             SBExaminar.Click += ButtonBrowse_Click;
@@ -368,7 +368,7 @@ namespace SGV_CLP.GUI
             tbImagePath.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             tbImagePath.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             tbImagePath.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tbImagePath.Location = new Point(323, 299);
+            tbImagePath.Location = new Point(436, 285);
             tbImagePath.Margin = new Padding(5, 7, 5, 7);
             tbImagePath.Name = "tbImagePath";
             tbImagePath.PasswordChar = '\0';
@@ -384,7 +384,7 @@ namespace SGV_CLP.GUI
             siticoneHtmlLabel11.Anchor = AnchorStyles.None;
             siticoneHtmlLabel11.BackColor = Color.Transparent;
             siticoneHtmlLabel11.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            siticoneHtmlLabel11.Location = new Point(114, 309);
+            siticoneHtmlLabel11.Location = new Point(227, 297);
             siticoneHtmlLabel11.Name = "siticoneHtmlLabel11";
             siticoneHtmlLabel11.Size = new Size(135, 26);
             siticoneHtmlLabel11.TabIndex = 48;
@@ -402,7 +402,7 @@ namespace SGV_CLP.GUI
             buttonAddProduct.FillColor = Color.Black;
             buttonAddProduct.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             buttonAddProduct.ForeColor = Color.White;
-            buttonAddProduct.Location = new Point(440, 657);
+            buttonAddProduct.Location = new Point(516, 581);
             buttonAddProduct.Margin = new Padding(3, 4, 3, 4);
             buttonAddProduct.Name = "buttonAddProduct";
             buttonAddProduct.Size = new Size(180, 45);
@@ -423,7 +423,7 @@ namespace SGV_CLP.GUI
             cbCategory.ForeColor = Color.FromArgb(68, 88, 112);
             cbCategory.ItemHeight = 39;
             cbCategory.Items.AddRange(new object[] { "Seleccione...", "Especialidades", "Bebidas Frías", "Bebidas Calientes", "Empanadas" });
-            cbCategory.Location = new Point(325, 230);
+            cbCategory.Location = new Point(438, 227);
             cbCategory.Margin = new Padding(3, 4, 3, 4);
             cbCategory.Name = "cbCategory";
             cbCategory.Size = new Size(249, 45);
@@ -437,7 +437,7 @@ namespace SGV_CLP.GUI
             siticoneHtmlLabel6.Anchor = AnchorStyles.None;
             siticoneHtmlLabel6.BackColor = Color.Transparent;
             siticoneHtmlLabel6.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            siticoneHtmlLabel6.Location = new Point(116, 236);
+            siticoneHtmlLabel6.Location = new Point(227, 235);
             siticoneHtmlLabel6.Margin = new Padding(3, 4, 3, 4);
             siticoneHtmlLabel6.Name = "siticoneHtmlLabel6";
             siticoneHtmlLabel6.Size = new Size(108, 26);
@@ -456,7 +456,7 @@ namespace SGV_CLP.GUI
             tbSalesPriceToThePublic.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             tbSalesPriceToThePublic.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             tbSalesPriceToThePublic.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tbSalesPriceToThePublic.Location = new Point(323, 382);
+            tbSalesPriceToThePublic.Location = new Point(436, 349);
             tbSalesPriceToThePublic.Margin = new Padding(5, 9, 5, 9);
             tbSalesPriceToThePublic.Name = "tbSalesPriceToThePublic";
             tbSalesPriceToThePublic.PasswordChar = '\0';
@@ -473,7 +473,7 @@ namespace SGV_CLP.GUI
             siticoneHtmlLabel8.Anchor = AnchorStyles.None;
             siticoneHtmlLabel8.BackColor = Color.Transparent;
             siticoneHtmlLabel8.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            siticoneHtmlLabel8.Location = new Point(114, 390);
+            siticoneHtmlLabel8.Location = new Point(227, 359);
             siticoneHtmlLabel8.Margin = new Padding(3, 4, 3, 4);
             siticoneHtmlLabel8.Name = "siticoneHtmlLabel8";
             siticoneHtmlLabel8.Size = new Size(57, 26);
@@ -485,7 +485,7 @@ namespace SGV_CLP.GUI
             siticoneHtmlLabel5.Anchor = AnchorStyles.None;
             siticoneHtmlLabel5.BackColor = Color.Transparent;
             siticoneHtmlLabel5.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            siticoneHtmlLabel5.Location = new Point(116, 158);
+            siticoneHtmlLabel5.Location = new Point(227, 173);
             siticoneHtmlLabel5.Margin = new Padding(3, 4, 3, 4);
             siticoneHtmlLabel5.Name = "siticoneHtmlLabel5";
             siticoneHtmlLabel5.Size = new Size(188, 26);
@@ -504,7 +504,7 @@ namespace SGV_CLP.GUI
             tbProductName.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             tbProductName.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             tbProductName.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tbProductName.Location = new Point(325, 154);
+            tbProductName.Location = new Point(438, 167);
             tbProductName.Margin = new Padding(5, 9, 5, 9);
             tbProductName.Name = "tbProductName";
             tbProductName.PasswordChar = '\0';
@@ -526,12 +526,12 @@ namespace SGV_CLP.GUI
             Editar.Controls.Add(tbSearchProductBy);
             Editar.Controls.Add(siticonePanel1);
             Editar.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            Editar.Location = new Point(164, 4);
+            Editar.Location = new Point(4, 44);
             Editar.Name = "Editar";
             Editar.Padding = new Padding(3, 4, 3, 4);
-            Editar.Size = new Size(1100, 757);
+            Editar.Size = new Size(1260, 717);
             Editar.TabIndex = 1;
-            Editar.Text = "Editar/Eliminar Producto";
+            Editar.Text = "Editar Producto";
             // 
             // labelCategoryNotChosenInTheSearchProductTab
             // 
@@ -539,7 +539,7 @@ namespace SGV_CLP.GUI
             labelCategoryNotChosenInTheSearchProductTab.BackColor = Color.Transparent;
             labelCategoryNotChosenInTheSearchProductTab.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             labelCategoryNotChosenInTheSearchProductTab.ForeColor = Color.Red;
-            labelCategoryNotChosenInTheSearchProductTab.Location = new Point(563, 74);
+            labelCategoryNotChosenInTheSearchProductTab.Location = new Point(643, 54);
             labelCategoryNotChosenInTheSearchProductTab.Name = "labelCategoryNotChosenInTheSearchProductTab";
             labelCategoryNotChosenInTheSearchProductTab.Size = new Size(305, 22);
             labelCategoryNotChosenInTheSearchProductTab.TabIndex = 59;
@@ -559,7 +559,7 @@ namespace SGV_CLP.GUI
             cbSearchProductByCategory.ForeColor = Color.FromArgb(68, 88, 112);
             cbSearchProductByCategory.ItemHeight = 39;
             cbSearchProductByCategory.Items.AddRange(new object[] { "Seleccione...", "Especialidades", "Bebidas Frías", "Bebidas Calientes", "Empanadas" });
-            cbSearchProductByCategory.Location = new Point(230, 111);
+            cbSearchProductByCategory.Location = new Point(310, 91);
             cbSearchProductByCategory.Margin = new Padding(3, 4, 3, 4);
             cbSearchProductByCategory.Name = "cbSearchProductByCategory";
             cbSearchProductByCategory.Size = new Size(288, 45);
@@ -574,7 +574,7 @@ namespace SGV_CLP.GUI
             labelSearchProductWithoutField.BackColor = Color.Transparent;
             labelSearchProductWithoutField.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             labelSearchProductWithoutField.ForeColor = Color.Red;
-            labelSearchProductWithoutField.Location = new Point(228, 74);
+            labelSearchProductWithoutField.Location = new Point(308, 54);
             labelSearchProductWithoutField.Name = "labelSearchProductWithoutField";
             labelSearchProductWithoutField.Size = new Size(290, 22);
             labelSearchProductWithoutField.TabIndex = 25;
@@ -594,7 +594,7 @@ namespace SGV_CLP.GUI
             cbSearchProdutBy.ForeColor = Color.FromArgb(68, 88, 112);
             cbSearchProdutBy.ItemHeight = 39;
             cbSearchProdutBy.Items.AddRange(new object[] { "Seleccione...", "Código", "Nombre", "Categoría" });
-            cbSearchProdutBy.Location = new Point(563, 111);
+            cbSearchProdutBy.Location = new Point(643, 91);
             cbSearchProdutBy.Name = "cbSearchProdutBy";
             cbSearchProdutBy.Size = new Size(305, 45);
             cbSearchProdutBy.StartIndex = 0;
@@ -615,7 +615,7 @@ namespace SGV_CLP.GUI
             tbSearchProductBy.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             tbSearchProductBy.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             tbSearchProductBy.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tbSearchProductBy.Location = new Point(230, 111);
+            tbSearchProductBy.Location = new Point(310, 91);
             tbSearchProductBy.Margin = new Padding(5, 6, 5, 6);
             tbSearchProductBy.Name = "tbSearchProductBy";
             tbSearchProductBy.PasswordChar = '\0';
@@ -629,10 +629,10 @@ namespace SGV_CLP.GUI
             // 
             siticonePanel1.Controls.Add(ProductDataGridView);
             siticonePanel1.Dock = DockStyle.Bottom;
-            siticonePanel1.Location = new Point(3, 253);
+            siticonePanel1.Location = new Point(3, 213);
             siticonePanel1.Margin = new Padding(3, 4, 3, 4);
             siticonePanel1.Name = "siticonePanel1";
-            siticonePanel1.Size = new Size(1094, 500);
+            siticonePanel1.Size = new Size(1254, 500);
             siticonePanel1.TabIndex = 1;
             // 
             // ProductDataGridView
@@ -667,7 +667,7 @@ namespace SGV_CLP.GUI
             ProductDataGridView.RowHeadersWidth = 50;
             ProductDataGridView.RowTemplate.DefaultCellStyle.BackColor = Color.White;
             ProductDataGridView.RowTemplate.Height = 50;
-            ProductDataGridView.Size = new Size(1094, 500);
+            ProductDataGridView.Size = new Size(1254, 500);
             ProductDataGridView.TabIndex = 0;
             ProductDataGridView.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             ProductDataGridView.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -694,7 +694,7 @@ namespace SGV_CLP.GUI
             // 
             // CodProd
             // 
-            CodProd.FillWeight = 75F;
+            CodProd.FillWeight = 77.11364F;
             CodProd.HeaderText = "Código";
             CodProd.MinimumWidth = 6;
             CodProd.Name = "CodProd";
@@ -703,7 +703,7 @@ namespace SGV_CLP.GUI
             // 
             // NombreProd
             // 
-            NombreProd.FillWeight = 150F;
+            NombreProd.FillWeight = 154.22728F;
             NombreProd.HeaderText = "Nombre";
             NombreProd.MinimumWidth = 6;
             NombreProd.Name = "NombreProd";
@@ -712,7 +712,7 @@ namespace SGV_CLP.GUI
             // 
             // PrecioVentaPub
             // 
-            PrecioVentaPub.FillWeight = 50F;
+            PrecioVentaPub.FillWeight = 51.4090919F;
             PrecioVentaPub.HeaderText = "P.V.P";
             PrecioVentaPub.MinimumWidth = 6;
             PrecioVentaPub.Name = "PrecioVentaPub";
@@ -721,7 +721,7 @@ namespace SGV_CLP.GUI
             // 
             // Categoria
             // 
-            Categoria.FillWeight = 150F;
+            Categoria.FillWeight = 154.22728F;
             Categoria.HeaderText = "Categoría";
             Categoria.MinimumWidth = 6;
             Categoria.Name = "Categoria";
@@ -730,35 +730,36 @@ namespace SGV_CLP.GUI
             // 
             // ImagePath
             // 
+            ImagePath.FillWeight = 102.818184F;
             ImagePath.HeaderText = "Ruta de Imagen";
             ImagePath.Name = "ImagePath";
             // 
             // parentCode
             // 
+            parentCode.FillWeight = 102.818184F;
             parentCode.HeaderText = "Padre";
             parentCode.Name = "parentCode";
             // 
             // ColumnaEditarProducto
             // 
-            ColumnaEditarProducto.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            ColumnaEditarProducto.FillWeight = 82.38636F;
             ColumnaEditarProducto.HeaderText = "";
             ColumnaEditarProducto.Image = (Image)resources.GetObject("ColumnaEditarProducto.Image");
-            ColumnaEditarProducto.MinimumWidth = 6;
+            ColumnaEditarProducto.MinimumWidth = 20;
             ColumnaEditarProducto.Name = "ColumnaEditarProducto";
             ColumnaEditarProducto.ReadOnly = true;
             ColumnaEditarProducto.Resizable = DataGridViewTriState.False;
-            ColumnaEditarProducto.Width = 182;
             // 
             // ColumnaEliminarProducto
             // 
-            ColumnaEliminarProducto.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            ColumnaEliminarProducto.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             ColumnaEliminarProducto.HeaderText = "";
             ColumnaEliminarProducto.Image = (Image)resources.GetObject("ColumnaEliminarProducto.Image");
-            ColumnaEliminarProducto.MinimumWidth = 6;
+            ColumnaEliminarProducto.MinimumWidth = 20;
             ColumnaEliminarProducto.Name = "ColumnaEliminarProducto";
             ColumnaEliminarProducto.ReadOnly = true;
             ColumnaEliminarProducto.Resizable = DataGridViewTriState.False;
-            ColumnaEliminarProducto.Width = 182;
+            ColumnaEliminarProducto.Width = 20;
             // 
             // AddCategory
             // 
@@ -766,10 +767,10 @@ namespace SGV_CLP.GUI
             AddCategory.Controls.Add(siticoneHtmlLabel3);
             AddCategory.Controls.Add(addCategoryTextBox);
             AddCategory.Controls.Add(addCategoryButton);
-            AddCategory.Location = new Point(164, 4);
+            AddCategory.Location = new Point(4, 44);
             AddCategory.Name = "AddCategory";
             AddCategory.Padding = new Padding(3);
-            AddCategory.Size = new Size(1100, 757);
+            AddCategory.Size = new Size(1260, 717);
             AddCategory.TabIndex = 2;
             AddCategory.Text = "Añadir Categoría";
             AddCategory.UseVisualStyleBackColor = true;
@@ -780,7 +781,7 @@ namespace SGV_CLP.GUI
             categoryUsedLabel.BackColor = Color.Transparent;
             categoryUsedLabel.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             categoryUsedLabel.ForeColor = Color.Red;
-            categoryUsedLabel.Location = new Point(519, 312);
+            categoryUsedLabel.Location = new Point(599, 292);
             categoryUsedLabel.Name = "categoryUsedLabel";
             categoryUsedLabel.Size = new Size(298, 22);
             categoryUsedLabel.TabIndex = 58;
@@ -792,7 +793,7 @@ namespace SGV_CLP.GUI
             siticoneHtmlLabel3.Anchor = AnchorStyles.None;
             siticoneHtmlLabel3.BackColor = Color.Transparent;
             siticoneHtmlLabel3.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            siticoneHtmlLabel3.Location = new Point(267, 265);
+            siticoneHtmlLabel3.Location = new Point(347, 245);
             siticoneHtmlLabel3.Margin = new Padding(3, 4, 3, 4);
             siticoneHtmlLabel3.Name = "siticoneHtmlLabel3";
             siticoneHtmlLabel3.Size = new Size(181, 26);
@@ -811,7 +812,7 @@ namespace SGV_CLP.GUI
             addCategoryTextBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             addCategoryTextBox.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             addCategoryTextBox.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            addCategoryTextBox.Location = new Point(536, 255);
+            addCategoryTextBox.Location = new Point(616, 235);
             addCategoryTextBox.Margin = new Padding(5, 9, 5, 9);
             addCategoryTextBox.Name = "addCategoryTextBox";
             addCategoryTextBox.PasswordChar = '\0';
@@ -835,7 +836,7 @@ namespace SGV_CLP.GUI
             addCategoryButton.FillColor = Color.Black;
             addCategoryButton.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             addCategoryButton.ForeColor = Color.White;
-            addCategoryButton.Location = new Point(435, 520);
+            addCategoryButton.Location = new Point(515, 500);
             addCategoryButton.Margin = new Padding(3, 4, 3, 4);
             addCategoryButton.Name = "addCategoryButton";
             addCategoryButton.Size = new Size(180, 45);
@@ -846,12 +847,12 @@ namespace SGV_CLP.GUI
             // EditDeleteCategory
             // 
             EditDeleteCategory.Controls.Add(categoryDataGridView);
-            EditDeleteCategory.Location = new Point(164, 4);
+            EditDeleteCategory.Location = new Point(4, 44);
             EditDeleteCategory.Name = "EditDeleteCategory";
             EditDeleteCategory.Padding = new Padding(3);
-            EditDeleteCategory.Size = new Size(1100, 757);
+            EditDeleteCategory.Size = new Size(1260, 717);
             EditDeleteCategory.TabIndex = 3;
-            EditDeleteCategory.Text = "Editar/Eliminar Categoría";
+            EditDeleteCategory.Text = "Editar Categoría";
             EditDeleteCategory.UseVisualStyleBackColor = true;
             // 
             // categoryDataGridView
@@ -886,7 +887,7 @@ namespace SGV_CLP.GUI
             categoryDataGridView.RowHeadersWidth = 50;
             categoryDataGridView.RowTemplate.DefaultCellStyle.BackColor = Color.White;
             categoryDataGridView.RowTemplate.Height = 50;
-            categoryDataGridView.Size = new Size(1094, 751);
+            categoryDataGridView.Size = new Size(1254, 711);
             categoryDataGridView.TabIndex = 1;
             categoryDataGridView.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             categoryDataGridView.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -1034,14 +1035,6 @@ namespace SGV_CLP.GUI
         private Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel parentErrorLabel;
         private Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel parentLabel;
         private CheckBox isSubproductCheckBox;
-        private DataGridViewTextBoxColumn CodProd;
-        private DataGridViewTextBoxColumn NombreProd;
-        private DataGridViewTextBoxColumn PrecioVentaPub;
-        private DataGridViewTextBoxColumn Categoria;
-        private DataGridViewTextBoxColumn ImagePath;
-        private DataGridViewTextBoxColumn parentCode;
-        private DataGridViewImageColumn ColumnaEditarProducto;
-        private DataGridViewImageColumn ColumnaEliminarProducto;
         private TabPage AddCategory;
         private TabPage EditDeleteCategory;
         private Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel categoryUsedLabel;
@@ -1052,5 +1045,13 @@ namespace SGV_CLP.GUI
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private DataGridViewImageColumn updateCategoryColumn;
         private DataGridViewImageColumn deleteCategoryColumn;
+        private DataGridViewTextBoxColumn CodProd;
+        private DataGridViewTextBoxColumn NombreProd;
+        private DataGridViewTextBoxColumn PrecioVentaPub;
+        private DataGridViewTextBoxColumn Categoria;
+        private DataGridViewTextBoxColumn ImagePath;
+        private DataGridViewTextBoxColumn parentCode;
+        private DataGridViewImageColumn ColumnaEditarProducto;
+        private DataGridViewImageColumn ColumnaEliminarProducto;
     }
 }

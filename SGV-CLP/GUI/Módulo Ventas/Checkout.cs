@@ -89,13 +89,14 @@ namespace SGV_CLP.GUI.Módulo_Ventas
             InvoiceMapper.AddInvoice(UC_Ventas.invoice);
             UC_Ventas.invoice.SetInvoiceDetail(InvoiceMapper.ConsultarUltimoID());
             UC_Ventas.invoice.invoiceDetailList.ForEach(item => InvoiceDetailMapper.AddInvoiceDetail(item));
-            ReceiptHelper.generateReceipt(
+            ReceiptHelper.GenerateReceipt(
                 UC_Ventas.invoice,
                 clienteFinal,
                 txtTotalVenta.Text.Replace('.',','),
                 txtRecibidoVenta.Text.Equals(string.Empty) ? txtTotalVenta.Text.Replace('.', ',') : txtRecibidoVenta.Text.Replace('.', ','),
                 txtVueltoVenta.Text.Equals(string.Empty) ? "0,00" : txtVueltoVenta.Text.Replace('.', ','));
-
+            //Print Receipt Line
+            //PrintHelper.PrintPDF("receipt.pdf");
             UC_Ventas.invoice = new Invoice();
             UC_Ventas.resetNumPickers();
             SystemSounds.Beep.Play();
