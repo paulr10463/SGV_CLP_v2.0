@@ -136,7 +136,16 @@ namespace SGV_CLP.Classes.Sales_Module
                 var queryString = "SELECT * FROM \"Order\" JOIN \"Customer\" ON \"Order\".\"ccCustomer\" = \"Customer\".\"ccCustomer\" WHERE \"issueDate\" = @value";
                 using var command = new NpgsqlCommand(queryString, connection);
                 // Utiliza parámetros en lugar de concatenar valores para evitar SQL Injection
-                command.Parameters.AddWithValue("@value", value);
+                // Convierte el valor de texto a un objeto DateTime
+                if (DateTime.TryParse(value, out DateTime dateValue))
+                {
+                    command.Parameters.AddWithValue("@value", dateValue);
+                }
+                else
+                {
+                    // Maneja el caso en el que el valor de texto no es una fecha válida
+                    throw new ArgumentException("El valor proporcionado no es una fecha válida.");
+                }
                 using var reader = await command.ExecuteReaderAsync(); // Ejecuta la consulta de forma asíncrona
                 while (await reader.ReadAsync()) // Lee el resultado de forma asíncrona
                 {

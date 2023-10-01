@@ -223,7 +223,8 @@ namespace SGV_CLP.GUI
                 case 6:
                     Categoria = "issueDate";
                     dateTimePickerConsultarVenta.Visible = true;
-                    DateTimePickerConsultarVenta_ValueChanged(null, null);
+                    dateTimePickerConsultarVenta.Value = DateTime.Now;
+                    //DateTimePickerConsultarVenta_ValueChanged(null, null);
                     break;
             }
 
@@ -253,7 +254,7 @@ namespace SGV_CLP.GUI
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.ToString());
+                MessageBox.Show(ex.Message);
             }
 
         }
