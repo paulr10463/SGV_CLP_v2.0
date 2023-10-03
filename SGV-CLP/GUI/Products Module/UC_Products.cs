@@ -195,7 +195,7 @@ namespace SGV_CLP.GUI
                     cbSearchProductByCategory.DataSource = existingCategories.Values.ToArray();
                     tbSearchProductBy.Visible = false;
                     cbSearchProductByCategory.Visible = true;
-                    cbSearchProductByCategory.SelectedIndex = -1;
+                    //cbSearchProductByCategory.SelectedIndex = 0;
                 }
                 else
                 {
@@ -562,10 +562,17 @@ namespace SGV_CLP.GUI
             {
                 MessageBox.Show(ex.Message);
             }
-
-            existingCategories.Clear();
-            CategoryMapper.GetAllCategories().ForEach(item => existingCategories[item.id] = item.categoryName);
             FillProductDataGridView();
+            string selectedItem = cbSearchProdutBy.SelectedItem.ToString();
+            if (selectedItem == "Código" || selectedItem == "Nombre")
+                TbSearchProductBy_TextChanged(null, null);
+            else
+                CbSearchProductByCategory_SelectedIndexChanged(null, null);
+            //existingCategories.Clear();
+            //CategoryMapper.GetAllCategories().ForEach(item => existingCategories[item.id] = item.categoryName);
+            //CbSearchProductBy_SelectedIndexChanged(null, null);
+            
+            //
             MainMenu.uc_ventas.LoadProducts();
         }
     }

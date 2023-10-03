@@ -2,9 +2,9 @@
 using SGV_CLP.Classes.Products_module;
 using SGV_CLP.Classes.Sales_Module;
 using SGV_CLP.GUI.Módulo_Ventas;
+using SGV_CLP.Properties;
 using Siticone.Desktop.UI.WinForms;
 using System.Media;
-
 using System.Windows.Forms;
 
 
@@ -14,28 +14,35 @@ namespace SGV_CLP.GUI
     {
         Dictionary<string, List<Product>> productsCategorized = new();
         public static Invoice invoice;
-        public static SiticoneDataGridView detalleVentaTabla;
+        public static SiticoneDataGridView dineInDataGridView;
+        public static SiticoneDataGridView toGoDataGridView;
         public static Label totalVenta;
         public static List<UC_Item> productosUI = new List<UC_Item>();
         public string Categoria = string.Empty;
+        public static bool ToGo = false;
         public UC_Ventas()
         {
             invoice = new Invoice();
 
             InitializeComponent();
-            detalleVentaTabla = siticoneDataGridView2;
+            ToEatButton.Width = ServiceTypePanel.Width / 2;
+            ToGoButton.Width = ServiceTypePanel.Width / 2;
+            ToEatButton.Checked = true;
+
+            dineInDataGridView = DineInDataGridView;
+            toGoDataGridView = ToGoDataGridView;
             totalVenta = siticoneHtmlLabel11;
             dateTimePickerConsultarVenta.Visible = false;
             txtConsultarVenta.Enabled = false;
             ComboBox_ConsultarVentaPor.SelectedIndex = 0;
             LoadProducts();
-
         }
 
 
         public void LoadProducts()
         {
             productsFlowLayoutPanel.Controls.Clear();
+            //productsFlowLayoutPanel.Controls.Add(necessaryPanel);
             productsCategorized.Clear();
             List<Product> products = ProductMapper.GetAllProduct();
             products.ForEach(product =>
@@ -47,6 +54,7 @@ namespace SGV_CLP.GUI
                 productsCategorized[product.categoryName].Add(product);
             });
 
+
             //List<Category> categoriesAvailable = CategoryMapper.GetAllCategories();
             foreach (var item in productsCategorized)
             {
@@ -57,28 +65,51 @@ namespace SGV_CLP.GUI
                     Dock = DockStyle.Top,
                     Margin = new Padding(0, 0, 0, 2),
                 };
-                Label label = new()
+                SiticoneButton categoryButton = new SiticoneButton
                 {
+                    Animated = true,
+                    BackColor = Color.Orange,
+                    BorderColor = Color.FromArgb(0, 192, 0),
                     AutoSize = true,
-                    Text = item.Key,
-                    Dock = DockStyle.Top,
-                    BackColor = Color.Green,
-                    ForeColor = Color.White,
-                    Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point),
-                    Padding = new Padding(10, 5, 0, 5),
-                    Cursor = Cursors.Hand,
-                    Margin = new Padding(0, 0, 0, 2),
                 };
-                label.Click += (s, e) => { flowLayoutPanel.Visible = !flowLayoutPanel.Visible; };
-                productsFlowLayoutPanel.Controls.Add(label);
+                categoryButton.CheckedState.CustomBorderColor = Color.Green;
+                categoryButton.CustomBorderColor = Color.Green;
+                categoryButton.CustomBorderThickness = new Padding(4, 0, 0, 1);
+                categoryButton.Dock = DockStyle.Top;
+                categoryButton.FillColor = Color.White;
+                categoryButton.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+                categoryButton.ForeColor = Color.Black;
+                categoryButton.Text = item.Key;
+                categoryButton.PressedDepth = 0;
+                categoryButton.RightToLeft = RightToLeft.No;
+                categoryButton.Image = Resources.minus;
+                categoryButton.ImageOffset = new Point(10, 0);
+                categoryButton.ImageSize = new Size(15, 15);
+                categoryButton.ImageAlign = HorizontalAlignment.Left;
+                //categoryButton.Size = new Size(417, 53);
+                categoryButton.TextAlign = HorizontalAlignment.Left;
+                categoryButton.TextOffset = new Point(10, 0);
+
+                categoryButton.Click += (s, e) =>
+                {
+                    flowLayoutPanel.Visible = !flowLayoutPanel.Visible;
+                    if (flowLayoutPanel.Visible)
+                    {
+
+                        categoryButton.Image = Resources.minus;
+                        //categoryButton.Text = categoryButton.Text.Replace("+", "-");
+                    }
+                    else
+                    {
+                        categoryButton.Image = Resources.plus;
+                        //categoryButton.Text = categoryButton.Text.Replace("-", "+");
+                    }
+
+                };
+                productsFlowLayoutPanel.Controls.Add(categoryButton);
                 productsFlowLayoutPanel.Controls.Add(flowLayoutPanel);
                 ShowProducts(item.Value, flowLayoutPanel);
             }
-        }
-
-        private void siticoneHtmlLabel17_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void ShowProducts(List<Product> productCategoryItems, FlowLayoutPanel flowLayoutPanel)
@@ -103,7 +134,8 @@ namespace SGV_CLP.GUI
         //Vacia siticoneDataGridView2 para una nueva compra
         public void ResetValues()
         {
-            siticoneDataGridView2.Rows.Clear();
+            DineInDataGridView.Rows.Clear();
+            ToGoDataGridView.Rows.Clear();
             siticoneHtmlLabel11.Visible = false;
         }
 
@@ -199,13 +231,13 @@ namespace SGV_CLP.GUI
         {
             try
             {
-                if (siticoneDataGridView2.Columns[e.ColumnIndex].Name == "EliminarDetalle")
+                if (DineInDataGridView.Columns[e.ColumnIndex].Name == "EliminarDetalle")
                 {
-                    if (e.RowIndex >= 0 && siticoneDataGridView2.Rows[e.RowIndex].Cells[0].Value.ToString() != null)
+                    if (e.RowIndex >= 0 && DineInDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString() != null)
                     {
-                        DataGridViewRow row = siticoneDataGridView2.Rows[e.RowIndex];
-                        invoice.DeleteInvoiceDetailbyProductName(row.Cells[0].Value.ToString());
-                        siticoneDataGridView2.Rows.RemoveAt(e.RowIndex);
+                        DataGridViewRow row = DineInDataGridView.Rows[e.RowIndex];
+                        invoice.DeleteDineInDetailbyProductName(row.Cells[0].Value.ToString());
+                        DineInDataGridView.Rows.RemoveAt(e.RowIndex);
                         totalVenta.Text = "Total : $" + $"{invoice.CalculateTotalSales():0.00}".Replace(',', '.');
                     }
                 }
@@ -252,14 +284,14 @@ namespace SGV_CLP.GUI
 
         private void ButtonDoPayment_Click(object sender, EventArgs e)
         {
-            if (siticoneDataGridView2.RowCount == 1)
+            if (DineInDataGridView.RowCount == 1 || ToGoDataGridView.RowCount == 1)
             {
                 SystemSounds.Beep.Play();
                 MessageBox.Show("Debe elegir al menos un producto", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                Checkout ventana = new(siticoneDataGridView2);
+                Checkout ventana = new(DineInDataGridView);
                 ventana.ShowDialog();
             }
         }
@@ -287,5 +319,69 @@ namespace SGV_CLP.GUI
                 MainMenu.uc_ventas.FillSalesTable(registeredInvoices);
             }
         }
+
+        private void ServiceTypePanel_Resize(object sender, EventArgs e)
+        {
+            ToEatButton.Width = ServiceTypePanel.Width / 2;
+            ToGoButton.Width = ServiceTypePanel.Width / 2;
+        }
+
+        private void ToGoButton_Click(object sender, EventArgs e)
+        {
+            ToGo = true;
+        }
+
+        private void ToEatButton_Click(object sender, EventArgs e)
+        {
+            ToGo = false;
+        }
+
+        private void ToGoDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (ToGoDataGridView.Columns[e.ColumnIndex].Name == "DeleteToGoDetail")
+                {
+                    if (e.RowIndex >= 0 && ToGoDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString() != null)
+                    {
+                        DataGridViewRow row = ToGoDataGridView.Rows[e.RowIndex];
+                        invoice.DeleteToGoDetailbyProductName(row.Cells[0].Value.ToString());
+                        ToGoDataGridView.Rows.RemoveAt(e.RowIndex);
+                        totalVenta.Text = "Total : $" + $"{invoice.CalculateTotalSales():0.00}".Replace(',', '.');
+                    }
+                }
+                if (invoice.toGoDetailList?.Count < 1)
+                {
+                    ToGoDataGridView.Visible = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show("Esa fila está vacía, no puede hacer acciones sobre ella!!");
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        private const int rowHeight = 33;
+        private void DineInDataGridView_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            DineInDataGridView.Height += rowHeight;
+        }
+
+        private void ToGoDataGridView_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            ToGoDataGridView.Height += rowHeight;
+        }
+
+        private void ToGoDataGridView_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            ToGoDataGridView.Height -= rowHeight;
+        }
+
+        private void DineInDataGridView_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            DineInDataGridView.Height -= rowHeight;
+        }
+    
     }
 }

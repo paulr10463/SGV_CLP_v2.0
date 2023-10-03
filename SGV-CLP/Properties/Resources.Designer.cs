@@ -143,6 +143,16 @@ namespace SGV_CLP.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap hand {
+            get {
+                object obj = ResourceManager.GetObject("hand", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Humita {
             get {
                 object obj = ResourceManager.GetObject("Humita", resourceCulture);
@@ -203,6 +213,36 @@ namespace SGV_CLP.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap minus {
+            get {
+                object obj = ResourceManager.GetObject("minus", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minus_circle_3185617_2685001 {
+            get {
+                object obj = ResourceManager.GetObject("minus-circle-3185617-2685001", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minus_circle_3185617_26850011 {
+            get {
+                object obj = ResourceManager.GetObject("minus-circle-3185617-26850011", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Morocho {
             get {
                 object obj = ResourceManager.GetObject("Morocho", resourceCulture);
@@ -223,6 +263,26 @@ namespace SGV_CLP.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap plus {
+            get {
+                object obj = ResourceManager.GetObject("plus", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap plus_circle_icon_256x256_9hl8pb45 {
+            get {
+                object obj = ResourceManager.GetObject("plus-circle-icon-256x256-9hl8pb45", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Products {
             get {
                 object obj = ResourceManager.GetObject("Products", resourceCulture);
@@ -236,6 +296,16 @@ namespace SGV_CLP.Properties {
         internal static System.Drawing.Bitmap Quimbolito {
             get {
                 object obj = ResourceManager.GetObject("Quimbolito", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap restaurant {
+            get {
+                object obj = ResourceManager.GetObject("restaurant", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

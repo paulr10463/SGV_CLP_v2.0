@@ -54,7 +54,7 @@
             addProductButton.Size = new Size(117, 31);
             addProductButton.TabIndex = 7;
             addProductButton.Text = "Añadir";
-            addProductButton.Click += siticoneButton1_Click;
+            addProductButton.Click += AddProductButton_Click;
             // 
             // siticonePictureBox1
             // 
@@ -69,37 +69,40 @@
             // 
             // lessButton
             // 
-            lessButton.BorderRadius = 10;
+            lessButton.BackColor = Color.Transparent;
+            lessButton.BorderRadius = 20;
             lessButton.DisabledState.BorderColor = Color.DarkGray;
             lessButton.DisabledState.CustomBorderColor = Color.DarkGray;
             lessButton.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             lessButton.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            lessButton.FillColor = Color.Black;
+            lessButton.FillColor = Color.Transparent;
             lessButton.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             lessButton.ForeColor = Color.White;
+            lessButton.Image = Properties.Resources.minus_circle_3185617_26850011;
+            lessButton.ImageSize = new Size(28, 28);
             lessButton.Location = new Point(7, 127);
             lessButton.Name = "lessButton";
-            lessButton.Size = new Size(35, 30);
+            lessButton.Size = new Size(34, 30);
             lessButton.TabIndex = 8;
-            lessButton.Text = "-";
             lessButton.MouseDown += lessButton_MouseDown;
             // 
             // plusButton
             // 
-            plusButton.BorderRadius = 10;
+            plusButton.BorderRadius = 20;
             plusButton.DisabledState.BorderColor = Color.DarkGray;
             plusButton.DisabledState.CustomBorderColor = Color.DarkGray;
             plusButton.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             plusButton.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            plusButton.FillColor = Color.Black;
+            plusButton.FillColor = Color.Transparent;
             plusButton.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             plusButton.ForeColor = Color.White;
-            plusButton.Location = new Point(87, 127);
+            plusButton.Image = Properties.Resources.plus_circle_icon_256x256_9hl8pb45;
+            plusButton.ImageSize = new Size(30, 30);
+            plusButton.Location = new Point(88, 127);
             plusButton.Name = "plusButton";
-            plusButton.Size = new Size(35, 30);
+            plusButton.Size = new Size(34, 30);
             plusButton.TabIndex = 9;
-            plusButton.Text = "+";
-            plusButton.MouseDown += plusButton_MouseDown;
+            plusButton.MouseDown += PlusButton_MouseDown;
             // 
             // quantityField
             // 
@@ -133,7 +136,7 @@
             openSubproductsButton.FillColor = Color.Black;
             openSubproductsButton.Font = new Font("Century Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
             openSubproductsButton.ForeColor = Color.White;
-            openSubproductsButton.Location = new Point(5, 143);
+            openSubproductsButton.Location = new Point(7, 141);
             openSubproductsButton.Name = "openSubproductsButton";
             openSubproductsButton.Size = new Size(117, 31);
             openSubproductsButton.TabIndex = 13;
@@ -153,7 +156,7 @@
             Controls.Add(addProductButton);
             Controls.Add(siticonePictureBox1);
             Name = "UC_Item";
-            Size = new Size(128, 197);
+            Size = new Size(128, 196);
             ((System.ComponentModel.ISupportInitialize)siticonePictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();

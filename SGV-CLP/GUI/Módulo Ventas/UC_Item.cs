@@ -41,23 +41,35 @@ namespace SGV_CLP.GUI.Módulo_Ventas
             this.label1.Text = producto.productName;
         }
 
-        private void siticoneButton1_Click(object sender, EventArgs e)
+        private void AddProductButton_Click(object sender, EventArgs e)
         {
             if (quantityField.Text != string.Empty && quantityField.Text != "0")
             {
                 invoiceDetail.soldQuantity = int.Parse(quantityField.Text);
                 invoiceDetail.subTotal = Math.Round((double)(invoiceDetail.soldQuantity * _producto.salePrice), 2);
-                UC_Ventas.invoice.AddOrUpdateInvoiceDetail(invoiceDetail);
-                addRowInTable(invoiceDetail.soldQuantity, _producto);
+                if (UC_Ventas.ToGo) 
+                {
+                    UC_Ventas.invoice.AddOrUpdateToGoList(invoiceDetail);
+                    addRowInTable(UC_Ventas.toGoDataGridView, invoiceDetail.soldQuantity, _producto);
+                    UC_Ventas.toGoDataGridView.Visible = true;
+                }
+                else
+                {
+                    UC_Ventas.invoice.AddOrUpdateDineInList(invoiceDetail);
+                    addRowInTable(UC_Ventas.dineInDataGridView, invoiceDetail.soldQuantity, _producto);
+                } 
+                
                 UC_Ventas.totalVenta.Visible = true;
                 UC_Ventas.totalVenta.Text = "Total : $" + $"{UC_Ventas.invoice.CalculateTotalSales():0.00}".Replace(',', '.');
+                quantityField.Text = string.Empty;
             }
+
         }
-        public void addRowInTable(int cantidad, Product producto)
+        public void addRowInTable(SiticoneDataGridView productDetailTable, int cantidad, Product producto)
         {
             bool flag = false;
             //Recorre la tabla de productos en el módulo de ventas
-            foreach (DataGridViewRow rowItem in UC_Ventas.detalleVentaTabla.Rows)
+            foreach (DataGridViewRow rowItem in productDetailTable.Rows)
             {
                 //Verifica que ya exista una fila con ese producto
                 if (rowItem.Cells[0].Value != null)
@@ -79,11 +91,11 @@ namespace SGV_CLP.GUI.Módulo_Ventas
             //En caso de no existir la fila del producto, la crea
             if (!flag)
             {
-                DataGridViewRow row = (DataGridViewRow)UC_Ventas.detalleVentaTabla.Rows[0].Clone();
+                DataGridViewRow row = (DataGridViewRow)productDetailTable.Rows[0].Clone();
                 row.Cells[0].Value = producto.productName;
                 row.Cells[1].Value = cantidad;
                 row.Cells[2].Value = invoiceDetail.subTotal.ToString().Replace(',', '.');
-                UC_Ventas.detalleVentaTabla.Rows.Add(row);
+                productDetailTable.Rows.Add(row);
             }
 
         }
@@ -98,7 +110,7 @@ namespace SGV_CLP.GUI.Módulo_Ventas
             ValidationUtils.keyPressDigitsValidation(e);
         }
 
-        private void plusButton_MouseDown(object sender, MouseEventArgs e)
+        private void PlusButton_MouseDown(object sender, MouseEventArgs e)
         {
             if (quantityField.Text == string.Empty)
             {
@@ -135,6 +147,11 @@ namespace SGV_CLP.GUI.Módulo_Ventas
             List<Product> subProductos = ProductMapper.GetProductByParentCode(_producto.productCode);
             ProductSubtype productSubtypeWindow = new ProductSubtype(subProductos);
             productSubtypeWindow.ShowDialog();
+
+        }
+
+        private void ToGoButton_MouseDown(object sender, MouseEventArgs e)
+        {
 
         }
     }

@@ -116,6 +116,7 @@ namespace SGV_CLP.GUI
                         }
                     }
                     FillCustomerDataGridView();
+                    tbSearchCustomerBy_TextChanged(null, null);
                 }
 
                 // CLICK EN CELDA EDITAR CLIENTE
@@ -128,6 +129,7 @@ namespace SGV_CLP.GUI
                         editCustomerWinForm.ShowDialog();
                     }
                     FillCustomerDataGridView();
+                    tbSearchCustomerBy_TextChanged(null, null);
                 }
             }
             catch (Exception nre)
@@ -135,6 +137,7 @@ namespace SGV_CLP.GUI
                 //MessageBox.Show("Esa fila está vacía, no puede hacer acciones sobre ella!!");
                 MessageBox.Show(nre.Message);
             }
+                
 
         }
         private void cbSearchCustomerBy_SelectedIndexChanged(object sender, EventArgs e)

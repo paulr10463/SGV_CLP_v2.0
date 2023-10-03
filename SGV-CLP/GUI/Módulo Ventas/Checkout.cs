@@ -88,7 +88,7 @@ namespace SGV_CLP.GUI.Módulo_Ventas
             UC_Ventas.invoice.issuedDate = DateTime.Now;
             InvoiceMapper.AddInvoice(UC_Ventas.invoice);
             UC_Ventas.invoice.SetInvoiceDetail(InvoiceMapper.ConsultarUltimoID());
-            UC_Ventas.invoice.invoiceDetailList.ForEach(item => InvoiceDetailMapper.AddInvoiceDetail(item));
+            UC_Ventas.invoice.dineInDetailList.ForEach(item => InvoiceDetailMapper.AddInvoiceDetail(item));
             ReceiptHelper.GenerateReceipt(
                 UC_Ventas.invoice,
                 clienteFinal,

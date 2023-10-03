@@ -73,8 +73,8 @@ namespace SGV_CLP
             // 
             // flowLayoutPanel1
             // 
-            flowLayoutPanel1.Controls.Add(siticoneButton4);
             flowLayoutPanel1.Controls.Add(siticoneButton3);
+            flowLayoutPanel1.Controls.Add(siticoneButton4);
             flowLayoutPanel1.Controls.Add(siticoneButton6);
             flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
             flowLayoutPanel1.Location = new Point(3, 178);
@@ -103,7 +103,7 @@ namespace SGV_CLP
             siticoneButton4.ImageAlign = HorizontalAlignment.Left;
             siticoneButton4.ImageOffset = new Point(10, 0);
             siticoneButton4.ImageSize = new Size(50, 50);
-            siticoneButton4.Location = new Point(3, 3);
+            siticoneButton4.Location = new Point(3, 80);
             siticoneButton4.Name = "siticoneButton4";
             siticoneButton4.PressedColor = Color.Green;
             siticoneButton4.PressedDepth = 0;
@@ -134,7 +134,7 @@ namespace SGV_CLP
             siticoneButton3.ImageAlign = HorizontalAlignment.Left;
             siticoneButton3.ImageOffset = new Point(10, 0);
             siticoneButton3.ImageSize = new Size(50, 50);
-            siticoneButton3.Location = new Point(3, 77);
+            siticoneButton3.Location = new Point(3, 3);
             siticoneButton3.Name = "siticoneButton3";
             siticoneButton3.PressedColor = Color.Green;
             siticoneButton3.PressedDepth = 0;

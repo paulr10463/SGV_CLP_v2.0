@@ -64,7 +64,7 @@ namespace SGV_CLP.Classes
             table.SetWidths(columnWidths);
             table.WidthPercentage = 100; // Ancho de tabla al 100% del ancho de página
             AddDetailTableTitle(table);
-            invoice.invoiceDetailList.ForEach(item => { AddReceiptItem(table, item.soldQuantity, item.product.productName, (double)item.product.salePrice, (double)item.subTotal); });
+            invoice.dineInDetailList.ForEach(item => { AddReceiptItem(table, item.soldQuantity, item.product.productName, (double)item.product.salePrice, (double)item.subTotal); });
             document.Add(table);
         }
         static void AddDetailTableTitle(PdfPTable table)
