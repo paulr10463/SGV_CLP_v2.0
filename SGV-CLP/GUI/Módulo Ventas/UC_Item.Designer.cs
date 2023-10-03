@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Item));
-            addProductButton = new Siticone.Desktop.UI.WinForms.SiticoneButton();
             siticonePictureBox1 = new Siticone.Desktop.UI.WinForms.SiticonePictureBox();
             lessButton = new Siticone.Desktop.UI.WinForms.SiticoneButton();
             plusButton = new Siticone.Desktop.UI.WinForms.SiticoneButton();
@@ -38,23 +37,6 @@
             openSubproductsButton = new Siticone.Desktop.UI.WinForms.SiticoneButton();
             ((System.ComponentModel.ISupportInitialize)siticonePictureBox1).BeginInit();
             SuspendLayout();
-            // 
-            // addProductButton
-            // 
-            addProductButton.BorderRadius = 10;
-            addProductButton.DisabledState.BorderColor = Color.DarkGray;
-            addProductButton.DisabledState.CustomBorderColor = Color.DarkGray;
-            addProductButton.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            addProductButton.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            addProductButton.FillColor = Color.Black;
-            addProductButton.Font = new Font("Century Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            addProductButton.ForeColor = Color.White;
-            addProductButton.Location = new Point(5, 160);
-            addProductButton.Name = "addProductButton";
-            addProductButton.Size = new Size(117, 31);
-            addProductButton.TabIndex = 7;
-            addProductButton.Text = "Añadir";
-            addProductButton.Click += AddProductButton_Click;
             // 
             // siticonePictureBox1
             // 
@@ -84,7 +66,7 @@
             lessButton.Name = "lessButton";
             lessButton.Size = new Size(34, 30);
             lessButton.TabIndex = 8;
-            lessButton.MouseDown += lessButton_MouseDown;
+            lessButton.MouseDown += LessButton_MouseDown;
             // 
             // plusButton
             // 
@@ -113,6 +95,7 @@
             quantityField.Size = new Size(35, 29);
             quantityField.TabIndex = 11;
             quantityField.TextAlign = HorizontalAlignment.Center;
+            quantityField.TextChanged += quantityField_TextChanged;
             quantityField.KeyPress += quantityField_KeyPress;
             // 
             // label1
@@ -136,7 +119,7 @@
             openSubproductsButton.FillColor = Color.Black;
             openSubproductsButton.Font = new Font("Century Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
             openSubproductsButton.ForeColor = Color.White;
-            openSubproductsButton.Location = new Point(7, 141);
+            openSubproductsButton.Location = new Point(5, 127);
             openSubproductsButton.Name = "openSubproductsButton";
             openSubproductsButton.Size = new Size(117, 31);
             openSubproductsButton.TabIndex = 13;
@@ -153,18 +136,15 @@
             Controls.Add(quantityField);
             Controls.Add(plusButton);
             Controls.Add(lessButton);
-            Controls.Add(addProductButton);
             Controls.Add(siticonePictureBox1);
             Name = "UC_Item";
-            Size = new Size(128, 196);
+            Size = new Size(128, 162);
             ((System.ComponentModel.ISupportInitialize)siticonePictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private Siticone.Desktop.UI.WinForms.SiticoneButton addProductButton;
         private Siticone.Desktop.UI.WinForms.SiticonePictureBox siticonePictureBox1;
         private Siticone.Desktop.UI.WinForms.SiticoneButton lessButton;
         private Siticone.Desktop.UI.WinForms.SiticoneButton plusButton;

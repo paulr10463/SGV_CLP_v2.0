@@ -155,7 +155,7 @@
             productsFlowLayoutPanel.Location = new Point(0, 56);
             productsFlowLayoutPanel.Margin = new Padding(0);
             productsFlowLayoutPanel.Name = "productsFlowLayoutPanel";
-            productsFlowLayoutPanel.Size = new Size(846, 616);
+            productsFlowLayoutPanel.Size = new Size(824, 616);
             productsFlowLayoutPanel.TabIndex = 12;
             productsFlowLayoutPanel.WrapContents = false;
             // 
@@ -176,7 +176,7 @@
             ServiceTypePanel.Dock = DockStyle.Top;
             ServiceTypePanel.Location = new Point(0, 0);
             ServiceTypePanel.Name = "ServiceTypePanel";
-            ServiceTypePanel.Size = new Size(849, 53);
+            ServiceTypePanel.Size = new Size(827, 56);
             ServiceTypePanel.TabIndex = 16;
             ServiceTypePanel.Resize += ServiceTypePanel_Resize;
             // 
@@ -200,11 +200,11 @@
             ToGoButton.Image = (Image)resources.GetObject("ToGoButton.Image");
             ToGoButton.ImageOffset = new Point(10, 0);
             ToGoButton.ImageSize = new Size(40, 40);
-            ToGoButton.Location = new Point(417, 0);
+            ToGoButton.Location = new Point(411, 0);
             ToGoButton.Name = "ToGoButton";
             ToGoButton.PressedColor = Color.Green;
             ToGoButton.PressedDepth = 0;
-            ToGoButton.Size = new Size(426, 53);
+            ToGoButton.Size = new Size(413, 56);
             ToGoButton.TabIndex = 8;
             ToGoButton.TextAlign = HorizontalAlignment.Left;
             ToGoButton.TextOffset = new Point(10, 0);
@@ -236,7 +236,7 @@
             ToEatButton.PressedColor = Color.Green;
             ToEatButton.PressedDepth = 0;
             ToEatButton.RightToLeft = RightToLeft.No;
-            ToEatButton.Size = new Size(417, 53);
+            ToEatButton.Size = new Size(411, 56);
             ToEatButton.TabIndex = 9;
             ToEatButton.TextAlign = HorizontalAlignment.Left;
             ToEatButton.TextOffset = new Point(10, 0);
@@ -244,28 +244,31 @@
             // 
             // siticoneGradientPanel1
             // 
+            siticoneGradientPanel1.AutoScroll = true;
             siticoneGradientPanel1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             siticoneGradientPanel1.BackColor = Color.White;
             siticoneGradientPanel1.Controls.Add(flowLayoutPanel1);
             siticoneGradientPanel1.Controls.Add(siticoneHtmlLabel11);
             siticoneGradientPanel1.Controls.Add(buttonDoPayment);
             siticoneGradientPanel1.Dock = DockStyle.Right;
-            siticoneGradientPanel1.Location = new Point(849, 0);
+            siticoneGradientPanel1.Location = new Point(827, 0);
             siticoneGradientPanel1.Name = "siticoneGradientPanel1";
-            siticoneGradientPanel1.Size = new Size(343, 672);
+            siticoneGradientPanel1.Size = new Size(365, 672);
             siticoneGradientPanel1.TabIndex = 5;
             // 
             // flowLayoutPanel1
             // 
             flowLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            flowLayoutPanel1.AutoScroll = true;
             flowLayoutPanel1.Controls.Add(DineInDataGridView);
             flowLayoutPanel1.Controls.Add(splitter1);
             flowLayoutPanel1.Controls.Add(ToGoDataGridView);
             flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
-            flowLayoutPanel1.Location = new Point(0, 0);
+            flowLayoutPanel1.Location = new Point(0, 3);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(343, 521);
+            flowLayoutPanel1.Size = new Size(365, 320);
             flowLayoutPanel1.TabIndex = 57;
+            flowLayoutPanel1.WrapContents = false;
             // 
             // DineInDataGridView
             // 
@@ -282,7 +285,7 @@
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             DineInDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            DineInDataGridView.ColumnHeadersHeight = 60;
+            DineInDataGridView.ColumnHeadersHeight = 40;
             DineInDataGridView.Columns.AddRange(new DataGridViewColumn[] { CC, Contras, dataGridViewTextBoxColumn3, EliminarDetalle });
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.White;
@@ -293,14 +296,14 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             DineInDataGridView.DefaultCellStyle = dataGridViewCellStyle3;
             DineInDataGridView.GridColor = Color.FromArgb(231, 229, 255);
-            DineInDataGridView.Location = new Point(3, 2);
+            DineInDataGridView.Location = new Point(4, 2);
             DineInDataGridView.Margin = new Padding(3, 2, 3, 2);
             DineInDataGridView.Name = "DineInDataGridView";
             DineInDataGridView.RowHeadersVisible = false;
             DineInDataGridView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             DineInDataGridView.RowTemplate.Height = 50;
             DineInDataGridView.RowTemplate.Resizable = DataGridViewTriState.True;
-            DineInDataGridView.Size = new Size(343, 87);
+            DineInDataGridView.Size = new Size(341, 87);
             DineInDataGridView.TabIndex = 55;
             DineInDataGridView.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             DineInDataGridView.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -314,7 +317,7 @@
             DineInDataGridView.ThemeStyle.HeaderStyle.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             DineInDataGridView.ThemeStyle.HeaderStyle.ForeColor = Color.White;
             DineInDataGridView.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            DineInDataGridView.ThemeStyle.HeaderStyle.Height = 60;
+            DineInDataGridView.ThemeStyle.HeaderStyle.Height = 40;
             DineInDataGridView.ThemeStyle.ReadOnly = false;
             DineInDataGridView.ThemeStyle.RowsStyle.BackColor = Color.White;
             DineInDataGridView.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
@@ -480,11 +483,11 @@
             // 
             // siticoneHtmlLabel11
             // 
-            siticoneHtmlLabel11.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            siticoneHtmlLabel11.Dock = DockStyle.Bottom;
             siticoneHtmlLabel11.Font = new Font("Century Gothic", 24F, FontStyle.Regular, GraphicsUnit.Point);
-            siticoneHtmlLabel11.Location = new Point(26, 535);
+            siticoneHtmlLabel11.Location = new Point(0, 531);
             siticoneHtmlLabel11.Name = "siticoneHtmlLabel11";
-            siticoneHtmlLabel11.Size = new Size(292, 48);
+            siticoneHtmlLabel11.Size = new Size(365, 70);
             siticoneHtmlLabel11.TabIndex = 56;
             siticoneHtmlLabel11.TextAlign = ContentAlignment.MiddleCenter;
             // 
@@ -505,7 +508,7 @@
             buttonDoPayment.ImageSize = new Size(30, 30);
             buttonDoPayment.Location = new Point(0, 601);
             buttonDoPayment.Name = "buttonDoPayment";
-            buttonDoPayment.Size = new Size(343, 71);
+            buttonDoPayment.Size = new Size(365, 71);
             buttonDoPayment.TabIndex = 4;
             buttonDoPayment.Text = "Realizar Pago";
             buttonDoPayment.Click += ButtonDoPayment_Click;

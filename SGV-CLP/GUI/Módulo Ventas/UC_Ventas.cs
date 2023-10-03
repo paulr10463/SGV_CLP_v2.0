@@ -329,11 +329,13 @@ namespace SGV_CLP.GUI
         private void ToGoButton_Click(object sender, EventArgs e)
         {
             ToGo = true;
+            resetNumPickers();
         }
 
         private void ToEatButton_Click(object sender, EventArgs e)
         {
             ToGo = false;
+            resetNumPickers();
         }
 
         private void ToGoDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -382,6 +384,6 @@ namespace SGV_CLP.GUI
         {
             DineInDataGridView.Height -= rowHeight;
         }
-    
+
     }
 }

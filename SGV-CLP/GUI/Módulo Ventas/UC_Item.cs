@@ -23,7 +23,7 @@ namespace SGV_CLP.GUI.Módulo_Ventas
                 lessButton.Visible = false;
                 quantityField.Visible = false;
                 plusButton.Visible = false;
-                addProductButton.Visible = false;
+                //addProductButton.Visible = false;
                 openSubproductsButton.Visible = true;
             }
 
@@ -41,7 +41,7 @@ namespace SGV_CLP.GUI.Módulo_Ventas
             this.label1.Text = producto.productName;
         }
 
-        private void AddProductButton_Click(object sender, EventArgs e)
+        /*private void AddProductButton_Click(object sender, EventArgs e)
         {
             if (quantityField.Text != string.Empty && quantityField.Text != "0")
             {
@@ -63,8 +63,7 @@ namespace SGV_CLP.GUI.Módulo_Ventas
                 UC_Ventas.totalVenta.Text = "Total : $" + $"{UC_Ventas.invoice.CalculateTotalSales():0.00}".Replace(',', '.');
                 quantityField.Text = string.Empty;
             }
-
-        }
+        }*/
         public void addRowInTable(SiticoneDataGridView productDetailTable, int cantidad, Product producto)
         {
             bool flag = false;
@@ -128,9 +127,10 @@ namespace SGV_CLP.GUI.Módulo_Ventas
                     Console.WriteLine(message);
                 }
             }
+            UpdateValue();
         }
 
-        private void lessButton_MouseDown(object sender, MouseEventArgs e)
+        private void LessButton_MouseDown(object sender, MouseEventArgs e)
         {
             if (quantityField.Text != string.Empty)
             {
@@ -139,6 +139,7 @@ namespace SGV_CLP.GUI.Módulo_Ventas
                 {
                     quantityField.Text = (currentAmountValue - 1).ToString();
                 }
+                UpdateValue();
             }
         }
 
@@ -150,9 +151,31 @@ namespace SGV_CLP.GUI.Módulo_Ventas
 
         }
 
-        private void ToGoButton_MouseDown(object sender, MouseEventArgs e)
+        private void UpdateValue()
         {
+            if (quantityField.Text != string.Empty && quantityField.Text != "0")
+            {
+                invoiceDetail.soldQuantity = int.Parse(quantityField.Text);
+                invoiceDetail.subTotal = Math.Round((double)(invoiceDetail.soldQuantity * _producto.salePrice), 2);
+                if (UC_Ventas.ToGo)
+                {
+                    UC_Ventas.invoice.AddOrUpdateToGoList(invoiceDetail);
+                    addRowInTable(UC_Ventas.toGoDataGridView, invoiceDetail.soldQuantity, _producto);
+                    UC_Ventas.toGoDataGridView.Visible = true;
+                }
+                else
+                {
+                    UC_Ventas.invoice.AddOrUpdateDineInList(invoiceDetail);
+                    addRowInTable(UC_Ventas.dineInDataGridView, invoiceDetail.soldQuantity, _producto);
+                }
 
+                UC_Ventas.totalVenta.Visible = true;
+                UC_Ventas.totalVenta.Text = "Total : $" + $"{UC_Ventas.invoice.CalculateTotalSales():0.00}".Replace(',', '.');
+            }
+        }
+        private void quantityField_TextChanged(object sender, EventArgs e)
+        {
+            UpdateValue();
         }
     }
 }
