@@ -125,8 +125,8 @@ namespace SGV_CLP.GUI
                         productCategoryItemsUI.Add(new UC_Item(producto));
                     }
                 });
-                productCategoryItemsUI.ForEach(item => flowLayoutPanel.Controls.Add(item));
-                productCategoryItemsUI.ForEach(item => productosUI.Add(item));
+                productCategoryItemsUI.ForEach(flowLayoutPanel.Controls.Add);
+                productCategoryItemsUI.ForEach(productosUI.Add);
             }
 
         }
@@ -139,7 +139,7 @@ namespace SGV_CLP.GUI
             siticoneHtmlLabel11.Visible = false;
         }
 
-        public static void resetNumPickers()
+        public static void ResetNumPickers()
         {
             productosUI.ForEach(item => item.resetComponents());
         }
@@ -284,15 +284,15 @@ namespace SGV_CLP.GUI
 
         private void ButtonDoPayment_Click(object sender, EventArgs e)
         {
-            if (DineInDataGridView.RowCount == 1 || ToGoDataGridView.RowCount == 1)
+            if (DineInDataGridView.RowCount > 1 || ToGoDataGridView.RowCount > 1)
             {
-                SystemSounds.Beep.Play();
-                MessageBox.Show("Debe elegir al menos un producto", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Checkout ventana = new(DineInDataGridView, ToGoDataGridView);
+                ventana.ShowDialog();
             }
             else
             {
-                Checkout ventana = new(DineInDataGridView);
-                ventana.ShowDialog();
+                SystemSounds.Beep.Play();
+                MessageBox.Show("Debe elegir al menos un producto", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -329,13 +329,13 @@ namespace SGV_CLP.GUI
         private void ToGoButton_Click(object sender, EventArgs e)
         {
             ToGo = true;
-            resetNumPickers();
+            ResetNumPickers();
         }
 
         private void ToEatButton_Click(object sender, EventArgs e)
         {
             ToGo = false;
-            resetNumPickers();
+            ResetNumPickers();
         }
 
         private void ToGoDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)

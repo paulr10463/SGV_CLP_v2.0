@@ -12,6 +12,7 @@ using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Media;
+using System.Security.Policy;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -23,7 +24,7 @@ namespace SGV_CLP.GUI.Módulo_Ventas
     public partial class Checkout : Form
     {
         public static List<Customer> clientes = CustomerMapper.GetAllCustomersSync();
-        AutoCompleteStringCollection listaDeSugerenciasdeAutompletacion;
+        private AutoCompleteStringCollection listaDeSugerenciasdeAutompletacion;
 
         readonly int num_atributos = 3;
         int count_correct_fields = 0;
@@ -36,15 +37,32 @@ namespace SGV_CLP.GUI.Módulo_Ventas
         bool telefIsValid = false;
         bool correoIsValid = false;
 
-        public Checkout(SiticoneDataGridView siticoneDataGridView)
+        public Checkout(SiticoneDataGridView dineInTable, SiticoneDataGridView toGoTable)
         {
             InitializeComponent();
-            foreach (DataGridViewRow rowItem in siticoneDataGridView.Rows)
+            CheckoutDineInDataGridView.AllowUserToAddRows = false;
+            CheckoutToGoDataGridView.AllowUserToAddRows = false;
+            int rowHeight = 35;
+            int checkoutTableWidth = 340;
+            int tableDineInHeight = dineInTable.Rows.Count * rowHeight;
+            int tableToGoHeight = toGoTable.Rows.Count * rowHeight;
+            CheckoutDineInDataGridView.Size = new Size(checkoutTableWidth, tableDineInHeight);
+            CheckoutToGoDataGridView.Size = new Size(checkoutTableWidth, tableToGoHeight);
+
+            foreach (DataGridViewRow rowItem in dineInTable.Rows)
             {
-                DataGridViewRow row = (DataGridViewRow)rowItem.Clone();
-                siticoneDataGridView1.Rows.Add(rowItem.Cells[0].Value, rowItem.Cells[1].Value, rowItem.Cells[2].Value);
+                CheckoutDineInDataGridView.Rows.Add(rowItem.Cells[0].Value, rowItem.Cells[1].Value, rowItem.Cells[2].Value);
             }
-            setTotal(siticoneDataGridView1);
+
+            if (toGoTable.Visible)
+            {
+                CheckoutToGoDataGridView.Visible = true;
+                foreach (DataGridViewRow rowItem in toGoTable.Rows)
+                {
+                    CheckoutToGoDataGridView.Rows.Add(rowItem.Cells[0].Value, rowItem.Cells[1].Value, rowItem.Cells[2].Value);
+                }
+            }
+            totalLabel.Text = $"{UC_Ventas.invoice.totalSales:0.00}".Replace(',', '.');
             listaDeSugerenciasdeAutompletacion = new AutoCompleteStringCollection();
             ActualizarListadeSugerenciasdeAutocompletacion();
 
@@ -92,13 +110,13 @@ namespace SGV_CLP.GUI.Módulo_Ventas
             ReceiptHelper.GenerateReceipt(
                 UC_Ventas.invoice,
                 clienteFinal,
-                txtTotalVenta.Text.Replace('.', ','),
-                txtRecibidoVenta.Text.Equals(string.Empty) ? txtTotalVenta.Text.Replace('.', ',') : txtRecibidoVenta.Text.Replace('.', ','),
-                txtVueltoVenta.Text.Equals(string.Empty) ? "0,00" : txtVueltoVenta.Text.Replace('.', ','));
+                totalLabel.Text.Replace('.', ','),
+                txtRecibidoVenta.Text.Equals(string.Empty) ? totalLabel.Text.Replace('.', ',') : txtRecibidoVenta.Text.Replace('.', ','),
+                changeLabel.Text.Equals(string.Empty) ? "0,00" : totalLabel.Text.Replace('.', ','));
             //Print Receipt Line
             //PrintHelper.PrintPDF("receipt.pdf");
             UC_Ventas.invoice = new Invoice();
-            UC_Ventas.resetNumPickers();
+            UC_Ventas.ResetNumPickers();
             SystemSounds.Beep.Play();
             MessageBox.Show("Venta finalizada con éxito", "Venta", MessageBoxButtons.OK, MessageBoxIcon.Information);
             MainMenu.uc_ventas.ResetValues();
@@ -218,7 +236,7 @@ namespace SGV_CLP.GUI.Módulo_Ventas
                 siticoneHtmlLabel_cc_invalida.Hide();
                 siticoneHtmlLabel_cc_valida.Show();
             }
-            validateFieldsCounter();
+            ValidateFieldsCounter();
         }
 
         private void txtCC_ClienteVenta_KeyPress(object sender, KeyPressEventArgs e)
@@ -302,17 +320,17 @@ namespace SGV_CLP.GUI.Módulo_Ventas
             Customer aux = findCustomer();
             if (aux != null)
             {
-                loadCustomerFields(aux);
+                LoadCustomerFields(aux);
                 ButtonFinalizarVenta.Enabled = true;
             }
             else
             {
                 if (ccIsValid && ValidationUtils.ValidarCedula(txtCC_ClienteVenta.Text)) ButtonAniadirClienteVenta.Enabled = true;
-                loadCustomerFields(new Customer("0", "", "", "", "", ""));
+                LoadCustomerFields(new Customer("0", "", "", "", "", ""));
                 ButtonFinalizarVenta.Enabled = false;
             }
 
-            validateFieldsCounter();
+            ValidateFieldsCounter();
 
         }
 
@@ -339,11 +357,11 @@ namespace SGV_CLP.GUI.Módulo_Ventas
             {
                 if (e.KeyChar == Convert.ToChar(Keys.Enter))
                 {
-                    if (Convert.ToDouble(txtRecibidoVenta.Text, CultureInfo.InvariantCulture) > Convert.ToDouble(txtTotalVenta.Text, CultureInfo.InvariantCulture))
+                    if (Convert.ToDouble(txtRecibidoVenta.Text, CultureInfo.InvariantCulture) > Convert.ToDouble(totalLabel.Text, CultureInfo.InvariantCulture))
                     {
                         double cash = Convert.ToDouble(txtRecibidoVenta.Text, CultureInfo.InvariantCulture);
-                        double totalSale = Convert.ToDouble(txtTotalVenta.Text, CultureInfo.InvariantCulture);
-                        txtVueltoVenta.Text = $"{(cash - totalSale):0.00}".Replace(',', '.');
+                        double totalSale = Convert.ToDouble(totalLabel.Text, CultureInfo.InvariantCulture);
+                        changeLabel.Text = $"{(cash - totalSale):0.00}".Replace(',', '.');
                         txtRecibidoVenta.Text = $"{cash:0.00}".Replace(',', '.');
                     }
                     else
@@ -367,37 +385,18 @@ namespace SGV_CLP.GUI.Módulo_Ventas
             ValidationUtils.keyPressDoubleValidation(e);
         }
 
-        private void validateFieldsCounter()
+        private void ValidateFieldsCounter()
         {
             ButtonConfirmarVenta.Enabled = count_correct_fields >= num_atributos;
         }
-        public void setTotal(SiticoneDataGridView tablaVenta)
-        {
-            double total = 0;
-            foreach (DataGridViewRow rowItem in siticoneDataGridView1.Rows)
-            {
-                if (rowItem.Cells[0].Value != null)
-                {
-                    total += Convert.ToDouble(rowItem.Cells[2].Value, CultureInfo.InvariantCulture);
-                }
-                else
-                {
-                    break;
-                }
-            }
-            txtTotalVenta.Text = $"{total:0.00}".Replace(',', '.');
 
-        }
-
-
-        private void loadCustomerFields(Customer cliente)
+        private void LoadCustomerFields(Customer cliente)
         {
             txtNombre1Venta.Text = cliente.firstName;
             txtApellido1Venta.Text = cliente.firstLastName;
             txtDireccionVenta.Text = cliente.homeAddress;
             txtTelefVenta.Text = cliente.phoneNumber;
             txtCorreoVenta.Text = cliente.eMail;
-
         }
 
         private void txtApellido1Venta_TextChanged(object sender, EventArgs e)
@@ -414,7 +413,7 @@ namespace SGV_CLP.GUI.Módulo_Ventas
                 count_correct_fields--;
             }
 
-            validateFieldsCounter();
+            ValidateFieldsCounter();
         }
 
         private void txtDireccionVenta_TextChanged(object sender, EventArgs e)
@@ -501,7 +500,7 @@ namespace SGV_CLP.GUI.Módulo_Ventas
                 count_correct_fields--;
             }
 
-            validateFieldsCounter();
+            ValidateFieldsCounter();
         }
 
         private void siticoneCheckBox1_CheckedChanged(object sender, EventArgs e)

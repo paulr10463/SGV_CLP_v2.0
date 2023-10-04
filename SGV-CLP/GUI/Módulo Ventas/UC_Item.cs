@@ -90,10 +90,10 @@ namespace SGV_CLP.GUI.Módulo_Ventas
             //En caso de no existir la fila del producto, la crea
             if (!flag)
             {
-                DataGridViewRow row = (DataGridViewRow)productDetailTable.Rows[0].Clone();
-                row.Cells[0].Value = producto.productName;
-                row.Cells[1].Value = cantidad;
-                row.Cells[2].Value = invoiceDetail.subTotal.ToString().Replace(',', '.');
+                DataGridViewRow row = new DataGridViewRow();
+                row.Cells.Add(new DataGridViewTextBoxCell { Value = producto.productName });
+                row.Cells.Add(new DataGridViewTextBoxCell { Value = cantidad });
+                row.Cells.Add(new DataGridViewTextBoxCell { Value = invoiceDetail.subTotal.ToString().Replace(',', '.') });
                 productDetailTable.Rows.Add(row);
             }
 

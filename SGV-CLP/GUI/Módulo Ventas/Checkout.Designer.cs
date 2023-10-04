@@ -31,21 +31,18 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Checkout));
             txtCC_ClienteVenta = new Siticone.Desktop.UI.WinForms.SiticoneTextBox();
             siticoneHtmlLabel1 = new Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel();
             siticoneButton2 = new Siticone.Desktop.UI.WinForms.SiticoneButton();
             ButtonFinalizarVenta = new Siticone.Desktop.UI.WinForms.SiticoneButton();
             ButtonAniadirClienteVenta = new Siticone.Desktop.UI.WinForms.SiticoneButton();
-            siticoneDataGridView1 = new Siticone.Desktop.UI.WinForms.SiticoneDataGridView();
-            CC = new DataGridViewTextBoxColumn();
-            Contras = new DataGridViewTextBoxColumn();
-            Nombre = new DataGridViewTextBoxColumn();
-            txtTotalVenta = new Siticone.Desktop.UI.WinForms.SiticoneTextBox();
             siticoneHtmlLabel2 = new Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel();
             txtRecibidoVenta = new Siticone.Desktop.UI.WinForms.SiticoneTextBox();
             siticoneHtmlLabel3 = new Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel();
-            txtVueltoVenta = new Siticone.Desktop.UI.WinForms.SiticoneTextBox();
             siticoneHtmlLabel4 = new Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel();
             siticoneHtmlLabel16 = new Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel();
             txtApellido1Venta = new Siticone.Desktop.UI.WinForms.SiticoneTextBox();
@@ -71,7 +68,21 @@
             labelCustomerIDNotUnique = new Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel();
             labelValidPhoneNumber = new Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel();
             labelInvalidPhoneNumber = new Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel();
-            ((System.ComponentModel.ISupportInitialize)siticoneDataGridView1).BeginInit();
+            CheckoutFlowLayoutPanel = new FlowLayoutPanel();
+            CheckoutDineInDataGridView = new Siticone.Desktop.UI.WinForms.SiticoneDataGridView();
+            CC = new DataGridViewTextBoxColumn();
+            Contras = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
+            splitter1 = new Splitter();
+            CheckoutToGoDataGridView = new Siticone.Desktop.UI.WinForms.SiticoneDataGridView();
+            totalLabel = new Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel();
+            changeLabel = new Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel();
+            dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn5 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn6 = new DataGridViewTextBoxColumn();
+            CheckoutFlowLayoutPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)CheckoutDineInDataGridView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)CheckoutToGoDataGridView).BeginInit();
             SuspendLayout();
             // 
             // txtCC_ClienteVenta
@@ -169,107 +180,6 @@
             ButtonAniadirClienteVenta.TabIndex = 53;
             ButtonAniadirClienteVenta.Click += SiticoneButton4_Click;
             // 
-            // siticoneDataGridView1
-            // 
-            dataGridViewCellStyle1.BackColor = Color.White;
-            siticoneDataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            siticoneDataGridView1.Anchor = AnchorStyles.None;
-            siticoneDataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(100, 88, 255);
-            dataGridViewCellStyle2.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            siticoneDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            siticoneDataGridView1.ColumnHeadersHeight = 50;
-            siticoneDataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            siticoneDataGridView1.Columns.AddRange(new DataGridViewColumn[] { CC, Contras, Nombre });
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.White;
-            dataGridViewCellStyle3.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(231, 229, 255);
-            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            siticoneDataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
-            siticoneDataGridView1.GridColor = Color.White;
-            siticoneDataGridView1.Location = new Point(698, 64);
-            siticoneDataGridView1.Name = "siticoneDataGridView1";
-            siticoneDataGridView1.RowHeadersVisible = false;
-            siticoneDataGridView1.RowHeadersWidth = 51;
-            siticoneDataGridView1.RowTemplate.Height = 25;
-            siticoneDataGridView1.Size = new Size(398, 414);
-            siticoneDataGridView1.TabIndex = 54;
-            siticoneDataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
-            siticoneDataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
-            siticoneDataGridView1.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
-            siticoneDataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
-            siticoneDataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
-            siticoneDataGridView1.ThemeStyle.BackColor = Color.White;
-            siticoneDataGridView1.ThemeStyle.GridColor = Color.White;
-            siticoneDataGridView1.ThemeStyle.HeaderStyle.BackColor = Color.DimGray;
-            siticoneDataGridView1.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
-            siticoneDataGridView1.ThemeStyle.HeaderStyle.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            siticoneDataGridView1.ThemeStyle.HeaderStyle.ForeColor = Color.White;
-            siticoneDataGridView1.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            siticoneDataGridView1.ThemeStyle.HeaderStyle.Height = 50;
-            siticoneDataGridView1.ThemeStyle.ReadOnly = false;
-            siticoneDataGridView1.ThemeStyle.RowsStyle.BackColor = Color.White;
-            siticoneDataGridView1.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            siticoneDataGridView1.ThemeStyle.RowsStyle.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            siticoneDataGridView1.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(71, 69, 94);
-            siticoneDataGridView1.ThemeStyle.RowsStyle.Height = 25;
-            siticoneDataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
-            siticoneDataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            // 
-            // CC
-            // 
-            CC.FillWeight = 167.5127F;
-            CC.HeaderText = "Nombre Producto";
-            CC.MinimumWidth = 6;
-            CC.Name = "CC";
-            CC.Resizable = DataGridViewTriState.False;
-            // 
-            // Contras
-            // 
-            Contras.FillWeight = 66.24365F;
-            Contras.HeaderText = "Cant.";
-            Contras.MinimumWidth = 6;
-            Contras.Name = "Contras";
-            // 
-            // Nombre
-            // 
-            Nombre.FillWeight = 66.24365F;
-            Nombre.HeaderText = "SubT.";
-            Nombre.MinimumWidth = 6;
-            Nombre.Name = "Nombre";
-            // 
-            // txtTotalVenta
-            // 
-            txtTotalVenta.Anchor = AnchorStyles.None;
-            txtTotalVenta.BorderRadius = 20;
-            txtTotalVenta.DefaultText = "";
-            txtTotalVenta.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txtTotalVenta.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txtTotalVenta.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txtTotalVenta.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txtTotalVenta.Enabled = false;
-            txtTotalVenta.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtTotalVenta.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtTotalVenta.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtTotalVenta.Location = new Point(893, 523);
-            txtTotalVenta.Margin = new Padding(6, 9, 6, 9);
-            txtTotalVenta.Name = "txtTotalVenta";
-            txtTotalVenta.PasswordChar = '\0';
-            txtTotalVenta.PlaceholderText = "";
-            txtTotalVenta.SelectedText = "";
-            txtTotalVenta.Size = new Size(119, 50);
-            txtTotalVenta.TabIndex = 56;
-            txtTotalVenta.TextAlign = HorizontalAlignment.Center;
-            txtTotalVenta.KeyPress += txtTotalVenta_KeyPress;
-            // 
             // siticoneHtmlLabel2
             // 
             siticoneHtmlLabel2.Anchor = AnchorStyles.None;
@@ -316,30 +226,6 @@
             siticoneHtmlLabel3.Size = new Size(92, 26);
             siticoneHtmlLabel3.TabIndex = 57;
             siticoneHtmlLabel3.Text = "Recibido";
-            // 
-            // txtVueltoVenta
-            // 
-            txtVueltoVenta.Anchor = AnchorStyles.None;
-            txtVueltoVenta.BorderRadius = 20;
-            txtVueltoVenta.DefaultText = "";
-            txtVueltoVenta.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txtVueltoVenta.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txtVueltoVenta.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txtVueltoVenta.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txtVueltoVenta.Enabled = false;
-            txtVueltoVenta.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtVueltoVenta.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtVueltoVenta.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtVueltoVenta.Location = new Point(890, 659);
-            txtVueltoVenta.Margin = new Padding(6, 9, 6, 9);
-            txtVueltoVenta.Name = "txtVueltoVenta";
-            txtVueltoVenta.PasswordChar = '\0';
-            txtVueltoVenta.PlaceholderText = "";
-            txtVueltoVenta.SelectedText = "";
-            txtVueltoVenta.Size = new Size(122, 50);
-            txtVueltoVenta.TabIndex = 60;
-            txtVueltoVenta.TextAlign = HorizontalAlignment.Center;
-            txtVueltoVenta.KeyPress += txtVueltoVenta_KeyPress;
             // 
             // siticoneHtmlLabel4
             // 
@@ -724,12 +610,243 @@
             labelInvalidPhoneNumber.TabIndex = 92;
             labelInvalidPhoneNumber.Text = "¡Teléfono inválido!";
             // 
+            // CheckoutFlowLayoutPanel
+            // 
+            CheckoutFlowLayoutPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            CheckoutFlowLayoutPanel.AutoScroll = true;
+            CheckoutFlowLayoutPanel.AutoSize = true;
+            CheckoutFlowLayoutPanel.Controls.Add(CheckoutDineInDataGridView);
+            CheckoutFlowLayoutPanel.Controls.Add(splitter1);
+            CheckoutFlowLayoutPanel.Controls.Add(CheckoutToGoDataGridView);
+            CheckoutFlowLayoutPanel.FlowDirection = FlowDirection.TopDown;
+            CheckoutFlowLayoutPanel.Location = new Point(741, 12);
+            CheckoutFlowLayoutPanel.Name = "CheckoutFlowLayoutPanel";
+            CheckoutFlowLayoutPanel.Size = new Size(365, 491);
+            CheckoutFlowLayoutPanel.TabIndex = 94;
+            CheckoutFlowLayoutPanel.WrapContents = false;
+            // 
+            // CheckoutDineInDataGridView
+            // 
+            CheckoutDineInDataGridView.AllowUserToAddRows = false;
+            dataGridViewCellStyle1.BackColor = Color.White;
+            CheckoutDineInDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            CheckoutDineInDataGridView.Anchor = AnchorStyles.Top;
+            CheckoutDineInDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            CheckoutDineInDataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(100, 88, 255);
+            dataGridViewCellStyle2.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            CheckoutDineInDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            CheckoutDineInDataGridView.ColumnHeadersHeight = 40;
+            CheckoutDineInDataGridView.Columns.AddRange(new DataGridViewColumn[] { CC, Contras, dataGridViewTextBoxColumn3 });
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.White;
+            dataGridViewCellStyle3.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            CheckoutDineInDataGridView.DefaultCellStyle = dataGridViewCellStyle3;
+            CheckoutDineInDataGridView.GridColor = Color.FromArgb(231, 229, 255);
+            CheckoutDineInDataGridView.Location = new Point(4, 2);
+            CheckoutDineInDataGridView.Margin = new Padding(3, 2, 3, 2);
+            CheckoutDineInDataGridView.Name = "CheckoutDineInDataGridView";
+            CheckoutDineInDataGridView.RowHeadersVisible = false;
+            CheckoutDineInDataGridView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            CheckoutDineInDataGridView.RowTemplate.Height = 50;
+            CheckoutDineInDataGridView.RowTemplate.Resizable = DataGridViewTriState.True;
+            CheckoutDineInDataGridView.Size = new Size(341, 44);
+            CheckoutDineInDataGridView.TabIndex = 55;
+            CheckoutDineInDataGridView.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
+            CheckoutDineInDataGridView.ThemeStyle.AlternatingRowsStyle.Font = null;
+            CheckoutDineInDataGridView.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
+            CheckoutDineInDataGridView.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
+            CheckoutDineInDataGridView.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
+            CheckoutDineInDataGridView.ThemeStyle.BackColor = Color.White;
+            CheckoutDineInDataGridView.ThemeStyle.GridColor = Color.FromArgb(231, 229, 255);
+            CheckoutDineInDataGridView.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(100, 88, 255);
+            CheckoutDineInDataGridView.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
+            CheckoutDineInDataGridView.ThemeStyle.HeaderStyle.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            CheckoutDineInDataGridView.ThemeStyle.HeaderStyle.ForeColor = Color.White;
+            CheckoutDineInDataGridView.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            CheckoutDineInDataGridView.ThemeStyle.HeaderStyle.Height = 40;
+            CheckoutDineInDataGridView.ThemeStyle.ReadOnly = false;
+            CheckoutDineInDataGridView.ThemeStyle.RowsStyle.BackColor = Color.White;
+            CheckoutDineInDataGridView.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            CheckoutDineInDataGridView.ThemeStyle.RowsStyle.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            CheckoutDineInDataGridView.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(71, 69, 94);
+            CheckoutDineInDataGridView.ThemeStyle.RowsStyle.Height = 50;
+            CheckoutDineInDataGridView.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            CheckoutDineInDataGridView.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            // 
+            // CC
+            // 
+            CC.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            CC.FillWeight = 255.2279F;
+            CC.HeaderText = "Nombre Producto";
+            CC.MaxInputLength = 16;
+            CC.MinimumWidth = 100;
+            CC.Name = "CC";
+            CC.Resizable = DataGridViewTriState.False;
+            CC.SortMode = DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Contras
+            // 
+            Contras.FillWeight = 39.56033F;
+            Contras.HeaderText = "Cant.";
+            Contras.MinimumWidth = 50;
+            Contras.Name = "Contras";
+            Contras.SortMode = DataGridViewColumnSortMode.NotSortable;
+            Contras.Width = 59;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            dataGridViewTextBoxColumn3.FillWeight = 39.56033F;
+            dataGridViewTextBoxColumn3.HeaderText = "SubT.";
+            dataGridViewTextBoxColumn3.MinimumWidth = 40;
+            dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            dataGridViewTextBoxColumn3.SortMode = DataGridViewColumnSortMode.NotSortable;
+            dataGridViewTextBoxColumn3.Width = 55;
+            // 
+            // splitter1
+            // 
+            splitter1.BackColor = Color.FromArgb(64, 64, 64);
+            splitter1.Location = new Point(3, 51);
+            splitter1.Name = "splitter1";
+            splitter1.Size = new Size(337, 3);
+            splitter1.TabIndex = 56;
+            splitter1.TabStop = false;
+            // 
+            // CheckoutToGoDataGridView
+            // 
+            CheckoutToGoDataGridView.AllowUserToAddRows = false;
+            dataGridViewCellStyle4.BackColor = Color.White;
+            CheckoutToGoDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            CheckoutToGoDataGridView.Anchor = AnchorStyles.Top;
+            CheckoutToGoDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            CheckoutToGoDataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.Black;
+            dataGridViewCellStyle5.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            CheckoutToGoDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            CheckoutToGoDataGridView.ColumnHeadersHeight = 60;
+            CheckoutToGoDataGridView.ColumnHeadersVisible = false;
+            CheckoutToGoDataGridView.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn4, dataGridViewTextBoxColumn5, dataGridViewTextBoxColumn6 });
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.White;
+            dataGridViewCellStyle6.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            CheckoutToGoDataGridView.DefaultCellStyle = dataGridViewCellStyle6;
+            CheckoutToGoDataGridView.GridColor = Color.FromArgb(231, 229, 255);
+            CheckoutToGoDataGridView.Location = new Point(3, 59);
+            CheckoutToGoDataGridView.Margin = new Padding(3, 2, 3, 2);
+            CheckoutToGoDataGridView.MaximumSize = new Size(346, 500);
+            CheckoutToGoDataGridView.Name = "CheckoutToGoDataGridView";
+            CheckoutToGoDataGridView.RowHeadersVisible = false;
+            CheckoutToGoDataGridView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
+            CheckoutToGoDataGridView.RowTemplate.Height = 50;
+            CheckoutToGoDataGridView.Size = new Size(343, 10);
+            CheckoutToGoDataGridView.TabIndex = 57;
+            CheckoutToGoDataGridView.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
+            CheckoutToGoDataGridView.ThemeStyle.AlternatingRowsStyle.Font = null;
+            CheckoutToGoDataGridView.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
+            CheckoutToGoDataGridView.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
+            CheckoutToGoDataGridView.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
+            CheckoutToGoDataGridView.ThemeStyle.BackColor = Color.White;
+            CheckoutToGoDataGridView.ThemeStyle.GridColor = Color.FromArgb(231, 229, 255);
+            CheckoutToGoDataGridView.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(100, 88, 255);
+            CheckoutToGoDataGridView.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
+            CheckoutToGoDataGridView.ThemeStyle.HeaderStyle.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            CheckoutToGoDataGridView.ThemeStyle.HeaderStyle.ForeColor = Color.White;
+            CheckoutToGoDataGridView.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            CheckoutToGoDataGridView.ThemeStyle.HeaderStyle.Height = 60;
+            CheckoutToGoDataGridView.ThemeStyle.ReadOnly = false;
+            CheckoutToGoDataGridView.ThemeStyle.RowsStyle.BackColor = Color.White;
+            CheckoutToGoDataGridView.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            CheckoutToGoDataGridView.ThemeStyle.RowsStyle.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            CheckoutToGoDataGridView.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(71, 69, 94);
+            CheckoutToGoDataGridView.ThemeStyle.RowsStyle.Height = 50;
+            CheckoutToGoDataGridView.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            CheckoutToGoDataGridView.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            CheckoutToGoDataGridView.Visible = false;
+            // 
+            // totalLabel
+            // 
+            totalLabel.Anchor = AnchorStyles.None;
+            totalLabel.AutoSize = false;
+            totalLabel.BackColor = Color.Transparent;
+            totalLabel.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            totalLabel.Location = new Point(893, 530);
+            totalLabel.Margin = new Padding(3, 2, 3, 2);
+            totalLabel.Name = "totalLabel";
+            totalLabel.Size = new Size(119, 43);
+            totalLabel.TabIndex = 95;
+            totalLabel.Text = null;
+            totalLabel.TextAlignment = ContentAlignment.MiddleCenter;
+            // 
+            // changeLabel
+            // 
+            changeLabel.Anchor = AnchorStyles.None;
+            changeLabel.AutoSize = false;
+            changeLabel.BackColor = Color.Transparent;
+            changeLabel.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            changeLabel.Location = new Point(893, 666);
+            changeLabel.Margin = new Padding(3, 2, 3, 2);
+            changeLabel.Name = "changeLabel";
+            changeLabel.Size = new Size(119, 43);
+            changeLabel.TabIndex = 96;
+            changeLabel.Text = null;
+            changeLabel.TextAlignment = ContentAlignment.MiddleCenter;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            dataGridViewTextBoxColumn4.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewTextBoxColumn4.FillWeight = 255.2279F;
+            dataGridViewTextBoxColumn4.HeaderText = "Nombre Producto";
+            dataGridViewTextBoxColumn4.MaxInputLength = 16;
+            dataGridViewTextBoxColumn4.MinimumWidth = 100;
+            dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            dataGridViewTextBoxColumn4.Resizable = DataGridViewTriState.False;
+            dataGridViewTextBoxColumn4.SortMode = DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            dataGridViewTextBoxColumn5.FillWeight = 39.56033F;
+            dataGridViewTextBoxColumn5.HeaderText = "Cant.";
+            dataGridViewTextBoxColumn5.MinimumWidth = 50;
+            dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            dataGridViewTextBoxColumn5.SortMode = DataGridViewColumnSortMode.NotSortable;
+            dataGridViewTextBoxColumn5.Width = 50;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            dataGridViewTextBoxColumn6.FillWeight = 39.56033F;
+            dataGridViewTextBoxColumn6.HeaderText = "SubT.";
+            dataGridViewTextBoxColumn6.MinimumWidth = 40;
+            dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            dataGridViewTextBoxColumn6.SortMode = DataGridViewColumnSortMode.NotSortable;
+            dataGridViewTextBoxColumn6.Width = 40;
+            // 
             // Checkout
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1128, 773);
+            Controls.Add(changeLabel);
+            Controls.Add(totalLabel);
+            Controls.Add(CheckoutFlowLayoutPanel);
             Controls.Add(labelValidPhoneNumber);
             Controls.Add(labelInvalidPhoneNumber);
             Controls.Add(labelCustomerIDUnique);
@@ -753,13 +870,10 @@
             Controls.Add(txtDireccionVenta);
             Controls.Add(siticoneHtmlLabel6);
             Controls.Add(siticoneHtmlLabel7);
-            Controls.Add(txtVueltoVenta);
             Controls.Add(siticoneHtmlLabel4);
             Controls.Add(txtRecibidoVenta);
             Controls.Add(siticoneHtmlLabel3);
-            Controls.Add(txtTotalVenta);
             Controls.Add(siticoneHtmlLabel2);
-            Controls.Add(siticoneDataGridView1);
             Controls.Add(ButtonAniadirClienteVenta);
             Controls.Add(siticoneButton2);
             Controls.Add(ButtonFinalizarVenta);
@@ -771,7 +885,9 @@
             Name = "Checkout";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Pago";
-            ((System.ComponentModel.ISupportInitialize)siticoneDataGridView1).EndInit();
+            CheckoutFlowLayoutPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)CheckoutDineInDataGridView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)CheckoutToGoDataGridView).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -782,12 +898,9 @@
         private Siticone.Desktop.UI.WinForms.SiticoneButton siticoneButton2;
         private Siticone.Desktop.UI.WinForms.SiticoneButton ButtonFinalizarVenta;
         private Siticone.Desktop.UI.WinForms.SiticoneButton ButtonAniadirClienteVenta;
-        private Siticone.Desktop.UI.WinForms.SiticoneDataGridView siticoneDataGridView1;
-        private Siticone.Desktop.UI.WinForms.SiticoneTextBox txtTotalVenta;
         private Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel siticoneHtmlLabel2;
         private Siticone.Desktop.UI.WinForms.SiticoneTextBox txtRecibidoVenta;
         private Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel siticoneHtmlLabel3;
-        private Siticone.Desktop.UI.WinForms.SiticoneTextBox txtVueltoVenta;
         private Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel siticoneHtmlLabel4;
         private Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel siticoneHtmlLabel16;
         private Siticone.Desktop.UI.WinForms.SiticoneTextBox txtApellido1Venta;
@@ -814,8 +927,17 @@
         private Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel labelCustomerIDNotUnique;
         private Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel labelValidPhoneNumber;
         private Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel labelInvalidPhoneNumber;
+        private FlowLayoutPanel CheckoutFlowLayoutPanel;
+        public Siticone.Desktop.UI.WinForms.SiticoneDataGridView CheckoutDineInDataGridView;
+        private Splitter splitter1;
+        public Siticone.Desktop.UI.WinForms.SiticoneDataGridView CheckoutToGoDataGridView;
         private DataGridViewTextBoxColumn CC;
         private DataGridViewTextBoxColumn Contras;
-        private DataGridViewTextBoxColumn Nombre;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel totalLabel;
+        private Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel changeLabel;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
     }
 }

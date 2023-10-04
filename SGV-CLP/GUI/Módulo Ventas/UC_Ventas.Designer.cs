@@ -266,12 +266,13 @@
             flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
             flowLayoutPanel1.Location = new Point(0, 3);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(365, 320);
+            flowLayoutPanel1.Size = new Size(365, 525);
             flowLayoutPanel1.TabIndex = 57;
             flowLayoutPanel1.WrapContents = false;
             // 
             // DineInDataGridView
             // 
+            DineInDataGridView.AllowUserToAddRows = false;
             dataGridViewCellStyle1.BackColor = Color.White;
             DineInDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             DineInDataGridView.Anchor = AnchorStyles.Top;
@@ -303,7 +304,7 @@
             DineInDataGridView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             DineInDataGridView.RowTemplate.Height = 50;
             DineInDataGridView.RowTemplate.Resizable = DataGridViewTriState.True;
-            DineInDataGridView.Size = new Size(341, 87);
+            DineInDataGridView.Size = new Size(341, 41);
             DineInDataGridView.TabIndex = 55;
             DineInDataGridView.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             DineInDataGridView.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -367,12 +368,12 @@
             EliminarDetalle.Image = (Image)resources.GetObject("EliminarDetalle.Image");
             EliminarDetalle.MinimumWidth = 3;
             EliminarDetalle.Name = "EliminarDetalle";
-            EliminarDetalle.Width = 20;
+            EliminarDetalle.Width = 3;
             // 
             // splitter1
             // 
             splitter1.BackColor = Color.FromArgb(64, 64, 64);
-            splitter1.Location = new Point(3, 94);
+            splitter1.Location = new Point(3, 48);
             splitter1.Name = "splitter1";
             splitter1.Size = new Size(337, 3);
             splitter1.TabIndex = 56;
@@ -380,6 +381,7 @@
             // 
             // ToGoDataGridView
             // 
+            ToGoDataGridView.AllowUserToAddRows = false;
             ToGoDataGridView.AllowUserToResizeColumns = false;
             ToGoDataGridView.AllowUserToResizeRows = false;
             dataGridViewCellStyle4.BackColor = Color.White;
@@ -407,14 +409,14 @@
             dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
             ToGoDataGridView.DefaultCellStyle = dataGridViewCellStyle6;
             ToGoDataGridView.GridColor = Color.FromArgb(231, 229, 255);
-            ToGoDataGridView.Location = new Point(3, 102);
+            ToGoDataGridView.Location = new Point(3, 56);
             ToGoDataGridView.Margin = new Padding(3, 2, 3, 2);
             ToGoDataGridView.MaximumSize = new Size(346, 500);
             ToGoDataGridView.Name = "ToGoDataGridView";
             ToGoDataGridView.RowHeadersVisible = false;
             ToGoDataGridView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             ToGoDataGridView.RowTemplate.Height = 50;
-            ToGoDataGridView.Size = new Size(343, 29);
+            ToGoDataGridView.Size = new Size(343, 10);
             ToGoDataGridView.TabIndex = 57;
             ToGoDataGridView.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             ToGoDataGridView.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -479,7 +481,7 @@
             DeleteToGoDetail.Image = (Image)resources.GetObject("DeleteToGoDetail.Image");
             DeleteToGoDetail.MinimumWidth = 3;
             DeleteToGoDetail.Name = "DeleteToGoDetail";
-            DeleteToGoDetail.Width = 20;
+            DeleteToGoDetail.Width = 3;
             // 
             // siticoneHtmlLabel11
             // 
