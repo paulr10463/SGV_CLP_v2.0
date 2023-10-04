@@ -42,10 +42,10 @@ namespace SGV_CLP.GUI.Módulo_Ventas
             InitializeComponent();
             CheckoutDineInDataGridView.AllowUserToAddRows = false;
             CheckoutToGoDataGridView.AllowUserToAddRows = false;
-            int rowHeight = 35;
+            int rowHeight = 25;
             int checkoutTableWidth = 340;
-            int tableDineInHeight = dineInTable.Rows.Count * rowHeight;
-            int tableToGoHeight = toGoTable.Rows.Count * rowHeight;
+            int tableDineInHeight = CheckoutDineInDataGridView.ColumnHeadersHeight + dineInTable.Rows.Count * rowHeight;
+            int tableToGoHeight = (toGoTable.Rows.Count + 1) * rowHeight;
             CheckoutDineInDataGridView.Size = new Size(checkoutTableWidth, tableDineInHeight);
             CheckoutToGoDataGridView.Size = new Size(checkoutTableWidth, tableToGoHeight);
 
@@ -521,5 +521,6 @@ namespace SGV_CLP.GUI.Módulo_Ventas
                 txtCC_ClienteVenta_TextChanged(null, null);
             }
         }
+
     }
 }

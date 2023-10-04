@@ -284,7 +284,7 @@ namespace SGV_CLP.GUI
 
         private void ButtonDoPayment_Click(object sender, EventArgs e)
         {
-            if (DineInDataGridView.RowCount > 1 || ToGoDataGridView.RowCount > 1)
+            if (DineInDataGridView.RowCount > 0 || ToGoDataGridView.RowCount > 0)
             {
                 Checkout ventana = new(DineInDataGridView, ToGoDataGridView);
                 ventana.ShowDialog();
