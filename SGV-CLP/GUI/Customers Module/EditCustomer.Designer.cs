@@ -53,7 +53,7 @@
             buttonCancelar.DisabledState.CustomBorderColor = Color.DarkGray;
             buttonCancelar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             buttonCancelar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            buttonCancelar.FillColor = Color.Black;
+            buttonCancelar.FillColor = Color.FromArgb(64, 64, 64);
             buttonCancelar.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             buttonCancelar.ForeColor = Color.White;
             buttonCancelar.Location = new Point(574, 407);
@@ -72,7 +72,7 @@
             buttonEditCustomer.DisabledState.CustomBorderColor = Color.DarkGray;
             buttonEditCustomer.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             buttonEditCustomer.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            buttonEditCustomer.FillColor = Color.Black;
+            buttonEditCustomer.FillColor = Color.FromArgb(64, 64, 64);
             buttonEditCustomer.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             buttonEditCustomer.ForeColor = Color.White;
             buttonEditCustomer.Location = new Point(293, 407);
@@ -106,7 +106,7 @@
             tbHomeAddress.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             tbHomeAddress.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             tbHomeAddress.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            tbHomeAddress.ForeColor = Color.Black;
+            tbHomeAddress.ForeColor = Color.FromArgb(64, 64, 64);
             tbHomeAddress.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             tbHomeAddress.Location = new Point(350, 124);
             tbHomeAddress.Margin = new Padding(5, 8, 5, 8);
@@ -142,7 +142,7 @@
             tbPhoneNumber.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             tbPhoneNumber.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             tbPhoneNumber.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            tbPhoneNumber.ForeColor = Color.Black;
+            tbPhoneNumber.ForeColor = Color.FromArgb(64, 64, 64);
             tbPhoneNumber.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             tbPhoneNumber.Location = new Point(349, 307);
             tbPhoneNumber.Margin = new Padding(5, 8, 5, 8);
@@ -179,7 +179,7 @@
             tbEMail.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             tbEMail.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             tbEMail.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            tbEMail.ForeColor = Color.Black;
+            tbEMail.ForeColor = Color.FromArgb(64, 64, 64);
             tbEMail.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             tbEMail.Location = new Point(350, 208);
             tbEMail.Margin = new Padding(5, 8, 5, 8);

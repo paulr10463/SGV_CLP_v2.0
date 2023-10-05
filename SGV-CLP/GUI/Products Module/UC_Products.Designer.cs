@@ -112,23 +112,23 @@ namespace SGV_CLP.GUI
             siticoneTabControl1.SelectedIndex = 0;
             siticoneTabControl1.Size = new Size(1268, 765);
             siticoneTabControl1.TabButtonHoverState.BorderColor = Color.Empty;
-            siticoneTabControl1.TabButtonHoverState.FillColor = Color.Black;
+            siticoneTabControl1.TabButtonHoverState.FillColor = Color.FromArgb(64, 64, 64);
             siticoneTabControl1.TabButtonHoverState.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             siticoneTabControl1.TabButtonHoverState.ForeColor = Color.White;
-            siticoneTabControl1.TabButtonHoverState.InnerColor = Color.Black;
+            siticoneTabControl1.TabButtonHoverState.InnerColor = Color.FromArgb(64, 64, 64);
             siticoneTabControl1.TabButtonIdleState.BorderColor = Color.Empty;
-            siticoneTabControl1.TabButtonIdleState.FillColor = Color.Black;
+            siticoneTabControl1.TabButtonIdleState.FillColor = Color.FromArgb(64, 64, 64);
             siticoneTabControl1.TabButtonIdleState.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             siticoneTabControl1.TabButtonIdleState.ForeColor = Color.FromArgb(156, 160, 167);
-            siticoneTabControl1.TabButtonIdleState.InnerColor = Color.Black;
+            siticoneTabControl1.TabButtonIdleState.InnerColor = Color.FromArgb(64, 64, 64);
             siticoneTabControl1.TabButtonSelectedState.BorderColor = Color.Empty;
-            siticoneTabControl1.TabButtonSelectedState.FillColor = Color.Black;
+            siticoneTabControl1.TabButtonSelectedState.FillColor = Color.FromArgb(64, 64, 64);
             siticoneTabControl1.TabButtonSelectedState.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             siticoneTabControl1.TabButtonSelectedState.ForeColor = Color.White;
             siticoneTabControl1.TabButtonSelectedState.InnerColor = Color.FromArgb(76, 132, 255);
             siticoneTabControl1.TabButtonSize = new Size(200, 40);
             siticoneTabControl1.TabIndex = 2;
-            siticoneTabControl1.TabMenuBackColor = Color.Black;
+            siticoneTabControl1.TabMenuBackColor = Color.FromArgb(64, 64, 64);
             siticoneTabControl1.TabMenuOrientation = Siticone.Desktop.UI.WinForms.TabMenuOrientation.HorizontalTop;
             siticoneTabControl1.SelectedIndexChanged += SiticoneTabControl1_SelectedIndexChanged;
             // 
@@ -346,7 +346,7 @@ namespace SGV_CLP.GUI
             SBExaminar.DisabledState.CustomBorderColor = Color.DarkGray;
             SBExaminar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             SBExaminar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            SBExaminar.FillColor = Color.Black;
+            SBExaminar.FillColor = Color.FromArgb(64, 64, 64);
             SBExaminar.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             SBExaminar.ForeColor = Color.White;
             SBExaminar.Location = new Point(886, 285);
@@ -399,7 +399,7 @@ namespace SGV_CLP.GUI
             buttonAddProduct.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             buttonAddProduct.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             buttonAddProduct.Enabled = false;
-            buttonAddProduct.FillColor = Color.Black;
+            buttonAddProduct.FillColor = Color.FromArgb(64, 64, 64);
             buttonAddProduct.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             buttonAddProduct.ForeColor = Color.White;
             buttonAddProduct.Location = new Point(516, 581);
@@ -833,7 +833,7 @@ namespace SGV_CLP.GUI
             addCategoryButton.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             addCategoryButton.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             addCategoryButton.Enabled = false;
-            addCategoryButton.FillColor = Color.Black;
+            addCategoryButton.FillColor = Color.FromArgb(64, 64, 64);
             addCategoryButton.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             addCategoryButton.ForeColor = Color.White;
             addCategoryButton.Location = new Point(515, 500);

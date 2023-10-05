@@ -59,7 +59,7 @@
             buttonEditProduct.DisabledState.CustomBorderColor = Color.DarkGray;
             buttonEditProduct.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             buttonEditProduct.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            buttonEditProduct.FillColor = Color.Black;
+            buttonEditProduct.FillColor = Color.FromArgb(64, 64, 64);
             buttonEditProduct.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             buttonEditProduct.ForeColor = Color.White;
             buttonEditProduct.Location = new Point(282, 653);
@@ -77,7 +77,7 @@
             buttonCancel.DisabledState.CustomBorderColor = Color.DarkGray;
             buttonCancel.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             buttonCancel.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            buttonCancel.FillColor = Color.Black;
+            buttonCancel.FillColor = Color.FromArgb(64, 64, 64);
             buttonCancel.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             buttonCancel.ForeColor = Color.White;
             buttonCancel.Location = new Point(563, 653);
@@ -220,7 +220,7 @@
             SBExaminar.DisabledState.CustomBorderColor = Color.DarkGray;
             SBExaminar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             SBExaminar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            SBExaminar.FillColor = Color.Black;
+            SBExaminar.FillColor = Color.FromArgb(64, 64, 64);
             SBExaminar.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             SBExaminar.ForeColor = Color.White;
             SBExaminar.Location = new Point(761, 250);

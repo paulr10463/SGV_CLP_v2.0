@@ -124,10 +124,7 @@ namespace SGV_CLP.Classes.Sales_Module
             return invoices;
         }
 
-    
-
-
-        public static async Task<List<Invoice>> GetAllInvoicesByDate(string value)
+         public static async Task<List<Invoice>> GetAllInvoicesByDate(string value)
         {
             List<Invoice> invoices = new();
             using (var connection = new NpgsqlConnection(s_connectionString))
@@ -165,6 +162,57 @@ namespace SGV_CLP.Classes.Sales_Module
             }
             return invoices;
         }
+
+        public static List<Invoice> GetLastInvoicesByDate(string value)
+        {
+            List<Invoice> invoices = new();
+
+            using (var connection = new NpgsqlConnection(s_connectionString))
+            {
+                connection.Open();
+
+                var queryString = "SELECT * FROM \"Order\" JOIN \"Customer\" ON \"Order\".\"ccCustomer\" = \"Customer\".\"ccCustomer\" WHERE \"issueDate\" = @value ORDER BY \"orderID\" DESC LIMIT 5";
+
+                using (var command = new NpgsqlCommand(queryString, connection))
+                {
+                    // Utiliza parámetros en lugar de concatenar valores para evitar SQL Injection
+                    // Convierte el valor de texto a un objeto DateTime
+                    if (DateTime.TryParse(value, out DateTime dateValue))
+                    {
+                        command.Parameters.AddWithValue("@value", dateValue);
+                    }
+                    else
+                    {
+                        // Maneja el caso en el que el valor de texto no es una fecha válida
+                        throw new ArgumentException("El valor proporcionado no es una fecha válida.");
+                    }
+
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            int invoiceCode = (int)reader["orderID"];
+                            string customerID = (string)reader["ccCustomer"];
+                            string firstName = (string)reader["name"];
+                            string firstLastName = (string)reader["lastName"];
+                            string phoneNumber = (string)reader["phone"];
+                            double totalSale = (double)reader["total"];
+                            DateTime issuedDate = (DateTime)reader["issueDate"];
+
+                            invoices.Add(new Invoice(
+                                invoiceCode,
+                                new Customer(customerID, firstName, firstLastName, null, phoneNumber, null),
+                                totalSale,
+                                issuedDate));
+                        }
+                    }
+                }
+            }
+
+            return invoices;
+        }
+
+
 
         public static void AddInvoice(Invoice invoice)
         {

@@ -26,6 +26,9 @@
     <Compile Update="GUI\Módulo Ventas\ProductSubtype.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="GUI\Módulo Ventas\UC_Order.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="GUI\Products Module\EditCategory.cs">
       <SubType>Form</SubType>
     </Compile>

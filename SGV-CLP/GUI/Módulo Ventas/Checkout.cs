@@ -112,7 +112,7 @@ namespace SGV_CLP.GUI.Módulo_Ventas
                 clienteFinal,
                 totalLabel.Text.Replace('.', ','),
                 txtRecibidoVenta.Text.Equals(string.Empty) ? totalLabel.Text.Replace('.', ',') : txtRecibidoVenta.Text.Replace('.', ','),
-                changeLabel.Text.Equals(string.Empty) ? "0,00" : totalLabel.Text.Replace('.', ','));
+                changeLabel.Text == null ? "0,00" : totalLabel.Text.Replace('.', ','));
             //Print Receipt Line
             //PrintHelper.PrintPDF("receipt.pdf");
             UC_Ventas.invoice = new Invoice();
@@ -120,6 +120,7 @@ namespace SGV_CLP.GUI.Módulo_Ventas
             SystemSounds.Beep.Play();
             MessageBox.Show("Venta finalizada con éxito", "Venta", MessageBoxButtons.OK, MessageBoxIcon.Information);
             MainMenu.uc_ventas.ResetValues();
+            MainMenu.uc_ventas.ChargeLastOrders();
 
             this.Dispose();
         }
@@ -522,5 +523,14 @@ namespace SGV_CLP.GUI.Módulo_Ventas
             }
         }
 
+        private void totalLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelCustomerIDNotUnique_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

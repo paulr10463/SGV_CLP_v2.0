@@ -116,7 +116,7 @@
             openSubproductsButton.DisabledState.CustomBorderColor = Color.DarkGray;
             openSubproductsButton.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             openSubproductsButton.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            openSubproductsButton.FillColor = Color.Black;
+            openSubproductsButton.FillColor = Color.FromArgb(64, 64, 64);
             openSubproductsButton.Font = new Font("Century Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
             openSubproductsButton.ForeColor = Color.White;
             openSubproductsButton.Location = new Point(5, 127);

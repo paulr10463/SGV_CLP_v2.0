@@ -40,6 +40,7 @@
             DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
             siticoneTabControl1 = new Siticone.Desktop.UI.WinForms.SiticoneTabControl();
             Añadir = new TabPage();
+            flowLayoutPanel2 = new FlowLayoutPanel();
             productsFlowLayoutPanel = new FlowLayoutPanel();
             panel1 = new Panel();
             ServiceTypePanel = new Panel();
@@ -54,9 +55,9 @@
             EliminarDetalle = new DataGridViewImageColumn();
             splitter1 = new Splitter();
             ToGoDataGridView = new Siticone.Desktop.UI.WinForms.SiticoneDataGridView();
-            dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn5 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn6 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn7 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn8 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn9 = new DataGridViewTextBoxColumn();
             DeleteToGoDetail = new DataGridViewImageColumn();
             siticoneHtmlLabel11 = new Label();
             buttonDoPayment = new Siticone.Desktop.UI.WinForms.SiticoneButton();
@@ -110,29 +111,30 @@
             siticoneTabControl1.SelectedIndex = 0;
             siticoneTabControl1.Size = new Size(1200, 720);
             siticoneTabControl1.TabButtonHoverState.BorderColor = Color.Empty;
-            siticoneTabControl1.TabButtonHoverState.FillColor = Color.Black;
+            siticoneTabControl1.TabButtonHoverState.FillColor = Color.FromArgb(64, 64, 64);
             siticoneTabControl1.TabButtonHoverState.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             siticoneTabControl1.TabButtonHoverState.ForeColor = Color.White;
-            siticoneTabControl1.TabButtonHoverState.InnerColor = Color.Black;
+            siticoneTabControl1.TabButtonHoverState.InnerColor = Color.FromArgb(64, 64, 64);
             siticoneTabControl1.TabButtonIdleState.BorderColor = Color.Empty;
-            siticoneTabControl1.TabButtonIdleState.FillColor = Color.Black;
+            siticoneTabControl1.TabButtonIdleState.FillColor = Color.FromArgb(64, 64, 64);
             siticoneTabControl1.TabButtonIdleState.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             siticoneTabControl1.TabButtonIdleState.ForeColor = Color.FromArgb(156, 160, 167);
-            siticoneTabControl1.TabButtonIdleState.InnerColor = Color.Black;
+            siticoneTabControl1.TabButtonIdleState.InnerColor = Color.FromArgb(64, 64, 64);
             siticoneTabControl1.TabButtonSelectedState.BorderColor = Color.Empty;
-            siticoneTabControl1.TabButtonSelectedState.FillColor = Color.Black;
+            siticoneTabControl1.TabButtonSelectedState.FillColor = Color.FromArgb(64, 64, 64);
             siticoneTabControl1.TabButtonSelectedState.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             siticoneTabControl1.TabButtonSelectedState.ForeColor = Color.White;
             siticoneTabControl1.TabButtonSelectedState.InnerColor = Color.FromArgb(76, 132, 255);
             siticoneTabControl1.TabButtonSize = new Size(120, 40);
             siticoneTabControl1.TabIndex = 2;
-            siticoneTabControl1.TabMenuBackColor = Color.Black;
+            siticoneTabControl1.TabMenuBackColor = Color.FromArgb(64, 64, 64);
             siticoneTabControl1.TabMenuOrientation = Siticone.Desktop.UI.WinForms.TabMenuOrientation.HorizontalTop;
             siticoneTabControl1.SelectedIndexChanged += SiticoneTabControl1_SelectedIndexChanged;
             // 
             // Añadir
             // 
             Añadir.BackColor = Color.Transparent;
+            Añadir.Controls.Add(flowLayoutPanel2);
             Añadir.Controls.Add(productsFlowLayoutPanel);
             Añadir.Controls.Add(ServiceTypePanel);
             Añadir.Controls.Add(siticoneGradientPanel1);
@@ -143,6 +145,15 @@
             Añadir.Size = new Size(1192, 672);
             Añadir.TabIndex = 0;
             Añadir.Text = "Añadir";
+            // 
+            // flowLayoutPanel2
+            // 
+            flowLayoutPanel2.BackColor = Color.FromArgb(64, 64, 64);
+            flowLayoutPanel2.Dock = DockStyle.Bottom;
+            flowLayoutPanel2.Location = new Point(0, 604);
+            flowLayoutPanel2.Name = "flowLayoutPanel2";
+            flowLayoutPanel2.Size = new Size(852, 68);
+            flowLayoutPanel2.TabIndex = 17;
             // 
             // productsFlowLayoutPanel
             // 
@@ -155,7 +166,7 @@
             productsFlowLayoutPanel.Location = new Point(0, 56);
             productsFlowLayoutPanel.Margin = new Padding(0);
             productsFlowLayoutPanel.Name = "productsFlowLayoutPanel";
-            productsFlowLayoutPanel.Size = new Size(824, 616);
+            productsFlowLayoutPanel.Size = new Size(849, 542);
             productsFlowLayoutPanel.TabIndex = 12;
             productsFlowLayoutPanel.WrapContents = false;
             // 
@@ -176,7 +187,7 @@
             ServiceTypePanel.Dock = DockStyle.Top;
             ServiceTypePanel.Location = new Point(0, 0);
             ServiceTypePanel.Name = "ServiceTypePanel";
-            ServiceTypePanel.Size = new Size(827, 56);
+            ServiceTypePanel.Size = new Size(852, 56);
             ServiceTypePanel.TabIndex = 16;
             ServiceTypePanel.Resize += ServiceTypePanel_Resize;
             // 
@@ -196,7 +207,7 @@
             ToGoButton.FillColor = Color.White;
             ToGoButton.FocusedColor = Color.Green;
             ToGoButton.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            ToGoButton.ForeColor = Color.Black;
+            ToGoButton.ForeColor = Color.FromArgb(64, 64, 64);
             ToGoButton.Image = (Image)resources.GetObject("ToGoButton.Image");
             ToGoButton.ImageOffset = new Point(10, 0);
             ToGoButton.ImageSize = new Size(40, 40);
@@ -204,7 +215,7 @@
             ToGoButton.Name = "ToGoButton";
             ToGoButton.PressedColor = Color.Green;
             ToGoButton.PressedDepth = 0;
-            ToGoButton.Size = new Size(413, 56);
+            ToGoButton.Size = new Size(438, 56);
             ToGoButton.TabIndex = 8;
             ToGoButton.TextAlign = HorizontalAlignment.Left;
             ToGoButton.TextOffset = new Point(10, 0);
@@ -227,7 +238,7 @@
             ToEatButton.FillColor = Color.White;
             ToEatButton.FocusedColor = Color.Green;
             ToEatButton.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            ToEatButton.ForeColor = Color.Black;
+            ToEatButton.ForeColor = Color.FromArgb(64, 64, 64);
             ToEatButton.Image = Properties.Resources.restaurant;
             ToEatButton.ImageOffset = new Point(10, 0);
             ToEatButton.ImageSize = new Size(40, 40);
@@ -251,9 +262,9 @@
             siticoneGradientPanel1.Controls.Add(siticoneHtmlLabel11);
             siticoneGradientPanel1.Controls.Add(buttonDoPayment);
             siticoneGradientPanel1.Dock = DockStyle.Right;
-            siticoneGradientPanel1.Location = new Point(827, 0);
+            siticoneGradientPanel1.Location = new Point(852, 0);
             siticoneGradientPanel1.Name = "siticoneGradientPanel1";
-            siticoneGradientPanel1.Size = new Size(365, 672);
+            siticoneGradientPanel1.Size = new Size(340, 672);
             siticoneGradientPanel1.TabIndex = 5;
             // 
             // flowLayoutPanel1
@@ -266,23 +277,26 @@
             flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
             flowLayoutPanel1.Location = new Point(0, 3);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(365, 525);
+            flowLayoutPanel1.Size = new Size(344, 525);
             flowLayoutPanel1.TabIndex = 57;
             flowLayoutPanel1.WrapContents = false;
+            flowLayoutPanel1.Paint += flowLayoutPanel1_Paint;
             // 
             // DineInDataGridView
             // 
             DineInDataGridView.AllowUserToAddRows = false;
+            DineInDataGridView.AllowUserToDeleteRows = false;
+            DineInDataGridView.AllowUserToResizeColumns = false;
+            DineInDataGridView.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = Color.White;
             DineInDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            DineInDataGridView.Anchor = AnchorStyles.Top;
             DineInDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             DineInDataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.Black;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(64, 64, 64);
             dataGridViewCellStyle2.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(64, 64, 64);
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             DineInDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
@@ -296,15 +310,16 @@
             dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             DineInDataGridView.DefaultCellStyle = dataGridViewCellStyle3;
+            DineInDataGridView.EditMode = DataGridViewEditMode.EditProgrammatically;
             DineInDataGridView.GridColor = Color.FromArgb(231, 229, 255);
-            DineInDataGridView.Location = new Point(4, 2);
+            DineInDataGridView.Location = new Point(3, 2);
             DineInDataGridView.Margin = new Padding(3, 2, 3, 2);
             DineInDataGridView.Name = "DineInDataGridView";
             DineInDataGridView.RowHeadersVisible = false;
-            DineInDataGridView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            DineInDataGridView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             DineInDataGridView.RowTemplate.Height = 50;
             DineInDataGridView.RowTemplate.Resizable = DataGridViewTriState.True;
-            DineInDataGridView.Size = new Size(341, 41);
+            DineInDataGridView.Size = new Size(337, 41);
             DineInDataGridView.TabIndex = 55;
             DineInDataGridView.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             DineInDataGridView.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -333,14 +348,15 @@
             // 
             // CC
             // 
-            CC.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            CC.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
             CC.FillWeight = 255.2279F;
             CC.HeaderText = "Nombre Producto";
             CC.MaxInputLength = 16;
-            CC.MinimumWidth = 100;
+            CC.MinimumWidth = 190;
             CC.Name = "CC";
             CC.Resizable = DataGridViewTriState.False;
             CC.SortMode = DataGridViewColumnSortMode.NotSortable;
+            CC.Width = 190;
             // 
             // Contras
             // 
@@ -348,6 +364,7 @@
             Contras.HeaderText = "Cant.";
             Contras.MinimumWidth = 50;
             Contras.Name = "Contras";
+            Contras.Resizable = DataGridViewTriState.False;
             Contras.SortMode = DataGridViewColumnSortMode.NotSortable;
             Contras.Width = 59;
             // 
@@ -357,6 +374,7 @@
             dataGridViewTextBoxColumn3.HeaderText = "SubT.";
             dataGridViewTextBoxColumn3.MinimumWidth = 40;
             dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            dataGridViewTextBoxColumn3.Resizable = DataGridViewTriState.False;
             dataGridViewTextBoxColumn3.SortMode = DataGridViewColumnSortMode.NotSortable;
             dataGridViewTextBoxColumn3.Width = 55;
             // 
@@ -366,40 +384,43 @@
             EliminarDetalle.FillWeight = 65.65144F;
             EliminarDetalle.HeaderText = "";
             EliminarDetalle.Image = (Image)resources.GetObject("EliminarDetalle.Image");
-            EliminarDetalle.MinimumWidth = 3;
+            EliminarDetalle.MinimumWidth = 33;
             EliminarDetalle.Name = "EliminarDetalle";
-            EliminarDetalle.Width = 3;
+            EliminarDetalle.Resizable = DataGridViewTriState.False;
+            EliminarDetalle.Width = 33;
             // 
             // splitter1
             // 
+            splitter1.AccessibleRole = AccessibleRole.Separator;
             splitter1.BackColor = Color.FromArgb(64, 64, 64);
             splitter1.Location = new Point(3, 48);
             splitter1.Name = "splitter1";
-            splitter1.Size = new Size(337, 3);
+            splitter1.Size = new Size(337, 5);
             splitter1.TabIndex = 56;
             splitter1.TabStop = false;
+            splitter1.Visible = false;
             // 
             // ToGoDataGridView
             // 
             ToGoDataGridView.AllowUserToAddRows = false;
+            ToGoDataGridView.AllowUserToDeleteRows = false;
             ToGoDataGridView.AllowUserToResizeColumns = false;
             ToGoDataGridView.AllowUserToResizeRows = false;
             dataGridViewCellStyle4.BackColor = Color.White;
             ToGoDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            ToGoDataGridView.Anchor = AnchorStyles.Top;
             ToGoDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             ToGoDataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.Black;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(64, 64, 64);
             dataGridViewCellStyle5.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             dataGridViewCellStyle5.ForeColor = Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(64, 64, 64);
             dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
             ToGoDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            ToGoDataGridView.ColumnHeadersHeight = 60;
+            ToGoDataGridView.ColumnHeadersHeight = 40;
             ToGoDataGridView.ColumnHeadersVisible = false;
-            ToGoDataGridView.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn4, dataGridViewTextBoxColumn5, dataGridViewTextBoxColumn6, DeleteToGoDetail });
+            ToGoDataGridView.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn7, dataGridViewTextBoxColumn8, dataGridViewTextBoxColumn9, DeleteToGoDetail });
             dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = Color.White;
             dataGridViewCellStyle6.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
@@ -408,16 +429,17 @@
             dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(71, 69, 94);
             dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
             ToGoDataGridView.DefaultCellStyle = dataGridViewCellStyle6;
+            ToGoDataGridView.EditMode = DataGridViewEditMode.EditProgrammatically;
             ToGoDataGridView.GridColor = Color.FromArgb(231, 229, 255);
-            ToGoDataGridView.Location = new Point(3, 56);
+            ToGoDataGridView.Location = new Point(3, 58);
             ToGoDataGridView.Margin = new Padding(3, 2, 3, 2);
-            ToGoDataGridView.MaximumSize = new Size(346, 500);
             ToGoDataGridView.Name = "ToGoDataGridView";
             ToGoDataGridView.RowHeadersVisible = false;
-            ToGoDataGridView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
+            ToGoDataGridView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             ToGoDataGridView.RowTemplate.Height = 50;
-            ToGoDataGridView.Size = new Size(343, 10);
-            ToGoDataGridView.TabIndex = 57;
+            ToGoDataGridView.RowTemplate.Resizable = DataGridViewTriState.True;
+            ToGoDataGridView.Size = new Size(337, 18);
+            ToGoDataGridView.TabIndex = 58;
             ToGoDataGridView.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             ToGoDataGridView.ThemeStyle.AlternatingRowsStyle.Font = null;
             ToGoDataGridView.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
@@ -430,7 +452,7 @@
             ToGoDataGridView.ThemeStyle.HeaderStyle.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             ToGoDataGridView.ThemeStyle.HeaderStyle.ForeColor = Color.White;
             ToGoDataGridView.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            ToGoDataGridView.ThemeStyle.HeaderStyle.Height = 60;
+            ToGoDataGridView.ThemeStyle.HeaderStyle.Height = 40;
             ToGoDataGridView.ThemeStyle.ReadOnly = false;
             ToGoDataGridView.ThemeStyle.RowsStyle.BackColor = Color.White;
             ToGoDataGridView.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
@@ -439,39 +461,41 @@
             ToGoDataGridView.ThemeStyle.RowsStyle.Height = 50;
             ToGoDataGridView.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             ToGoDataGridView.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            ToGoDataGridView.Visible = false;
             ToGoDataGridView.CellClick += ToGoDataGridView_CellClick;
             ToGoDataGridView.RowsAdded += ToGoDataGridView_RowsAdded;
             ToGoDataGridView.RowsRemoved += ToGoDataGridView_RowsRemoved;
             // 
-            // dataGridViewTextBoxColumn4
+            // dataGridViewTextBoxColumn7
             // 
-            dataGridViewTextBoxColumn4.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewTextBoxColumn4.FillWeight = 255.2279F;
-            dataGridViewTextBoxColumn4.HeaderText = "Nombre Producto";
-            dataGridViewTextBoxColumn4.MaxInputLength = 16;
-            dataGridViewTextBoxColumn4.MinimumWidth = 100;
-            dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            dataGridViewTextBoxColumn4.Resizable = DataGridViewTriState.False;
-            dataGridViewTextBoxColumn4.SortMode = DataGridViewColumnSortMode.NotSortable;
+            dataGridViewTextBoxColumn7.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            dataGridViewTextBoxColumn7.FillWeight = 255.2279F;
+            dataGridViewTextBoxColumn7.HeaderText = "Nombre Producto";
+            dataGridViewTextBoxColumn7.MaxInputLength = 16;
+            dataGridViewTextBoxColumn7.MinimumWidth = 190;
+            dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            dataGridViewTextBoxColumn7.Resizable = DataGridViewTriState.False;
+            dataGridViewTextBoxColumn7.SortMode = DataGridViewColumnSortMode.NotSortable;
+            dataGridViewTextBoxColumn7.Width = 190;
             // 
-            // dataGridViewTextBoxColumn5
+            // dataGridViewTextBoxColumn8
             // 
-            dataGridViewTextBoxColumn5.FillWeight = 39.56033F;
-            dataGridViewTextBoxColumn5.HeaderText = "Cant.";
-            dataGridViewTextBoxColumn5.MinimumWidth = 50;
-            dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            dataGridViewTextBoxColumn5.SortMode = DataGridViewColumnSortMode.NotSortable;
-            dataGridViewTextBoxColumn5.Width = 50;
+            dataGridViewTextBoxColumn8.FillWeight = 39.56033F;
+            dataGridViewTextBoxColumn8.HeaderText = "Cant.";
+            dataGridViewTextBoxColumn8.MinimumWidth = 59;
+            dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            dataGridViewTextBoxColumn8.Resizable = DataGridViewTriState.False;
+            dataGridViewTextBoxColumn8.SortMode = DataGridViewColumnSortMode.NotSortable;
+            dataGridViewTextBoxColumn8.Width = 59;
             // 
-            // dataGridViewTextBoxColumn6
+            // dataGridViewTextBoxColumn9
             // 
-            dataGridViewTextBoxColumn6.FillWeight = 39.56033F;
-            dataGridViewTextBoxColumn6.HeaderText = "SubT.";
-            dataGridViewTextBoxColumn6.MinimumWidth = 40;
-            dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            dataGridViewTextBoxColumn6.SortMode = DataGridViewColumnSortMode.NotSortable;
-            dataGridViewTextBoxColumn6.Width = 40;
+            dataGridViewTextBoxColumn9.FillWeight = 39.56033F;
+            dataGridViewTextBoxColumn9.HeaderText = "SubT.";
+            dataGridViewTextBoxColumn9.MinimumWidth = 55;
+            dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            dataGridViewTextBoxColumn9.Resizable = DataGridViewTriState.False;
+            dataGridViewTextBoxColumn9.SortMode = DataGridViewColumnSortMode.NotSortable;
+            dataGridViewTextBoxColumn9.Width = 55;
             // 
             // DeleteToGoDetail
             // 
@@ -489,7 +513,7 @@
             siticoneHtmlLabel11.Font = new Font("Century Gothic", 24F, FontStyle.Regular, GraphicsUnit.Point);
             siticoneHtmlLabel11.Location = new Point(0, 531);
             siticoneHtmlLabel11.Name = "siticoneHtmlLabel11";
-            siticoneHtmlLabel11.Size = new Size(365, 70);
+            siticoneHtmlLabel11.Size = new Size(340, 70);
             siticoneHtmlLabel11.TabIndex = 56;
             siticoneHtmlLabel11.TextAlign = ContentAlignment.MiddleCenter;
             // 
@@ -504,13 +528,13 @@
             buttonDoPayment.Dock = DockStyle.Bottom;
             buttonDoPayment.FillColor = Color.MediumSpringGreen;
             buttonDoPayment.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonDoPayment.ForeColor = Color.Black;
+            buttonDoPayment.ForeColor = Color.FromArgb(64, 64, 64);
             buttonDoPayment.Image = Properties.Resources.hand;
             buttonDoPayment.ImageOffset = new Point(-10, 0);
             buttonDoPayment.ImageSize = new Size(30, 30);
             buttonDoPayment.Location = new Point(0, 601);
             buttonDoPayment.Name = "buttonDoPayment";
-            buttonDoPayment.Size = new Size(365, 71);
+            buttonDoPayment.Size = new Size(340, 71);
             buttonDoPayment.TabIndex = 4;
             buttonDoPayment.Text = "Realizar Pago";
             buttonDoPayment.Click += ButtonDoPayment_Click;
@@ -845,19 +869,20 @@
         private Label siticoneHtmlLabel11;
         public TabPage Añadir;
         private Panel panel1;
+        private Siticone.Desktop.UI.WinForms.SiticoneButton ToGoButton;
+        private Siticone.Desktop.UI.WinForms.SiticoneButton ToEatButton;
+        private Panel ServiceTypePanel;
+        private FlowLayoutPanel flowLayoutPanel1;
+        public Splitter splitter1;
+        public Siticone.Desktop.UI.WinForms.SiticoneDataGridView ToGoDataGridView;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private DataGridViewImageColumn DeleteToGoDetail;
         private DataGridViewTextBoxColumn CC;
         private DataGridViewTextBoxColumn Contras;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private DataGridViewImageColumn EliminarDetalle;
-        private Siticone.Desktop.UI.WinForms.SiticoneButton ToGoButton;
-        private Siticone.Desktop.UI.WinForms.SiticoneButton ToEatButton;
-        private Panel ServiceTypePanel;
-        public Siticone.Desktop.UI.WinForms.SiticoneDataGridView ToGoDataGridView;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private DataGridViewImageColumn DeleteToGoDetail;
-        private FlowLayoutPanel flowLayoutPanel1;
-        private Splitter splitter1;
+        private FlowLayoutPanel flowLayoutPanel2;
     }
 }

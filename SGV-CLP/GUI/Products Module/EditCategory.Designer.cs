@@ -44,7 +44,7 @@
             buttonCancel.DisabledState.CustomBorderColor = Color.DarkGray;
             buttonCancel.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             buttonCancel.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            buttonCancel.FillColor = Color.Black;
+            buttonCancel.FillColor = Color.FromArgb(64, 64, 64);
             buttonCancel.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             buttonCancel.ForeColor = Color.White;
             buttonCancel.Location = new Point(399, 295);
@@ -100,7 +100,7 @@
             editCategoryButton.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             editCategoryButton.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             editCategoryButton.Enabled = false;
-            editCategoryButton.FillColor = Color.Black;
+            editCategoryButton.FillColor = Color.FromArgb(64, 64, 64);
             editCategoryButton.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             editCategoryButton.ForeColor = Color.White;
             editCategoryButton.Location = new Point(172, 295);

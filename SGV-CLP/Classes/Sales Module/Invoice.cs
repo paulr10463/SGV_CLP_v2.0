@@ -11,6 +11,7 @@ namespace SGV_CLP.Classes.Sales_Module
 {
     public class Invoice
     {
+        public int tableNumber;
         public List<InvoiceDetail> dineInDetailList;
         public List<InvoiceDetail>? toGoDetailList;
         public Customer? customer;

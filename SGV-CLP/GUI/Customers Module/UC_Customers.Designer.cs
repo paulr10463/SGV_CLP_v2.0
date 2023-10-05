@@ -93,23 +93,23 @@
             siticoneTabControl1.SelectedIndex = 0;
             siticoneTabControl1.Size = new Size(1446, 845);
             siticoneTabControl1.TabButtonHoverState.BorderColor = Color.Empty;
-            siticoneTabControl1.TabButtonHoverState.FillColor = Color.Black;
+            siticoneTabControl1.TabButtonHoverState.FillColor = Color.FromArgb(64, 64, 64);
             siticoneTabControl1.TabButtonHoverState.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             siticoneTabControl1.TabButtonHoverState.ForeColor = Color.White;
-            siticoneTabControl1.TabButtonHoverState.InnerColor = Color.Black;
+            siticoneTabControl1.TabButtonHoverState.InnerColor = Color.FromArgb(64, 64, 64);
             siticoneTabControl1.TabButtonIdleState.BorderColor = Color.Empty;
-            siticoneTabControl1.TabButtonIdleState.FillColor = Color.Black;
+            siticoneTabControl1.TabButtonIdleState.FillColor = Color.FromArgb(64, 64, 64);
             siticoneTabControl1.TabButtonIdleState.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             siticoneTabControl1.TabButtonIdleState.ForeColor = Color.FromArgb(156, 160, 167);
-            siticoneTabControl1.TabButtonIdleState.InnerColor = Color.Black;
+            siticoneTabControl1.TabButtonIdleState.InnerColor = Color.FromArgb(64, 64, 64);
             siticoneTabControl1.TabButtonSelectedState.BorderColor = Color.Empty;
-            siticoneTabControl1.TabButtonSelectedState.FillColor = Color.Black;
+            siticoneTabControl1.TabButtonSelectedState.FillColor = Color.FromArgb(64, 64, 64);
             siticoneTabControl1.TabButtonSelectedState.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             siticoneTabControl1.TabButtonSelectedState.ForeColor = Color.White;
             siticoneTabControl1.TabButtonSelectedState.InnerColor = Color.FromArgb(76, 132, 255);
             siticoneTabControl1.TabButtonSize = new Size(120, 40);
             siticoneTabControl1.TabIndex = 2;
-            siticoneTabControl1.TabMenuBackColor = Color.Black;
+            siticoneTabControl1.TabMenuBackColor = Color.FromArgb(64, 64, 64);
             siticoneTabControl1.TabMenuOrientation = Siticone.Desktop.UI.WinForms.TabMenuOrientation.HorizontalTop;
             siticoneTabControl1.SelectedIndexChanged += siticoneTabControl1_SelectedIndexChanged;
             // 
@@ -251,7 +251,7 @@
             tbEMail.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             tbEMail.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             tbEMail.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            tbEMail.ForeColor = Color.Black;
+            tbEMail.ForeColor = Color.FromArgb(64, 64, 64);
             tbEMail.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             tbEMail.Location = new Point(526, 400);
             tbEMail.Margin = new Padding(5, 9, 5, 9);
@@ -290,7 +290,7 @@
             tbFirstName.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             tbFirstName.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             tbFirstName.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            tbFirstName.ForeColor = Color.Black;
+            tbFirstName.ForeColor = Color.FromArgb(64, 64, 64);
             tbFirstName.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             tbFirstName.Location = new Point(526, 211);
             tbFirstName.Margin = new Padding(0);
@@ -338,7 +338,7 @@
             buttonAddCustomer.DisabledState.CustomBorderColor = Color.DarkGray;
             buttonAddCustomer.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             buttonAddCustomer.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            buttonAddCustomer.FillColor = Color.Black;
+            buttonAddCustomer.FillColor = Color.FromArgb(64, 64, 64);
             buttonAddCustomer.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             buttonAddCustomer.ForeColor = Color.White;
             buttonAddCustomer.Location = new Point(635, 617);
@@ -396,7 +396,7 @@
             tbHomeAddress.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             tbHomeAddress.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             tbHomeAddress.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            tbHomeAddress.ForeColor = Color.Black;
+            tbHomeAddress.ForeColor = Color.FromArgb(64, 64, 64);
             tbHomeAddress.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             tbHomeAddress.Location = new Point(526, 337);
             tbHomeAddress.Margin = new Padding(5, 9, 5, 9);
@@ -433,7 +433,7 @@
             tbCustomerID.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             tbCustomerID.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             tbCustomerID.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            tbCustomerID.ForeColor = Color.Black;
+            tbCustomerID.ForeColor = Color.FromArgb(64, 64, 64);
             tbCustomerID.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             tbCustomerID.Location = new Point(526, 148);
             tbCustomerID.Margin = new Padding(8, 7, 8, 7);
@@ -460,7 +460,7 @@
             tbPhoneNumber.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             tbPhoneNumber.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             tbPhoneNumber.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            tbPhoneNumber.ForeColor = Color.Black;
+            tbPhoneNumber.ForeColor = Color.FromArgb(64, 64, 64);
             tbPhoneNumber.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             tbPhoneNumber.Location = new Point(524, 463);
             tbPhoneNumber.Margin = new Padding(5, 9, 5, 9);
@@ -510,7 +510,7 @@
             tbFirstLastName.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             tbFirstLastName.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             tbFirstLastName.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            tbFirstLastName.ForeColor = Color.Black;
+            tbFirstLastName.ForeColor = Color.FromArgb(64, 64, 64);
             tbFirstLastName.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             tbFirstLastName.Location = new Point(526, 274);
             tbFirstLastName.Margin = new Padding(5, 9, 5, 9);

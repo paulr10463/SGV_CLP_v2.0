@@ -17,9 +17,10 @@ namespace SGV_CLP.GUI
         public static SiticoneDataGridView dineInDataGridView;
         public static SiticoneDataGridView toGoDataGridView;
         public static Label totalVenta;
-        public static List<UC_Item> productosUI = new List<UC_Item>();
+        public static List<UC_Item> productosUI = new();
         public string Categoria = string.Empty;
         public static bool ToGo = false;
+        public static Splitter splitterToGoDineIn;
         public UC_Ventas()
         {
             invoice = new Invoice();
@@ -32,12 +33,23 @@ namespace SGV_CLP.GUI
             dineInDataGridView = DineInDataGridView;
             toGoDataGridView = ToGoDataGridView;
             totalVenta = siticoneHtmlLabel11;
+            splitterToGoDineIn = splitter1;
             dateTimePickerConsultarVenta.Visible = false;
             txtConsultarVenta.Enabled = false;
             ComboBox_ConsultarVentaPor.SelectedIndex = 0;
             LoadProducts();
+            //To show Last Orders
+            ChargeLastOrders();
+
         }
 
+        public void ChargeLastOrders()
+        {
+            List<Invoice> lastOrders = InvoiceMapper.GetLastInvoicesByDate(DateTime.Now.ToString("dd-MM-yyyy"));
+            List<UC_Order> orders = new();
+            lastOrders.ForEach(order => orders.Add(new UC_Order(order)));
+            orders.ForEach(flowLayoutPanel2.Controls.Add);
+        }
 
         public void LoadProducts()
         {
@@ -78,7 +90,7 @@ namespace SGV_CLP.GUI
                 categoryButton.Dock = DockStyle.Top;
                 categoryButton.FillColor = Color.White;
                 categoryButton.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-                categoryButton.ForeColor = Color.Black;
+                categoryButton.ForeColor = Color.FromArgb(64, 64, 64);
                 categoryButton.Text = item.Key;
                 categoryButton.PressedDepth = 0;
                 categoryButton.RightToLeft = RightToLeft.No;
@@ -338,6 +350,35 @@ namespace SGV_CLP.GUI
             ResetNumPickers();
         }
 
+
+
+        private const int rowHeight = 33;
+        private void DineInDataGridView_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            DineInDataGridView.Height += rowHeight;
+        }
+
+
+
+        private void DineInDataGridView_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            DineInDataGridView.Height -= rowHeight;
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+        private void ToGoDataGridView_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            ToGoDataGridView.Height += rowHeight;
+        }
+
+        private void ToGoDataGridView_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            ToGoDataGridView.Height -= rowHeight;
+        }
+
         private void ToGoDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -349,6 +390,8 @@ namespace SGV_CLP.GUI
                         DataGridViewRow row = ToGoDataGridView.Rows[e.RowIndex];
                         invoice.DeleteToGoDetailbyProductName(row.Cells[0].Value.ToString());
                         ToGoDataGridView.Rows.RemoveAt(e.RowIndex);
+                        if (ToGoDataGridView.Rows.Count == 0)
+                            splitter1.Visible = false;
                         totalVenta.Text = "Total : $" + $"{invoice.CalculateTotalSales():0.00}".Replace(',', '.');
                     }
                 }
@@ -362,27 +405,6 @@ namespace SGV_CLP.GUI
                 //MessageBox.Show("Esa fila está vacía, no puede hacer acciones sobre ella!!");
                 Console.WriteLine(ex.Message);
             }
-        }
-
-        private const int rowHeight = 33;
-        private void DineInDataGridView_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
-        {
-            DineInDataGridView.Height += rowHeight;
-        }
-
-        private void ToGoDataGridView_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
-        {
-            ToGoDataGridView.Height += rowHeight;
-        }
-
-        private void ToGoDataGridView_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
-        {
-            ToGoDataGridView.Height -= rowHeight;
-        }
-
-        private void DineInDataGridView_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
-        {
-            DineInDataGridView.Height -= rowHeight;
         }
 
     }

@@ -1,4 +1,5 @@
 ﻿using SGV_CLP.Classes;
+using SGV_CLP.Classes;
 using SGV_CLP.Classes.Sales_Module;
 using SGV_CLP.Classes.Products_module;
 using Siticone.Desktop.UI.WinForms;
@@ -64,7 +65,7 @@ namespace SGV_CLP.GUI.Módulo_Ventas
                 quantityField.Text = string.Empty;
             }
         }*/
-        public void addRowInTable(SiticoneDataGridView productDetailTable, int cantidad, Product producto)
+        public void AddRowInTable(SiticoneDataGridView productDetailTable, int cantidad, Product producto)
         {
             bool flag = false;
             //Recorre la tabla de productos en el módulo de ventas
@@ -90,7 +91,7 @@ namespace SGV_CLP.GUI.Módulo_Ventas
             //En caso de no existir la fila del producto, la crea
             if (!flag)
             {
-                DataGridViewRow row = new DataGridViewRow();
+                DataGridViewRow row = new();
                 row.Cells.Add(new DataGridViewTextBoxCell { Value = producto.productName });
                 row.Cells.Add(new DataGridViewTextBoxCell { Value = cantidad });
                 row.Cells.Add(new DataGridViewTextBoxCell { Value = invoiceDetail.subTotal.ToString().Replace(',', '.') });
@@ -160,13 +161,14 @@ namespace SGV_CLP.GUI.Módulo_Ventas
                 if (UC_Ventas.ToGo)
                 {
                     UC_Ventas.invoice.AddOrUpdateToGoList(invoiceDetail);
-                    addRowInTable(UC_Ventas.toGoDataGridView, invoiceDetail.soldQuantity, _producto);
+                    AddRowInTable(UC_Ventas.toGoDataGridView, invoiceDetail.soldQuantity, _producto);
                     UC_Ventas.toGoDataGridView.Visible = true;
+                    UC_Ventas.splitterToGoDineIn.Visible = true;
                 }
                 else
                 {
                     UC_Ventas.invoice.AddOrUpdateDineInList(invoiceDetail);
-                    addRowInTable(UC_Ventas.dineInDataGridView, invoiceDetail.soldQuantity, _producto);
+                    AddRowInTable(UC_Ventas.dineInDataGridView, invoiceDetail.soldQuantity, _producto);
                 }
 
                 UC_Ventas.totalVenta.Visible = true;

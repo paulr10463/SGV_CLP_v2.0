@@ -52,7 +52,7 @@ namespace SGV_CLP
             // 
             // siticonePanel1
             // 
-            siticonePanel1.BackColor = Color.Black;
+            siticonePanel1.BackColor = Color.FromArgb(64, 64, 64);
             siticonePanel1.Controls.Add(pictureBox1);
             siticonePanel1.Controls.Add(flowLayoutPanel1);
             siticonePanel1.Dock = DockStyle.Left;
@@ -98,7 +98,7 @@ namespace SGV_CLP
             siticoneButton4.FillColor = Color.White;
             siticoneButton4.FocusedColor = Color.Green;
             siticoneButton4.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            siticoneButton4.ForeColor = Color.Black;
+            siticoneButton4.ForeColor = Color.FromArgb(64, 64, 64);
             siticoneButton4.Image = Properties.Resources.Customer;
             siticoneButton4.ImageAlign = HorizontalAlignment.Left;
             siticoneButton4.ImageOffset = new Point(10, 0);
@@ -129,7 +129,7 @@ namespace SGV_CLP
             siticoneButton3.FillColor = Color.White;
             siticoneButton3.FocusedColor = Color.Green;
             siticoneButton3.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            siticoneButton3.ForeColor = Color.Black;
+            siticoneButton3.ForeColor = Color.FromArgb(64, 64, 64);
             siticoneButton3.Image = Properties.Resources.Market;
             siticoneButton3.ImageAlign = HorizontalAlignment.Left;
             siticoneButton3.ImageOffset = new Point(10, 0);
@@ -159,7 +159,7 @@ namespace SGV_CLP
             siticoneButton6.FillColor = Color.White;
             siticoneButton6.FocusedColor = Color.Green;
             siticoneButton6.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            siticoneButton6.ForeColor = Color.Black;
+            siticoneButton6.ForeColor = Color.FromArgb(64, 64, 64);
             siticoneButton6.Image = Properties.Resources.Products;
             siticoneButton6.ImageAlign = HorizontalAlignment.Left;
             siticoneButton6.ImageOffset = new Point(10, 0);
