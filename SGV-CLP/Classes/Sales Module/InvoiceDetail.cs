@@ -13,28 +13,27 @@ namespace SGV_CLP.Classes.Sales_Module
         public int? invoiceCode { get; set; }
         public int soldQuantity { get; set; }
         public double? subTotal { get; set; }
-        public Product? product  { get; set; }
+        public Product? product { get; set; }
+        public bool isToGo { get; set; }
 
-        public InvoiceDetail(int? detailNumber, int? invoiceCode, Product? product)
-        {
-            this.detailNumber = detailNumber;
-            this.invoiceCode = invoiceCode;
-            this.soldQuantity = soldQuantity;
-            this.subTotal = subTotal;
-            this.product = product;
-        }
-
-        public InvoiceDetail(string productName, int soldQuantity, double subTotal)
+        public InvoiceDetail(string productName, int soldQuantity, double subTotal, bool isToGo)
         {
             this.soldQuantity = soldQuantity;
             this.subTotal = subTotal;
-            this.product = new Product(productName , string.Empty);
+            this.product = new Product(productName, string.Empty);
+            this.isToGo = isToGo;
         }
 
         public InvoiceDetail()
         {
             this.soldQuantity = 0;
             this.subTotal = 0;
+        }
+
+        
+        public override string ToString()
+        {
+            return $"DetailNumber: {detailNumber}, InvoiceCode: {invoiceCode}, SoldQuantity: {soldQuantity}, SubTotal: {subTotal}, Product: {product?.productName}, IsToGo: {isToGo}";
         }
 
     }

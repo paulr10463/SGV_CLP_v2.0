@@ -23,10 +23,13 @@
     <Compile Update="GUI\Customers Module\UC_Customers.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="GUI\Módulo Ventas\ProductSubtype.cs">
+    <Compile Update="GUI\Sales Module\SelectTable.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="GUI\Módulo Ventas\UC_Order.cs">
+    <Compile Update="GUI\Sales Module\ProductSubtype.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GUI\Sales Module\UC_Order.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="GUI\Products Module\EditCategory.cs">
@@ -35,13 +38,19 @@
     <Compile Update="GUI\Products Module\UC_Products.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="GUI\Módulo Ventas\Checkout.cs">
+    <Compile Update="GUI\Sales Module\Checkout.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="GUI\Módulo Ventas\UC_Item.cs">
+    <Compile Update="GUI\Sales Module\UC_Item.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="GUI\Módulo Ventas\UC_Ventas.cs">
+    <Compile Update="GUI\Sales Module\UC_Ventas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="GUI\Settings Module\UC_Settings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="GUI\Settings Module\UC_Settings.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Properties\Resources.Designer.cs">

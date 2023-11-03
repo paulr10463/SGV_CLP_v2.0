@@ -80,26 +80,36 @@
             totalLabel = new Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel();
             changeLabel = new Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel();
             panel1 = new Panel();
-            panel4 = new Panel();
-            panel6 = new Panel();
             panel3 = new Panel();
-            panel7 = new Panel();
+            panel6 = new Panel();
+            panel9 = new Panel();
             txtRecibidoVenta = new Siticone.Desktop.UI.WinForms.SiticoneTextBox();
+            panel7 = new Panel();
+            panel4 = new Panel();
+            siticoneButton4 = new Siticone.Desktop.UI.WinForms.SiticoneButton();
+            siticoneButton3 = new Siticone.Desktop.UI.WinForms.SiticoneButton();
+            siticoneButton1 = new Siticone.Desktop.UI.WinForms.SiticoneButton();
             panel2 = new Panel();
             panel8 = new Panel();
             panel5 = new Panel();
             splitter2 = new Splitter();
+            SelectTableButton = new Siticone.Desktop.UI.WinForms.SiticoneButton();
+            TableNameLabel = new Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel();
+            TableNumberLabel = new Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel();
+            TableChoicePanel = new Panel();
             CheckoutFlowLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)CheckoutDineInDataGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)CheckoutToGoDataGridView).BeginInit();
             panel1.SuspendLayout();
-            panel4.SuspendLayout();
-            panel6.SuspendLayout();
             panel3.SuspendLayout();
+            panel6.SuspendLayout();
+            panel9.SuspendLayout();
             panel7.SuspendLayout();
+            panel4.SuspendLayout();
             panel2.SuspendLayout();
             panel8.SuspendLayout();
             panel5.SuspendLayout();
+            TableChoicePanel.SuspendLayout();
             SuspendLayout();
             // 
             // txtCC_ClienteVenta
@@ -116,7 +126,7 @@
             txtCC_ClienteVenta.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtCC_ClienteVenta.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             txtCC_ClienteVenta.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtCC_ClienteVenta.Location = new Point(279, 115);
+            txtCC_ClienteVenta.Location = new Point(216, 125);
             txtCC_ClienteVenta.Margin = new Padding(5, 6, 5, 6);
             txtCC_ClienteVenta.Name = "txtCC_ClienteVenta";
             txtCC_ClienteVenta.PasswordChar = '\0';
@@ -134,7 +144,7 @@
             siticoneHtmlLabel1.Anchor = AnchorStyles.None;
             siticoneHtmlLabel1.BackColor = Color.Transparent;
             siticoneHtmlLabel1.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            siticoneHtmlLabel1.Location = new Point(213, 125);
+            siticoneHtmlLabel1.Location = new Point(150, 135);
             siticoneHtmlLabel1.Margin = new Padding(3, 2, 3, 2);
             siticoneHtmlLabel1.Name = "siticoneHtmlLabel1";
             siticoneHtmlLabel1.Size = new Size(33, 24);
@@ -194,7 +204,7 @@
             ButtonAniadirClienteVenta.ForeColor = Color.White;
             ButtonAniadirClienteVenta.Image = Properties.Resources.newUser;
             ButtonAniadirClienteVenta.ImageSize = new Size(30, 30);
-            ButtonAniadirClienteVenta.Location = new Point(529, 115);
+            ButtonAniadirClienteVenta.Location = new Point(466, 125);
             ButtonAniadirClienteVenta.Name = "ButtonAniadirClienteVenta";
             ButtonAniadirClienteVenta.Size = new Size(46, 45);
             ButtonAniadirClienteVenta.TabIndex = 53;
@@ -412,7 +422,7 @@
             siticoneHtmlLabel_cc_correct_length.BackColor = Color.Transparent;
             siticoneHtmlLabel_cc_correct_length.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             siticoneHtmlLabel_cc_correct_length.ForeColor = Color.Turquoise;
-            siticoneHtmlLabel_cc_correct_length.Location = new Point(280, 84);
+            siticoneHtmlLabel_cc_correct_length.Location = new Point(217, 94);
             siticoneHtmlLabel_cc_correct_length.Name = "siticoneHtmlLabel_cc_correct_length";
             siticoneHtmlLabel_cc_correct_length.Size = new Size(143, 22);
             siticoneHtmlLabel_cc_correct_length.TabIndex = 79;
@@ -424,7 +434,7 @@
             siticoneHtmlLabel_cc_valida.BackColor = Color.Transparent;
             siticoneHtmlLabel_cc_valida.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             siticoneHtmlLabel_cc_valida.ForeColor = Color.Turquoise;
-            siticoneHtmlLabel_cc_valida.Location = new Point(280, 61);
+            siticoneHtmlLabel_cc_valida.Location = new Point(217, 71);
             siticoneHtmlLabel_cc_valida.Name = "siticoneHtmlLabel_cc_valida";
             siticoneHtmlLabel_cc_valida.Size = new Size(115, 22);
             siticoneHtmlLabel_cc_valida.TabIndex = 78;
@@ -436,7 +446,7 @@
             siticoneHtmlLabel_cc_invalida.BackColor = Color.Transparent;
             siticoneHtmlLabel_cc_invalida.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             siticoneHtmlLabel_cc_invalida.ForeColor = Color.Red;
-            siticoneHtmlLabel_cc_invalida.Location = new Point(280, 61);
+            siticoneHtmlLabel_cc_invalida.Location = new Point(217, 71);
             siticoneHtmlLabel_cc_invalida.Name = "siticoneHtmlLabel_cc_invalida";
             siticoneHtmlLabel_cc_invalida.Size = new Size(127, 22);
             siticoneHtmlLabel_cc_invalida.TabIndex = 77;
@@ -448,7 +458,7 @@
             siticoneHtmlLabel_cc_wrong_length.BackColor = Color.Transparent;
             siticoneHtmlLabel_cc_wrong_length.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             siticoneHtmlLabel_cc_wrong_length.ForeColor = Color.Red;
-            siticoneHtmlLabel_cc_wrong_length.Location = new Point(279, 84);
+            siticoneHtmlLabel_cc_wrong_length.Location = new Point(216, 94);
             siticoneHtmlLabel_cc_wrong_length.Name = "siticoneHtmlLabel_cc_wrong_length";
             siticoneHtmlLabel_cc_wrong_length.Size = new Size(182, 22);
             siticoneHtmlLabel_cc_wrong_length.TabIndex = 76;
@@ -549,7 +559,7 @@
             siticoneCheckBox1.CheckedState.BorderThickness = 0;
             siticoneCheckBox1.CheckedState.FillColor = Color.FromArgb(94, 148, 255);
             siticoneCheckBox1.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            siticoneCheckBox1.Location = new Point(279, 174);
+            siticoneCheckBox1.Location = new Point(216, 184);
             siticoneCheckBox1.Name = "siticoneCheckBox1";
             siticoneCheckBox1.Size = new Size(161, 25);
             siticoneCheckBox1.TabIndex = 87;
@@ -566,7 +576,7 @@
             labelCustomerIDUnique.BackColor = Color.Transparent;
             labelCustomerIDUnique.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             labelCustomerIDUnique.ForeColor = Color.DodgerBlue;
-            labelCustomerIDUnique.Location = new Point(279, 39);
+            labelCustomerIDUnique.Location = new Point(216, 49);
             labelCustomerIDUnique.Margin = new Padding(3, 2, 3, 2);
             labelCustomerIDUnique.Name = "labelCustomerIDUnique";
             labelCustomerIDUnique.Size = new Size(110, 22);
@@ -579,7 +589,7 @@
             labelCustomerIDNotUnique.BackColor = Color.Transparent;
             labelCustomerIDNotUnique.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             labelCustomerIDNotUnique.ForeColor = Color.DodgerBlue;
-            labelCustomerIDNotUnique.Location = new Point(279, 39);
+            labelCustomerIDNotUnique.Location = new Point(216, 49);
             labelCustomerIDNotUnique.Margin = new Padding(3, 2, 3, 2);
             labelCustomerIDNotUnique.Name = "labelCustomerIDNotUnique";
             labelCustomerIDNotUnique.Size = new Size(165, 22);
@@ -627,7 +637,7 @@
             CheckoutFlowLayoutPanel.Margin = new Padding(0);
             CheckoutFlowLayoutPanel.MaximumSize = new Size(0, 549);
             CheckoutFlowLayoutPanel.Name = "CheckoutFlowLayoutPanel";
-            CheckoutFlowLayoutPanel.Size = new Size(320, 478);
+            CheckoutFlowLayoutPanel.Size = new Size(320, 427);
             CheckoutFlowLayoutPanel.TabIndex = 94;
             CheckoutFlowLayoutPanel.WrapContents = false;
             // 
@@ -834,7 +844,7 @@
             totalLabel.Location = new Point(158, 0);
             totalLabel.Margin = new Padding(3, 2, 3, 2);
             totalLabel.Name = "totalLabel";
-            totalLabel.Size = new Size(160, 70);
+            totalLabel.Size = new Size(155, 70);
             totalLabel.TabIndex = 95;
             totalLabel.Text = null;
             totalLabel.TextAlignment = ContentAlignment.MiddleCenter;
@@ -856,8 +866,9 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(panel4);
             panel1.Controls.Add(panel3);
+            panel1.Controls.Add(panel9);
+            panel1.Controls.Add(panel4);
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(CheckoutFlowLayoutPanel);
             panel1.Dock = DockStyle.Right;
@@ -866,15 +877,15 @@
             panel1.Size = new Size(318, 691);
             panel1.TabIndex = 97;
             // 
-            // panel4
+            // panel3
             // 
-            panel4.Controls.Add(panel6);
-            panel4.Controls.Add(totalLabel);
-            panel4.Dock = DockStyle.Bottom;
-            panel4.Location = new Point(0, 481);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(318, 70);
-            panel4.TabIndex = 98;
+            panel3.Controls.Add(panel6);
+            panel3.Controls.Add(totalLabel);
+            panel3.Location = new Point(0, 427);
+            panel3.Margin = new Padding(0);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(313, 70);
+            panel3.TabIndex = 100;
             // 
             // panel6
             // 
@@ -886,25 +897,15 @@
             panel6.Size = new Size(159, 70);
             panel6.TabIndex = 96;
             // 
-            // panel3
+            // panel9
             // 
-            panel3.Controls.Add(panel7);
-            panel3.Controls.Add(txtRecibidoVenta);
-            panel3.Dock = DockStyle.Bottom;
-            panel3.Location = new Point(0, 551);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(318, 70);
-            panel3.TabIndex = 98;
-            // 
-            // panel7
-            // 
-            panel7.BackColor = Color.FromArgb(64, 64, 64);
-            panel7.Controls.Add(siticoneHtmlLabel3);
-            panel7.Dock = DockStyle.Left;
-            panel7.Location = new Point(0, 0);
-            panel7.Name = "panel7";
-            panel7.Size = new Size(159, 70);
-            panel7.TabIndex = 97;
+            panel9.Controls.Add(txtRecibidoVenta);
+            panel9.Controls.Add(panel7);
+            panel9.Dock = DockStyle.Bottom;
+            panel9.Location = new Point(0, 497);
+            panel9.Name = "panel9";
+            panel9.Size = new Size(318, 70);
+            panel9.TabIndex = 99;
             // 
             // txtRecibidoVenta
             // 
@@ -928,6 +929,87 @@
             txtRecibidoVenta.TabIndex = 58;
             txtRecibidoVenta.TextAlign = HorizontalAlignment.Center;
             txtRecibidoVenta.KeyPress += txtRecibidoVenta_KeyPress;
+            // 
+            // panel7
+            // 
+            panel7.BackColor = Color.FromArgb(64, 64, 64);
+            panel7.Controls.Add(siticoneHtmlLabel3);
+            panel7.Dock = DockStyle.Left;
+            panel7.Location = new Point(0, 0);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(159, 70);
+            panel7.TabIndex = 97;
+            // 
+            // panel4
+            // 
+            panel4.Controls.Add(siticoneButton4);
+            panel4.Controls.Add(siticoneButton3);
+            panel4.Controls.Add(siticoneButton1);
+            panel4.Dock = DockStyle.Bottom;
+            panel4.Location = new Point(0, 567);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(318, 54);
+            panel4.TabIndex = 98;
+            // 
+            // siticoneButton4
+            // 
+            siticoneButton4.Animated = true;
+            siticoneButton4.BackColor = Color.Transparent;
+            siticoneButton4.BorderRadius = 5;
+            siticoneButton4.DisabledState.BorderColor = Color.DarkGray;
+            siticoneButton4.DisabledState.CustomBorderColor = Color.DarkGray;
+            siticoneButton4.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            siticoneButton4.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            siticoneButton4.Dock = DockStyle.Left;
+            siticoneButton4.FillColor = Color.DeepSkyBlue;
+            siticoneButton4.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            siticoneButton4.ForeColor = Color.Black;
+            siticoneButton4.Location = new Point(212, 0);
+            siticoneButton4.Name = "siticoneButton4";
+            siticoneButton4.Size = new Size(106, 54);
+            siticoneButton4.TabIndex = 53;
+            siticoneButton4.Text = "20";
+            siticoneButton4.Click += siticoneButton4_Click_1;
+            // 
+            // siticoneButton3
+            // 
+            siticoneButton3.Animated = true;
+            siticoneButton3.BackColor = Color.Transparent;
+            siticoneButton3.BorderRadius = 5;
+            siticoneButton3.DisabledState.BorderColor = Color.DarkGray;
+            siticoneButton3.DisabledState.CustomBorderColor = Color.DarkGray;
+            siticoneButton3.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            siticoneButton3.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            siticoneButton3.Dock = DockStyle.Left;
+            siticoneButton3.FillColor = Color.DeepSkyBlue;
+            siticoneButton3.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            siticoneButton3.ForeColor = Color.Black;
+            siticoneButton3.Location = new Point(106, 0);
+            siticoneButton3.Name = "siticoneButton3";
+            siticoneButton3.Size = new Size(106, 54);
+            siticoneButton3.TabIndex = 52;
+            siticoneButton3.Text = "10";
+            siticoneButton3.Click += siticoneButton3_Click;
+            // 
+            // siticoneButton1
+            // 
+            siticoneButton1.Animated = true;
+            siticoneButton1.BackColor = Color.Transparent;
+            siticoneButton1.BorderRadius = 5;
+            siticoneButton1.DisabledState.BorderColor = Color.DarkGray;
+            siticoneButton1.DisabledState.CustomBorderColor = Color.DarkGray;
+            siticoneButton1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            siticoneButton1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            siticoneButton1.Dock = DockStyle.Left;
+            siticoneButton1.FillColor = Color.DeepSkyBlue;
+            siticoneButton1.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            siticoneButton1.ForeColor = Color.Black;
+            siticoneButton1.Location = new Point(0, 0);
+            siticoneButton1.Name = "siticoneButton1";
+            siticoneButton1.Size = new Size(106, 54);
+            siticoneButton1.TabIndex = 51;
+            siticoneButton1.Text = "5";
+            siticoneButton1.Click += siticoneButton1_Click_1;
             // 
             // panel2
             // 
@@ -969,12 +1051,70 @@
             splitter2.TabIndex = 99;
             splitter2.TabStop = false;
             // 
+            // SelectTableButton
+            // 
+            SelectTableButton.Animated = true;
+            SelectTableButton.BackColor = Color.Transparent;
+            SelectTableButton.BorderRadius = 20;
+            SelectTableButton.DisabledState.BorderColor = Color.DarkGray;
+            SelectTableButton.DisabledState.CustomBorderColor = Color.DarkGray;
+            SelectTableButton.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            SelectTableButton.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            SelectTableButton.Dock = DockStyle.Fill;
+            SelectTableButton.FillColor = Color.MediumSpringGreen;
+            SelectTableButton.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            SelectTableButton.ForeColor = Color.Black;
+            SelectTableButton.Location = new Point(0, 84);
+            SelectTableButton.Name = "SelectTableButton";
+            SelectTableButton.Size = new Size(161, 44);
+            SelectTableButton.TabIndex = 52;
+            SelectTableButton.Text = "Seleccionar...";
+            SelectTableButton.Click += SelectTableButton_Click;
+            // 
+            // TableNameLabel
+            // 
+            TableNameLabel.AutoSize = false;
+            TableNameLabel.BackColor = Color.Transparent;
+            TableNameLabel.Dock = DockStyle.Top;
+            TableNameLabel.Font = new Font("Century Gothic", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            TableNameLabel.Location = new Point(0, 0);
+            TableNameLabel.Name = "TableNameLabel";
+            TableNameLabel.Size = new Size(161, 43);
+            TableNameLabel.TabIndex = 100;
+            TableNameLabel.Text = "Mesa N° ";
+            TableNameLabel.TextAlignment = ContentAlignment.MiddleCenter;
+            // 
+            // TableNumberLabel
+            // 
+            TableNumberLabel.AutoSize = false;
+            TableNumberLabel.BackColor = Color.Transparent;
+            TableNumberLabel.Dock = DockStyle.Top;
+            TableNumberLabel.Font = new Font("Century Gothic", 24F, FontStyle.Regular, GraphicsUnit.Point);
+            TableNumberLabel.Location = new Point(0, 43);
+            TableNumberLabel.Name = "TableNumberLabel";
+            TableNumberLabel.Size = new Size(161, 41);
+            TableNumberLabel.TabIndex = 101;
+            TableNumberLabel.Text = "0";
+            TableNumberLabel.TextAlignment = ContentAlignment.MiddleCenter;
+            TableNumberLabel.Click += siticoneHtmlLabel5_Click;
+            // 
+            // TableChoicePanel
+            // 
+            TableChoicePanel.Controls.Add(SelectTableButton);
+            TableChoicePanel.Controls.Add(TableNumberLabel);
+            TableChoicePanel.Controls.Add(TableNameLabel);
+            TableChoicePanel.Location = new Point(610, 1);
+            TableChoicePanel.Name = "TableChoicePanel";
+            TableChoicePanel.Size = new Size(161, 128);
+            TableChoicePanel.TabIndex = 102;
+            // 
             // Checkout
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1092, 691);
+            Controls.Add(TableChoicePanel);
             Controls.Add(splitter2);
             Controls.Add(panel5);
             Controls.Add(panel1);
@@ -1015,13 +1155,15 @@
             ((System.ComponentModel.ISupportInitialize)CheckoutToGoDataGridView).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            panel4.ResumeLayout(false);
-            panel6.ResumeLayout(false);
             panel3.ResumeLayout(false);
+            panel6.ResumeLayout(false);
+            panel9.ResumeLayout(false);
             panel7.ResumeLayout(false);
+            panel4.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel8.ResumeLayout(false);
             panel5.ResumeLayout(false);
+            TableChoicePanel.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -1069,7 +1211,6 @@
         private Panel panel1;
         private Siticone.Desktop.UI.WinForms.SiticoneTextBox txtRecibidoVenta;
         private Panel panel2;
-        private Panel panel3;
         private Panel panel4;
         private Panel panel5;
         private DataGridViewTextBoxColumn CC;
@@ -1082,5 +1223,14 @@
         private Panel panel7;
         private Panel panel8;
         private Splitter splitter2;
+        private Panel panel9;
+        private Siticone.Desktop.UI.WinForms.SiticoneButton siticoneButton4;
+        private Siticone.Desktop.UI.WinForms.SiticoneButton siticoneButton3;
+        private Siticone.Desktop.UI.WinForms.SiticoneButton siticoneButton1;
+        private Panel panel3;
+        private Siticone.Desktop.UI.WinForms.SiticoneButton SelectTableButton;
+        private Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel TableNameLabel;
+        private Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel TableNumberLabel;
+        public Panel TableChoicePanel;
     }
 }

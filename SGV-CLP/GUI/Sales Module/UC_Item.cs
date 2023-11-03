@@ -8,11 +8,12 @@ namespace SGV_CLP.GUI.Módulo_Ventas
 {
     public partial class UC_Item : UserControl
     {
-        public InvoiceDetail invoiceDetail;
+        public InvoiceDetail dineInInvoiceDetail;
+        public InvoiceDetail? toGoInvoiceDetail;
         Product _producto;
         public UC_Item(Product producto)
         {
-            invoiceDetail = new InvoiceDetail
+            dineInInvoiceDetail = new InvoiceDetail
             {
                 product = producto
             };
@@ -42,30 +43,7 @@ namespace SGV_CLP.GUI.Módulo_Ventas
             this.label1.Text = producto.productName;
         }
 
-        /*private void AddProductButton_Click(object sender, EventArgs e)
-        {
-            if (quantityField.Text != string.Empty && quantityField.Text != "0")
-            {
-                invoiceDetail.soldQuantity = int.Parse(quantityField.Text);
-                invoiceDetail.subTotal = Math.Round((double)(invoiceDetail.soldQuantity * _producto.salePrice), 2);
-                if (UC_Ventas.ToGo) 
-                {
-                    UC_Ventas.invoice.AddOrUpdateToGoList(invoiceDetail);
-                    addRowInTable(UC_Ventas.toGoDataGridView, invoiceDetail.soldQuantity, _producto);
-                    UC_Ventas.toGoDataGridView.Visible = true;
-                }
-                else
-                {
-                    UC_Ventas.invoice.AddOrUpdateDineInList(invoiceDetail);
-                    addRowInTable(UC_Ventas.dineInDataGridView, invoiceDetail.soldQuantity, _producto);
-                } 
-                
-                UC_Ventas.totalVenta.Visible = true;
-                UC_Ventas.totalVenta.Text = "Total : $" + $"{UC_Ventas.invoice.CalculateTotalSales():0.00}".Replace(',', '.');
-                quantityField.Text = string.Empty;
-            }
-        }*/
-        public void AddRowInTable(SiticoneDataGridView productDetailTable, int cantidad, Product producto)
+        public void AddRowInTable(SiticoneDataGridView productDetailTable, InvoiceDetail invoiceDetail)
         {
             bool flag = false;
             //Recorre la tabla de productos en el módulo de ventas
@@ -75,11 +53,11 @@ namespace SGV_CLP.GUI.Módulo_Ventas
                 if (rowItem.Cells[0].Value != null)
                 {
                     //Encuentra la fila del producto que se está modificando 
-                    if (rowItem.Cells[0].Value.Equals(producto.productName))
+                    if (rowItem.Cells[0].Value.Equals(invoiceDetail.product?.productName))
                     {
                         //Actualizar la cantidad del producto
-                        rowItem.Cells[1].Value = cantidad;
-                        rowItem.Cells[2].Value = invoiceDetail.subTotal.ToString().Replace(',', '.');
+                        rowItem.Cells[1].Value = invoiceDetail.soldQuantity;
+                        rowItem.Cells[2].Value = invoiceDetail.subTotal?.ToString().Replace(',', '.');
                         flag = true;
                     }
                 }
@@ -92,18 +70,25 @@ namespace SGV_CLP.GUI.Módulo_Ventas
             if (!flag)
             {
                 DataGridViewRow row = new();
-                row.Cells.Add(new DataGridViewTextBoxCell { Value = producto.productName });
-                row.Cells.Add(new DataGridViewTextBoxCell { Value = cantidad });
-                row.Cells.Add(new DataGridViewTextBoxCell { Value = invoiceDetail.subTotal.ToString().Replace(',', '.') });
+                row.Cells.Add(new DataGridViewTextBoxCell { Value = invoiceDetail.product?.productName });
+                row.Cells.Add(new DataGridViewTextBoxCell { Value = invoiceDetail.soldQuantity });
+                row.Cells.Add(new DataGridViewTextBoxCell { Value = invoiceDetail.subTotal?.ToString().Replace(',', '.') });
                 productDetailTable.Rows.Add(row);
             }
 
         }
-
-        public void resetComponents()
+        public void ResetComponentsForNewOrder()
         {
             quantityField.Text = string.Empty;
-            invoiceDetail.soldQuantity = 0;
+            dineInInvoiceDetail.soldQuantity = 0;
+            if(toGoInvoiceDetail != null )
+            {
+                toGoInvoiceDetail.soldQuantity = 0;
+            } 
+        }
+        public void BlankQuantity()
+        {
+            quantityField.Text = string.Empty;
         }
         private void quantityField_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -128,7 +113,6 @@ namespace SGV_CLP.GUI.Módulo_Ventas
                     Console.WriteLine(message);
                 }
             }
-            UpdateValue();
         }
 
         private void LessButton_MouseDown(object sender, MouseEventArgs e)
@@ -140,7 +124,6 @@ namespace SGV_CLP.GUI.Módulo_Ventas
                 {
                     quantityField.Text = (currentAmountValue - 1).ToString();
                 }
-                UpdateValue();
             }
         }
 
@@ -156,28 +139,38 @@ namespace SGV_CLP.GUI.Módulo_Ventas
         {
             if (quantityField.Text != string.Empty && quantityField.Text != "0")
             {
-                invoiceDetail.soldQuantity = int.Parse(quantityField.Text);
-                invoiceDetail.subTotal = Math.Round((double)(invoiceDetail.soldQuantity * _producto.salePrice), 2);
                 if (UC_Ventas.ToGo)
                 {
-                    UC_Ventas.invoice.AddOrUpdateToGoList(invoiceDetail);
-                    AddRowInTable(UC_Ventas.toGoDataGridView, invoiceDetail.soldQuantity, _producto);
+                    if (toGoInvoiceDetail == null)
+                    {
+                        toGoInvoiceDetail = new InvoiceDetail
+                        {
+                            product = dineInInvoiceDetail.product
+                        };
+                    }
+                    toGoInvoiceDetail.soldQuantity = int.Parse(quantityField.Text);
+                    toGoInvoiceDetail.subTotal = Math.Round((double)(toGoInvoiceDetail.soldQuantity * _producto.salePrice), 2);
+                    UC_Ventas.invoice.AddOrUpdateToGoList(toGoInvoiceDetail);
+                    AddRowInTable(UC_Ventas.toGoDataGridView, toGoInvoiceDetail);
                     UC_Ventas.toGoDataGridView.Visible = true;
                     UC_Ventas.splitterToGoDineIn.Visible = true;
                 }
                 else
                 {
-                    UC_Ventas.invoice.AddOrUpdateDineInList(invoiceDetail);
-                    AddRowInTable(UC_Ventas.dineInDataGridView, invoiceDetail.soldQuantity, _producto);
+                    dineInInvoiceDetail.soldQuantity = int.Parse(quantityField.Text);
+                    dineInInvoiceDetail.subTotal = Math.Round((double)(dineInInvoiceDetail.soldQuantity * _producto.salePrice), 2);
+                    UC_Ventas.invoice.AddOrUpdateDineInList(dineInInvoiceDetail);
+                    AddRowInTable(UC_Ventas.dineInDataGridView, dineInInvoiceDetail);
                 }
 
                 UC_Ventas.totalVenta.Visible = true;
                 UC_Ventas.totalVenta.Text = "Total : $" + $"{UC_Ventas.invoice.CalculateTotalSales():0.00}".Replace(',', '.');
             }
         }
-        private void quantityField_TextChanged(object sender, EventArgs e)
+        private void QuantityField_TextChanged(object sender, EventArgs e)
         {
-            UpdateValue();
+            if(quantityField.Text != string.Empty)
+                UpdateValue();
         }
     }
 }

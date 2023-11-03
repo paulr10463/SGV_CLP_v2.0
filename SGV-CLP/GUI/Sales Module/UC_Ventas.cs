@@ -13,14 +13,14 @@ namespace SGV_CLP.GUI
     public partial class UC_Ventas : UserControl
     {
         Dictionary<string, List<Product>> productsCategorized = new();
-        public static Invoice invoice;
-        public static SiticoneDataGridView dineInDataGridView;
-        public static SiticoneDataGridView toGoDataGridView;
-        public static Label totalVenta;
+        public static Invoice? invoice;
+        public static SiticoneDataGridView? dineInDataGridView;
+        public static SiticoneDataGridView? toGoDataGridView;
+        public static Label? totalVenta;
         public static List<UC_Item> productosUI = new();
         public string Categoria = string.Empty;
         public static bool ToGo = false;
-        public static Splitter splitterToGoDineIn;
+        public static Splitter? splitterToGoDineIn;
         public UC_Ventas()
         {
             invoice = new Invoice();
@@ -38,15 +38,29 @@ namespace SGV_CLP.GUI
             txtConsultarVenta.Enabled = false;
             ComboBox_ConsultarVentaPor.SelectedIndex = 0;
             LoadProducts();
-            //To show Last Orders
-            ChargeLastOrders();
-
+            ShowLastOrders(UC_Settings.LastOrdersEnabled);
         }
 
+        public void ShowLastOrders(bool lastOrdersEnabled)
+        {
+            if (lastOrdersEnabled)
+            {
+                TableNameLabel.Visible = true;
+                flowLayoutPanel2.Visible = true;
+                ChargeLastOrders();
+            }
+            else
+            {
+                TableNameLabel.Visible = false;
+                flowLayoutPanel2.Visible = false;
+            }
+
+        }
         public void ChargeLastOrders()
         {
             List<Invoice> lastOrders = InvoiceMapper.GetLastInvoicesByDate(DateTime.Now.ToString("dd-MM-yyyy"));
             List<UC_Order> orders = new();
+            flowLayoutPanel2.Controls.Clear();
             lastOrders.ForEach(order => orders.Add(new UC_Order(order)));
             orders.ForEach(flowLayoutPanel2.Controls.Add);
         }
@@ -54,7 +68,6 @@ namespace SGV_CLP.GUI
         public void LoadProducts()
         {
             productsFlowLayoutPanel.Controls.Clear();
-            //productsFlowLayoutPanel.Controls.Add(necessaryPanel);
             productsCategorized.Clear();
             List<Product> products = ProductMapper.GetAllProduct();
             products.ForEach(product =>
@@ -70,14 +83,14 @@ namespace SGV_CLP.GUI
             //List<Category> categoriesAvailable = CategoryMapper.GetAllCategories();
             foreach (var item in productsCategorized)
             {
-                FlowLayoutPanel flowLayoutPanel = new()
+                FlowLayoutPanel? flowLayoutPanel = new()
                 {
                     FlowDirection = FlowDirection.LeftToRight,
                     AutoSize = true,
                     Dock = DockStyle.Top,
                     Margin = new Padding(0, 0, 0, 2),
                 };
-                SiticoneButton categoryButton = new SiticoneButton
+                SiticoneButton? categoryButton = new SiticoneButton
                 {
                     Animated = true,
                     BackColor = Color.Orange,
@@ -149,11 +162,23 @@ namespace SGV_CLP.GUI
             DineInDataGridView.Rows.Clear();
             ToGoDataGridView.Rows.Clear();
             siticoneHtmlLabel11.Visible = false;
+            //Return the selection toEat in UC_Ventas   
+            ToEatButton.Checked = true;
+            ToEatButton_Click(null, null);
+            //Delete splitter
+            splitterToGoDineIn.Visible = false;
+            //Return DineInTableToDefaultValue
+            DineInDataGridView.Height = 41;
+            ToGoDataGridView.Height = 10;
         }
 
-        public static void ResetNumPickers()
+        public static void ResetNumPickersForNewOrder()
         {
-            productosUI.ForEach(item => item.resetComponents());
+            productosUI.ForEach(item => item.ResetComponentsForNewOrder());
+        }
+        public static void ResetNumPickersByModalityChange()
+        {
+            productosUI.ForEach(item => item.BlankQuantity());
         }
 
         private async void TxtConsultarVenta_TextChanged(object sender, EventArgs e)
@@ -213,14 +238,17 @@ namespace SGV_CLP.GUI
             }
         }
 
-        private void siticoneDataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void SiticoneDataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
                 if (e.ColumnIndex == 7 && siticoneDataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString() != null)
                 {
                     int InvoiceCodeSelected = Convert.ToInt32(siticoneDataGridView1.Rows[e.RowIndex].Cells[0].Value);
-                    ShowDetailInvoice showDetailInvoice = new ShowDetailInvoice(
+                    Invoice invoiceToShow = new Invoice(
+                        );
+
+                    /*ShowDetailInvoice showDetailInvoice = new ShowDetailInvoice(
                         InvoiceDetailMapper.GetAllInvoiceDetails(InvoiceCodeSelected),
                         cc: siticoneDataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString(),
                         name: siticoneDataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString() + " " + siticoneDataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString(),
@@ -230,7 +258,7 @@ namespace SGV_CLP.GUI
                         codNotaVenta: InvoiceCodeSelected
                    );
                     showDetailInvoice.BringToFront();
-                    showDetailInvoice.Visible = true;
+                    showDetailInvoice.Visible = true;*/
                 }
             }
             catch (Exception ex)
@@ -341,13 +369,13 @@ namespace SGV_CLP.GUI
         private void ToGoButton_Click(object sender, EventArgs e)
         {
             ToGo = true;
-            ResetNumPickers();
+            ResetNumPickersByModalityChange();
         }
 
         private void ToEatButton_Click(object sender, EventArgs e)
         {
             ToGo = false;
-            ResetNumPickers();
+            ResetNumPickersByModalityChange();
         }
 
 
@@ -357,23 +385,14 @@ namespace SGV_CLP.GUI
         {
             DineInDataGridView.Height += rowHeight;
         }
-
-
-
         private void DineInDataGridView_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
         {
             DineInDataGridView.Height -= rowHeight;
-        }
-
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
         private void ToGoDataGridView_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
             ToGoDataGridView.Height += rowHeight;
         }
-
         private void ToGoDataGridView_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
         {
             ToGoDataGridView.Height -= rowHeight;

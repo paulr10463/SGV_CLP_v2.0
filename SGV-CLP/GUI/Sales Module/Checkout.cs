@@ -25,7 +25,7 @@ namespace SGV_CLP.GUI.Módulo_Ventas
     {
         public static List<Customer> clientes = CustomerMapper.GetAllCustomersSync();
         private AutoCompleteStringCollection listaDeSugerenciasdeAutompletacion;
-
+        public static int TableNumber;
         readonly int num_atributos = 3;
         int count_correct_fields = 0;
         bool editClientIsEnabled = false;
@@ -90,6 +90,7 @@ namespace SGV_CLP.GUI.Módulo_Ventas
 
             ButtonAniadirClienteVenta.Enabled = false;
             ButtonConfirmarVenta.Enabled = false;
+            TableChoicePanel.Visible = UC_Settings.TableChoiceEnabled;
 
         }
 
@@ -104,9 +105,12 @@ namespace SGV_CLP.GUI.Módulo_Ventas
             Customer clienteFinal = new(txtCC_ClienteVenta.Text, txtNombre1Venta.Text, txtApellido1Venta.Text, txtDireccionVenta.Text, txtTelefVenta.Text, txtCorreoVenta.Text);
             UC_Ventas.invoice.customer = clienteFinal;
             UC_Ventas.invoice.issuedDate = DateTime.Now;
+            UC_Ventas.invoice?.SetInvoiceDetail(InvoiceMapper.ConsultarUltimoID() + 1);
+            UC_Ventas.invoice?.dineInDetailList.ForEach(InvoiceDetailMapper.AddInvoiceDetail);
+            UC_Ventas.invoice?.toGoDetailList?.ForEach(InvoiceDetailMapper.AddInvoiceDetail);
+            //Guardar Invoice
             InvoiceMapper.AddInvoice(UC_Ventas.invoice);
-            UC_Ventas.invoice.SetInvoiceDetail(InvoiceMapper.ConsultarUltimoID());
-            UC_Ventas.invoice.dineInDetailList.ForEach(item => InvoiceDetailMapper.AddInvoiceDetail(item));
+
             ReceiptHelper.GenerateReceipt(
                 UC_Ventas.invoice,
                 clienteFinal,
@@ -116,13 +120,12 @@ namespace SGV_CLP.GUI.Módulo_Ventas
             //Print Receipt Line
             //PrintHelper.PrintPDF("receipt.pdf");
             UC_Ventas.invoice = new Invoice();
-            UC_Ventas.ResetNumPickers();
+            UC_Ventas.ResetNumPickersForNewOrder();
             SystemSounds.Beep.Play();
             MessageBox.Show("Venta finalizada con éxito", "Venta", MessageBoxButtons.OK, MessageBoxIcon.Information);
             MainMenu.uc_ventas.ResetValues();
             MainMenu.uc_ventas.ChargeLastOrders();
-
-            this.Dispose();
+            Dispose();
         }
 
         private void SiticoneButton2_Click(object sender, EventArgs e)
@@ -358,18 +361,7 @@ namespace SGV_CLP.GUI.Módulo_Ventas
             {
                 if (e.KeyChar == Convert.ToChar(Keys.Enter))
                 {
-                    if (Convert.ToDouble(txtRecibidoVenta.Text, CultureInfo.InvariantCulture) > Convert.ToDouble(totalLabel.Text, CultureInfo.InvariantCulture))
-                    {
-                        double cash = Convert.ToDouble(txtRecibidoVenta.Text, CultureInfo.InvariantCulture);
-                        double totalSale = Convert.ToDouble(totalLabel.Text, CultureInfo.InvariantCulture);
-                        changeLabel.Text = $"{(cash - totalSale):0.00}".Replace(',', '.');
-                        txtRecibidoVenta.Text = $"{cash:0.00}".Replace(',', '.');
-                    }
-                    else
-                    {
-                        txtRecibidoVenta.Text = "";
-                        MessageBox.Show("El valor recibido debe ser mayor al total de la venta!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
+                    CalculateChange();
                 }
                 else if (!char.IsDigit(e.KeyChar) && e.KeyChar != '.' && e.KeyChar != Convert.ToChar(Keys.Back))
                 {
@@ -529,6 +521,50 @@ namespace SGV_CLP.GUI.Módulo_Ventas
         }
 
         private void labelCustomerIDNotUnique_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void siticoneButton1_Click_1(object sender, EventArgs e)
+        {
+            txtRecibidoVenta.Text = "5.00";
+            CalculateChange();
+        }
+        private void siticoneButton3_Click(object sender, EventArgs e)
+        {
+            txtRecibidoVenta.Text = "10.00";
+            CalculateChange();
+        }
+        private void siticoneButton4_Click_1(object sender, EventArgs e)
+        {
+            txtRecibidoVenta.Text = "20.00";
+            CalculateChange();
+        }
+        private void CalculateChange()
+        {
+            if (Convert.ToDouble(txtRecibidoVenta.Text, CultureInfo.InvariantCulture) > Convert.ToDouble(totalLabel.Text, CultureInfo.InvariantCulture))
+            {
+                double cash = Convert.ToDouble(txtRecibidoVenta.Text, CultureInfo.InvariantCulture);
+                double totalSale = Convert.ToDouble(totalLabel.Text, CultureInfo.InvariantCulture);
+                changeLabel.Text = $"{(cash - totalSale):0.00}".Replace(',', '.');
+                txtRecibidoVenta.Text = $"{cash:0.00}".Replace(',', '.');
+            }
+            else
+            {
+                txtRecibidoVenta.Text = "";
+                changeLabel.Text = "";
+                MessageBox.Show("El valor recibido debe ser mayor al total de la venta!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void SelectTableButton_Click(object sender, EventArgs e)
+        {
+            SelectTable selectTable = new SelectTable();
+            selectTable.ShowDialog();
+            TableNumberLabel.Text = selectTable.TableNumber.ToString();
+        }
+
+        private void siticoneHtmlLabel5_Click(object sender, EventArgs e)
         {
 
         }

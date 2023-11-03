@@ -55,10 +55,10 @@
             siticoneDataGridView1.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = Color.White;
             siticoneDataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            siticoneDataGridView1.Anchor = AnchorStyles.None;
+            siticoneDataGridView1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             siticoneDataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(100, 88, 255);
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(64, 64, 64);
             dataGridViewCellStyle2.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             dataGridViewCellStyle2.ForeColor = Color.White;
             dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
@@ -77,12 +77,12 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             siticoneDataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             siticoneDataGridView1.GridColor = Color.White;
-            siticoneDataGridView1.Location = new Point(23, 232);
+            siticoneDataGridView1.Location = new Point(0, 232);
             siticoneDataGridView1.Name = "siticoneDataGridView1";
             siticoneDataGridView1.RowHeadersVisible = false;
             siticoneDataGridView1.RowHeadersWidth = 51;
             siticoneDataGridView1.RowTemplate.Height = 25;
-            siticoneDataGridView1.Size = new Size(509, 398);
+            siticoneDataGridView1.Size = new Size(564, 445);
             siticoneDataGridView1.TabIndex = 55;
             siticoneDataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             siticoneDataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -126,25 +126,28 @@
             // 
             // CodNotaVentaLabel
             // 
-            CodNotaVentaLabel.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            CodNotaVentaLabel.BackColor = Color.Transparent;
+            CodNotaVentaLabel.AutoSize = false;
+            CodNotaVentaLabel.BackColor = Color.FromArgb(64, 64, 64);
+            CodNotaVentaLabel.Dock = DockStyle.Top;
             CodNotaVentaLabel.Font = new Font("Century Gothic", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
-            CodNotaVentaLabel.Location = new Point(160, 30);
+            CodNotaVentaLabel.ForeColor = Color.White;
+            CodNotaVentaLabel.Location = new Point(0, 0);
             CodNotaVentaLabel.Name = "CodNotaVentaLabel";
-            CodNotaVentaLabel.Size = new Size(251, 35);
+            CodNotaVentaLabel.Size = new Size(564, 67);
             CodNotaVentaLabel.TabIndex = 56;
-            CodNotaVentaLabel.Text = "siticoneHtmlLabel1";
+            CodNotaVentaLabel.Text = "Title";
             CodNotaVentaLabel.TextAlignment = ContentAlignment.MiddleCenter;
             // 
             // TotalLabel
             // 
-            TotalLabel.Anchor = AnchorStyles.None;
             TotalLabel.AutoSize = false;
-            TotalLabel.BackColor = Color.Transparent;
-            TotalLabel.Font = new Font("Century Gothic", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
-            TotalLabel.Location = new Point(23, 668);
+            TotalLabel.BackColor = Color.FromArgb(64, 64, 64);
+            TotalLabel.Dock = DockStyle.Bottom;
+            TotalLabel.Font = new Font("Century Gothic", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
+            TotalLabel.ForeColor = Color.White;
+            TotalLabel.Location = new Point(0, 683);
             TotalLabel.Name = "TotalLabel";
-            TotalLabel.Size = new Size(509, 35);
+            TotalLabel.Size = new Size(564, 72);
             TotalLabel.TabIndex = 57;
             TotalLabel.Text = "Total: $X.XX";
             TotalLabel.TextAlignment = ContentAlignment.MiddleCenter;
@@ -152,7 +155,7 @@
             // nameLabel
             // 
             nameLabel.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            nameLabel.Location = new Point(289, 119);
+            nameLabel.Location = new Point(284, 120);
             nameLabel.Name = "nameLabel";
             nameLabel.Size = new Size(168, 19);
             nameLabel.TabIndex = 58;
@@ -161,7 +164,7 @@
             // ccLabel
             // 
             ccLabel.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            ccLabel.Location = new Point(289, 90);
+            ccLabel.Location = new Point(284, 91);
             ccLabel.Name = "ccLabel";
             ccLabel.Size = new Size(168, 19);
             ccLabel.TabIndex = 59;
@@ -170,7 +173,7 @@
             // phoneLabel
             // 
             phoneLabel.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            phoneLabel.Location = new Point(289, 148);
+            phoneLabel.Location = new Point(284, 149);
             phoneLabel.Name = "phoneLabel";
             phoneLabel.Size = new Size(168, 19);
             phoneLabel.TabIndex = 60;
@@ -180,7 +183,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(157, 90);
+            label1.Location = new Point(152, 91);
             label1.Name = "label1";
             label1.Size = new Size(37, 19);
             label1.TabIndex = 61;
@@ -190,7 +193,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(157, 119);
+            label2.Location = new Point(152, 120);
             label2.Name = "label2";
             label2.Size = new Size(77, 19);
             label2.TabIndex = 62;
@@ -200,7 +203,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(157, 148);
+            label3.Location = new Point(152, 149);
             label3.Name = "label3";
             label3.Size = new Size(78, 19);
             label3.TabIndex = 63;
@@ -210,7 +213,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(157, 179);
+            label4.Location = new Point(152, 180);
             label4.Name = "label4";
             label4.Size = new Size(62, 19);
             label4.TabIndex = 65;
@@ -219,7 +222,7 @@
             // dateLabel
             // 
             dateLabel.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dateLabel.Location = new Point(289, 179);
+            dateLabel.Location = new Point(284, 180);
             dateLabel.Name = "dateLabel";
             dateLabel.Size = new Size(168, 19);
             dateLabel.TabIndex = 64;
@@ -244,7 +247,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "ShowDetailInvoice";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "ShowDetailInvoice";
+            Text = "Detalle";
             ((System.ComponentModel.ISupportInitialize)siticoneDataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();

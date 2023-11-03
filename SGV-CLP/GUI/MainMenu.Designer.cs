@@ -36,14 +36,16 @@ namespace SGV_CLP
             siticonePanel1 = new Siticone.Desktop.UI.WinForms.SiticonePanel();
             pictureBox1 = new PictureBox();
             flowLayoutPanel1 = new FlowLayoutPanel();
-            siticoneButton4 = new Siticone.Desktop.UI.WinForms.SiticoneButton();
             siticoneButton3 = new Siticone.Desktop.UI.WinForms.SiticoneButton();
+            siticoneButton4 = new Siticone.Desktop.UI.WinForms.SiticoneButton();
             siticoneButton6 = new Siticone.Desktop.UI.WinForms.SiticoneButton();
+            siticoneButton1 = new Siticone.Desktop.UI.WinForms.SiticoneButton();
             siticoneDragControl1 = new Siticone.Desktop.UI.WinForms.SiticoneDragControl(components);
             siticoneCustomGradientPanel1 = new Siticone.Desktop.UI.WinForms.SiticoneCustomGradientPanel();
             uC_Clientes1 = new UC_Customers();
             uC_Ventas1 = new UC_Ventas();
             uC_Productos1 = new UC_Products();
+            uC_Settings1 = new UC_Settings();
             siticonePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             flowLayoutPanel1.SuspendLayout();
@@ -76,11 +78,42 @@ namespace SGV_CLP
             flowLayoutPanel1.Controls.Add(siticoneButton3);
             flowLayoutPanel1.Controls.Add(siticoneButton4);
             flowLayoutPanel1.Controls.Add(siticoneButton6);
+            flowLayoutPanel1.Controls.Add(siticoneButton1);
             flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
             flowLayoutPanel1.Location = new Point(3, 178);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(99, 246);
+            flowLayoutPanel1.Size = new Size(99, 324);
             flowLayoutPanel1.TabIndex = 14;
+            // 
+            // siticoneButton3
+            // 
+            siticoneButton3.Animated = true;
+            siticoneButton3.BorderColor = Color.FromArgb(0, 192, 0);
+            siticoneButton3.ButtonMode = Siticone.Desktop.UI.WinForms.Enums.ButtonMode.RadioButton;
+            siticoneButton3.CheckedState.CustomBorderColor = Color.Green;
+            siticoneButton3.CustomBorderColor = Color.DimGray;
+            siticoneButton3.CustomBorderThickness = new Padding(5, 0, 0, 0);
+            siticoneButton3.DisabledState.BorderColor = Color.DarkGray;
+            siticoneButton3.DisabledState.CustomBorderColor = Color.DarkGray;
+            siticoneButton3.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            siticoneButton3.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            siticoneButton3.FillColor = Color.White;
+            siticoneButton3.FocusedColor = Color.Green;
+            siticoneButton3.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            siticoneButton3.ForeColor = Color.FromArgb(64, 64, 64);
+            siticoneButton3.Image = Properties.Resources.Market;
+            siticoneButton3.ImageAlign = HorizontalAlignment.Left;
+            siticoneButton3.ImageOffset = new Point(15, 0);
+            siticoneButton3.ImageSize = new Size(45, 45);
+            siticoneButton3.Location = new Point(3, 3);
+            siticoneButton3.Name = "siticoneButton3";
+            siticoneButton3.PressedColor = Color.Green;
+            siticoneButton3.PressedDepth = 0;
+            siticoneButton3.Size = new Size(95, 71);
+            siticoneButton3.TabIndex = 8;
+            siticoneButton3.TextAlign = HorizontalAlignment.Left;
+            siticoneButton3.TextOffset = new Point(10, 0);
+            siticoneButton3.CheckedChanged += SiticoneButton3_CheckedChanged_1;
             // 
             // siticoneButton4
             // 
@@ -101,7 +134,7 @@ namespace SGV_CLP
             siticoneButton4.ForeColor = Color.FromArgb(64, 64, 64);
             siticoneButton4.Image = Properties.Resources.Customer;
             siticoneButton4.ImageAlign = HorizontalAlignment.Left;
-            siticoneButton4.ImageOffset = new Point(10, 0);
+            siticoneButton4.ImageOffset = new Point(15, 0);
             siticoneButton4.ImageSize = new Size(50, 50);
             siticoneButton4.Location = new Point(3, 80);
             siticoneButton4.Name = "siticoneButton4";
@@ -113,36 +146,6 @@ namespace SGV_CLP
             siticoneButton4.TextAlign = HorizontalAlignment.Left;
             siticoneButton4.TextOffset = new Point(10, 0);
             siticoneButton4.CheckedChanged += siticoneButton4_CheckedChanged_1;
-            // 
-            // siticoneButton3
-            // 
-            siticoneButton3.Animated = true;
-            siticoneButton3.BorderColor = Color.FromArgb(0, 192, 0);
-            siticoneButton3.ButtonMode = Siticone.Desktop.UI.WinForms.Enums.ButtonMode.RadioButton;
-            siticoneButton3.CheckedState.CustomBorderColor = Color.Green;
-            siticoneButton3.CustomBorderColor = Color.DimGray;
-            siticoneButton3.CustomBorderThickness = new Padding(5, 0, 0, 0);
-            siticoneButton3.DisabledState.BorderColor = Color.DarkGray;
-            siticoneButton3.DisabledState.CustomBorderColor = Color.DarkGray;
-            siticoneButton3.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            siticoneButton3.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            siticoneButton3.FillColor = Color.White;
-            siticoneButton3.FocusedColor = Color.Green;
-            siticoneButton3.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            siticoneButton3.ForeColor = Color.FromArgb(64, 64, 64);
-            siticoneButton3.Image = Properties.Resources.Market;
-            siticoneButton3.ImageAlign = HorizontalAlignment.Left;
-            siticoneButton3.ImageOffset = new Point(10, 0);
-            siticoneButton3.ImageSize = new Size(50, 50);
-            siticoneButton3.Location = new Point(3, 3);
-            siticoneButton3.Name = "siticoneButton3";
-            siticoneButton3.PressedColor = Color.Green;
-            siticoneButton3.PressedDepth = 0;
-            siticoneButton3.Size = new Size(95, 71);
-            siticoneButton3.TabIndex = 8;
-            siticoneButton3.TextAlign = HorizontalAlignment.Left;
-            siticoneButton3.TextOffset = new Point(10, 0);
-            siticoneButton3.CheckedChanged += SiticoneButton3_CheckedChanged_1;
             // 
             // siticoneButton6
             // 
@@ -162,7 +165,7 @@ namespace SGV_CLP
             siticoneButton6.ForeColor = Color.FromArgb(64, 64, 64);
             siticoneButton6.Image = Properties.Resources.Products;
             siticoneButton6.ImageAlign = HorizontalAlignment.Left;
-            siticoneButton6.ImageOffset = new Point(10, 0);
+            siticoneButton6.ImageOffset = new Point(15, 0);
             siticoneButton6.ImageSize = new Size(50, 50);
             siticoneButton6.Location = new Point(3, 154);
             siticoneButton6.Name = "siticoneButton6";
@@ -174,6 +177,36 @@ namespace SGV_CLP
             siticoneButton6.TextOffset = new Point(10, 0);
             siticoneButton6.CheckedChanged += siticoneButton6_CheckedChanged_1;
             // 
+            // siticoneButton1
+            // 
+            siticoneButton1.Animated = true;
+            siticoneButton1.BorderColor = Color.FromArgb(0, 192, 0);
+            siticoneButton1.ButtonMode = Siticone.Desktop.UI.WinForms.Enums.ButtonMode.RadioButton;
+            siticoneButton1.CheckedState.CustomBorderColor = Color.Green;
+            siticoneButton1.CustomBorderColor = Color.DimGray;
+            siticoneButton1.CustomBorderThickness = new Padding(5, 0, 0, 0);
+            siticoneButton1.DisabledState.BorderColor = Color.DarkGray;
+            siticoneButton1.DisabledState.CustomBorderColor = Color.DarkGray;
+            siticoneButton1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            siticoneButton1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            siticoneButton1.FillColor = Color.White;
+            siticoneButton1.FocusedColor = Color.Green;
+            siticoneButton1.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            siticoneButton1.ForeColor = Color.FromArgb(64, 64, 64);
+            siticoneButton1.Image = Properties.Resources.setting;
+            siticoneButton1.ImageAlign = HorizontalAlignment.Left;
+            siticoneButton1.ImageOffset = new Point(20, 0);
+            siticoneButton1.ImageSize = new Size(40, 40);
+            siticoneButton1.Location = new Point(3, 238);
+            siticoneButton1.Name = "siticoneButton1";
+            siticoneButton1.PressedColor = Color.Green;
+            siticoneButton1.PressedDepth = 0;
+            siticoneButton1.Size = new Size(95, 78);
+            siticoneButton1.TabIndex = 12;
+            siticoneButton1.TextAlign = HorizontalAlignment.Left;
+            siticoneButton1.TextOffset = new Point(10, 0);
+            siticoneButton1.CheckedChanged += siticoneButton1_CheckedChanged;
+            // 
             // siticoneDragControl1
             // 
             siticoneDragControl1.DockIndicatorTransparencyValue = 0.6D;
@@ -184,6 +217,7 @@ namespace SGV_CLP
             siticoneCustomGradientPanel1.Controls.Add(uC_Clientes1);
             siticoneCustomGradientPanel1.Controls.Add(uC_Ventas1);
             siticoneCustomGradientPanel1.Controls.Add(uC_Productos1);
+            siticoneCustomGradientPanel1.Controls.Add(uC_Settings1);
             siticoneCustomGradientPanel1.Dock = DockStyle.Fill;
             siticoneCustomGradientPanel1.Location = new Point(107, 0);
             siticoneCustomGradientPanel1.Name = "siticoneCustomGradientPanel1";
@@ -218,6 +252,16 @@ namespace SGV_CLP
             uC_Productos1.Size = new Size(1795, 1033);
             uC_Productos1.TabIndex = 2;
             // 
+            // uC_Ventas1
+            // 
+            uC_Settings1.BackColor = SystemColors.AppWorkspace;
+            uC_Settings1.Dock = DockStyle.Fill;
+            uC_Settings1.Location = new Point(0, 0);
+            uC_Settings1.Margin = new Padding(3, 4, 3, 4);
+            uC_Settings1.Name = "uC_Settings1";
+            uC_Settings1.Size = new Size(1795, 1033);
+            uC_Settings1.TabIndex = 1;
+            // 
             // MainMenu
             // 
             AutoScaleMode = AutoScaleMode.None;
@@ -246,8 +290,10 @@ namespace SGV_CLP
         private GUI.UC_Customers uC_Clientes1;
         private GUI.UC_Products uC_Productos1;
         private UC_Ventas uC_Ventas1;
+        private UC_Settings uC_Settings1;
         private FlowLayoutPanel flowLayoutPanel1;
         private Siticone.Desktop.UI.WinForms.SiticoneButton siticoneButton6;
         private PictureBox pictureBox1;
+        private Siticone.Desktop.UI.WinForms.SiticoneButton siticoneButton1;
     }
 }

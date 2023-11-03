@@ -29,7 +29,7 @@ namespace SGV_CLP.Classes.Sales_Module
         }
 
         //Constructor getter BD
-        public Invoice(int invoiceCode, string customerID,  double totalSales, DateTime issuedDate)
+        public Invoice(int invoiceCode, string customerID, double totalSales, DateTime issuedDate)
         {
             this.invoiceCode = invoiceCode;
             this.dineInDetailList = new List<InvoiceDetail>();
@@ -38,7 +38,16 @@ namespace SGV_CLP.Classes.Sales_Module
             this.totalSales = totalSales;
             this.issuedDate = issuedDate;
         }
-
+        public Invoice(int tableNumber, List<InvoiceDetail> dineInDetailList, List<InvoiceDetail>? toGoDetailList, Customer? customer, double totalSales, DateTime? issuedDate, int invoiceCode)
+        {
+            this.tableNumber = tableNumber;
+            this.dineInDetailList = dineInDetailList;
+            this.toGoDetailList = toGoDetailList;
+            this.customer = customer;
+            this.totalSales = totalSales;
+            this.issuedDate = issuedDate;
+            this.invoiceCode = invoiceCode;
+        }
         public Invoice()
         {
             dineInDetailList = new List<InvoiceDetail>();
@@ -70,7 +79,8 @@ namespace SGV_CLP.Classes.Sales_Module
 
         public void AddOrUpdateToGoList(InvoiceDetail invoiceDetail)
         {
-            if (toGoDetailList == null) {
+            if (toGoDetailList == null)
+            {
                 toGoDetailList = new List<InvoiceDetail>();
             }
             AddOrUpdateInvoiceDetail(toGoDetailList, invoiceDetail);
@@ -83,7 +93,7 @@ namespace SGV_CLP.Classes.Sales_Module
             {
                 if (item.product != null)
                 {
-                    if (item.product.productName.Equals(invoiceDetail.product.productName))
+                    if (item.product.productName.Equals(invoiceDetail?.product?.productName))
                     {
                         detailList[counter].soldQuantity = invoiceDetail.soldQuantity;
                         CalculateTotalSales();
@@ -104,7 +114,7 @@ namespace SGV_CLP.Classes.Sales_Module
 
         public void DeleteDineInDetailbyProductName(string productName)
         {
-            for(int i = 0; i < dineInDetailList.Count; i++)
+            for (int i = 0; i < dineInDetailList.Count; i++)
             {
                 if (dineInDetailList[i].product.productName.Equals(productName))
                 {
@@ -125,10 +135,18 @@ namespace SGV_CLP.Classes.Sales_Module
 
         public void SetInvoiceDetail(int codNotaVenta)
         {
-            for(int i = 0; i < dineInDetailList.Count; i++)
+            for (int i = 0; i < dineInDetailList.Count; i++)
             {
                 dineInDetailList[i].invoiceCode = codNotaVenta;
-                dineInDetailList[i].detailNumber = i+1;
+                dineInDetailList[i].detailNumber = i + 1;
+                dineInDetailList[i].isToGo = false;
+            }
+            var lastIndex = dineInDetailList.Count;
+            for (int i = 0; i < toGoDetailList?.Count; i++)
+            {
+                toGoDetailList[i].detailNumber = i + lastIndex + 1;
+                toGoDetailList[i].invoiceCode = codNotaVenta;
+                toGoDetailList[i].isToGo = true;
             }
         }
     }

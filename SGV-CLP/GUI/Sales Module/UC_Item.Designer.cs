@@ -95,7 +95,7 @@
             quantityField.Size = new Size(35, 29);
             quantityField.TabIndex = 11;
             quantityField.TextAlign = HorizontalAlignment.Center;
-            quantityField.TextChanged += quantityField_TextChanged;
+            quantityField.TextChanged += QuantityField_TextChanged;
             quantityField.KeyPress += quantityField_KeyPress;
             // 
             // label1
