@@ -12,16 +12,16 @@ namespace SGV_CLP.GUI
     {
         public static bool TableChoiceEnabled = SettingsMapper.GetSettingValue(Constants.TABLE_NUMBER_SETTING);
         public static bool LastOrdersEnabled = SettingsMapper.GetSettingValue(Constants.LAST_ORDERS_SETTING);
+        public static bool MultiplePrintEnabled = SettingsMapper.GetSettingValue(Constants.MULTIPLE_PRINT_SETTING);
         public UC_Settings()
         {
-            LastOrdersEnabled.ToString();
-            TableChoiceEnabled.ToString();
-
             InitializeComponent();
             TableNumberChoice.Checked = TableChoiceEnabled;
             siticoneCheckBox1.Checked = LastOrdersEnabled;
+            MultplePrintCheckBox.Checked = MultiplePrintEnabled;
             TableNumberChoice.CheckedChanged += TableNumberChoice_CheckedChanged;
-            siticoneCheckBox1.CheckedChanged += siticoneCheckBox1_CheckedChanged;
+            siticoneCheckBox1.CheckedChanged += SiticoneCheckBox1_CheckedChanged;
+            MultplePrintCheckBox.CheckedChanged += MultplePrintCheckBox_CheckedChanged;
         }
 
         private void TableNumberChoice_CheckedChanged(object sender, EventArgs e)
@@ -30,10 +30,16 @@ namespace SGV_CLP.GUI
             SettingsMapper.EditSetting(Constants.TABLE_NUMBER_SETTING, TableChoiceEnabled);
         }
 
-        private void siticoneCheckBox1_CheckedChanged(object sender, EventArgs e)
+        private void SiticoneCheckBox1_CheckedChanged(object sender, EventArgs e)
         {
             LastOrdersEnabled = !LastOrdersEnabled;
             SettingsMapper.EditSetting(Constants.LAST_ORDERS_SETTING, LastOrdersEnabled);
+        }
+
+        private void MultplePrintCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            MultiplePrintEnabled = !MultiplePrintEnabled;
+            SettingsMapper.EditSetting(Constants.MULTIPLE_PRINT_SETTING, MultiplePrintEnabled);
         }
     }
 }

@@ -23,7 +23,7 @@ namespace SGV_CLP.GUI.Módulo_Ventas
 
     public partial class SelectTable : Form
     {
-        public int TableNumber = 0;
+        public int? TableNumber = null;
         public SelectTable()
         {
             InitializeComponent();
@@ -34,7 +34,8 @@ namespace SGV_CLP.GUI.Módulo_Ventas
 
         private void SiticoneButton1_Click(object sender, EventArgs e)
         {
-            TableNumber = Int32.Parse(TableSelectorTextField.Text);
+            if(TableSelectorTextField.Text != string.Empty)
+                TableNumber = Int32.Parse(TableSelectorTextField.Text);
             this.Dispose();
         }
 

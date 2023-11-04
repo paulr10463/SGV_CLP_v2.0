@@ -25,7 +25,7 @@ namespace SGV_CLP.GUI.Módulo_Ventas
     {
         public static List<Customer> clientes = CustomerMapper.GetAllCustomersSync();
         private AutoCompleteStringCollection listaDeSugerenciasdeAutompletacion;
-        public static int TableNumber;
+        public static int? TableNumber;
         readonly int num_atributos = 3;
         int count_correct_fields = 0;
         bool editClientIsEnabled = false;
@@ -92,6 +92,9 @@ namespace SGV_CLP.GUI.Módulo_Ventas
             ButtonConfirmarVenta.Enabled = false;
             TableChoicePanel.Visible = UC_Settings.TableChoiceEnabled;
 
+            if (UC_Ventas.invoice.toGoDetailList == null || UC_Ventas.invoice.toGoDetailList?.Count == 0) splitter1.Visible = false;
+            else splitter1.Visible = true;
+
         }
 
         private void ActualizarListadeSugerenciasdeAutocompletacion()
@@ -116,15 +119,19 @@ namespace SGV_CLP.GUI.Módulo_Ventas
                 clienteFinal,
                 totalLabel.Text.Replace('.', ','),
                 txtRecibidoVenta.Text.Equals(string.Empty) ? totalLabel.Text.Replace('.', ',') : txtRecibidoVenta.Text.Replace('.', ','),
-                changeLabel.Text == null ? "0,00" : totalLabel.Text.Replace('.', ','));
-            //Print Receipt Line
+                changeLabel.Text == null ? "0,00" : totalLabel.Text.Replace('.', ','),
+                TableNumber);
+            //Print Receipt 
             //PrintHelper.PrintPDF("receipt.pdf");
+            //if (UC_Settings.MultiplePrintEnabled)
+            //    PrintHelper.PrintPDF("receipt.pdf");
             UC_Ventas.invoice = new Invoice();
             UC_Ventas.ResetNumPickersForNewOrder();
             SystemSounds.Beep.Play();
             MessageBox.Show("Venta finalizada con éxito", "Venta", MessageBoxButtons.OK, MessageBoxIcon.Information);
             MainMenu.uc_ventas.ResetValues();
             MainMenu.uc_ventas.ChargeLastOrders();
+            TableNumber = null;
             Dispose();
         }
 
@@ -562,6 +569,7 @@ namespace SGV_CLP.GUI.Módulo_Ventas
             SelectTable selectTable = new SelectTable();
             selectTable.ShowDialog();
             TableNumberLabel.Text = selectTable.TableNumber.ToString();
+            TableNumber = selectTable.TableNumber;
         }
 
         private void siticoneHtmlLabel5_Click(object sender, EventArgs e)

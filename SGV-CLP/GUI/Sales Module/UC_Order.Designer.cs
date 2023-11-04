@@ -39,10 +39,10 @@
             nameLabel.Dock = DockStyle.Bottom;
             nameLabel.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             nameLabel.ForeColor = Color.White;
-            nameLabel.Location = new Point(0, 41);
+            nameLabel.Location = new Point(0, 34);
             nameLabel.Margin = new Padding(3, 4, 3, 4);
             nameLabel.Name = "nameLabel";
-            nameLabel.Size = new Size(220, 28);
+            nameLabel.Size = new Size(173, 25);
             nameLabel.TabIndex = 43;
             nameLabel.Text = "Pedro Perez";
             nameLabel.TextAlignment = ContentAlignment.TopCenter;
@@ -60,7 +60,7 @@
             showDetailDialogButton.Location = new Point(0, 0);
             showDetailDialogButton.Margin = new Padding(4);
             showDetailDialogButton.Name = "showDetailDialogButton";
-            showDetailDialogButton.Size = new Size(220, 36);
+            showDetailDialogButton.Size = new Size(173, 31);
             showDetailDialogButton.TabIndex = 47;
             showDetailDialogButton.Text = "Mesa N°";
             showDetailDialogButton.Click += showDetailDialogButton_Click;
@@ -74,7 +74,7 @@
             Controls.Add(showDetailDialogButton);
             Controls.Add(nameLabel);
             Name = "UC_Order";
-            Size = new Size(220, 69);
+            Size = new Size(173, 59);
             ResumeLayout(false);
         }
 

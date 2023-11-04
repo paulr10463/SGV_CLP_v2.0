@@ -29,6 +29,10 @@ namespace SGV_CLP.Classes
         //SettingsNames
         public const string TABLE_NUMBER_SETTING = "TableNumberEnabled";
         public const string LAST_ORDERS_SETTING = "LastOrdersEnabled";
+        public const string MULTIPLE_PRINT_SETTING = "MultiplePrintEnabled";
+
+        //UC_Ventas
+        public const int SCROLL_WIDTH = 16;
 
 
     }

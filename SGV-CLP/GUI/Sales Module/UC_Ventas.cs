@@ -21,6 +21,8 @@ namespace SGV_CLP.GUI
         public string Categoria = string.Empty;
         public static bool ToGo = false;
         public static Splitter? splitterToGoDineIn;
+        private bool _areLastOrdersShowing = false;
+        private bool _scrollInDetailsVisible = false;
         public UC_Ventas()
         {
             invoice = new Invoice();
@@ -48,13 +50,24 @@ namespace SGV_CLP.GUI
                 TableNameLabel.Visible = true;
                 flowLayoutPanel2.Visible = true;
                 ChargeLastOrders();
+                if (!_areLastOrdersShowing)
+                {
+                    productsFlowLayoutPanel.Height -= 95;
+                    productsFlowLayoutPanel.Refresh();
+                    _areLastOrdersShowing = true;
+                }
             }
             else
             {
                 TableNameLabel.Visible = false;
                 flowLayoutPanel2.Visible = false;
+                if (_areLastOrdersShowing)
+                {
+                    productsFlowLayoutPanel.Height += 95;
+                    productsFlowLayoutPanel.Refresh();
+                    _areLastOrdersShowing = false;
+                }
             }
-
         }
         public void ChargeLastOrders()
         {
@@ -62,7 +75,13 @@ namespace SGV_CLP.GUI
             List<UC_Order> orders = new();
             flowLayoutPanel2.Controls.Clear();
             lastOrders.ForEach(order => orders.Add(new UC_Order(order)));
-            orders.ForEach(flowLayoutPanel2.Controls.Add);
+            orders.ForEach(order =>
+            {
+                flowLayoutPanel2.Controls.Add(order);
+                Console.WriteLine(flowLayoutPanel2.Width);
+                order.Width = flowLayoutPanel2.Width/5 - 6;
+            });
+            //flowLayoutPanel2.Refresh();
         }
 
         public void LoadProducts()
@@ -384,20 +403,44 @@ namespace SGV_CLP.GUI
         private void DineInDataGridView_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
             DineInDataGridView.Height += rowHeight;
+            CheckOrderDetailScroll();
         }
         private void DineInDataGridView_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
         {
             DineInDataGridView.Height -= rowHeight;
+            CheckOrderDetailScroll();
         }
         private void ToGoDataGridView_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
             ToGoDataGridView.Height += rowHeight;
+            CheckOrderDetailScroll();
         }
         private void ToGoDataGridView_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
         {
             ToGoDataGridView.Height -= rowHeight;
+            CheckOrderDetailScroll();
         }
-
+        private void CheckOrderDetailScroll()
+        {
+            if (orderDetailPanel.VerticalScroll.Visible)
+            {
+                if (!_scrollInDetailsVisible)
+                {
+                    siticoneGradientPanel1.Width += Constants.SCROLL_WIDTH;
+                    productsFlowLayoutPanel.Width -= Constants.SCROLL_WIDTH;
+                    _scrollInDetailsVisible = true;
+                }
+            }
+            if (!orderDetailPanel.VerticalScroll.Visible)
+            {
+                if (_scrollInDetailsVisible)
+                {
+                    siticoneGradientPanel1.Width -= Constants.SCROLL_WIDTH;
+                    productsFlowLayoutPanel.Width += Constants.SCROLL_WIDTH;
+                    _scrollInDetailsVisible = false;
+                }
+            }
+        }
         private void ToGoDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -426,5 +469,14 @@ namespace SGV_CLP.GUI
             }
         }
 
+        private void orderDetailPanel_SizeChanged(object sender, EventArgs e)
+        {
+            CheckOrderDetailScroll();
+        }
+
+        private void flowLayoutPanel2_SizeChanged(object sender, EventArgs e)
+        {
+            ChargeLastOrders();
+        }
     }
 }

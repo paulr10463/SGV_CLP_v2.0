@@ -9,7 +9,9 @@ namespace SGV_CLP.Classes
 {
     public static class ReceiptHelper
     {
-        public static void GenerateReceipt(Invoice invoice, Customer customer, string total, string cash, string change)
+        private static iTextSharp.text.Font font = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 8);
+        private static iTextSharp.text.Font font1 = FontFactory.GetFont(FontFactory.HELVETICA, 8);
+        public static void GenerateReceipt(Invoice invoice, Customer customer, string total, string cash, string change, int? tableNumber)
         {
             iTextSharp.text.Rectangle pageSize = new iTextSharp.text.Rectangle(226.77f, PageSize.LETTER.Height);
             // Crear un nuevo documento
@@ -22,10 +24,19 @@ namespace SGV_CLP.Classes
             // Abrir el documento para escritura
             document.Open();
             AddHeader(document);
+            if (tableNumber != null)
+                AddTableInfo(document, tableNumber);
             AddSeparator(document);
             AddCustomerInfo(document, customer);
-            AddSeparator(document);
-            AddProducDetail(document, invoice);
+            if (invoice.dineInDetailList.Count == 0)
+            {
+                AddToGoSeparator(document); 
+            }
+            else
+            {
+                AddSeparator(document);
+            }
+            AddProductDetail(document, invoice);
             AddSeparator(document);
             AddTotal(document, total, cash, change);
             AddSeparator(document);
@@ -36,8 +47,6 @@ namespace SGV_CLP.Classes
         }
         static void AddHeader(iTextSharp.text.Document document)
         {
-            iTextSharp.text.Font font = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 8);
-            iTextSharp.text.Font font1 = FontFactory.GetFont(FontFactory.HELVETICA, 8);
             Paragraph header = new iTextSharp.text.Paragraph("CAFETERÍA LA PROSPERIDAD\n\n", font);
             // Obtener la fecha y hora actuales
             DateTime now = DateTime.Now;
@@ -51,25 +60,53 @@ namespace SGV_CLP.Classes
             document.Add(new Paragraph("FECHA: " + formattedDate + "   HORA: " + formattedTime, font1));
 
         }
-        static void AddSeparator(iTextSharp.text.Document document)
+        static void AddTableInfo(Document document, int? tableNumber)
         {
-            Paragraph separator = new Paragraph("--------------------------------------------------\n");
-            separator.Alignment = Element.ALIGN_CENTER;
+            document.Add(new Paragraph("MESA NRO: " + tableNumber.ToString() , font1));
+        }
+        static void AddSeparator(Document document)
+        {
+            Paragraph separator = new Paragraph("--------------------------------------------------\n")
+            {
+                Alignment = Element.ALIGN_CENTER
+            };
             document.Add(separator);
         }
-        static void AddProducDetail(iTextSharp.text.Document document, Invoice invoice)
+        static void AddToGoSeparator(Document document)
         {
-            PdfPTable table = new PdfPTable(4); // 4 columnas
+            Paragraph separator = new Paragraph("\n------------------------- PARA LLEVAR -------------------------\n", font)
+            {
+                Alignment = Element.ALIGN_CENTER
+            };
+            document.Add(separator);
+        }
+        static void AddProductDetail(Document document, Invoice invoice)
+        {
             float[] columnWidths = { 10f, 40f, 10f, 13f };
-            table.SetWidths(columnWidths);
-            table.WidthPercentage = 100; // Ancho de tabla al 100% del ancho de página
-            AddDetailTableTitle(table);
-            invoice.dineInDetailList.ForEach(item => { AddReceiptItem(table, item.soldQuantity, item.product.productName, (double)item.product.salePrice, (double)item.subTotal); });
-            document.Add(table);
+            if (invoice.dineInDetailList.Count > 0)
+            {
+                PdfPTable table = new PdfPTable(4); // 4 columnas
+                table.SetWidths(columnWidths);
+                table.WidthPercentage = 100; // Ancho de tabla al 100% del ancho de página
+                AddDetailTableTitle(table);
+                invoice.dineInDetailList.ForEach(item => { AddReceiptItem(table, item.soldQuantity, item.product.productName, (double)item.product.salePrice, (double)item.subTotal); });
+                document.Add(table);
+                if (invoice.toGoDetailList != null)
+                    AddToGoSeparator(document);
+            }
+            if (invoice.toGoDetailList != null)
+            {
+                PdfPTable toGoDetailTable = new PdfPTable(4); // 4 columnas
+                toGoDetailTable.SetWidths(columnWidths);
+                toGoDetailTable.WidthPercentage = 100; // Ancho de tabla al 100% del ancho de página
+                if(invoice.dineInDetailList.Count == 0)
+                    AddDetailTableTitle(toGoDetailTable);
+                invoice.toGoDetailList.ForEach(item => { AddReceiptItem(toGoDetailTable, item.soldQuantity, item.product.productName, (double)item.product.salePrice, (double)item.subTotal); });
+                document.Add(toGoDetailTable);
+            }
         }
         static void AddDetailTableTitle(PdfPTable table)
         {
-            iTextSharp.text.Font font = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 8);
             // Configurar el estilo de borde de las celdas
             PdfPCell cell = new PdfPCell();
             cell.Border = iTextSharp.text.Rectangle.NO_BORDER;
@@ -94,7 +131,6 @@ namespace SGV_CLP.Classes
         }
         static void AddReceiptItem(PdfPTable table, int quantity, string itemName, double itemPrice, double subTotal)
         {
-            iTextSharp.text.Font font1 = FontFactory.GetFont(FontFactory.HELVETICA, 8);
             PdfPCell cell = new PdfPCell();
             cell.Border = iTextSharp.text.Rectangle.NO_BORDER;
             cell.HorizontalAlignment = Element.ALIGN_CENTER; // Centrar contenido horizontalmente
@@ -117,7 +153,6 @@ namespace SGV_CLP.Classes
         }
         static void AddTotal(iTextSharp.text.Document document, string totalAmount, string cash, string change)
         {
-            iTextSharp.text.Font font = FontFactory.GetFont(FontFactory.HELVETICA, 8);
             PdfPTable table = new PdfPTable(2); // 4 columnas
             float[] columnWidths = { 5f, 1f };
             table.SetWidths(columnWidths);
@@ -135,33 +170,33 @@ namespace SGV_CLP.Classes
 
             string blankSpace = "                         ";
             // Adding subtotal row
-            cell.Phrase = new Phrase(blankSpace + "SUBTOTAL", font);
+            cell.Phrase = new Phrase(blankSpace + "SUBTOTAL", font1);
             table.AddCell(cell);
-            rightCell.Phrase = new Phrase(totalAmount, font);
+            rightCell.Phrase = new Phrase(totalAmount, font1);
             table.AddCell(rightCell);
 
             //Adding IVA row
-            cell.Phrase = new Phrase(blankSpace + "IVA 12%", font);
+            cell.Phrase = new Phrase(blankSpace + "IVA 12%", font1);
             table.AddCell(cell);
-            rightCell.Phrase = new Phrase($"0,00", font);
+            rightCell.Phrase = new Phrase($"0,00", font1);
             table.AddCell(rightCell);
 
             //Adding Total row
-            cell.Phrase = new Phrase(blankSpace + "TOTAL", font);
+            cell.Phrase = new Phrase(blankSpace + "TOTAL", font1);
             table.AddCell(cell);
-            rightCell.Phrase = new Phrase(totalAmount, font);
+            rightCell.Phrase = new Phrase(totalAmount, font1);
             table.AddCell(rightCell);
 
             //Adding cash row
-            cell.Phrase = new Phrase(blankSpace + "EFECTIVO", font);
+            cell.Phrase = new Phrase(blankSpace + "EFECTIVO", font1);
             table.AddCell(cell);
-            rightCell.Phrase = new Phrase(cash, font);
+            rightCell.Phrase = new Phrase(cash, font1);
             table.AddCell(rightCell);
 
             //Adding cash row
-            cell.Phrase = new Phrase(blankSpace + "CAMBIO", font);
+            cell.Phrase = new Phrase(blankSpace + "CAMBIO", font1);
             table.AddCell(cell);
-            rightCell.Phrase = new Phrase(change, font);
+            rightCell.Phrase = new Phrase(change, font1);
             table.AddCell(rightCell);
 
             // Agregar la tabla al documento
@@ -169,7 +204,6 @@ namespace SGV_CLP.Classes
         }
         static void AddCustomerInfo(iTextSharp.text.Document document, Customer customer)
         {
-            iTextSharp.text.Font font = FontFactory.GetFont(FontFactory.HELVETICA, 8);
             PdfPTable table = new PdfPTable(2); // 4 columnas
             float[] columnWidths = { 2f, 4f };
             table.SetWidths(columnWidths);
@@ -180,15 +214,15 @@ namespace SGV_CLP.Classes
             cell.Border = iTextSharp.text.Rectangle.NO_BORDER;
             cell.HorizontalAlignment = Element.ALIGN_LEFT; // Centrar contenido horizontalmente
                                                            // Adding subtotal row
-            cell.Phrase = new Phrase("C.I/RUC:", font);
+            cell.Phrase = new Phrase("C.I/RUC:", font1);
             table.AddCell(cell);
-            cell.Phrase = new Phrase(customer.customerID, font);
+            cell.Phrase = new Phrase(customer.customerID, font1);
             table.AddCell(cell);
 
             //Adding IVA row
-            cell.Phrase = new Phrase("NOMBRE:", font);
+            cell.Phrase = new Phrase("NOMBRE:", font1);
             table.AddCell(cell);
-            cell.Phrase = new Phrase(customer.firstName.ToUpper() + " " + customer.firstLastName.ToUpper(), font);
+            cell.Phrase = new Phrase(customer?.firstName?.ToUpper() + " " + customer?.firstLastName?.ToUpper(), font);
             table.AddCell(cell);
 
             // Agregar la tabla al documento
@@ -196,9 +230,10 @@ namespace SGV_CLP.Classes
         }
         static void AddFooter(iTextSharp.text.Document document)
         {
-            iTextSharp.text.Font font = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 8);
-            Paragraph header = new iTextSharp.text.Paragraph("**  GRACIAS POR SU COMPRA  **\n\n\n\n", font);
-            header.Alignment = Element.ALIGN_CENTER;
+            Paragraph header = new("**  GRACIAS POR SU COMPRA  **\n\n\n\n", font)
+            {
+                Alignment = Element.ALIGN_CENTER
+            };
             document.Add(header);
         }
 

@@ -741,6 +741,7 @@
             splitter1.Size = new Size(314, 3);
             splitter1.TabIndex = 56;
             splitter1.TabStop = false;
+            splitter1.Visible = false;
             // 
             // CheckoutToGoDataGridView
             // 
@@ -1045,6 +1046,7 @@
             // 
             splitter2.BackColor = Color.FromArgb(64, 64, 64);
             splitter2.Dock = DockStyle.Right;
+            splitter2.Enabled = false;
             splitter2.Location = new Point(772, 0);
             splitter2.Name = "splitter2";
             splitter2.Size = new Size(2, 691);

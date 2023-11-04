@@ -29,15 +29,17 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            siticoneCheckBox1 = new Siticone.Desktop.UI.WinForms.SiticoneCheckBox();
             TableNameLabel = new Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel();
             TableNumberChoice = new Siticone.Desktop.UI.WinForms.SiticoneCheckBox();
-            siticoneCheckBox1 = new Siticone.Desktop.UI.WinForms.SiticoneCheckBox();
+            MultplePrintCheckBox = new Siticone.Desktop.UI.WinForms.SiticoneCheckBox();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.White;
+            panel1.Controls.Add(MultplePrintCheckBox);
             panel1.Controls.Add(siticoneCheckBox1);
             panel1.Controls.Add(TableNameLabel);
             panel1.Controls.Add(TableNumberChoice);
@@ -46,6 +48,25 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1040, 604);
             panel1.TabIndex = 0;
+            // 
+            // siticoneCheckBox1
+            // 
+            siticoneCheckBox1.Anchor = AnchorStyles.None;
+            siticoneCheckBox1.AutoSize = true;
+            siticoneCheckBox1.CheckedState.BorderColor = Color.FromArgb(94, 148, 255);
+            siticoneCheckBox1.CheckedState.BorderRadius = 0;
+            siticoneCheckBox1.CheckedState.BorderThickness = 0;
+            siticoneCheckBox1.CheckedState.FillColor = Color.FromArgb(94, 148, 255);
+            siticoneCheckBox1.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            siticoneCheckBox1.Location = new Point(379, 208);
+            siticoneCheckBox1.Name = "siticoneCheckBox1";
+            siticoneCheckBox1.Size = new Size(235, 25);
+            siticoneCheckBox1.TabIndex = 102;
+            siticoneCheckBox1.Text = "Mostrar los últimos pedidos";
+            siticoneCheckBox1.UncheckedState.BorderColor = Color.FromArgb(125, 137, 149);
+            siticoneCheckBox1.UncheckedState.BorderRadius = 0;
+            siticoneCheckBox1.UncheckedState.BorderThickness = 0;
+            siticoneCheckBox1.UncheckedState.FillColor = Color.FromArgb(125, 137, 149);
             // 
             // TableNameLabel
             // 
@@ -79,24 +100,24 @@
             TableNumberChoice.UncheckedState.BorderThickness = 0;
             TableNumberChoice.UncheckedState.FillColor = Color.FromArgb(125, 137, 149);
             // 
-            // siticoneCheckBox1
+            // MultplePrintCheckBox
             // 
-            siticoneCheckBox1.Anchor = AnchorStyles.None;
-            siticoneCheckBox1.AutoSize = true;
-            siticoneCheckBox1.CheckedState.BorderColor = Color.FromArgb(94, 148, 255);
-            siticoneCheckBox1.CheckedState.BorderRadius = 0;
-            siticoneCheckBox1.CheckedState.BorderThickness = 0;
-            siticoneCheckBox1.CheckedState.FillColor = Color.FromArgb(94, 148, 255);
-            siticoneCheckBox1.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            siticoneCheckBox1.Location = new Point(379, 207);
-            siticoneCheckBox1.Name = "siticoneCheckBox1";
-            siticoneCheckBox1.Size = new Size(235, 25);
-            siticoneCheckBox1.TabIndex = 102;
-            siticoneCheckBox1.Text = "Mostrar los últimos pedidos";
-            siticoneCheckBox1.UncheckedState.BorderColor = Color.FromArgb(125, 137, 149);
-            siticoneCheckBox1.UncheckedState.BorderRadius = 0;
-            siticoneCheckBox1.UncheckedState.BorderThickness = 0;
-            siticoneCheckBox1.UncheckedState.FillColor = Color.FromArgb(125, 137, 149);
+            MultplePrintCheckBox.Anchor = AnchorStyles.None;
+            MultplePrintCheckBox.AutoSize = true;
+            MultplePrintCheckBox.CheckedState.BorderColor = Color.FromArgb(94, 148, 255);
+            MultplePrintCheckBox.CheckedState.BorderRadius = 0;
+            MultplePrintCheckBox.CheckedState.BorderThickness = 0;
+            MultplePrintCheckBox.CheckedState.FillColor = Color.FromArgb(94, 148, 255);
+            MultplePrintCheckBox.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            MultplePrintCheckBox.Location = new Point(379, 262);
+            MultplePrintCheckBox.Name = "MultplePrintCheckBox";
+            MultplePrintCheckBox.Size = new Size(233, 25);
+            MultplePrintCheckBox.TabIndex = 103;
+            MultplePrintCheckBox.Text = "Doble impresión del recibo";
+            MultplePrintCheckBox.UncheckedState.BorderColor = Color.FromArgb(125, 137, 149);
+            MultplePrintCheckBox.UncheckedState.BorderRadius = 0;
+            MultplePrintCheckBox.UncheckedState.BorderThickness = 0;
+            MultplePrintCheckBox.UncheckedState.FillColor = Color.FromArgb(125, 137, 149);
             // 
             // UC_Settings
             // 
@@ -116,5 +137,6 @@
         private Siticone.Desktop.UI.WinForms.SiticoneCheckBox TableNumberChoice;
         private Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel TableNameLabel;
         private Siticone.Desktop.UI.WinForms.SiticoneCheckBox siticoneCheckBox1;
+        private Siticone.Desktop.UI.WinForms.SiticoneCheckBox MultplePrintCheckBox;
     }
 }
