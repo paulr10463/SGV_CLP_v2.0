@@ -12,7 +12,7 @@ namespace SGV_CLP.Classes.Sales_Module
     public class InvoiceDetailMapper
     {
 
-        private static readonly string s_connectionString = "Host=localhost:5432;Username=postgres;Password=P@ssw0rd;Database=SGV-CLP";
+        private static readonly string s_connectionString = Constants.CONNECTION_STRING;
         //USAR using SGV_CLP.Classes
         //--------
         //CREATE

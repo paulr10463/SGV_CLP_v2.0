@@ -14,7 +14,7 @@ namespace SGV_CLP.Classes.Sales_Module
 {
     internal class InvoiceMapper
     {
-        private static readonly string s_connectionString = "Host=localhost:5432;Username=postgres;Password=P@ssw0rd;Database=SGV-CLP";
+        private static readonly string s_connectionString = Constants.CONNECTION_STRING;
 
         public static async Task<List<Invoice>> GetAllInvoices(string parameter, string value)
         {
