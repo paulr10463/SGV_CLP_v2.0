@@ -40,7 +40,7 @@ namespace SGV_CLP.GUI.Módulo_Ventas
             {
                 Console.WriteLine(e.Message);
             }
-            this.label1.Text = producto.productName;
+            this.label1.Text = producto.productName.ToUpper();
         }
 
         public void AddRowInTable(SiticoneDataGridView productDetailTable, InvoiceDetail invoiceDetail)
@@ -81,10 +81,10 @@ namespace SGV_CLP.GUI.Módulo_Ventas
         {
             quantityField.Text = string.Empty;
             dineInInvoiceDetail.soldQuantity = 0;
-            if(toGoInvoiceDetail != null )
+            if (toGoInvoiceDetail != null)
             {
                 toGoInvoiceDetail.soldQuantity = 0;
-            } 
+            }
         }
         public void BlankQuantity()
         {
@@ -169,7 +169,7 @@ namespace SGV_CLP.GUI.Módulo_Ventas
         }
         private void QuantityField_TextChanged(object sender, EventArgs e)
         {
-            if(quantityField.Text != string.Empty)
+            if (quantityField.Text != string.Empty)
                 UpdateValue();
         }
     }

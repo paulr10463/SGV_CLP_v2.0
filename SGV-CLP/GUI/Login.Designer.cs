@@ -70,7 +70,7 @@
             siticoneButton7.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             siticoneButton7.FillColor = Color.FromArgb(64, 64, 64);
             siticoneButton7.FocusedColor = Color.Gray;
-            siticoneButton7.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            siticoneButton7.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             siticoneButton7.ForeColor = Color.White;
             siticoneButton7.Location = new Point(177, 219);
             siticoneButton7.Name = "siticoneButton7";

@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            MultplePrintCheckBox = new Siticone.Desktop.UI.WinForms.SiticoneCheckBox();
             siticoneCheckBox1 = new Siticone.Desktop.UI.WinForms.SiticoneCheckBox();
             TableNameLabel = new Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel();
             TableNumberChoice = new Siticone.Desktop.UI.WinForms.SiticoneCheckBox();
-            MultplePrintCheckBox = new Siticone.Desktop.UI.WinForms.SiticoneCheckBox();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -48,6 +48,25 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1040, 604);
             panel1.TabIndex = 0;
+            // 
+            // MultplePrintCheckBox
+            // 
+            MultplePrintCheckBox.Anchor = AnchorStyles.None;
+            MultplePrintCheckBox.AutoSize = true;
+            MultplePrintCheckBox.CheckedState.BorderColor = Color.FromArgb(94, 148, 255);
+            MultplePrintCheckBox.CheckedState.BorderRadius = 0;
+            MultplePrintCheckBox.CheckedState.BorderThickness = 0;
+            MultplePrintCheckBox.CheckedState.FillColor = Color.FromArgb(94, 148, 255);
+            MultplePrintCheckBox.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            MultplePrintCheckBox.Location = new Point(379, 262);
+            MultplePrintCheckBox.Name = "MultplePrintCheckBox";
+            MultplePrintCheckBox.Size = new Size(233, 25);
+            MultplePrintCheckBox.TabIndex = 103;
+            MultplePrintCheckBox.Text = "Doble impresión del recibo";
+            MultplePrintCheckBox.UncheckedState.BorderColor = Color.FromArgb(125, 137, 149);
+            MultplePrintCheckBox.UncheckedState.BorderRadius = 0;
+            MultplePrintCheckBox.UncheckedState.BorderThickness = 0;
+            MultplePrintCheckBox.UncheckedState.FillColor = Color.FromArgb(125, 137, 149);
             // 
             // siticoneCheckBox1
             // 
@@ -99,25 +118,6 @@
             TableNumberChoice.UncheckedState.BorderRadius = 0;
             TableNumberChoice.UncheckedState.BorderThickness = 0;
             TableNumberChoice.UncheckedState.FillColor = Color.FromArgb(125, 137, 149);
-            // 
-            // MultplePrintCheckBox
-            // 
-            MultplePrintCheckBox.Anchor = AnchorStyles.None;
-            MultplePrintCheckBox.AutoSize = true;
-            MultplePrintCheckBox.CheckedState.BorderColor = Color.FromArgb(94, 148, 255);
-            MultplePrintCheckBox.CheckedState.BorderRadius = 0;
-            MultplePrintCheckBox.CheckedState.BorderThickness = 0;
-            MultplePrintCheckBox.CheckedState.FillColor = Color.FromArgb(94, 148, 255);
-            MultplePrintCheckBox.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            MultplePrintCheckBox.Location = new Point(379, 262);
-            MultplePrintCheckBox.Name = "MultplePrintCheckBox";
-            MultplePrintCheckBox.Size = new Size(233, 25);
-            MultplePrintCheckBox.TabIndex = 103;
-            MultplePrintCheckBox.Text = "Doble impresión del recibo";
-            MultplePrintCheckBox.UncheckedState.BorderColor = Color.FromArgb(125, 137, 149);
-            MultplePrintCheckBox.UncheckedState.BorderRadius = 0;
-            MultplePrintCheckBox.UncheckedState.BorderThickness = 0;
-            MultplePrintCheckBox.UncheckedState.FillColor = Color.FromArgb(125, 137, 149);
             // 
             // UC_Settings
             // 

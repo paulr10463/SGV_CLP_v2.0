@@ -60,7 +60,7 @@
             buttonEditProduct.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             buttonEditProduct.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             buttonEditProduct.FillColor = Color.FromArgb(64, 64, 64);
-            buttonEditProduct.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonEditProduct.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             buttonEditProduct.ForeColor = Color.White;
             buttonEditProduct.Location = new Point(282, 653);
             buttonEditProduct.Name = "buttonEditProduct";
@@ -78,7 +78,7 @@
             buttonCancel.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             buttonCancel.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             buttonCancel.FillColor = Color.FromArgb(64, 64, 64);
-            buttonCancel.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonCancel.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             buttonCancel.ForeColor = Color.White;
             buttonCancel.Location = new Point(563, 653);
             buttonCancel.Name = "buttonCancel";
@@ -117,7 +117,7 @@
             // 
             isSubproductCheckBox.Anchor = AnchorStyles.None;
             isSubproductCheckBox.AutoSize = true;
-            isSubproductCheckBox.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            isSubproductCheckBox.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             isSubproductCheckBox.Location = new Point(100, 501);
             isSubproductCheckBox.Name = "isSubproductCheckBox";
             isSubproductCheckBox.Size = new Size(210, 26);
@@ -135,7 +135,7 @@
             parentComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             parentComboBox.FocusedColor = Color.FromArgb(94, 148, 255);
             parentComboBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            parentComboBox.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            parentComboBox.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             parentComboBox.ForeColor = Color.FromArgb(68, 88, 112);
             parentComboBox.ItemHeight = 39;
             parentComboBox.Location = new Point(502, 491);
@@ -151,7 +151,7 @@
             // 
             isParentCheckBox.Anchor = AnchorStyles.None;
             isParentCheckBox.AutoSize = true;
-            isParentCheckBox.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            isParentCheckBox.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             isParentCheckBox.Location = new Point(100, 438);
             isParentCheckBox.Name = "isParentCheckBox";
             isParentCheckBox.Size = new Size(223, 26);
@@ -221,7 +221,7 @@
             SBExaminar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             SBExaminar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             SBExaminar.FillColor = Color.FromArgb(64, 64, 64);
-            SBExaminar.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            SBExaminar.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             SBExaminar.ForeColor = Color.White;
             SBExaminar.Location = new Point(761, 250);
             SBExaminar.Name = "SBExaminar";
@@ -240,7 +240,7 @@
             tbImagePath.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             tbImagePath.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             tbImagePath.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            tbImagePath.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            tbImagePath.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             tbImagePath.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             tbImagePath.Location = new Point(311, 250);
             tbImagePath.Margin = new Padding(5, 7, 5, 7);
@@ -273,7 +273,7 @@
             cbCategory.DropDownStyle = ComboBoxStyle.DropDownList;
             cbCategory.FocusedColor = Color.FromArgb(94, 148, 255);
             cbCategory.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            cbCategory.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            cbCategory.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             cbCategory.ForeColor = Color.FromArgb(68, 88, 112);
             cbCategory.ItemHeight = 39;
             cbCategory.Items.AddRange(new object[] { "Seleccione...", "Especialidades", "Bebidas Frías", "Bebidas Calientes", "Empanadas" });
@@ -308,7 +308,7 @@
             tbSalesPriceToThePublic.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             tbSalesPriceToThePublic.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             tbSalesPriceToThePublic.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            tbSalesPriceToThePublic.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            tbSalesPriceToThePublic.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             tbSalesPriceToThePublic.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             tbSalesPriceToThePublic.Location = new Point(311, 333);
             tbSalesPriceToThePublic.Margin = new Padding(5, 9, 5, 9);
@@ -355,7 +355,7 @@
             tbProductName.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             tbProductName.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             tbProductName.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            tbProductName.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            tbProductName.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             tbProductName.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             tbProductName.Location = new Point(313, 105);
             tbProductName.Margin = new Padding(5, 9, 5, 9);

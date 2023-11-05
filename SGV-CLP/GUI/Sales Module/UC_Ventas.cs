@@ -79,7 +79,7 @@ namespace SGV_CLP.GUI
             {
                 flowLayoutPanel2.Controls.Add(order);
                 Console.WriteLine(flowLayoutPanel2.Width);
-                order.Width = flowLayoutPanel2.Width/5 - 6;
+                order.Width = flowLayoutPanel2.Width / 5 - 6;
             });
             //flowLayoutPanel2.Refresh();
         }
@@ -121,7 +121,7 @@ namespace SGV_CLP.GUI
                 categoryButton.CustomBorderThickness = new Padding(4, 0, 0, 1);
                 categoryButton.Dock = DockStyle.Top;
                 categoryButton.FillColor = Color.White;
-                categoryButton.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+                categoryButton.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
                 categoryButton.ForeColor = Color.FromArgb(64, 64, 64);
                 categoryButton.Text = item.Key;
                 categoryButton.PressedDepth = 0;

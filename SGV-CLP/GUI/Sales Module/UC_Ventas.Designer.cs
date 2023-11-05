@@ -103,7 +103,7 @@
             siticoneTabControl1.Controls.Add(Añadir);
             siticoneTabControl1.Controls.Add(Buscar);
             siticoneTabControl1.Dock = DockStyle.Fill;
-            siticoneTabControl1.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            siticoneTabControl1.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             siticoneTabControl1.ItemSize = new Size(120, 40);
             siticoneTabControl1.Location = new Point(0, 0);
             siticoneTabControl1.Margin = new Padding(0);
@@ -113,17 +113,17 @@
             siticoneTabControl1.Size = new Size(1200, 720);
             siticoneTabControl1.TabButtonHoverState.BorderColor = Color.Empty;
             siticoneTabControl1.TabButtonHoverState.FillColor = Color.FromArgb(64, 64, 64);
-            siticoneTabControl1.TabButtonHoverState.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            siticoneTabControl1.TabButtonHoverState.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             siticoneTabControl1.TabButtonHoverState.ForeColor = Color.White;
             siticoneTabControl1.TabButtonHoverState.InnerColor = Color.FromArgb(64, 64, 64);
             siticoneTabControl1.TabButtonIdleState.BorderColor = Color.Empty;
             siticoneTabControl1.TabButtonIdleState.FillColor = Color.FromArgb(64, 64, 64);
-            siticoneTabControl1.TabButtonIdleState.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            siticoneTabControl1.TabButtonIdleState.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             siticoneTabControl1.TabButtonIdleState.ForeColor = Color.FromArgb(156, 160, 167);
             siticoneTabControl1.TabButtonIdleState.InnerColor = Color.FromArgb(64, 64, 64);
             siticoneTabControl1.TabButtonSelectedState.BorderColor = Color.Empty;
             siticoneTabControl1.TabButtonSelectedState.FillColor = Color.FromArgb(64, 64, 64);
-            siticoneTabControl1.TabButtonSelectedState.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            siticoneTabControl1.TabButtonSelectedState.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             siticoneTabControl1.TabButtonSelectedState.ForeColor = Color.White;
             siticoneTabControl1.TabButtonSelectedState.InnerColor = Color.FromArgb(76, 132, 255);
             siticoneTabControl1.TabButtonSize = new Size(120, 40);
@@ -226,7 +226,7 @@
             ToGoButton.Dock = DockStyle.Left;
             ToGoButton.FillColor = Color.White;
             ToGoButton.FocusedColor = Color.Green;
-            ToGoButton.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            ToGoButton.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             ToGoButton.ForeColor = Color.FromArgb(64, 64, 64);
             ToGoButton.Image = (Image)resources.GetObject("ToGoButton.Image");
             ToGoButton.ImageOffset = new Point(10, 0);
@@ -257,7 +257,7 @@
             ToEatButton.Dock = DockStyle.Left;
             ToEatButton.FillColor = Color.White;
             ToEatButton.FocusedColor = Color.Green;
-            ToEatButton.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            ToEatButton.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             ToEatButton.ForeColor = Color.FromArgb(64, 64, 64);
             ToEatButton.Image = Properties.Resources.restaurant;
             ToEatButton.ImageOffset = new Point(10, 0);
@@ -357,7 +357,7 @@
             DineInDataGridView.ThemeStyle.ReadOnly = false;
             DineInDataGridView.ThemeStyle.RowsStyle.BackColor = Color.White;
             DineInDataGridView.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            DineInDataGridView.ThemeStyle.RowsStyle.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            DineInDataGridView.ThemeStyle.RowsStyle.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             DineInDataGridView.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(71, 69, 94);
             DineInDataGridView.ThemeStyle.RowsStyle.Height = 50;
             DineInDataGridView.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
@@ -476,7 +476,7 @@
             ToGoDataGridView.ThemeStyle.ReadOnly = false;
             ToGoDataGridView.ThemeStyle.RowsStyle.BackColor = Color.White;
             ToGoDataGridView.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            ToGoDataGridView.ThemeStyle.RowsStyle.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            ToGoDataGridView.ThemeStyle.RowsStyle.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             ToGoDataGridView.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(71, 69, 94);
             ToGoDataGridView.ThemeStyle.RowsStyle.Height = 50;
             ToGoDataGridView.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
@@ -547,7 +547,7 @@
             buttonDoPayment.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             buttonDoPayment.Dock = DockStyle.Bottom;
             buttonDoPayment.FillColor = Color.MediumSpringGreen;
-            buttonDoPayment.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonDoPayment.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             buttonDoPayment.ForeColor = Color.FromArgb(64, 64, 64);
             buttonDoPayment.Image = Properties.Resources.hand;
             buttonDoPayment.ImageOffset = new Point(-10, 0);
@@ -583,9 +583,9 @@
             dateTimePickerConsultarVenta.Checked = true;
             dateTimePickerConsultarVenta.CustomFormat = "yyyy-MM-dd";
             dateTimePickerConsultarVenta.FillColor = Color.White;
-            dateTimePickerConsultarVenta.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dateTimePickerConsultarVenta.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             dateTimePickerConsultarVenta.Format = DateTimePickerFormat.Custom;
-            dateTimePickerConsultarVenta.Location = new Point(283, 55);
+            dateTimePickerConsultarVenta.Location = new Point(308, 91);
             dateTimePickerConsultarVenta.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             dateTimePickerConsultarVenta.MinDate = new DateTime(2000, 1, 1, 0, 0, 0, 0);
             dateTimePickerConsultarVenta.Name = "dateTimePickerConsultarVenta";
@@ -600,7 +600,7 @@
             siticoneHtmlLabel_buscarCliente_sin_campo.BackColor = Color.Transparent;
             siticoneHtmlLabel_buscarCliente_sin_campo.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             siticoneHtmlLabel_buscarCliente_sin_campo.ForeColor = Color.Red;
-            siticoneHtmlLabel_buscarCliente_sin_campo.Location = new Point(283, 24);
+            siticoneHtmlLabel_buscarCliente_sin_campo.Location = new Point(308, 54);
             siticoneHtmlLabel_buscarCliente_sin_campo.Name = "siticoneHtmlLabel_buscarCliente_sin_campo";
             siticoneHtmlLabel_buscarCliente_sin_campo.Size = new Size(290, 22);
             siticoneHtmlLabel_buscarCliente_sin_campo.TabIndex = 24;
@@ -612,7 +612,7 @@
             siticoneDataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle8.BackColor = Color.FromArgb(100, 88, 255);
-            dataGridViewCellStyle8.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle8.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             dataGridViewCellStyle8.ForeColor = Color.White;
             dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
@@ -623,7 +623,7 @@
             siticoneDataGridView1.Columns.AddRange(new DataGridViewColumn[] { CodNV, CICliente, Column1, Column2, Column3, Column7, FechaDeVenta, Column4 });
             dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle9.BackColor = Color.White;
-            dataGridViewCellStyle9.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle9.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             dataGridViewCellStyle9.ForeColor = Color.FromArgb(71, 69, 94);
             dataGridViewCellStyle9.SelectionBackColor = Color.FromArgb(231, 229, 255);
             dataGridViewCellStyle9.SelectionForeColor = Color.FromArgb(71, 69, 94);
@@ -647,14 +647,14 @@
             siticoneDataGridView1.ThemeStyle.GridColor = Color.FromArgb(231, 229, 255);
             siticoneDataGridView1.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(100, 88, 255);
             siticoneDataGridView1.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
-            siticoneDataGridView1.ThemeStyle.HeaderStyle.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            siticoneDataGridView1.ThemeStyle.HeaderStyle.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             siticoneDataGridView1.ThemeStyle.HeaderStyle.ForeColor = Color.White;
             siticoneDataGridView1.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             siticoneDataGridView1.ThemeStyle.HeaderStyle.Height = 60;
             siticoneDataGridView1.ThemeStyle.ReadOnly = false;
             siticoneDataGridView1.ThemeStyle.RowsStyle.BackColor = Color.White;
             siticoneDataGridView1.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            siticoneDataGridView1.ThemeStyle.RowsStyle.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            siticoneDataGridView1.ThemeStyle.RowsStyle.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             siticoneDataGridView1.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(71, 69, 94);
             siticoneDataGridView1.ThemeStyle.RowsStyle.Height = 29;
             siticoneDataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
@@ -711,7 +711,7 @@
             Column4.ImageLayout = DataGridViewImageCellLayout.Zoom;
             Column4.MinimumWidth = 6;
             Column4.Name = "Column4";
-            Column4.Width = 78;
+            Column4.Width = 70;
             // 
             // ComboBox_ConsultarVentaPor
             // 
@@ -722,13 +722,13 @@
             ComboBox_ConsultarVentaPor.DropDownStyle = ComboBoxStyle.DropDownList;
             ComboBox_ConsultarVentaPor.FocusedColor = Color.FromArgb(94, 148, 255);
             ComboBox_ConsultarVentaPor.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            ComboBox_ConsultarVentaPor.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            ComboBox_ConsultarVentaPor.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             ComboBox_ConsultarVentaPor.ForeColor = Color.FromArgb(68, 88, 112);
             ComboBox_ConsultarVentaPor.ItemHeight = 39;
             ComboBox_ConsultarVentaPor.Items.AddRange(new object[] { "Seleccione...", "Código Nota de Venta", "CC Cliente", "Nombre Cliente", "Apellido Cliente", "Teléfono Cliente", "Fecha Venta" });
-            ComboBox_ConsultarVentaPor.Location = new Point(606, 55);
+            ComboBox_ConsultarVentaPor.Location = new Point(643, 91);
             ComboBox_ConsultarVentaPor.Name = "ComboBox_ConsultarVentaPor";
-            ComboBox_ConsultarVentaPor.Size = new Size(273, 45);
+            ComboBox_ConsultarVentaPor.Size = new Size(303, 45);
             ComboBox_ConsultarVentaPor.TabIndex = 20;
             ComboBox_ConsultarVentaPor.TextOffset = new Point(5, 0);
             ComboBox_ConsultarVentaPor.SelectedIndexChanged += ComboBox_ConsultarVentaPor_SelectedIndexChanged;
@@ -743,9 +743,9 @@
             txtConsultarVenta.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             txtConsultarVenta.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtConsultarVenta.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtConsultarVenta.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtConsultarVenta.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtConsultarVenta.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtConsultarVenta.Location = new Point(283, 55);
+            txtConsultarVenta.Location = new Point(308, 91);
             txtConsultarVenta.Margin = new Padding(5, 6, 5, 6);
             txtConsultarVenta.Name = "txtConsultarVenta";
             txtConsultarVenta.PasswordChar = '\0';

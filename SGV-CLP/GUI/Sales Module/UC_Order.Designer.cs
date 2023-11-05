@@ -37,12 +37,12 @@
             nameLabel.AutoSize = false;
             nameLabel.BackColor = Color.Transparent;
             nameLabel.Dock = DockStyle.Bottom;
-            nameLabel.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            nameLabel.Font = new Font("Century Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
             nameLabel.ForeColor = Color.White;
-            nameLabel.Location = new Point(0, 34);
+            nameLabel.Location = new Point(0, 33);
             nameLabel.Margin = new Padding(3, 4, 3, 4);
             nameLabel.Name = "nameLabel";
-            nameLabel.Size = new Size(173, 25);
+            nameLabel.Size = new Size(120, 20);
             nameLabel.TabIndex = 43;
             nameLabel.Text = "Pedro Perez";
             nameLabel.TextAlignment = ContentAlignment.TopCenter;
@@ -55,12 +55,12 @@
             showDetailDialogButton.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             showDetailDialogButton.Dock = DockStyle.Top;
             showDetailDialogButton.FillColor = Color.Black;
-            showDetailDialogButton.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            showDetailDialogButton.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             showDetailDialogButton.ForeColor = Color.White;
             showDetailDialogButton.Location = new Point(0, 0);
             showDetailDialogButton.Margin = new Padding(4);
             showDetailDialogButton.Name = "showDetailDialogButton";
-            showDetailDialogButton.Size = new Size(173, 31);
+            showDetailDialogButton.Size = new Size(120, 30);
             showDetailDialogButton.TabIndex = 47;
             showDetailDialogButton.Text = "Mesa N°";
             showDetailDialogButton.Click += showDetailDialogButton_Click;
@@ -74,7 +74,7 @@
             Controls.Add(showDetailDialogButton);
             Controls.Add(nameLabel);
             Name = "UC_Order";
-            Size = new Size(173, 59);
+            Size = new Size(120, 53);
             ResumeLayout(false);
         }
 

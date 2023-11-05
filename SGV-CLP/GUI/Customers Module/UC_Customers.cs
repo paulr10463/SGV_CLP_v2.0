@@ -137,7 +137,7 @@ namespace SGV_CLP.GUI
                 //MessageBox.Show("Esa fila está vacía, no puede hacer acciones sobre ella!!");
                 MessageBox.Show(nre.Message);
             }
-                
+
 
         }
         private void cbSearchCustomerBy_SelectedIndexChanged(object sender, EventArgs e)

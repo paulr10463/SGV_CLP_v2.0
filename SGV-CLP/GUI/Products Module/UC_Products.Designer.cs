@@ -30,13 +30,13 @@ namespace SGV_CLP.GUI
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Products));
-            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             siticoneTabControl1 = new Siticone.Desktop.UI.WinForms.SiticoneTabControl();
             Añadir = new TabPage();
             parentErrorLabel = new Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel();
@@ -105,25 +105,25 @@ namespace SGV_CLP.GUI
             siticoneTabControl1.Controls.Add(AddCategory);
             siticoneTabControl1.Controls.Add(EditDeleteCategory);
             siticoneTabControl1.Dock = DockStyle.Fill;
-            siticoneTabControl1.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            siticoneTabControl1.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             siticoneTabControl1.ItemSize = new Size(200, 40);
             siticoneTabControl1.Location = new Point(0, 0);
             siticoneTabControl1.Name = "siticoneTabControl1";
             siticoneTabControl1.SelectedIndex = 0;
-            siticoneTabControl1.Size = new Size(1268, 765);
+            siticoneTabControl1.Size = new Size(1200, 720);
             siticoneTabControl1.TabButtonHoverState.BorderColor = Color.Empty;
             siticoneTabControl1.TabButtonHoverState.FillColor = Color.FromArgb(64, 64, 64);
-            siticoneTabControl1.TabButtonHoverState.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            siticoneTabControl1.TabButtonHoverState.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             siticoneTabControl1.TabButtonHoverState.ForeColor = Color.White;
             siticoneTabControl1.TabButtonHoverState.InnerColor = Color.FromArgb(64, 64, 64);
             siticoneTabControl1.TabButtonIdleState.BorderColor = Color.Empty;
             siticoneTabControl1.TabButtonIdleState.FillColor = Color.FromArgb(64, 64, 64);
-            siticoneTabControl1.TabButtonIdleState.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            siticoneTabControl1.TabButtonIdleState.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             siticoneTabControl1.TabButtonIdleState.ForeColor = Color.FromArgb(156, 160, 167);
             siticoneTabControl1.TabButtonIdleState.InnerColor = Color.FromArgb(64, 64, 64);
             siticoneTabControl1.TabButtonSelectedState.BorderColor = Color.Empty;
             siticoneTabControl1.TabButtonSelectedState.FillColor = Color.FromArgb(64, 64, 64);
-            siticoneTabControl1.TabButtonSelectedState.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            siticoneTabControl1.TabButtonSelectedState.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             siticoneTabControl1.TabButtonSelectedState.ForeColor = Color.White;
             siticoneTabControl1.TabButtonSelectedState.InnerColor = Color.FromArgb(76, 132, 255);
             siticoneTabControl1.TabButtonSize = new Size(200, 40);
@@ -157,12 +157,12 @@ namespace SGV_CLP.GUI
             Añadir.Controls.Add(siticoneHtmlLabel8);
             Añadir.Controls.Add(siticoneHtmlLabel5);
             Añadir.Controls.Add(tbProductName);
-            Añadir.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            Añadir.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             Añadir.Location = new Point(4, 44);
             Añadir.Margin = new Padding(3, 4, 3, 4);
             Añadir.Name = "Añadir";
             Añadir.Padding = new Padding(3, 4, 3, 4);
-            Añadir.Size = new Size(1260, 717);
+            Añadir.Size = new Size(1192, 672);
             Añadir.TabIndex = 0;
             Añadir.Text = "Añadir Producto";
             // 
@@ -183,11 +183,11 @@ namespace SGV_CLP.GUI
             // 
             parentLabel.Anchor = AnchorStyles.None;
             parentLabel.BackColor = Color.Transparent;
-            parentLabel.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            parentLabel.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             parentLabel.Location = new Point(541, 480);
             parentLabel.Margin = new Padding(3, 4, 3, 4);
             parentLabel.Name = "parentLabel";
-            parentLabel.Size = new Size(68, 26);
+            parentLabel.Size = new Size(53, 23);
             parentLabel.TabIndex = 67;
             parentLabel.Text = "Padre:";
             parentLabel.Visible = false;
@@ -198,7 +198,7 @@ namespace SGV_CLP.GUI
             isSubproductCheckBox.AutoSize = true;
             isSubproductCheckBox.Location = new Point(223, 480);
             isSubproductCheckBox.Name = "isSubproductCheckBox";
-            isSubproductCheckBox.Size = new Size(210, 26);
+            isSubproductCheckBox.Size = new Size(182, 25);
             isSubproductCheckBox.TabIndex = 66;
             isSubproductCheckBox.Text = "Es un subproducto?";
             isSubproductCheckBox.UseVisualStyleBackColor = true;
@@ -213,7 +213,7 @@ namespace SGV_CLP.GUI
             parentComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             parentComboBox.FocusedColor = Color.FromArgb(94, 148, 255);
             parentComboBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            parentComboBox.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            parentComboBox.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             parentComboBox.ForeColor = Color.FromArgb(68, 88, 112);
             parentComboBox.ItemHeight = 39;
             parentComboBox.Location = new Point(625, 470);
@@ -231,7 +231,7 @@ namespace SGV_CLP.GUI
             isParentCheckBox.AutoSize = true;
             isParentCheckBox.Location = new Point(223, 440);
             isParentCheckBox.Name = "isParentCheckBox";
-            isParentCheckBox.Size = new Size(223, 26);
+            isParentCheckBox.Size = new Size(194, 25);
             isParentCheckBox.TabIndex = 64;
             isParentCheckBox.Text = "Tiene subproductos? ";
             isParentCheckBox.UseVisualStyleBackColor = true;
@@ -306,11 +306,11 @@ namespace SGV_CLP.GUI
             // 
             siticoneHtmlLabel1.Anchor = AnchorStyles.None;
             siticoneHtmlLabel1.BackColor = Color.Transparent;
-            siticoneHtmlLabel1.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            siticoneHtmlLabel1.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             siticoneHtmlLabel1.Location = new Point(227, 111);
             siticoneHtmlLabel1.Margin = new Padding(3, 4, 3, 4);
             siticoneHtmlLabel1.Name = "siticoneHtmlLabel1";
-            siticoneHtmlLabel1.Size = new Size(124, 26);
+            siticoneHtmlLabel1.Size = new Size(96, 23);
             siticoneHtmlLabel1.TabIndex = 52;
             siticoneHtmlLabel1.Text = "ID Producto";
             // 
@@ -324,7 +324,7 @@ namespace SGV_CLP.GUI
             tbProductCode.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             tbProductCode.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             tbProductCode.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            tbProductCode.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            tbProductCode.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             tbProductCode.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             tbProductCode.Location = new Point(436, 104);
             tbProductCode.Margin = new Padding(5, 9, 5, 9);
@@ -347,7 +347,7 @@ namespace SGV_CLP.GUI
             SBExaminar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             SBExaminar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             SBExaminar.FillColor = Color.FromArgb(64, 64, 64);
-            SBExaminar.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            SBExaminar.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             SBExaminar.ForeColor = Color.White;
             SBExaminar.Location = new Point(886, 285);
             SBExaminar.Name = "SBExaminar";
@@ -366,7 +366,7 @@ namespace SGV_CLP.GUI
             tbImagePath.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             tbImagePath.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             tbImagePath.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            tbImagePath.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            tbImagePath.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             tbImagePath.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             tbImagePath.Location = new Point(436, 285);
             tbImagePath.Margin = new Padding(5, 7, 5, 7);
@@ -383,10 +383,10 @@ namespace SGV_CLP.GUI
             // 
             siticoneHtmlLabel11.Anchor = AnchorStyles.None;
             siticoneHtmlLabel11.BackColor = Color.Transparent;
-            siticoneHtmlLabel11.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            siticoneHtmlLabel11.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             siticoneHtmlLabel11.Location = new Point(227, 297);
             siticoneHtmlLabel11.Name = "siticoneHtmlLabel11";
-            siticoneHtmlLabel11.Size = new Size(135, 26);
+            siticoneHtmlLabel11.Size = new Size(105, 23);
             siticoneHtmlLabel11.TabIndex = 48;
             siticoneHtmlLabel11.Text = "Ruta imagen";
             // 
@@ -400,7 +400,7 @@ namespace SGV_CLP.GUI
             buttonAddProduct.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             buttonAddProduct.Enabled = false;
             buttonAddProduct.FillColor = Color.FromArgb(64, 64, 64);
-            buttonAddProduct.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonAddProduct.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             buttonAddProduct.ForeColor = Color.White;
             buttonAddProduct.Location = new Point(516, 581);
             buttonAddProduct.Margin = new Padding(3, 4, 3, 4);
@@ -419,7 +419,7 @@ namespace SGV_CLP.GUI
             cbCategory.DropDownStyle = ComboBoxStyle.DropDownList;
             cbCategory.FocusedColor = Color.FromArgb(94, 148, 255);
             cbCategory.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            cbCategory.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            cbCategory.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             cbCategory.ForeColor = Color.FromArgb(68, 88, 112);
             cbCategory.ItemHeight = 39;
             cbCategory.Items.AddRange(new object[] { "Seleccione...", "Especialidades", "Bebidas Frías", "Bebidas Calientes", "Empanadas" });
@@ -436,11 +436,11 @@ namespace SGV_CLP.GUI
             // 
             siticoneHtmlLabel6.Anchor = AnchorStyles.None;
             siticoneHtmlLabel6.BackColor = Color.Transparent;
-            siticoneHtmlLabel6.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            siticoneHtmlLabel6.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             siticoneHtmlLabel6.Location = new Point(227, 235);
             siticoneHtmlLabel6.Margin = new Padding(3, 4, 3, 4);
             siticoneHtmlLabel6.Name = "siticoneHtmlLabel6";
-            siticoneHtmlLabel6.Size = new Size(108, 26);
+            siticoneHtmlLabel6.Size = new Size(84, 23);
             siticoneHtmlLabel6.TabIndex = 43;
             siticoneHtmlLabel6.Text = "Categoría";
             // 
@@ -454,7 +454,7 @@ namespace SGV_CLP.GUI
             tbSalesPriceToThePublic.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             tbSalesPriceToThePublic.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             tbSalesPriceToThePublic.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            tbSalesPriceToThePublic.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            tbSalesPriceToThePublic.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             tbSalesPriceToThePublic.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             tbSalesPriceToThePublic.Location = new Point(436, 349);
             tbSalesPriceToThePublic.Margin = new Padding(5, 9, 5, 9);
@@ -472,11 +472,11 @@ namespace SGV_CLP.GUI
             // 
             siticoneHtmlLabel8.Anchor = AnchorStyles.None;
             siticoneHtmlLabel8.BackColor = Color.Transparent;
-            siticoneHtmlLabel8.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            siticoneHtmlLabel8.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             siticoneHtmlLabel8.Location = new Point(227, 359);
             siticoneHtmlLabel8.Margin = new Padding(3, 4, 3, 4);
             siticoneHtmlLabel8.Name = "siticoneHtmlLabel8";
-            siticoneHtmlLabel8.Size = new Size(57, 26);
+            siticoneHtmlLabel8.Size = new Size(44, 23);
             siticoneHtmlLabel8.TabIndex = 41;
             siticoneHtmlLabel8.Text = "P.V.P.";
             // 
@@ -484,11 +484,11 @@ namespace SGV_CLP.GUI
             // 
             siticoneHtmlLabel5.Anchor = AnchorStyles.None;
             siticoneHtmlLabel5.BackColor = Color.Transparent;
-            siticoneHtmlLabel5.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            siticoneHtmlLabel5.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             siticoneHtmlLabel5.Location = new Point(227, 173);
             siticoneHtmlLabel5.Margin = new Padding(3, 4, 3, 4);
             siticoneHtmlLabel5.Name = "siticoneHtmlLabel5";
-            siticoneHtmlLabel5.Size = new Size(188, 26);
+            siticoneHtmlLabel5.Size = new Size(142, 23);
             siticoneHtmlLabel5.TabIndex = 28;
             siticoneHtmlLabel5.Text = "Nombre Producto";
             // 
@@ -502,7 +502,7 @@ namespace SGV_CLP.GUI
             tbProductName.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             tbProductName.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             tbProductName.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            tbProductName.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            tbProductName.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             tbProductName.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             tbProductName.Location = new Point(438, 167);
             tbProductName.Margin = new Padding(5, 9, 5, 9);
@@ -525,11 +525,11 @@ namespace SGV_CLP.GUI
             Editar.Controls.Add(cbSearchProdutBy);
             Editar.Controls.Add(tbSearchProductBy);
             Editar.Controls.Add(siticonePanel1);
-            Editar.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            Editar.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             Editar.Location = new Point(4, 44);
             Editar.Name = "Editar";
             Editar.Padding = new Padding(3, 4, 3, 4);
-            Editar.Size = new Size(1260, 717);
+            Editar.Size = new Size(1192, 672);
             Editar.TabIndex = 1;
             Editar.Text = "Editar Producto";
             // 
@@ -555,14 +555,14 @@ namespace SGV_CLP.GUI
             cbSearchProductByCategory.DropDownStyle = ComboBoxStyle.DropDownList;
             cbSearchProductByCategory.FocusedColor = Color.FromArgb(94, 148, 255);
             cbSearchProductByCategory.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            cbSearchProductByCategory.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            cbSearchProductByCategory.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             cbSearchProductByCategory.ForeColor = Color.FromArgb(68, 88, 112);
             cbSearchProductByCategory.ItemHeight = 39;
             cbSearchProductByCategory.Items.AddRange(new object[] { "Seleccione...", "Especialidades", "Bebidas Frías", "Bebidas Calientes", "Empanadas" });
             cbSearchProductByCategory.Location = new Point(308, 91);
             cbSearchProductByCategory.Margin = new Padding(3, 4, 3, 4);
             cbSearchProductByCategory.Name = "cbSearchProductByCategory";
-            cbSearchProductByCategory.Size = new Size(288, 45);
+            cbSearchProductByCategory.Size = new Size(303, 45);
             cbSearchProductByCategory.TabIndex = 58;
             cbSearchProductByCategory.TextOffset = new Point(5, 0);
             cbSearchProductByCategory.Visible = false;
@@ -590,13 +590,13 @@ namespace SGV_CLP.GUI
             cbSearchProdutBy.DropDownStyle = ComboBoxStyle.DropDownList;
             cbSearchProdutBy.FocusedColor = Color.FromArgb(94, 148, 255);
             cbSearchProdutBy.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            cbSearchProdutBy.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            cbSearchProdutBy.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             cbSearchProdutBy.ForeColor = Color.FromArgb(68, 88, 112);
             cbSearchProdutBy.ItemHeight = 39;
             cbSearchProdutBy.Items.AddRange(new object[] { "Seleccione...", "Código", "Nombre", "Categoría" });
             cbSearchProdutBy.Location = new Point(643, 91);
             cbSearchProdutBy.Name = "cbSearchProdutBy";
-            cbSearchProdutBy.Size = new Size(305, 45);
+            cbSearchProdutBy.Size = new Size(303, 45);
             cbSearchProdutBy.StartIndex = 0;
             cbSearchProdutBy.TabIndex = 20;
             cbSearchProdutBy.TextOffset = new Point(5, 0);
@@ -613,9 +613,9 @@ namespace SGV_CLP.GUI
             tbSearchProductBy.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             tbSearchProductBy.Enabled = false;
             tbSearchProductBy.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            tbSearchProductBy.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            tbSearchProductBy.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             tbSearchProductBy.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tbSearchProductBy.Location = new Point(310, 91);
+            tbSearchProductBy.Location = new Point(308, 91);
             tbSearchProductBy.Margin = new Padding(5, 6, 5, 6);
             tbSearchProductBy.Name = "tbSearchProductBy";
             tbSearchProductBy.PasswordChar = '\0';
@@ -629,36 +629,36 @@ namespace SGV_CLP.GUI
             // 
             siticonePanel1.Controls.Add(ProductDataGridView);
             siticonePanel1.Dock = DockStyle.Bottom;
-            siticonePanel1.Location = new Point(3, 213);
+            siticonePanel1.Location = new Point(3, 168);
             siticonePanel1.Margin = new Padding(3, 4, 3, 4);
             siticonePanel1.Name = "siticonePanel1";
-            siticonePanel1.Size = new Size(1254, 500);
+            siticonePanel1.Size = new Size(1186, 500);
             siticonePanel1.TabIndex = 1;
             // 
             // ProductDataGridView
             // 
             ProductDataGridView.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle7.BackColor = Color.White;
-            ProductDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = Color.FromArgb(100, 88, 255);
-            dataGridViewCellStyle8.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
-            ProductDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle1.BackColor = Color.White;
+            ProductDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(100, 88, 255);
+            dataGridViewCellStyle2.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            ProductDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             ProductDataGridView.ColumnHeadersHeight = 75;
             ProductDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             ProductDataGridView.Columns.AddRange(new DataGridViewColumn[] { CodProd, NombreProd, PrecioVentaPub, Categoria, ImagePath, parentCode, ColumnaEditarProducto, ColumnaEliminarProducto });
-            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = Color.White;
-            dataGridViewCellStyle9.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle9.ForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle9.SelectionBackColor = Color.FromArgb(231, 229, 255);
-            dataGridViewCellStyle9.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.False;
-            ProductDataGridView.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.White;
+            dataGridViewCellStyle3.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            ProductDataGridView.DefaultCellStyle = dataGridViewCellStyle3;
             ProductDataGridView.Dock = DockStyle.Fill;
             ProductDataGridView.GridColor = Color.FromArgb(231, 229, 255);
             ProductDataGridView.Location = new Point(0, 0);
@@ -667,7 +667,7 @@ namespace SGV_CLP.GUI
             ProductDataGridView.RowHeadersWidth = 50;
             ProductDataGridView.RowTemplate.DefaultCellStyle.BackColor = Color.White;
             ProductDataGridView.RowTemplate.Height = 50;
-            ProductDataGridView.Size = new Size(1254, 500);
+            ProductDataGridView.Size = new Size(1186, 500);
             ProductDataGridView.TabIndex = 0;
             ProductDataGridView.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             ProductDataGridView.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -678,14 +678,14 @@ namespace SGV_CLP.GUI
             ProductDataGridView.ThemeStyle.GridColor = Color.FromArgb(231, 229, 255);
             ProductDataGridView.ThemeStyle.HeaderStyle.BackColor = Color.DimGray;
             ProductDataGridView.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
-            ProductDataGridView.ThemeStyle.HeaderStyle.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            ProductDataGridView.ThemeStyle.HeaderStyle.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             ProductDataGridView.ThemeStyle.HeaderStyle.ForeColor = Color.White;
             ProductDataGridView.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             ProductDataGridView.ThemeStyle.HeaderStyle.Height = 75;
             ProductDataGridView.ThemeStyle.ReadOnly = false;
             ProductDataGridView.ThemeStyle.RowsStyle.BackColor = Color.White;
             ProductDataGridView.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            ProductDataGridView.ThemeStyle.RowsStyle.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            ProductDataGridView.ThemeStyle.RowsStyle.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             ProductDataGridView.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(71, 69, 94);
             ProductDataGridView.ThemeStyle.RowsStyle.Height = 50;
             ProductDataGridView.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
@@ -770,7 +770,7 @@ namespace SGV_CLP.GUI
             AddCategory.Location = new Point(4, 44);
             AddCategory.Name = "AddCategory";
             AddCategory.Padding = new Padding(3);
-            AddCategory.Size = new Size(1260, 717);
+            AddCategory.Size = new Size(1192, 672);
             AddCategory.TabIndex = 2;
             AddCategory.Text = "Añadir Categoría";
             AddCategory.UseVisualStyleBackColor = true;
@@ -792,11 +792,11 @@ namespace SGV_CLP.GUI
             // 
             siticoneHtmlLabel3.Anchor = AnchorStyles.None;
             siticoneHtmlLabel3.BackColor = Color.Transparent;
-            siticoneHtmlLabel3.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            siticoneHtmlLabel3.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             siticoneHtmlLabel3.Location = new Point(347, 245);
             siticoneHtmlLabel3.Margin = new Padding(3, 4, 3, 4);
             siticoneHtmlLabel3.Name = "siticoneHtmlLabel3";
-            siticoneHtmlLabel3.Size = new Size(181, 26);
+            siticoneHtmlLabel3.Size = new Size(138, 23);
             siticoneHtmlLabel3.TabIndex = 57;
             siticoneHtmlLabel3.Text = "Nueva categoría";
             // 
@@ -810,7 +810,7 @@ namespace SGV_CLP.GUI
             addCategoryTextBox.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             addCategoryTextBox.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             addCategoryTextBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            addCategoryTextBox.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            addCategoryTextBox.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             addCategoryTextBox.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             addCategoryTextBox.Location = new Point(616, 235);
             addCategoryTextBox.Margin = new Padding(5, 9, 5, 9);
@@ -834,7 +834,7 @@ namespace SGV_CLP.GUI
             addCategoryButton.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             addCategoryButton.Enabled = false;
             addCategoryButton.FillColor = Color.FromArgb(64, 64, 64);
-            addCategoryButton.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            addCategoryButton.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             addCategoryButton.ForeColor = Color.White;
             addCategoryButton.Location = new Point(515, 500);
             addCategoryButton.Margin = new Padding(3, 4, 3, 4);
@@ -850,7 +850,7 @@ namespace SGV_CLP.GUI
             EditDeleteCategory.Location = new Point(4, 44);
             EditDeleteCategory.Name = "EditDeleteCategory";
             EditDeleteCategory.Padding = new Padding(3);
-            EditDeleteCategory.Size = new Size(1260, 717);
+            EditDeleteCategory.Size = new Size(1192, 672);
             EditDeleteCategory.TabIndex = 3;
             EditDeleteCategory.Text = "Editar Categoría";
             EditDeleteCategory.UseVisualStyleBackColor = true;
@@ -858,27 +858,27 @@ namespace SGV_CLP.GUI
             // categoryDataGridView
             // 
             categoryDataGridView.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle10.BackColor = Color.White;
-            categoryDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
-            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = Color.FromArgb(100, 88, 255);
-            dataGridViewCellStyle11.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle11.ForeColor = Color.White;
-            dataGridViewCellStyle11.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = DataGridViewTriState.True;
-            categoryDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle4.BackColor = Color.White;
+            categoryDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(100, 88, 255);
+            dataGridViewCellStyle5.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            categoryDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             categoryDataGridView.ColumnHeadersHeight = 75;
             categoryDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             categoryDataGridView.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, updateCategoryColumn, deleteCategoryColumn });
-            dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = Color.White;
-            dataGridViewCellStyle12.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle12.ForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle12.SelectionBackColor = Color.FromArgb(231, 229, 255);
-            dataGridViewCellStyle12.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle12.WrapMode = DataGridViewTriState.False;
-            categoryDataGridView.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.White;
+            dataGridViewCellStyle6.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            categoryDataGridView.DefaultCellStyle = dataGridViewCellStyle6;
             categoryDataGridView.Dock = DockStyle.Fill;
             categoryDataGridView.GridColor = Color.FromArgb(231, 229, 255);
             categoryDataGridView.Location = new Point(3, 3);
@@ -887,7 +887,7 @@ namespace SGV_CLP.GUI
             categoryDataGridView.RowHeadersWidth = 50;
             categoryDataGridView.RowTemplate.DefaultCellStyle.BackColor = Color.White;
             categoryDataGridView.RowTemplate.Height = 50;
-            categoryDataGridView.Size = new Size(1254, 711);
+            categoryDataGridView.Size = new Size(1186, 666);
             categoryDataGridView.TabIndex = 1;
             categoryDataGridView.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             categoryDataGridView.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -898,14 +898,14 @@ namespace SGV_CLP.GUI
             categoryDataGridView.ThemeStyle.GridColor = Color.FromArgb(231, 229, 255);
             categoryDataGridView.ThemeStyle.HeaderStyle.BackColor = Color.DimGray;
             categoryDataGridView.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
-            categoryDataGridView.ThemeStyle.HeaderStyle.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            categoryDataGridView.ThemeStyle.HeaderStyle.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             categoryDataGridView.ThemeStyle.HeaderStyle.ForeColor = Color.White;
             categoryDataGridView.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             categoryDataGridView.ThemeStyle.HeaderStyle.Height = 75;
             categoryDataGridView.ThemeStyle.ReadOnly = false;
             categoryDataGridView.ThemeStyle.RowsStyle.BackColor = Color.White;
             categoryDataGridView.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            categoryDataGridView.ThemeStyle.RowsStyle.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            categoryDataGridView.ThemeStyle.RowsStyle.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             categoryDataGridView.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(71, 69, 94);
             categoryDataGridView.ThemeStyle.RowsStyle.Height = 50;
             categoryDataGridView.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
@@ -958,7 +958,7 @@ namespace SGV_CLP.GUI
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(siticoneTabControl1);
             Name = "UC_Products";
-            Size = new Size(1268, 765);
+            Size = new Size(1200, 720);
             siticoneTabControl1.ResumeLayout(false);
             Añadir.ResumeLayout(false);
             Añadir.PerformLayout();

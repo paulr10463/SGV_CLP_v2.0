@@ -571,7 +571,7 @@ namespace SGV_CLP.GUI
             //existingCategories.Clear();
             //CategoryMapper.GetAllCategories().ForEach(item => existingCategories[item.id] = item.categoryName);
             //CbSearchProductBy_SelectedIndexChanged(null, null);
-            
+
             //
             MainMenu.uc_ventas.LoadProducts();
         }

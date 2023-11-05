@@ -67,7 +67,7 @@
             siticoneButton2.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             siticoneButton2.Dock = DockStyle.Right;
             siticoneButton2.FillColor = Color.LightCoral;
-            siticoneButton2.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            siticoneButton2.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             siticoneButton2.ForeColor = Color.Black;
             siticoneButton2.Location = new Point(157, 0);
             siticoneButton2.Name = "siticoneButton2";
@@ -87,7 +87,7 @@
             ButtonFinalizarVenta.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             ButtonFinalizarVenta.Dock = DockStyle.Left;
             ButtonFinalizarVenta.FillColor = Color.MediumSpringGreen;
-            ButtonFinalizarVenta.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            ButtonFinalizarVenta.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             ButtonFinalizarVenta.ForeColor = Color.Black;
             ButtonFinalizarVenta.Location = new Point(20, 0);
             ButtonFinalizarVenta.Name = "ButtonFinalizarVenta";
@@ -117,7 +117,7 @@
             siticoneButton4.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             siticoneButton4.Dock = DockStyle.Left;
             siticoneButton4.FillColor = Color.DeepSkyBlue;
-            siticoneButton4.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            siticoneButton4.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             siticoneButton4.ForeColor = Color.Black;
             siticoneButton4.Location = new Point(212, 0);
             siticoneButton4.Name = "siticoneButton4";
@@ -137,7 +137,7 @@
             siticoneButton3.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             siticoneButton3.Dock = DockStyle.Left;
             siticoneButton3.FillColor = Color.DeepSkyBlue;
-            siticoneButton3.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            siticoneButton3.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             siticoneButton3.ForeColor = Color.Black;
             siticoneButton3.Location = new Point(106, 0);
             siticoneButton3.Name = "siticoneButton3";
@@ -157,7 +157,7 @@
             siticoneButton1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             siticoneButton1.Dock = DockStyle.Left;
             siticoneButton1.FillColor = Color.DeepSkyBlue;
-            siticoneButton1.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            siticoneButton1.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             siticoneButton1.ForeColor = Color.Black;
             siticoneButton1.Location = new Point(0, 0);
             siticoneButton1.Name = "siticoneButton1";
@@ -198,7 +198,7 @@
             siticoneButton5.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             siticoneButton5.Dock = DockStyle.Left;
             siticoneButton5.FillColor = Color.DeepSkyBlue;
-            siticoneButton5.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            siticoneButton5.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             siticoneButton5.ForeColor = Color.Black;
             siticoneButton5.Location = new Point(212, 0);
             siticoneButton5.Name = "siticoneButton5";
@@ -218,7 +218,7 @@
             siticoneButton6.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             siticoneButton6.Dock = DockStyle.Left;
             siticoneButton6.FillColor = Color.DeepSkyBlue;
-            siticoneButton6.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            siticoneButton6.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             siticoneButton6.ForeColor = Color.Black;
             siticoneButton6.Location = new Point(106, 0);
             siticoneButton6.Name = "siticoneButton6";
@@ -238,7 +238,7 @@
             siticoneButton7.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             siticoneButton7.Dock = DockStyle.Left;
             siticoneButton7.FillColor = Color.DeepSkyBlue;
-            siticoneButton7.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            siticoneButton7.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             siticoneButton7.ForeColor = Color.Black;
             siticoneButton7.Location = new Point(0, 0);
             siticoneButton7.Name = "siticoneButton7";
@@ -268,7 +268,7 @@
             siticoneButton8.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             siticoneButton8.Dock = DockStyle.Left;
             siticoneButton8.FillColor = Color.DeepSkyBlue;
-            siticoneButton8.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            siticoneButton8.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             siticoneButton8.ForeColor = Color.Black;
             siticoneButton8.Location = new Point(212, 0);
             siticoneButton8.Name = "siticoneButton8";
@@ -288,7 +288,7 @@
             siticoneButton9.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             siticoneButton9.Dock = DockStyle.Left;
             siticoneButton9.FillColor = Color.DeepSkyBlue;
-            siticoneButton9.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            siticoneButton9.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             siticoneButton9.ForeColor = Color.Black;
             siticoneButton9.Location = new Point(106, 0);
             siticoneButton9.Name = "siticoneButton9";
@@ -308,7 +308,7 @@
             siticoneButton10.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             siticoneButton10.Dock = DockStyle.Left;
             siticoneButton10.FillColor = Color.DeepSkyBlue;
-            siticoneButton10.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            siticoneButton10.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             siticoneButton10.ForeColor = Color.Black;
             siticoneButton10.Location = new Point(0, 0);
             siticoneButton10.Name = "siticoneButton10";
@@ -337,7 +337,7 @@
             siticoneButton11.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             siticoneButton11.Dock = DockStyle.Left;
             siticoneButton11.FillColor = Color.DeepSkyBlue;
-            siticoneButton11.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            siticoneButton11.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             siticoneButton11.ForeColor = Color.Black;
             siticoneButton11.Image = Properties.Resources.delete;
             siticoneButton11.Location = new Point(164, 0);
@@ -357,7 +357,7 @@
             siticoneButton12.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             siticoneButton12.Dock = DockStyle.Left;
             siticoneButton12.FillColor = Color.DeepSkyBlue;
-            siticoneButton12.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            siticoneButton12.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             siticoneButton12.ForeColor = Color.Black;
             siticoneButton12.Location = new Point(0, 0);
             siticoneButton12.Name = "siticoneButton12";

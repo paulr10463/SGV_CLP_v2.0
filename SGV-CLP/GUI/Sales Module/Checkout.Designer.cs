@@ -124,7 +124,7 @@
             txtCC_ClienteVenta.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             txtCC_ClienteVenta.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtCC_ClienteVenta.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtCC_ClienteVenta.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtCC_ClienteVenta.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtCC_ClienteVenta.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtCC_ClienteVenta.Location = new Point(216, 125);
             txtCC_ClienteVenta.Margin = new Padding(5, 6, 5, 6);
@@ -143,7 +143,7 @@
             // 
             siticoneHtmlLabel1.Anchor = AnchorStyles.None;
             siticoneHtmlLabel1.BackColor = Color.Transparent;
-            siticoneHtmlLabel1.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            siticoneHtmlLabel1.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             siticoneHtmlLabel1.Location = new Point(150, 135);
             siticoneHtmlLabel1.Margin = new Padding(3, 2, 3, 2);
             siticoneHtmlLabel1.Name = "siticoneHtmlLabel1";
@@ -161,7 +161,7 @@
             siticoneButton2.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             siticoneButton2.Dock = DockStyle.Right;
             siticoneButton2.FillColor = Color.LightCoral;
-            siticoneButton2.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            siticoneButton2.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             siticoneButton2.ForeColor = Color.Black;
             siticoneButton2.Location = new Point(424, 0);
             siticoneButton2.Name = "siticoneButton2";
@@ -182,7 +182,7 @@
             ButtonFinalizarVenta.Dock = DockStyle.Left;
             ButtonFinalizarVenta.Enabled = false;
             ButtonFinalizarVenta.FillColor = Color.MediumSpringGreen;
-            ButtonFinalizarVenta.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            ButtonFinalizarVenta.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             ButtonFinalizarVenta.ForeColor = Color.Black;
             ButtonFinalizarVenta.Location = new Point(20, 0);
             ButtonFinalizarVenta.Name = "ButtonFinalizarVenta";
@@ -200,7 +200,7 @@
             ButtonAniadirClienteVenta.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             ButtonAniadirClienteVenta.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             ButtonAniadirClienteVenta.FillColor = Color.MediumSpringGreen;
-            ButtonAniadirClienteVenta.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            ButtonAniadirClienteVenta.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             ButtonAniadirClienteVenta.ForeColor = Color.White;
             ButtonAniadirClienteVenta.Image = Properties.Resources.newUser;
             ButtonAniadirClienteVenta.ImageSize = new Size(30, 30);
@@ -256,7 +256,7 @@
             // 
             siticoneHtmlLabel16.Anchor = AnchorStyles.None;
             siticoneHtmlLabel16.BackColor = Color.Transparent;
-            siticoneHtmlLabel16.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            siticoneHtmlLabel16.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             siticoneHtmlLabel16.Location = new Point(153, 322);
             siticoneHtmlLabel16.Name = "siticoneHtmlLabel16";
             siticoneHtmlLabel16.Size = new Size(77, 24);
@@ -274,7 +274,7 @@
             txtApellido1Venta.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtApellido1Venta.Enabled = false;
             txtApellido1Venta.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtApellido1Venta.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtApellido1Venta.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtApellido1Venta.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtApellido1Venta.Location = new Point(254, 311);
             txtApellido1Venta.Margin = new Padding(5, 6, 5, 6);
@@ -292,7 +292,7 @@
             // 
             siticoneHtmlLabel17.Anchor = AnchorStyles.None;
             siticoneHtmlLabel17.BackColor = Color.Transparent;
-            siticoneHtmlLabel17.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            siticoneHtmlLabel17.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             siticoneHtmlLabel17.Location = new Point(153, 264);
             siticoneHtmlLabel17.Name = "siticoneHtmlLabel17";
             siticoneHtmlLabel17.Size = new Size(77, 24);
@@ -310,7 +310,7 @@
             txtNombre1Venta.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtNombre1Venta.Enabled = false;
             txtNombre1Venta.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtNombre1Venta.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtNombre1Venta.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtNombre1Venta.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtNombre1Venta.Location = new Point(254, 254);
             txtNombre1Venta.Margin = new Padding(5, 6, 5, 6);
@@ -335,7 +335,7 @@
             txtTelefVenta.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtTelefVenta.Enabled = false;
             txtTelefVenta.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtTelefVenta.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtTelefVenta.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtTelefVenta.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtTelefVenta.Location = new Point(254, 429);
             txtTelefVenta.Margin = new Padding(5, 6, 5, 6);
@@ -360,7 +360,7 @@
             txtDireccionVenta.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtDireccionVenta.Enabled = false;
             txtDireccionVenta.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtDireccionVenta.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtDireccionVenta.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtDireccionVenta.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtDireccionVenta.Location = new Point(254, 369);
             txtDireccionVenta.Margin = new Padding(5, 6, 5, 6);
@@ -378,7 +378,7 @@
             // 
             siticoneHtmlLabel6.Anchor = AnchorStyles.None;
             siticoneHtmlLabel6.BackColor = Color.Transparent;
-            siticoneHtmlLabel6.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            siticoneHtmlLabel6.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             siticoneHtmlLabel6.Location = new Point(153, 381);
             siticoneHtmlLabel6.Name = "siticoneHtmlLabel6";
             siticoneHtmlLabel6.Size = new Size(89, 24);
@@ -389,7 +389,7 @@
             // 
             siticoneHtmlLabel7.Anchor = AnchorStyles.None;
             siticoneHtmlLabel7.BackColor = Color.Transparent;
-            siticoneHtmlLabel7.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            siticoneHtmlLabel7.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             siticoneHtmlLabel7.Location = new Point(153, 441);
             siticoneHtmlLabel7.Name = "siticoneHtmlLabel7";
             siticoneHtmlLabel7.Size = new Size(80, 24);
@@ -405,7 +405,7 @@
             ButtonConfirmarVenta.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             ButtonConfirmarVenta.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             ButtonConfirmarVenta.FillColor = Color.MediumSpringGreen;
-            ButtonConfirmarVenta.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            ButtonConfirmarVenta.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             ButtonConfirmarVenta.ForeColor = Color.White;
             ButtonConfirmarVenta.Image = Properties.Resources._2550221;
             ButtonConfirmarVenta.ImageSize = new Size(30, 30);
@@ -475,7 +475,7 @@
             txtCorreoVenta.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtCorreoVenta.Enabled = false;
             txtCorreoVenta.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtCorreoVenta.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtCorreoVenta.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtCorreoVenta.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtCorreoVenta.Location = new Point(254, 491);
             txtCorreoVenta.Margin = new Padding(5, 6, 5, 6);
@@ -530,7 +530,7 @@
             // 
             siticoneHtmlLabel9.Anchor = AnchorStyles.None;
             siticoneHtmlLabel9.BackColor = Color.Transparent;
-            siticoneHtmlLabel9.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            siticoneHtmlLabel9.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             siticoneHtmlLabel9.Location = new Point(153, 497);
             siticoneHtmlLabel9.Name = "siticoneHtmlLabel9";
             siticoneHtmlLabel9.Size = new Size(66, 24);
@@ -797,7 +797,7 @@
             CheckoutToGoDataGridView.ThemeStyle.ReadOnly = false;
             CheckoutToGoDataGridView.ThemeStyle.RowsStyle.BackColor = Color.White;
             CheckoutToGoDataGridView.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            CheckoutToGoDataGridView.ThemeStyle.RowsStyle.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            CheckoutToGoDataGridView.ThemeStyle.RowsStyle.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             CheckoutToGoDataGridView.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(71, 69, 94);
             CheckoutToGoDataGridView.ThemeStyle.RowsStyle.Height = 50;
             CheckoutToGoDataGridView.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
@@ -918,7 +918,7 @@
             txtRecibidoVenta.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtRecibidoVenta.Dock = DockStyle.Right;
             txtRecibidoVenta.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtRecibidoVenta.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtRecibidoVenta.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtRecibidoVenta.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtRecibidoVenta.Location = new Point(158, 0);
             txtRecibidoVenta.Margin = new Padding(6, 9, 6, 9);
@@ -963,7 +963,7 @@
             siticoneButton4.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             siticoneButton4.Dock = DockStyle.Left;
             siticoneButton4.FillColor = Color.DeepSkyBlue;
-            siticoneButton4.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            siticoneButton4.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             siticoneButton4.ForeColor = Color.Black;
             siticoneButton4.Location = new Point(212, 0);
             siticoneButton4.Name = "siticoneButton4";
@@ -983,7 +983,7 @@
             siticoneButton3.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             siticoneButton3.Dock = DockStyle.Left;
             siticoneButton3.FillColor = Color.DeepSkyBlue;
-            siticoneButton3.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            siticoneButton3.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             siticoneButton3.ForeColor = Color.Black;
             siticoneButton3.Location = new Point(106, 0);
             siticoneButton3.Name = "siticoneButton3";
@@ -1003,7 +1003,7 @@
             siticoneButton1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             siticoneButton1.Dock = DockStyle.Left;
             siticoneButton1.FillColor = Color.DeepSkyBlue;
-            siticoneButton1.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            siticoneButton1.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             siticoneButton1.ForeColor = Color.Black;
             siticoneButton1.Location = new Point(0, 0);
             siticoneButton1.Name = "siticoneButton1";

@@ -42,7 +42,7 @@
             siticoneButton2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             siticoneButton2.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             siticoneButton2.FillColor = Color.FromArgb(64, 64, 64);
-            siticoneButton2.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            siticoneButton2.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             siticoneButton2.ForeColor = Color.White;
             siticoneButton2.Location = new Point(261, 658);
             siticoneButton2.Name = "siticoneButton2";
