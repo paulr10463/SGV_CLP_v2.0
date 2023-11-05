@@ -341,7 +341,7 @@
             buttonAddCustomer.FillColor = Color.FromArgb(64, 64, 64);
             buttonAddCustomer.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             buttonAddCustomer.ForeColor = Color.White;
-            buttonAddCustomer.Location = new Point(510, 600);
+            buttonAddCustomer.Location = new Point(514, 550);
             buttonAddCustomer.Margin = new Padding(3, 4, 3, 4);
             buttonAddCustomer.Name = "buttonAddCustomer";
             buttonAddCustomer.Size = new Size(180, 45);

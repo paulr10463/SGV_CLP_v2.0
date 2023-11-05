@@ -50,6 +50,7 @@ namespace SGV_CLP.Classes.Sales_Module
         }
         public Invoice()
         {
+            this.customer = new Customer();
             dineInDetailList = new List<InvoiceDetail>();
             totalSales = 0;
         }

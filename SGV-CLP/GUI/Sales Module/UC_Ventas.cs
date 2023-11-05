@@ -264,25 +264,28 @@ namespace SGV_CLP.GUI
                 if (e.ColumnIndex == 7 && siticoneDataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString() != null)
                 {
                     int InvoiceCodeSelected = Convert.ToInt32(siticoneDataGridView1.Rows[e.RowIndex].Cells[0].Value);
-                    Invoice invoiceToShow = new Invoice(
-                        );
+                    Invoice invoiceToShow = new Invoice();
+                    invoiceToShow.invoiceCode = InvoiceCodeSelected;
+                    invoiceToShow.customer.customerID = siticoneDataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+                    invoiceToShow.customer.firstName = siticoneDataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+                    invoiceToShow.customer.firstLastName = siticoneDataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+                    invoiceToShow.customer.phoneNumber = siticoneDataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
+                    invoiceToShow.totalSales = Convert.ToDouble(siticoneDataGridView1.Rows[e.RowIndex].Cells[5].Value);
+                    try
+                    {
+                        invoiceToShow.issuedDate = DateTime.Parse(siticoneDataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString());
+                    }catch (Exception ex)
+                    {
+                        invoiceToShow.issuedDate = null;
+                    }
 
-                    /*ShowDetailInvoice showDetailInvoice = new ShowDetailInvoice(
-                        InvoiceDetailMapper.GetAllInvoiceDetails(InvoiceCodeSelected),
-                        cc: siticoneDataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString(),
-                        name: siticoneDataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString() + " " + siticoneDataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString(),
-                        phone: siticoneDataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString(),
-                        date: siticoneDataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString(),
-                        total: Convert.ToDouble(siticoneDataGridView1.Rows[e.RowIndex].Cells[5].Value),
-                        codNotaVenta: InvoiceCodeSelected
-                   );
-                    showDetailInvoice.BringToFront();
-                    showDetailInvoice.Visible = true;*/
+                    ShowDetailInvoice showDetailInvoice = new(invoiceToShow);
+                    showDetailInvoice.ShowDialog();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Esa fila está vacía, no puede hacer acciones sobre ella!!");
+                MessageBox.Show("Error: "+ex.Message);
             }
         }
 
