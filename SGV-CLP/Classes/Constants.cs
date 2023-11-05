@@ -32,10 +32,10 @@ namespace SGV_CLP.Classes
         public const string MULTIPLE_PRINT_SETTING = "MultiplePrintEnabled";
 
         //UC_Ventas
-        public const int SCROLL_WIDTH = 16;
+        public const int SCROLL_WIDTH = 10;
 
         //Connectivity
-        public const string CONNECTION_STRING = "Host=localhost:5432;Username=postgres;Password=P@ssw0rd;Database=sgvclp";
+        public const string CONNECTION_STRING = "Host=localhost:5432;Username=postgres;Password=P@ssw0rd;Database=SGVCLP";
 
     }
 }
