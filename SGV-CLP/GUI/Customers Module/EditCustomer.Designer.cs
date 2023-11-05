@@ -56,10 +56,10 @@
             buttonCancelar.FillColor = Color.FromArgb(64, 64, 64);
             buttonCancelar.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             buttonCancelar.ForeColor = Color.White;
-            buttonCancelar.Location = new Point(574, 407);
+            buttonCancelar.Location = new Point(445, 291);
             buttonCancelar.Margin = new Padding(4);
             buttonCancelar.Name = "buttonCancelar";
-            buttonCancelar.Size = new Size(231, 60);
+            buttonCancelar.Size = new Size(166, 44);
             buttonCancelar.TabIndex = 47;
             buttonCancelar.Text = "Cancelar";
             buttonCancelar.Click += buttonCancelar_Click;
@@ -75,10 +75,10 @@
             buttonEditCustomer.FillColor = Color.FromArgb(64, 64, 64);
             buttonEditCustomer.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             buttonEditCustomer.ForeColor = Color.White;
-            buttonEditCustomer.Location = new Point(293, 407);
+            buttonEditCustomer.Location = new Point(171, 291);
             buttonEditCustomer.Margin = new Padding(4);
             buttonEditCustomer.Name = "buttonEditCustomer";
-            buttonEditCustomer.Size = new Size(231, 60);
+            buttonEditCustomer.Size = new Size(166, 44);
             buttonEditCustomer.TabIndex = 46;
             buttonEditCustomer.Text = "Aceptar";
             buttonEditCustomer.Click += buttonEditCustomer_Click;
@@ -87,11 +87,11 @@
             // 
             siticoneHtmlLabel20.Anchor = AnchorStyles.None;
             siticoneHtmlLabel20.BackColor = Color.Transparent;
-            siticoneHtmlLabel20.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            siticoneHtmlLabel20.Location = new Point(222, 124);
+            siticoneHtmlLabel20.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            siticoneHtmlLabel20.Location = new Point(43, 60);
             siticoneHtmlLabel20.Margin = new Padding(4);
             siticoneHtmlLabel20.Name = "siticoneHtmlLabel20";
-            siticoneHtmlLabel20.Size = new Size(100, 26);
+            siticoneHtmlLabel20.Size = new Size(76, 23);
             siticoneHtmlLabel20.TabIndex = 49;
             siticoneHtmlLabel20.Text = "Dirección";
             // 
@@ -108,7 +108,7 @@
             tbHomeAddress.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             tbHomeAddress.ForeColor = Color.FromArgb(64, 64, 64);
             tbHomeAddress.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tbHomeAddress.Location = new Point(350, 124);
+            tbHomeAddress.Location = new Point(171, 60);
             tbHomeAddress.Margin = new Padding(5, 8, 5, 8);
             tbHomeAddress.Name = "tbHomeAddress";
             tbHomeAddress.PasswordChar = '\0';
@@ -123,11 +123,11 @@
             // 
             siticoneHtmlLabel1.Anchor = AnchorStyles.None;
             siticoneHtmlLabel1.BackColor = Color.Transparent;
-            siticoneHtmlLabel1.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            siticoneHtmlLabel1.Location = new Point(222, 309);
+            siticoneHtmlLabel1.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            siticoneHtmlLabel1.Location = new Point(42, 185);
             siticoneHtmlLabel1.Margin = new Padding(4);
             siticoneHtmlLabel1.Name = "siticoneHtmlLabel1";
-            siticoneHtmlLabel1.Size = new Size(92, 26);
+            siticoneHtmlLabel1.Size = new Size(69, 23);
             siticoneHtmlLabel1.TabIndex = 51;
             siticoneHtmlLabel1.Text = "Teléfono";
             // 
@@ -144,7 +144,7 @@
             tbPhoneNumber.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             tbPhoneNumber.ForeColor = Color.FromArgb(64, 64, 64);
             tbPhoneNumber.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tbPhoneNumber.Location = new Point(349, 307);
+            tbPhoneNumber.Location = new Point(169, 183);
             tbPhoneNumber.Margin = new Padding(5, 8, 5, 8);
             tbPhoneNumber.Name = "tbPhoneNumber";
             tbPhoneNumber.PasswordChar = '\0';
@@ -160,11 +160,11 @@
             // 
             siticoneHtmlLabel2.Anchor = AnchorStyles.None;
             siticoneHtmlLabel2.BackColor = Color.Transparent;
-            siticoneHtmlLabel2.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            siticoneHtmlLabel2.Location = new Point(222, 212);
+            siticoneHtmlLabel2.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            siticoneHtmlLabel2.Location = new Point(43, 122);
             siticoneHtmlLabel2.Margin = new Padding(4);
             siticoneHtmlLabel2.Name = "siticoneHtmlLabel2";
-            siticoneHtmlLabel2.Size = new Size(58, 26);
+            siticoneHtmlLabel2.Size = new Size(45, 23);
             siticoneHtmlLabel2.TabIndex = 53;
             siticoneHtmlLabel2.Text = "eMail";
             // 
@@ -181,7 +181,7 @@
             tbEMail.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             tbEMail.ForeColor = Color.FromArgb(64, 64, 64);
             tbEMail.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tbEMail.Location = new Point(350, 208);
+            tbEMail.Location = new Point(171, 118);
             tbEMail.Margin = new Padding(5, 8, 5, 8);
             tbEMail.Name = "tbEMail";
             tbEMail.PasswordChar = '\0';
@@ -199,7 +199,7 @@
             labelCorrectEMail.BackColor = Color.Transparent;
             labelCorrectEMail.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             labelCorrectEMail.ForeColor = Color.Turquoise;
-            labelCorrectEMail.Location = new Point(810, 216);
+            labelCorrectEMail.Location = new Point(631, 126);
             labelCorrectEMail.Margin = new Padding(4);
             labelCorrectEMail.Name = "labelCorrectEMail";
             labelCorrectEMail.Size = new Size(98, 22);
@@ -212,7 +212,7 @@
             labelWrongEMail.BackColor = Color.Transparent;
             labelWrongEMail.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             labelWrongEMail.ForeColor = Color.Red;
-            labelWrongEMail.Location = new Point(810, 216);
+            labelWrongEMail.Location = new Point(631, 126);
             labelWrongEMail.Margin = new Padding(4);
             labelWrongEMail.Name = "labelWrongEMail";
             labelWrongEMail.Size = new Size(110, 22);
@@ -225,7 +225,7 @@
             labelValidPhoneNumber.BackColor = Color.Transparent;
             labelValidPhoneNumber.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             labelValidPhoneNumber.ForeColor = Color.Turquoise;
-            labelValidPhoneNumber.Location = new Point(662, 330);
+            labelValidPhoneNumber.Location = new Point(482, 206);
             labelValidPhoneNumber.Margin = new Padding(4, 5, 4, 5);
             labelValidPhoneNumber.Name = "labelValidPhoneNumber";
             labelValidPhoneNumber.Size = new Size(177, 22);
@@ -239,7 +239,7 @@
             labelInvalidPhoneNumber.BackColor = Color.Transparent;
             labelInvalidPhoneNumber.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             labelInvalidPhoneNumber.ForeColor = Color.Red;
-            labelInvalidPhoneNumber.Location = new Point(662, 330);
+            labelInvalidPhoneNumber.Location = new Point(482, 206);
             labelInvalidPhoneNumber.Margin = new Padding(4, 5, 4, 5);
             labelInvalidPhoneNumber.Name = "labelInvalidPhoneNumber";
             labelInvalidPhoneNumber.Size = new Size(189, 22);
@@ -252,7 +252,7 @@
             labelCorrectPhoneNumberLength.BackColor = Color.Transparent;
             labelCorrectPhoneNumberLength.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             labelCorrectPhoneNumberLength.ForeColor = Color.Turquoise;
-            labelCorrectPhoneNumberLength.Location = new Point(662, 300);
+            labelCorrectPhoneNumberLength.Location = new Point(482, 176);
             labelCorrectPhoneNumberLength.Margin = new Padding(4, 5, 4, 5);
             labelCorrectPhoneNumberLength.Name = "labelCorrectPhoneNumberLength";
             labelCorrectPhoneNumberLength.Size = new Size(143, 22);
@@ -265,7 +265,7 @@
             labelWrongPhoneNumberLength.BackColor = Color.Transparent;
             labelWrongPhoneNumberLength.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             labelWrongPhoneNumberLength.ForeColor = Color.Red;
-            labelWrongPhoneNumberLength.Location = new Point(662, 300);
+            labelWrongPhoneNumberLength.Location = new Point(482, 176);
             labelWrongPhoneNumberLength.Margin = new Padding(4, 5, 4, 5);
             labelWrongPhoneNumberLength.Name = "labelWrongPhoneNumberLength";
             labelWrongPhoneNumberLength.Size = new Size(182, 22);
@@ -277,7 +277,7 @@
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1002, 544);
+            ClientSize = new Size(761, 380);
             Controls.Add(labelValidPhoneNumber);
             Controls.Add(labelInvalidPhoneNumber);
             Controls.Add(labelCorrectPhoneNumberLength);

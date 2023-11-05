@@ -122,12 +122,12 @@ namespace SGV_CLP.GUI
             bool fieldAreValid = false;
             if (isParentCheckBox.Checked)
             {
-                fieldAreValid =  productNameIsValid && categoryIsValid && imagePathIsValid;
+                fieldAreValid = productNameIsValid && categoryIsValid && imagePathIsValid;
             }
             else if (isSubproductCheckBox.Checked)
             {
                 //Se debe tomar en cuenta el checkbox de padre
-                fieldAreValid =  productNameIsValid && salesPriceToThePubicIsValid && categoryIsValid && imagePathIsValid && parentIsValid;
+                fieldAreValid = productNameIsValid && salesPriceToThePubicIsValid && categoryIsValid && imagePathIsValid && parentIsValid;
             }
             else
             {

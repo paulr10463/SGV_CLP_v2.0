@@ -47,9 +47,9 @@
             buttonCancel.FillColor = Color.FromArgb(64, 64, 64);
             buttonCancel.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             buttonCancel.ForeColor = Color.White;
-            buttonCancel.Location = new Point(399, 295);
+            buttonCancel.Location = new Point(331, 211);
             buttonCancel.Name = "buttonCancel";
-            buttonCancel.Size = new Size(180, 45);
+            buttonCancel.Size = new Size(160, 45);
             buttonCancel.TabIndex = 41;
             buttonCancel.Text = "Cancelar";
             buttonCancel.Click += ButtonCancel_Click;
@@ -60,7 +60,7 @@
             editCategoryUsedLabel.BackColor = Color.Transparent;
             editCategoryUsedLabel.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             editCategoryUsedLabel.ForeColor = Color.Red;
-            editCategoryUsedLabel.Location = new Point(364, 187);
+            editCategoryUsedLabel.Location = new Point(270, 137);
             editCategoryUsedLabel.Name = "editCategoryUsedLabel";
             editCategoryUsedLabel.Size = new Size(298, 22);
             editCategoryUsedLabel.TabIndex = 62;
@@ -79,7 +79,7 @@
             editCategoryTextBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             editCategoryTextBox.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             editCategoryTextBox.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            editCategoryTextBox.Location = new Point(381, 130);
+            editCategoryTextBox.Location = new Point(287, 80);
             editCategoryTextBox.Margin = new Padding(5, 9, 5, 9);
             editCategoryTextBox.Name = "editCategoryTextBox";
             editCategoryTextBox.PasswordChar = '\0';
@@ -103,10 +103,10 @@
             editCategoryButton.FillColor = Color.FromArgb(64, 64, 64);
             editCategoryButton.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             editCategoryButton.ForeColor = Color.White;
-            editCategoryButton.Location = new Point(172, 295);
+            editCategoryButton.Location = new Point(118, 211);
             editCategoryButton.Margin = new Padding(3, 4, 3, 4);
             editCategoryButton.Name = "editCategoryButton";
-            editCategoryButton.Size = new Size(180, 45);
+            editCategoryButton.Size = new Size(160, 45);
             editCategoryButton.TabIndex = 59;
             editCategoryButton.Text = "Aceptar";
             editCategoryButton.Click += EditCategoryButton_Click;
@@ -115,11 +115,11 @@
             // 
             siticoneHtmlLabel3.Anchor = AnchorStyles.None;
             siticoneHtmlLabel3.BackColor = Color.Transparent;
-            siticoneHtmlLabel3.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            siticoneHtmlLabel3.Location = new Point(112, 140);
+            siticoneHtmlLabel3.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            siticoneHtmlLabel3.Location = new Point(96, 90);
             siticoneHtmlLabel3.Margin = new Padding(3, 4, 3, 4);
             siticoneHtmlLabel3.Name = "siticoneHtmlLabel3";
-            siticoneHtmlLabel3.Size = new Size(181, 26);
+            siticoneHtmlLabel3.Size = new Size(138, 23);
             siticoneHtmlLabel3.TabIndex = 61;
             siticoneHtmlLabel3.Text = "Nueva categoría";
             // 
@@ -128,7 +128,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(757, 416);
+            ClientSize = new Size(604, 293);
             Controls.Add(editCategoryUsedLabel);
             Controls.Add(siticoneHtmlLabel3);
             Controls.Add(editCategoryTextBox);

@@ -53,15 +53,16 @@
             siticonePanel2.Controls.Add(siticoneHtmlLabel3);
             siticonePanel2.FillColor = Color.White;
             siticonePanel2.ForeColor = SystemColors.ControlText;
-            siticonePanel2.Location = new Point(0, 416);
+            siticonePanel2.Location = new Point(0, 346);
             siticonePanel2.Margin = new Padding(0);
             siticonePanel2.Name = "siticonePanel2";
-            siticonePanel2.Size = new Size(590, 402);
+            siticonePanel2.Size = new Size(513, 472);
             siticonePanel2.TabIndex = 1;
             // 
             // siticoneButton7
             // 
             siticoneButton7.Anchor = AnchorStyles.Bottom;
+            siticoneButton7.Animated = true;
             siticoneButton7.BackColor = Color.White;
             siticoneButton7.BorderRadius = 20;
             siticoneButton7.DisabledState.BorderColor = Color.DarkGray;
@@ -72,9 +73,9 @@
             siticoneButton7.FocusedColor = Color.Gray;
             siticoneButton7.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             siticoneButton7.ForeColor = Color.White;
-            siticoneButton7.Location = new Point(177, 219);
+            siticoneButton7.Location = new Point(142, 204);
             siticoneButton7.Name = "siticoneButton7";
-            siticoneButton7.Size = new Size(239, 68);
+            siticoneButton7.Size = new Size(239, 55);
             siticoneButton7.TabIndex = 19;
             siticoneButton7.Text = "Ingresar";
             siticoneButton7.Click += siticoneButton7_Click;
@@ -84,7 +85,7 @@
             siticoneHtmlLabel4.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             siticoneHtmlLabel4.BackColor = Color.Transparent;
             siticoneHtmlLabel4.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            siticoneHtmlLabel4.Location = new Point(231, 343);
+            siticoneHtmlLabel4.Location = new Point(231, 378);
             siticoneHtmlLabel4.Margin = new Padding(3, 2, 3, 2);
             siticoneHtmlLabel4.Name = "siticoneHtmlLabel4";
             siticoneHtmlLabel4.Size = new Size(136, 19);
@@ -95,12 +96,12 @@
             // 
             siticoneHtmlLabel2.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             siticoneHtmlLabel2.BackColor = Color.Transparent;
-            siticoneHtmlLabel2.Font = new Font("Century Gothic", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            siticoneHtmlLabel2.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             siticoneHtmlLabel2.ForeColor = Color.FromArgb(64, 64, 64);
-            siticoneHtmlLabel2.Location = new Point(126, 59);
+            siticoneHtmlLabel2.Location = new Point(111, 66);
             siticoneHtmlLabel2.Margin = new Padding(3, 2, 3, 2);
             siticoneHtmlLabel2.Name = "siticoneHtmlLabel2";
-            siticoneHtmlLabel2.Size = new Size(361, 32);
+            siticoneHtmlLabel2.Size = new Size(308, 26);
             siticoneHtmlLabel2.TabIndex = 17;
             siticoneHtmlLabel2.Text = "Sistema de Gestión de Ventas";
             // 
@@ -108,21 +109,21 @@
             // 
             siticoneHtmlLabel3.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             siticoneHtmlLabel3.BackColor = Color.Transparent;
-            siticoneHtmlLabel3.Font = new Font("Century Gothic", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            siticoneHtmlLabel3.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             siticoneHtmlLabel3.ForeColor = SystemColors.ActiveCaptionText;
-            siticoneHtmlLabel3.Location = new Point(148, 104);
+            siticoneHtmlLabel3.Location = new Point(138, 112);
             siticoneHtmlLabel3.Margin = new Padding(3, 2, 3, 2);
             siticoneHtmlLabel3.Name = "siticoneHtmlLabel3";
-            siticoneHtmlLabel3.Size = new Size(297, 32);
+            siticoneHtmlLabel3.Size = new Size(256, 26);
             siticoneHtmlLabel3.TabIndex = 18;
             siticoneHtmlLabel3.Text = "Cafetería La Prosperidad";
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(211, 101);
+            pictureBox1.Location = new Point(209, 86);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(157, 169);
+            pictureBox1.Size = new Size(117, 129);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 16;
             pictureBox1.TabStop = false;
@@ -133,7 +134,7 @@
             siticoneHtmlLabel1.BackColor = Color.Transparent;
             siticoneHtmlLabel1.Font = new Font("Century Gothic", 24F, FontStyle.Regular, GraphicsUnit.Point);
             siticoneHtmlLabel1.ForeColor = SystemColors.ButtonHighlight;
-            siticoneHtmlLabel1.Location = new Point(195, 325);
+            siticoneHtmlLabel1.Location = new Point(168, 245);
             siticoneHtmlLabel1.Margin = new Padding(3, 2, 3, 2);
             siticoneHtmlLabel1.Name = "siticoneHtmlLabel1";
             siticoneHtmlLabel1.Size = new Size(199, 41);
@@ -145,7 +146,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(28, 33, 32);
-            ClientSize = new Size(590, 791);
+            ClientSize = new Size(513, 651);
             Controls.Add(siticoneHtmlLabel1);
             Controls.Add(pictureBox1);
             Controls.Add(siticonePanel2);

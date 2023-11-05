@@ -77,12 +77,12 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             siticoneDataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             siticoneDataGridView1.GridColor = Color.White;
-            siticoneDataGridView1.Location = new Point(0, 232);
+            siticoneDataGridView1.Location = new Point(0, 165);
             siticoneDataGridView1.Name = "siticoneDataGridView1";
             siticoneDataGridView1.RowHeadersVisible = false;
             siticoneDataGridView1.RowHeadersWidth = 51;
             siticoneDataGridView1.RowTemplate.Height = 25;
-            siticoneDataGridView1.Size = new Size(564, 445);
+            siticoneDataGridView1.Size = new Size(486, 295);
             siticoneDataGridView1.TabIndex = 55;
             siticoneDataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             siticoneDataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -129,11 +129,11 @@
             CodNotaVentaLabel.AutoSize = false;
             CodNotaVentaLabel.BackColor = Color.FromArgb(64, 64, 64);
             CodNotaVentaLabel.Dock = DockStyle.Top;
-            CodNotaVentaLabel.Font = new Font("Century Gothic", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            CodNotaVentaLabel.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             CodNotaVentaLabel.ForeColor = Color.White;
             CodNotaVentaLabel.Location = new Point(0, 0);
             CodNotaVentaLabel.Name = "CodNotaVentaLabel";
-            CodNotaVentaLabel.Size = new Size(564, 67);
+            CodNotaVentaLabel.Size = new Size(486, 50);
             CodNotaVentaLabel.TabIndex = 56;
             CodNotaVentaLabel.Text = "Title";
             CodNotaVentaLabel.TextAlignment = ContentAlignment.MiddleCenter;
@@ -143,11 +143,11 @@
             TotalLabel.AutoSize = false;
             TotalLabel.BackColor = Color.FromArgb(64, 64, 64);
             TotalLabel.Dock = DockStyle.Bottom;
-            TotalLabel.Font = new Font("Century Gothic", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
+            TotalLabel.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             TotalLabel.ForeColor = Color.White;
-            TotalLabel.Location = new Point(0, 683);
+            TotalLabel.Location = new Point(0, 466);
             TotalLabel.Name = "TotalLabel";
-            TotalLabel.Size = new Size(564, 72);
+            TotalLabel.Size = new Size(486, 54);
             TotalLabel.TabIndex = 57;
             TotalLabel.Text = "Total: $X.XX";
             TotalLabel.TextAlignment = ContentAlignment.MiddleCenter;
@@ -155,7 +155,7 @@
             // nameLabel
             // 
             nameLabel.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            nameLabel.Location = new Point(284, 120);
+            nameLabel.Location = new Point(266, 85);
             nameLabel.Name = "nameLabel";
             nameLabel.Size = new Size(168, 19);
             nameLabel.TabIndex = 58;
@@ -164,7 +164,7 @@
             // ccLabel
             // 
             ccLabel.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            ccLabel.Location = new Point(284, 91);
+            ccLabel.Location = new Point(266, 62);
             ccLabel.Name = "ccLabel";
             ccLabel.Size = new Size(168, 19);
             ccLabel.TabIndex = 59;
@@ -173,7 +173,7 @@
             // phoneLabel
             // 
             phoneLabel.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            phoneLabel.Location = new Point(284, 149);
+            phoneLabel.Location = new Point(266, 109);
             phoneLabel.Name = "phoneLabel";
             phoneLabel.Size = new Size(168, 19);
             phoneLabel.TabIndex = 60;
@@ -183,7 +183,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(152, 91);
+            label1.Location = new Point(134, 63);
             label1.Name = "label1";
             label1.Size = new Size(37, 19);
             label1.TabIndex = 61;
@@ -193,7 +193,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(152, 120);
+            label2.Location = new Point(134, 85);
             label2.Name = "label2";
             label2.Size = new Size(77, 19);
             label2.TabIndex = 62;
@@ -203,7 +203,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(152, 149);
+            label3.Location = new Point(134, 109);
             label3.Name = "label3";
             label3.Size = new Size(78, 19);
             label3.TabIndex = 63;
@@ -213,7 +213,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(152, 180);
+            label4.Location = new Point(134, 132);
             label4.Name = "label4";
             label4.Size = new Size(62, 19);
             label4.TabIndex = 65;
@@ -222,7 +222,7 @@
             // dateLabel
             // 
             dateLabel.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dateLabel.Location = new Point(284, 180);
+            dateLabel.Location = new Point(266, 132);
             dateLabel.Name = "dateLabel";
             dateLabel.Size = new Size(168, 19);
             dateLabel.TabIndex = 64;
@@ -232,7 +232,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(564, 755);
+            ClientSize = new Size(486, 520);
             Controls.Add(label4);
             Controls.Add(dateLabel);
             Controls.Add(label3);

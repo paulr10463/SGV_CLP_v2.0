@@ -44,7 +44,7 @@
             siticoneButton2.FillColor = Color.FromArgb(64, 64, 64);
             siticoneButton2.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             siticoneButton2.ForeColor = Color.White;
-            siticoneButton2.Location = new Point(261, 658);
+            siticoneButton2.Location = new Point(298, 320);
             siticoneButton2.Name = "siticoneButton2";
             siticoneButton2.Size = new Size(180, 45);
             siticoneButton2.TabIndex = 51;
@@ -56,7 +56,7 @@
             subtypesFlowPanel.Dock = DockStyle.Top;
             subtypesFlowPanel.Location = new Point(0, 0);
             subtypesFlowPanel.Name = "subtypesFlowPanel";
-            subtypesFlowPanel.Size = new Size(739, 566);
+            subtypesFlowPanel.Size = new Size(739, 298);
             subtypesFlowPanel.TabIndex = 52;
             // 
             // ProductSubtype
@@ -64,7 +64,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(739, 773);
+            ClientSize = new Size(739, 386);
             Controls.Add(subtypesFlowPanel);
             Controls.Add(siticoneButton2);
             Icon = (Icon)resources.GetObject("$this.Icon");

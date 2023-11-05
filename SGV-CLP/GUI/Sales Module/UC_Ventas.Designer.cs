@@ -153,7 +153,7 @@
             TableNameLabel.AutoSize = false;
             TableNameLabel.BackColor = Color.Black;
             TableNameLabel.Dock = DockStyle.Bottom;
-            TableNameLabel.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            TableNameLabel.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             TableNameLabel.ForeColor = Color.White;
             TableNameLabel.Location = new Point(0, 574);
             TableNameLabel.Margin = new Padding(0);

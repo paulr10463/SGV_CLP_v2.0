@@ -62,7 +62,7 @@
             buttonEditProduct.FillColor = Color.FromArgb(64, 64, 64);
             buttonEditProduct.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             buttonEditProduct.ForeColor = Color.White;
-            buttonEditProduct.Location = new Point(282, 653);
+            buttonEditProduct.Location = new Point(231, 469);
             buttonEditProduct.Name = "buttonEditProduct";
             buttonEditProduct.Size = new Size(180, 45);
             buttonEditProduct.TabIndex = 40;
@@ -80,7 +80,7 @@
             buttonCancel.FillColor = Color.FromArgb(64, 64, 64);
             buttonCancel.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             buttonCancel.ForeColor = Color.White;
-            buttonCancel.Location = new Point(563, 653);
+            buttonCancel.Location = new Point(512, 469);
             buttonCancel.Name = "buttonCancel";
             buttonCancel.Size = new Size(180, 45);
             buttonCancel.TabIndex = 41;
@@ -93,7 +93,7 @@
             parentErrorLabel.BackColor = Color.Transparent;
             parentErrorLabel.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             parentErrorLabel.ForeColor = Color.Red;
-            parentErrorLabel.Location = new Point(463, 543);
+            parentErrorLabel.Location = new Point(397, 404);
             parentErrorLabel.Name = "parentErrorLabel";
             parentErrorLabel.Size = new Size(396, 22);
             parentErrorLabel.TabIndex = 86;
@@ -104,11 +104,11 @@
             // 
             parentLabel.Anchor = AnchorStyles.None;
             parentLabel.BackColor = Color.Transparent;
-            parentLabel.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            parentLabel.Location = new Point(418, 501);
+            parentLabel.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            parentLabel.Location = new Point(352, 362);
             parentLabel.Margin = new Padding(3, 4, 3, 4);
             parentLabel.Name = "parentLabel";
-            parentLabel.Size = new Size(68, 26);
+            parentLabel.Size = new Size(53, 23);
             parentLabel.TabIndex = 85;
             parentLabel.Text = "Padre:";
             parentLabel.Visible = false;
@@ -118,9 +118,9 @@
             isSubproductCheckBox.Anchor = AnchorStyles.None;
             isSubproductCheckBox.AutoSize = true;
             isSubproductCheckBox.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            isSubproductCheckBox.Location = new Point(100, 501);
+            isSubproductCheckBox.Location = new Point(34, 362);
             isSubproductCheckBox.Name = "isSubproductCheckBox";
-            isSubproductCheckBox.Size = new Size(210, 26);
+            isSubproductCheckBox.Size = new Size(182, 25);
             isSubproductCheckBox.TabIndex = 84;
             isSubproductCheckBox.Text = "Es un subproducto?";
             isSubproductCheckBox.UseVisualStyleBackColor = true;
@@ -138,7 +138,7 @@
             parentComboBox.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             parentComboBox.ForeColor = Color.FromArgb(68, 88, 112);
             parentComboBox.ItemHeight = 39;
-            parentComboBox.Location = new Point(502, 491);
+            parentComboBox.Location = new Point(436, 352);
             parentComboBox.Margin = new Padding(3, 4, 3, 4);
             parentComboBox.Name = "parentComboBox";
             parentComboBox.Size = new Size(316, 45);
@@ -152,9 +152,9 @@
             isParentCheckBox.Anchor = AnchorStyles.None;
             isParentCheckBox.AutoSize = true;
             isParentCheckBox.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            isParentCheckBox.Location = new Point(100, 438);
+            isParentCheckBox.Location = new Point(36, 331);
             isParentCheckBox.Name = "isParentCheckBox";
-            isParentCheckBox.Size = new Size(223, 26);
+            isParentCheckBox.Size = new Size(194, 25);
             isParentCheckBox.TabIndex = 82;
             isParentCheckBox.Text = "Tiene subproductos? ";
             isParentCheckBox.UseVisualStyleBackColor = true;
@@ -166,7 +166,7 @@
             labelInvalidImagePath.BackColor = Color.Transparent;
             labelInvalidImagePath.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             labelInvalidImagePath.ForeColor = Color.Red;
-            labelInvalidImagePath.Location = new Point(950, 260);
+            labelInvalidImagePath.Location = new Point(780, 190);
             labelInvalidImagePath.Name = "labelInvalidImagePath";
             labelInvalidImagePath.Size = new Size(98, 22);
             labelInvalidImagePath.TabIndex = 81;
@@ -179,7 +179,7 @@
             labelInvalidSalesPriceToThePublic.BackColor = Color.Transparent;
             labelInvalidSalesPriceToThePublic.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             labelInvalidSalesPriceToThePublic.ForeColor = Color.Red;
-            labelInvalidSalesPriceToThePublic.Location = new Point(573, 347);
+            labelInvalidSalesPriceToThePublic.Location = new Point(512, 254);
             labelInvalidSalesPriceToThePublic.Name = "labelInvalidSalesPriceToThePublic";
             labelInvalidSalesPriceToThePublic.Size = new Size(130, 22);
             labelInvalidSalesPriceToThePublic.TabIndex = 80;
@@ -192,7 +192,7 @@
             labelCategoryNotChosen.BackColor = Color.Transparent;
             labelCategoryNotChosen.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             labelCategoryNotChosen.ForeColor = Color.Red;
-            labelCategoryNotChosen.Location = new Point(575, 191);
+            labelCategoryNotChosen.Location = new Point(512, 128);
             labelCategoryNotChosen.Name = "labelCategoryNotChosen";
             labelCategoryNotChosen.Size = new Size(305, 22);
             labelCategoryNotChosen.TabIndex = 79;
@@ -205,7 +205,7 @@
             labelProductNameNotUnique.BackColor = Color.Transparent;
             labelProductNameNotUnique.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             labelProductNameNotUnique.ForeColor = Color.Red;
-            labelProductNameNotUnique.Location = new Point(575, 115);
+            labelProductNameNotUnique.Location = new Point(512, 70);
             labelProductNameNotUnique.Name = "labelProductNameNotUnique";
             labelProductNameNotUnique.Size = new Size(284, 22);
             labelProductNameNotUnique.TabIndex = 78;
@@ -223,9 +223,9 @@
             SBExaminar.FillColor = Color.FromArgb(64, 64, 64);
             SBExaminar.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             SBExaminar.ForeColor = Color.White;
-            SBExaminar.Location = new Point(761, 250);
+            SBExaminar.Location = new Point(647, 179);
             SBExaminar.Name = "SBExaminar";
-            SBExaminar.Size = new Size(180, 45);
+            SBExaminar.Size = new Size(127, 45);
             SBExaminar.TabIndex = 77;
             SBExaminar.Text = "Examinar...";
             SBExaminar.Click += SBExaminar_Click;
@@ -242,13 +242,13 @@
             tbImagePath.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             tbImagePath.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             tbImagePath.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tbImagePath.Location = new Point(311, 250);
+            tbImagePath.Location = new Point(247, 179);
             tbImagePath.Margin = new Padding(5, 7, 5, 7);
             tbImagePath.Name = "tbImagePath";
             tbImagePath.PasswordChar = '\0';
             tbImagePath.PlaceholderText = "";
             tbImagePath.SelectedText = "";
-            tbImagePath.Size = new Size(442, 45);
+            tbImagePath.Size = new Size(392, 45);
             tbImagePath.TabIndex = 76;
             tbImagePath.TextOffset = new Point(5, 0);
             tbImagePath.TextChanged += tbImagePath_TextChanged;
@@ -257,10 +257,10 @@
             // 
             siticoneHtmlLabel11.Anchor = AnchorStyles.None;
             siticoneHtmlLabel11.BackColor = Color.Transparent;
-            siticoneHtmlLabel11.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            siticoneHtmlLabel11.Location = new Point(102, 260);
+            siticoneHtmlLabel11.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            siticoneHtmlLabel11.Location = new Point(38, 189);
             siticoneHtmlLabel11.Name = "siticoneHtmlLabel11";
-            siticoneHtmlLabel11.Size = new Size(135, 26);
+            siticoneHtmlLabel11.Size = new Size(105, 23);
             siticoneHtmlLabel11.TabIndex = 75;
             siticoneHtmlLabel11.Text = "Ruta imagen";
             // 
@@ -277,7 +277,7 @@
             cbCategory.ForeColor = Color.FromArgb(68, 88, 112);
             cbCategory.ItemHeight = 39;
             cbCategory.Items.AddRange(new object[] { "Seleccione...", "Especialidades", "Bebidas Frías", "Bebidas Calientes", "Empanadas" });
-            cbCategory.Location = new Point(313, 181);
+            cbCategory.Location = new Point(250, 118);
             cbCategory.Margin = new Padding(3, 4, 3, 4);
             cbCategory.Name = "cbCategory";
             cbCategory.Size = new Size(249, 45);
@@ -290,11 +290,11 @@
             // 
             siticoneHtmlLabel6.Anchor = AnchorStyles.None;
             siticoneHtmlLabel6.BackColor = Color.Transparent;
-            siticoneHtmlLabel6.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            siticoneHtmlLabel6.Location = new Point(104, 187);
+            siticoneHtmlLabel6.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            siticoneHtmlLabel6.Location = new Point(41, 124);
             siticoneHtmlLabel6.Margin = new Padding(3, 4, 3, 4);
             siticoneHtmlLabel6.Name = "siticoneHtmlLabel6";
-            siticoneHtmlLabel6.Size = new Size(108, 26);
+            siticoneHtmlLabel6.Size = new Size(84, 23);
             siticoneHtmlLabel6.TabIndex = 73;
             siticoneHtmlLabel6.Text = "Categoría";
             // 
@@ -310,7 +310,7 @@
             tbSalesPriceToThePublic.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             tbSalesPriceToThePublic.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             tbSalesPriceToThePublic.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tbSalesPriceToThePublic.Location = new Point(311, 333);
+            tbSalesPriceToThePublic.Location = new Point(250, 240);
             tbSalesPriceToThePublic.Margin = new Padding(5, 9, 5, 9);
             tbSalesPriceToThePublic.Name = "tbSalesPriceToThePublic";
             tbSalesPriceToThePublic.PasswordChar = '\0';
@@ -325,11 +325,11 @@
             // 
             siticoneHtmlLabel8.Anchor = AnchorStyles.None;
             siticoneHtmlLabel8.BackColor = Color.Transparent;
-            siticoneHtmlLabel8.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            siticoneHtmlLabel8.Location = new Point(102, 341);
+            siticoneHtmlLabel8.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            siticoneHtmlLabel8.Location = new Point(41, 248);
             siticoneHtmlLabel8.Margin = new Padding(3, 4, 3, 4);
             siticoneHtmlLabel8.Name = "siticoneHtmlLabel8";
-            siticoneHtmlLabel8.Size = new Size(57, 26);
+            siticoneHtmlLabel8.Size = new Size(44, 23);
             siticoneHtmlLabel8.TabIndex = 71;
             siticoneHtmlLabel8.Text = "P.V.P.";
             // 
@@ -337,11 +337,11 @@
             // 
             siticoneHtmlLabel5.Anchor = AnchorStyles.None;
             siticoneHtmlLabel5.BackColor = Color.Transparent;
-            siticoneHtmlLabel5.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            siticoneHtmlLabel5.Location = new Point(104, 109);
+            siticoneHtmlLabel5.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            siticoneHtmlLabel5.Location = new Point(41, 64);
             siticoneHtmlLabel5.Margin = new Padding(3, 4, 3, 4);
             siticoneHtmlLabel5.Name = "siticoneHtmlLabel5";
-            siticoneHtmlLabel5.Size = new Size(188, 26);
+            siticoneHtmlLabel5.Size = new Size(142, 23);
             siticoneHtmlLabel5.TabIndex = 70;
             siticoneHtmlLabel5.Text = "Nombre Producto";
             // 
@@ -357,7 +357,7 @@
             tbProductName.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             tbProductName.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             tbProductName.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tbProductName.Location = new Point(313, 105);
+            tbProductName.Location = new Point(250, 60);
             tbProductName.Margin = new Padding(5, 9, 5, 9);
             tbProductName.Name = "tbProductName";
             tbProductName.PasswordChar = '\0';
@@ -373,7 +373,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1060, 770);
+            ClientSize = new Size(900, 535);
             Controls.Add(parentErrorLabel);
             Controls.Add(parentLabel);
             Controls.Add(isSubproductCheckBox);
