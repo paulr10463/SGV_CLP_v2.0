@@ -35,7 +35,7 @@ namespace SGV_CLP.Classes
         public const int SCROLL_WIDTH = 16;
 
         //Connectivity
-        public const string CONNECTION_STRING = "Host=localhost:5432;Username=postgres;Password=P@ssw0rd;Database=SGV-CLP";
+        public const string CONNECTION_STRING = "Host=localhost:5432;Username=postgres;Password=P@ssw0rd;Database=SGVCLP";
 
     }
 }
