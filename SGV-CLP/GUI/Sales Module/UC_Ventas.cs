@@ -4,6 +4,7 @@ using SGV_CLP.Classes.Sales_Module;
 using SGV_CLP.GUI.Módulo_Ventas;
 using SGV_CLP.Properties;
 using Siticone.Desktop.UI.WinForms;
+using System.Data;
 using System.Media;
 using System.Windows.Forms;
 
@@ -265,15 +266,16 @@ namespace SGV_CLP.GUI
                 {
                     int InvoiceCodeSelected = Convert.ToInt32(siticoneDataGridView1.Rows[e.RowIndex].Cells[0].Value);
                     Invoice invoiceToShow = new Invoice();
+                    DataGridViewRow rowSelected = siticoneDataGridView1.Rows[e.RowIndex];
                     invoiceToShow.invoiceCode = InvoiceCodeSelected;
-                    invoiceToShow.customer.customerID = siticoneDataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
-                    invoiceToShow.customer.firstName = siticoneDataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
-                    invoiceToShow.customer.firstLastName = siticoneDataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
-                    invoiceToShow.customer.phoneNumber = siticoneDataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
-                    invoiceToShow.totalSales = Convert.ToDouble(siticoneDataGridView1.Rows[e.RowIndex].Cells[5].Value);
+                    invoiceToShow.customer.customerID = rowSelected.Cells[1].Value.ToString();
+                    invoiceToShow.customer.firstName = rowSelected.Cells[2].Value.ToString();
+                    invoiceToShow.customer.firstLastName = rowSelected.Cells[3].Value.ToString();
+                    invoiceToShow.customer.phoneNumber = rowSelected.Cells[4].Value.ToString();
+                    invoiceToShow.totalSales = Convert.ToDouble(rowSelected.Cells[5].Value);
                     try
                     {
-                        invoiceToShow.issuedDate = DateTime.Parse(siticoneDataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString());
+                        invoiceToShow.issuedDate = DateTime.Parse(rowSelected.Cells[6].Value.ToString());
                     }catch (Exception ex)
                     {
                         invoiceToShow.issuedDate = null;
